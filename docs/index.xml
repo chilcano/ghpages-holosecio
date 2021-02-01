@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Holistic Security</title>
+    <link>https://chilcano.github.io/ghpages-holosecio/</link>
+    <description>Recent content on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Sun, 06 Sep 2020 11:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implementing VSCode-based (Code-Server) on Cloud with AWS CDK</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/</link>
+      <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/</guid>
+      <description>&lt;p&gt;As I stated in the previous post &amp;ldquo;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/2020/09/06/a-cloud-ide-for-the-masses&#34;&gt;A Cloud IDE for the masses&lt;/a&gt;&amp;rdquo;, in this post I will explain you how to deploy &lt;a href=&#34;https://github.com/cdr/code-server&#34;&gt;Code-Server&lt;/a&gt; on AWS. But to make it more interesting, I&amp;rsquo;m going to use &lt;a href=&#34;https://aws.amazon.com/cdk/&#34;&gt;AWS Cloud Development Kit (AWS CDK)&lt;/a&gt;, it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.&lt;/p&gt;
+&lt;p&gt;We are going to deploy &lt;a href=&#34;https://github.com/cdr/code-server&#34;&gt;Code-Server&lt;/a&gt; (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png&#34; alt=&#34;&#34;&gt;{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Cloud IDE for the masses</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/08/05/a-cloud-ide-for-the-masses/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/08/05/a-cloud-ide-for-the-masses/</guid>
+      <description>&lt;p&gt;Nowadays, you likely are involved in development/devops tasks for the cloud and you are using a &lt;a href=&#34;https://en.wikipedia.org/wiki/Online_integrated_development_environment&#34;&gt;Cloud-based IDE (Integrated Development Environment)&lt;/a&gt; to accomplish your job, but if you don&amp;rsquo;t have any or you are not happy with yours, then this blog post will explain you how to get one, opensource and in a few minutes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200805_cloud_ide/cloud-ide-1-evolution.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sidecar Proxy: The Security Building Block</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/05/13/sidecar-proxy-the-security-building-block/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/05/13/sidecar-proxy-the-security-building-block/</guid>
+      <description>&lt;p&gt;Just as a HTTP reverse proxy is sitting in front of a web application and a sidecar is attached to a motorcycle; a sidecar proxy is attached to a main application to extend or add functionality. A Sidecar Proxy is an application design pattern which abstracts certain features, such as inter-service communications, monitoring and &lt;strong&gt;security&lt;/strong&gt;, away from the main application to ease its maintainability, resilience and scalability of the application as a whole.&lt;/p&gt;
+&lt;p&gt;In this post I will show you how to use the Sidecar Pattern to address security challenges in the Cloud Native Applications.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-1-evolution.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;80%&amp;quot;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with Packer)</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/</link>
+      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/</guid>
+      <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws&#34;&gt;Building an affordable remote DevOps desktop on AWS&lt;/a&gt; I shown you how to build a cheaper remote DevOps Desktop on AWS, now I&amp;rsquo;ll explain you how to do that in approximately 3 minutes, instead of 25 minutes, using &lt;a href=&#34;https://www.packer.io&#34;&gt;Hashicorp Packer&lt;/a&gt; to pre-bake an AWS AMI.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1-arch-packer.png&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1-arch-packer.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building an affordable remote DevOps desktop on AWS</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws/</link>
+      <pubDate>Thu, 09 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;re going to work 100% remotely or are just tired of carrying a heavy laptop while commuting, why not spin up a DevOps Desktop PC in a public cloud and work from anywhere you want?
+So, if you like the idea, this post for you.
+In this post I&amp;rsquo;ll explain you how to build your own Remote DevOps Desktop on AWS and configure your thinner Local PC to connect to remote one.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-0-arch.png&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-0-arch.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub Pages and Jekyll on Windows 10</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/30/github-pages-and-jekyll-on-windows-10/</link>
+      <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/30/github-pages-and-jekyll-on-windows-10/</guid>
+      <description>&lt;p&gt;I have a&lt;a href=&#34;https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1&#34;&gt; Blog hosted on Github Pages created with Jekyll from Linux&lt;/a&gt;. That &lt;a href=&#34;https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2&#34;&gt;works perfectly and can publish posts frequently&lt;/a&gt;, but now I would like to do the same but from Windows 10 laptop (older Surface 3 Pro, 4GB RAM, 64GB SSD). The aim of this post is explain you how to prepare and configure Windows 10 to publish post in a new or existing static site created with Jekyll.&lt;/p&gt;
+&lt;p&gt;To do that I&amp;rsquo;m going to follow the &lt;a href=&#34;https://jekyllrb.com/docs/installation/windows&#34;&gt;Jekyll on Windows&lt;/a&gt; guide, basically I&amp;rsquo;ll &lt;a href=&#34;https://rubyinstaller.org/downloads&#34;&gt;download, install and configure a Ruby+Devkit&lt;/a&gt; version in Windows 10.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Simple Windows 10 Environment for DevOps Engineers</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</link>
+      <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</guid>
+      <description>&lt;p&gt;If you are working as a DevOps Engineer and want to automate the creation of your infrastructure on AWS from Windows 10, then you should install and configure a minimalist toolset to do &lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as Code (IaC)&lt;/a&gt; tasks. Since I&amp;rsquo;m using an older Surface 3 Pro (Windows 10 with 4GB RAM and 64GB SSD), I&amp;rsquo;m going to focus on Terraform coding, leaving out Docker, K8s, Jenkins, etc. for another article.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200330b/20200330b-simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-1.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</link>
+      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</guid>
+      <description>&lt;p&gt;In the &amp;ldquo;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt;&amp;rdquo; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the &lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) and &lt;strong&gt;Pareto Principle or 80/20 rule&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this post I&amp;rsquo;ll explain how to enable and configure &lt;em&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Basic_access_authentication&#34;&gt;HTTP Basic Authentication&lt;/a&gt; over TLS&lt;/em&gt; in the &lt;a href=&#34;https://www.weave.works/oss/scope&#34;&gt;Weave Scope&lt;/a&gt; webapp running in the recently created K8s Cluster.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DevOps is to SDLC as MLOps is to Machine Learning Applications</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps/</link>
+      <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps/</guid>
+      <description>&lt;p&gt;If you have read the previous post about &lt;a href=&#34;https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc&#34;&gt;Security along the Container-based SDLC&lt;/a&gt;, then you have noted that DevOps and Security practices should be applied and embeded along &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;SDLC&lt;/a&gt;. Before we had to understand the entire software production process and sub-processes in order to apply these DevOps and Security practices. Well, in this post I&amp;rsquo;ll explain how to apply DevOps practices along Machine Learning Software Applications Development Life Cycle (ML-SDLC) and I&amp;rsquo;ll share a set of tools focusing to implement MLOps.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200309/mlops-sdlc-devsecops-comparison.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200309/mlops-sdlc-devsecops-comparison.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;br&gt;
+&lt;em&gt;&lt;!-- raw HTML omitted --&gt;Data Science (&amp;amp; ML) Life Cycle&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</link>
+      <pubDate>Sun, 08 Mar 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) is a concept borrowed from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Minimum_viable_product&#34;&gt;Minimum Viable Product&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} (MVP) concept about the Product Development Strategy and from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Pareto_principle&#34;&gt;Pareto Principle or 80/20 rule&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).&lt;/p&gt;
+&lt;p&gt;The purpose of this post is to explain how to implement &lt;strong&gt;TLS everywhere&lt;/strong&gt; to become &lt;strong&gt;MVSec&lt;/strong&gt; (roughly 80% of security with 20% of working) for a &lt;strong&gt;Kubernetised Webapp hosted on AWS&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;br&gt;
+&lt;em&gt;&lt;!-- raw HTML omitted --&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let&amp;rsquo;s Encrypt&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Security along the Container-based SDLC</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/02/10/security-along-the-container-based-sdlc/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/02/10/security-along-the-container-based-sdlc/</guid>
+      <description>&lt;p&gt;Nowadays, containers are becoming the standard deployment unit of software, and that in the Cloud-based Application Security world means 2 things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Software Applications are &lt;strong&gt;distributed&lt;/strong&gt; into containers.&lt;/li&gt;
+&lt;li&gt;The minimum unit of &lt;strong&gt;deployment&lt;/strong&gt; and &lt;strong&gt;shipment&lt;/strong&gt; is the container.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other words, using containers we are adding a new element to be considered along the &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;Software Development Life Cycle (SDLC)&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} as a new additional piece of software (containers), and from Architectural point of view, those new pieces of software will be distributed.&lt;/p&gt;
+&lt;p&gt;Said that, the purpose of this post is explain you how to embed &lt;strong&gt;Security along the Container-based SDLC (Secure-SDLC)&lt;/strong&gt; and how to &lt;strong&gt;DevOps&lt;/strong&gt; practices will help its adoption.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;br&gt;
+&lt;em&gt;&lt;!-- raw HTML omitted --&gt;Security along the Container-based SDLC - Overview&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building your own affordable K8s to host a Service Mesh - Part 3: Certificate Manager</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</link>
+      <pubDate>Wed, 29 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</guid>
+      <description>&lt;p&gt;In this blog post I&amp;rsquo;ll explain how to get a X.509 TLS Certificate from &lt;a href=&#34;https://letsencrypt.org&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} automatically during the Terraform provision time, in this way we can now invoke the services additionally on port 443 (HTTPS/TLS).&lt;br&gt;
+During the Terraform execution, immediately after Kubernetes Cluster creation, the &lt;a href=&#34;https://github.com/jetstack/cert-manager&#34;&gt;JetStack Cert-Manager&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} is deployed in a Pod, it is who will request to &lt;a href=&#34;https://letsencrypt.org&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} service a X.509 TLS Certificate, once completed, the &lt;a href=&#34;https://github.com/jetstack/cert-manager&#34;&gt;JetStack Cert-Manager&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} will inject the X.509 Certificate as a Kubernetes Secret into NGINX Ingress Controller to enbale TLS.&lt;/p&gt;
+&lt;p&gt;At this point you must have created a Kubernetes Cluster with ExternalDNS and NGINX as Ingress Controller. If you don&amp;rsquo;t know how to achieve that, I recommend to follow these posts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane&#34;&gt;Part 1 - Building your own affordable K8s to host a Service Mesh&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress&#34;&gt;Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34; alt=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&amp;rsquo;s Encrypt&#34; title=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&#39;s Encrypt&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building your own affordable K8s to host a Service Mesh - Part 2: External DNS and Ingress</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/</link>
+      <pubDate>Wed, 22 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/</guid>
+      <description>&lt;p&gt;In order to get an affordable Kubernetes, every part we&amp;rsquo;re going to use should be affordable too, and ones of the expensive and tricky things are the &lt;a href=&#34;https://aws.amazon.com/elasticloadbalancing&#34;&gt;AWS Elastic Load Balancing (ELB)&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} and the &lt;a href=&#34;https://aws.amazon.com/route53&#34;&gt;AWS Route 53 (DNS)&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}. Fortunately, Kubernetes SIGs are working to address this gap with the &lt;a href=&#34;https://github.com/kubernetes-sigs/external-dns&#34;&gt;Kubernetes ExternalDNS&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;But what is the problem?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Apart of it is expensive, the problem is every time I deploy a &lt;code&gt;Service&lt;/code&gt; in Kubernetes I have to update and add a new DNS entry in the Cloud Provider&amp;rsquo;s DNS manually. Yes, of course, the process can be automated, but the idea is doing it during the provisioning time. In other words, every developer can publish theirs services adding the DNS name as annotation for that services can be called over Internet.
+Yes, &lt;a href=&#34;https://github.com/kubernetes/dns&#34;&gt;Kubernetes brings by default a DNS&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} but this is an internal one and it is only to work resolving DNS names over the Kubernetes Network, not for internet facing services.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Solution&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The Kubernetes ExternalDNS will run a program in our affordable K8s which it will synchronize exposed Kubernetes Services and Ingresses with the Cloud Provider&amp;rsquo;s DNS Service, in this case with AWS Route 53. Below you can view a high level diagram and current status of my &lt;a href=&#34;http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane&#34;&gt;Affordable Kubernetes Data Plane, I recommend look at first post about it&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png&#34; alt=&#34;Service Mesh hosted using AWS Spot Instances&#34; title=&#34;Service Mesh using AWS Spot Instances&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building your own affordable K8s to host a Service Mesh - Part 1</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/</link>
+      <pubDate>Thu, 16 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/</guid>
+      <description>&lt;p&gt;I want to build a Container-based Cloud to deploy any kind of workload (RESTful API, Microservices, Event-Driven, Functions, etc.) but it should be affordable, ready to use, reliable, secure and productionable. This means:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Productionable: should be fully functional and ready to be used as a production environment.&lt;/li&gt;
+&lt;li&gt;Reliable and Secure: able to improve the security level by implementing more security controls, at least fully isolated secure private networking.&lt;/li&gt;
+&lt;li&gt;Affordable: cheaper.&lt;/li&gt;
+&lt;li&gt;Ready to use: able to be automated (DevOps and IaC) with a mature management API.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Below a high level architecture of Container-based Cloud I want to get. I will focus on the Service Mesh Data Plane.&lt;br&gt;
+&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20200116-service-mesh-01-reference-arch-2.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20200116-service-mesh-01-reference-arch-2.png&#34; alt=&#34;&#34; title=&#34;Service Mesh hosted in a Container-based Cloud&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;/p&gt;
+&lt;p&gt;These requeriments restric some options, all of them using any Public Cloud Provider, but considering the &lt;a href=&#34;https://aws.amazon.com/ec2/spot&#34;&gt;AWS Spot Instances&lt;/a&gt; and &lt;a href=&#34;https://cloud.google.com/preemptible-vms&#34;&gt;Google Cloud Preemptible VM Instances&lt;/a&gt;. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/</link>
+      <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/</guid>
+      <description>&lt;p&gt;In the first blog post &lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1&#34; title=&#34;Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1&#34;&gt;I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages&lt;/a&gt;. Now, in this blog post (Part 2) I will explain how to manage the look&amp;amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&amp;rsquo;s blog to GitHub Pages.
+Also I&amp;rsquo;ll explain how to convert all HTML post files, obtained by using the &lt;code&gt;JekyllImport::Importers::WordpressDotCom&lt;/code&gt;, to Markdown format by using a simple Python script.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20191210-wp-github-jekyll-python-part2-1.png&#34; alt=&#34;Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll Part2&#34;&gt;{:width=&amp;ldquo;500&amp;rdquo;}&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting a Python 3 local programming environment</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/12/08/python3-setting-a-local-env/</link>
+      <pubDate>Sun, 08 Dec 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/12/08/python3-setting-a-local-env/</guid>
+      <description>&lt;p&gt;This post will guide you through installing Python 3, and Python 2.x, on your local Linux machine and setting up a programming environment via the command line. This post will explicitly cover the installation procedures for Ubuntu 18.04 or above, but the general principles apply to any other distribution of Debian Linux.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20191208-python.png&#34; alt=&#34;Python 3&#34; title=&#34;Setting a Python 3 local programming environment&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Android Tablet or iPad as extra monitor for Linux</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</guid>
+      <description>&lt;p&gt;There are several applications out there that help us to use a spare Android Tablet or iPad as a external monitor in Windows PC or Mac OSX Laptop over WI-FI or using a USB cable. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.easynlight.com/en/twomonusb/&#34;&gt;TwomonUSB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.duetdisplay.com/&#34;&gt;DuetDisplay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lunadisplay.com/&#34;&gt;LunaDisplay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.apple.com/en-gb/HT210380&#34;&gt;Apple Sidecar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.splashtop.com/wiredxdisplay&#34;&gt;SplashTop Wired xDisplay&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tips &amp; Tricks to use the Apple Magic Mouse in your Linux Ubuntu</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</guid>
+      <description>&lt;p&gt;This a set of resources (reported issues, blogs, drivers, tips and tricks) to eager to use your Apple Magic Mouse in your Linux Ubuntu.
+These resources are recommedations of many people whom tried and got successfully the Apple Magic Mouse working in Linux.
+Next you can review documentation about how to configure it in your Linux PC:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/</link>
+      <pubDate>Mon, 14 Oct 2019 15:58:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/</guid>
+      <description>&lt;p&gt;I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
+In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
+In the next blog post (Part 2) I will explain how to manage the look&amp;amp;feel, layouts, etc.
+&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/2019-10-14-blog-migration-wp-github.png&#34; alt=&#34;Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

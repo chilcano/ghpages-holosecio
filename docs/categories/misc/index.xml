@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>misc on Holistic Security</title>
+    <link>https://chilcano.github.io/ghpages-holosecio/categories/misc/</link>
+    <description>Recent content in misc on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Mon, 30 Mar 2020 22:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/categories/misc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Pages and Jekyll on Windows 10</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/30/github-pages-and-jekyll-on-windows-10/</link>
+      <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/30/github-pages-and-jekyll-on-windows-10/</guid>
+      <description>&lt;p&gt;I have a&lt;a href=&#34;https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1&#34;&gt; Blog hosted on Github Pages created with Jekyll from Linux&lt;/a&gt;. That &lt;a href=&#34;https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2&#34;&gt;works perfectly and can publish posts frequently&lt;/a&gt;, but now I would like to do the same but from Windows 10 laptop (older Surface 3 Pro, 4GB RAM, 64GB SSD). The aim of this post is explain you how to prepare and configure Windows 10 to publish post in a new or existing static site created with Jekyll.&lt;/p&gt;
+&lt;p&gt;To do that I&amp;rsquo;m going to follow the &lt;a href=&#34;https://jekyllrb.com/docs/installation/windows&#34;&gt;Jekyll on Windows&lt;/a&gt; guide, basically I&amp;rsquo;ll &lt;a href=&#34;https://rubyinstaller.org/downloads&#34;&gt;download, install and configure a Ruby+Devkit&lt;/a&gt; version in Windows 10.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/</link>
+      <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/</guid>
+      <description>&lt;p&gt;In the first blog post &lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1&#34; title=&#34;Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1&#34;&gt;I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages&lt;/a&gt;. Now, in this blog post (Part 2) I will explain how to manage the look&amp;amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&amp;rsquo;s blog to GitHub Pages.
+Also I&amp;rsquo;ll explain how to convert all HTML post files, obtained by using the &lt;code&gt;JekyllImport::Importers::WordpressDotCom&lt;/code&gt;, to Markdown format by using a simple Python script.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20191210-wp-github-jekyll-python-part2-1.png&#34; alt=&#34;Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll Part2&#34;&gt;{:width=&amp;ldquo;500&amp;rdquo;}&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Android Tablet or iPad as extra monitor for Linux</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</guid>
+      <description>&lt;p&gt;There are several applications out there that help us to use a spare Android Tablet or iPad as a external monitor in Windows PC or Mac OSX Laptop over WI-FI or using a USB cable. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.easynlight.com/en/twomonusb/&#34;&gt;TwomonUSB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.duetdisplay.com/&#34;&gt;DuetDisplay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lunadisplay.com/&#34;&gt;LunaDisplay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.apple.com/en-gb/HT210380&#34;&gt;Apple Sidecar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.splashtop.com/wiredxdisplay&#34;&gt;SplashTop Wired xDisplay&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tips &amp; Tricks to use the Apple Magic Mouse in your Linux Ubuntu</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</guid>
+      <description>&lt;p&gt;This a set of resources (reported issues, blogs, drivers, tips and tricks) to eager to use your Apple Magic Mouse in your Linux Ubuntu.
+These resources are recommedations of many people whom tried and got successfully the Apple Magic Mouse working in Linux.
+Next you can review documentation about how to configure it in your Linux PC:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/</link>
+      <pubDate>Mon, 14 Oct 2019 15:58:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/</guid>
+      <description>&lt;p&gt;I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
+In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
+In the next blog post (Part 2) I will explain how to manage the look&amp;amp;feel, layouts, etc.
+&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/2019-10-14-blog-migration-wp-github.png&#34; alt=&#34;Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

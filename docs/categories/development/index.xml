@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>development on Holistic Security</title>
+    <link>https://chilcano.github.io/ghpages-holosecio/categories/development/</link>
+    <description>Recent content in development on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Sun, 08 Dec 2019 10:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting a Python 3 local programming environment</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2019/12/08/python3-setting-a-local-env/</link>
+      <pubDate>Sun, 08 Dec 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2019/12/08/python3-setting-a-local-env/</guid>
+      <description>&lt;p&gt;This post will guide you through installing Python 3, and Python 2.x, on your local Linux machine and setting up a programming environment via the command line. This post will explicitly cover the installation procedures for Ubuntu 18.04 or above, but the general principles apply to any other distribution of Debian Linux.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20191208-python.png&#34; alt=&#34;Python 3&#34; title=&#34;Setting a Python 3 local programming environment&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/aws/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/cdk/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/cloud/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/cloudformation/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/code-server/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/devops/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/post/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/vscode-ide/</loc>
+    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/08/05/a-cloud-ide-for-the-masses/</loc>
+    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/docker/</loc>
+    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/git/</loc>
+    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/k8s/</loc>
+    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/linux/</loc>
+    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/raspberry-pi/</loc>
+    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/wsl/</loc>
+    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/apaas/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/gateway/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/ingress/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/load-balancer/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/patterns/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/proxy/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/security/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/sidecar/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/05/13/sidecar-proxy-the-security-building-block/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/</loc>
+    <lastmod>2020-04-20T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/packer/</loc>
+    <lastmod>2020-04-20T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/remote/</loc>
+    <lastmod>2020-04-20T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/terraform/</loc>
+    <lastmod>2020-04-20T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/vs-code/</loc>
+    <lastmod>2020-04-20T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws/</loc>
+    <lastmod>2020-04-09T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/cms/</loc>
+    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/github/</loc>
+    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/03/30/github-pages-and-jekyll-on-windows-10/</loc>
+    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/jekyll/</loc>
+    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/misc/</loc>
+    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/ruby/</loc>
+    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/awscli/</loc>
+    <lastmod>2020-03-29T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</loc>
+    <lastmod>2020-03-29T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/windows-10/</loc>
+    <lastmod>2020-03-29T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/http-basic-auth/</loc>
+    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/microservice/</loc>
+    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</loc>
+    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/mvp/</loc>
+    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/service-mesh/</loc>
+    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/tls/</loc>
+    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/x509/</loc>
+    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/ai/</loc>
+    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/bigdata/</loc>
+    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/data-science/</loc>
+    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps/</loc>
+    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/kubernetes/</loc>
+    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/ml/</loc>
+    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/mlops/</loc>
+    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/sdlc/</loc>
+    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</loc>
+    <lastmod>2020-03-08T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/container/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/dast/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/devsecops/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/holism/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/iast/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/pentesting/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/rasp/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/sast/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/sca/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/02/10/security-along-the-container-based-sdlc/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</loc>
+    <lastmod>2020-01-29T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/data-plane/</loc>
+    <lastmod>2020-01-29T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/pki/</loc>
+    <lastmod>2020-01-29T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/</loc>
+    <lastmod>2020-01-22T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/external-dns/</loc>
+    <lastmod>2020-01-22T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/nginx/</loc>
+    <lastmod>2020-01-22T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/</loc>
+    <lastmod>2020-01-16T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/</loc>
+    <lastmod>2019-12-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/migration/</loc>
+    <lastmod>2019-12-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/python/</loc>
+    <lastmod>2019-12-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/wordpress/</loc>
+    <lastmod>2019-12-10T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/development/</loc>
+    <lastmod>2019-12-08T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2019/12/08/python3-setting-a-local-env/</loc>
+    <lastmod>2019-12-08T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/dual/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/extended/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/categories/linux/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/monitor/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/screen/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/tablet/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/ubuntu/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/apple/</loc>
+    <lastmod>2019-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/bluetooth/</loc>
+    <lastmod>2019-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/magic-mouse/</loc>
+    <lastmod>2019-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</loc>
+    <lastmod>2019-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/</loc>
+    <lastmod>2019-10-14T15:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chilcano.github.io/ghpages-holosecio/tags/ci/cd/</loc>
+  </url>
+  
+</urlset>

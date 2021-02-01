@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wsl on Holistic Security</title>
+    <link>https://chilcano.github.io/ghpages-holosecio/tags/wsl/</link>
+    <description>Recent content in wsl on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Wed, 05 Aug 2020 18:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Cloud IDE for the masses</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/2020/08/05/a-cloud-ide-for-the-masses/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/2020/08/05/a-cloud-ide-for-the-masses/</guid>
+      <description>&lt;p&gt;Nowadays, you likely are involved in development/devops tasks for the cloud and you are using a &lt;a href=&#34;https://en.wikipedia.org/wiki/Online_integrated_development_environment&#34;&gt;Cloud-based IDE (Integrated Development Environment)&lt;/a&gt; to accomplish your job, but if you don&amp;rsquo;t have any or you are not happy with yours, then this blog post will explain you how to get one, opensource and in a few minutes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200805_cloud_ide/cloud-ide-1-evolution.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

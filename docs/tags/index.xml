@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Holistic Security</title>
+    <link>https://chilcano.github.io/ghpages-holosecio/tags/</link>
+    <description>Recent content in Tags on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Sun, 06 Sep 2020 11:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/aws/</link>
+      <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cdk</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/cdk/</link>
+      <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/cdk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloudformation</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/cloudformation/</link>
+      <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/cloudformation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code-server</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/code-server/</link>
+      <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/code-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode ide</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/vscode-ide/</link>
+      <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/vscode-ide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/docker/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/git/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/k8s/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/linux/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raspberry pi</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/raspberry-pi/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wsl</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/wsl/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gateway</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/gateway/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/gateway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ingress</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/ingress/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/ingress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>load balancer</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/load-balancer/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/load-balancer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/proxy/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sidecar</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/sidecar/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/sidecar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>packer</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/packer/</link>
+      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/packer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>remote</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/remote/</link>
+      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/remote/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/terraform/</link>
+      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vs code</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/vs-code/</link>
+      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/vs-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/github/</link>
+      <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/jekyll/</link>
+      <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ruby</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/ruby/</link>
+      <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>awscli</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/awscli/</link>
+      <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/awscli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows 10</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/windows-10/</link>
+      <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/windows-10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTTP Basic Auth</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/http-basic-auth/</link>
+      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/http-basic-auth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microservice</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/microservice/</link>
+      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mvp</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/mvp/</link>
+      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/mvp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tls</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/tls/</link>
+      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/tls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>x509</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/x509/</link>
+      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/x509/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/kubernetes/</link>
+      <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MLOps</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/mlops/</link>
+      <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/mlops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>container</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/container/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DAST</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/dast/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/dast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IAST</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/iast/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/iast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pentesting</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/pentesting/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/pentesting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RASP</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/rasp/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/rasp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SAST</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/sast/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/sast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sca</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/sca/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/sca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data plane</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/data-plane/</link>
+      <pubDate>Wed, 29 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/data-plane/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pki</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/pki/</link>
+      <pubDate>Wed, 29 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/pki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>external dns</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/external-dns/</link>
+      <pubDate>Wed, 22 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/external-dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/nginx/</link>
+      <pubDate>Wed, 22 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>migration</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/migration/</link>
+      <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/python/</link>
+      <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wordpress</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/wordpress/</link>
+      <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> dual</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/dual/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/dual/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>extended</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/extended/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/extended/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monitor</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/monitor/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/monitor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>screen</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/screen/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/screen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tablet</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/tablet/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/tablet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/ubuntu/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apple</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/apple/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/apple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bluetooth</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/bluetooth/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/bluetooth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>magic mouse</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/magic-mouse/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/magic-mouse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CI/CD</title>
+      <link>https://chilcano.github.io/ghpages-holosecio/tags/ci/cd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chilcano.github.io/ghpages-holosecio/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
