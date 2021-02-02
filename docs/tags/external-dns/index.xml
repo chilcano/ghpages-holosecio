@@ -6,7 +6,6 @@
     <description>Recent content in external dns on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>You</copyright>
     <lastBuildDate>Wed, 22 Jan 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/external-dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building your own affordable K8s to host a Service Mesh - Part 2: External DNS and Ingress</title>

@@ -6,7 +6,6 @@
     <description>Recent content in DevOps on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>You</copyright>
     <lastBuildDate>Sun, 06 Sep 2020 11:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Implementing VSCode-based (Code-Server) on Cloud with AWS CDK</title>
