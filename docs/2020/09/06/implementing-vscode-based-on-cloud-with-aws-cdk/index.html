@@ -11,24 +11,25 @@
   <meta property="og:title" content="Implementing VSCode-based (Code-Server) on Cloud with AWS CDK" />
 <meta property="og:description" content="As I stated in the previous post &ldquo;A Cloud IDE for the masses&rdquo;, in this post I will explain you how to deploy Code-Server on AWS. But to make it more interesting, I&rsquo;m going to use AWS Cloud Development Kit (AWS CDK), it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.
 We are going to deploy Code-Server (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it.
-{:style=&ldquo;display:block;margin:auto;&quot;}" />
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chilcano.github.io/ghpages-holosecio/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/" />
-<meta property="article:published_time" content="2020-09-06T11:00:00+00:00" />
-<meta property="article:modified_time" content="2020-09-06T11:00:00+00:00" />
+<meta property="og:url" content="https://chilcano.github.io/ghpages-holosecio/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-09-06T11:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-09-06T11:00:00&#43;00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Implementing VSCode-based (Code-Server) on Cloud with AWS CDK"/>
 <meta name="twitter:description" content="As I stated in the previous post &ldquo;A Cloud IDE for the masses&rdquo;, in this post I will explain you how to deploy Code-Server on AWS. But to make it more interesting, I&rsquo;m going to use AWS Cloud Development Kit (AWS CDK), it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.
 We are going to deploy Code-Server (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it.
-{:style=&ldquo;display:block;margin:auto;&quot;}"/>
+"/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://chilcano.github.io/ghpages-holosecio/css/style-light.css">
+  <link rel="stylesheet" href="https://chilcano.github.io/ghpages-holosecio/css/style-white.css">
   
   
   
@@ -43,6 +44,22 @@ We are going to deploy Code-Server (a NodeJS web app) into an EC2 instance, usin
 
   
   
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
   
   
 </head>
@@ -86,7 +103,7 @@ We are going to deploy Code-Server (a NodeJS web app) into an EC2 instance, usin
   
     <p>As I stated in the previous post &ldquo;<a href="/2020/09/06/a-cloud-ide-for-the-masses">A Cloud IDE for the masses</a>&rdquo;, in this post I will explain you how to deploy <a href="https://github.com/cdr/code-server">Code-Server</a> on AWS. But to make it more interesting, I&rsquo;m going to use <a href="https://aws.amazon.com/cdk/">AWS Cloud Development Kit (AWS CDK)</a>, it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.</p>
 <p>We are going to deploy <a href="https://github.com/cdr/code-server">Code-Server</a> (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it.</p>
-<p><img src="/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png" alt="">{:style=&ldquo;display:block;margin:auto;&quot;}</p>
+<p><img src="/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png" alt=""></p>
 <h3 id="persisting-the-code">Persisting the code</h3>
 <p>Code-Server doesn&rsquo;t require a Database, the only thing to persist is the code. The EC2 instance has enough room to download and persist the code and its dependencies like you do it in your local computer. If you have completed your project, then you can push your code to your Git repository.</p>
 <h3 id="on-demand-computing">On-demand computing</h3>
@@ -170,6 +187,20 @@ Hope this helps.</p>
     </nav>
   </div>
 </footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 
   </div>

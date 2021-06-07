@@ -20,9 +20,10 @@ Below a high level architecture of Container-based Cloud I want to get. I will f
 {:target=&quot;_blank&quot;}
 These requeriments restric some options, all of them using any Public Cloud Provider, but considering the AWS Spot Instances and Google Cloud Preemptible VM Instances. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chilcano.github.io/ghpages-holosecio/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/" />
-<meta property="article:published_time" content="2020-01-16T10:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-16T10:00:00+00:00" />
+<meta property="og:url" content="https://chilcano.github.io/ghpages-holosecio/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-01-16T10:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-01-16T10:00:00&#43;00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Building your own affordable K8s to host a Service Mesh - Part 1"/>
@@ -42,7 +43,7 @@ These requeriments restric some options, all of them using any Public Cloud Prov
     
   
   
-  <link rel="stylesheet" href="https://chilcano.github.io/ghpages-holosecio/css/style-light.css">
+  <link rel="stylesheet" href="https://chilcano.github.io/ghpages-holosecio/css/style-white.css">
   
   
   
@@ -57,6 +58,22 @@ These requeriments restric some options, all of them using any Public Cloud Prov
 
   
   
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
   
   
 </head>
@@ -156,9 +173,9 @@ The <code>oci</code> suffix means that Terraform is compatible with <a href="htt
 <li>
 <p>Extract the downloaded <code>terraform</code> binary file and move it into a directory searched for executables.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~$ unzip ~/Downloads/terraform_0.11.15-oci_linux_amd64.zip 
- 
+
 chilcano@inti:~$ sudo mv terraform /usr/local/bin/
-   
+
 chilcano@inti:~$ terraform -v
 Terraform v0.11.15-oci
 </code></pre></div></li>
@@ -170,12 +187,12 @@ Terraform v0.11.15-oci
 <p>Install AWS CLI. It requires Pip 3.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~$ pip3 --version
 pip 18.1 from /usr/lib/python3/dist-packages/pip <span style="color:#f92672">(</span>python 3.7<span style="color:#f92672">)</span>
-   
+
 chilcano@inti:~$ pip3 install awscli --upgrade --user
-   
+
 chilcano@inti:~$ aws --version
 aws-cli/1.16.314 Python/3.7.5 Linux/5.3.0-26-generic botocore/1.13.50
-   
+
 chilcano@inti:~$ which aws
 /home/chilcano/.local/bin/aws
 </code></pre></div></li>
@@ -186,7 +203,7 @@ AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f9
 AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: &lt;SECRET-ACCESS-KEY&gt;
 Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: us-west-2
 Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: json
- 
+
 chilcano@inti:~$ cat .aws/credentials 
 <span style="color:#f92672">[</span>affordablek8s01<span style="color:#f92672">]</span>
 aws_access_key_id <span style="color:#f92672">=</span> &lt;ACCESS-KEY-ID&gt;
@@ -202,15 +219,15 @@ aws_secret_access_key <span style="color:#f92672">=</span> &lt;SECRET-ACCESS-KEY
 <p>Clone the Github repo.</p>
 <p>You can clone the <a href="https://github.com/chilcano/kubeadm-aws">forked GitHub repo</a>{:target=&quot;_blank&quot;} and switch to <code>0.2.1-chilcano</code> branch.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos$ git clone https://github.com/chilcano/kubeadm-aws affordable-k8s-tf
-   
+
 Cloning into <span style="color:#e6db74">&#39;affordable-k8s-tf&#39;</span>...
 remote: Enumerating objects: 327, <span style="color:#66d9ef">done</span>.
 remote: Total <span style="color:#ae81ff">327</span> <span style="color:#f92672">(</span>delta 0<span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>delta 0<span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">327</span>
 Receiving objects: 100% <span style="color:#f92672">(</span>327/327<span style="color:#f92672">)</span>, 71.68 KiB | 638.00 KiB/s, <span style="color:#66d9ef">done</span>.
 Resolving deltas: 100% <span style="color:#f92672">(</span>210/210<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-   
+
 chilcano@inti:~/git-repos$ cd affordable-k8s-tf/
-   
+
 chilcano@inti:~/git-repos/affordable-k8s-tf$ git tag -l
 0.1.0
 0.1.1
@@ -236,7 +253,7 @@ Switched to a new branch <span style="color:#e6db74">&#39;0.2.1-chilcano&#39;</s
 chilcano@inti:~/git-repos/affordable-k8s-tf$ git status
 On branch 0.2.1-chilcano
 Your branch is up to date with <span style="color:#e6db74">&#39;origin/0.2.1-chilcano&#39;</span>.
-   
+
 nothing to commit, working tree clean
 </code></pre></div><blockquote>
 <p>Alternatively to all above steps you can clone the <code>0.2.1-chilcano</code> branch only of GitHub repo as follow:</p>
@@ -275,30 +292,30 @@ $ export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="c
   <span style="color:#a6e22e">secret_key</span> = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var.<span style="color:#a6e22e">secret_key</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
   <span style="color:#a6e22e">region</span>     = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var.<span style="color:#a6e22e">region</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 }
-<span style="color:#66d9ef">   
+<span style="color:#66d9ef">
 </span><span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;template&#34;</span> {
   <span style="color:#a6e22e">version</span>    = <span style="color:#e6db74">&#34;1.0.0&#34;</span>
 }
-<span style="color:#66d9ef">   
+<span style="color:#66d9ef">
 </span><span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;random&#34;</span> {<span style="color:#75715e">
 </span><span style="color:#75715e">  #version    = &#34;2.0.0&#34;
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">version</span>    = <span style="color:#e6db74">&#34;2.1.0&#34;</span>
 }
 </code></pre></div><p>Now, initialize Terraform.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform init
-   
+
 Initializing provider plugins...
 - Checking <span style="color:#66d9ef">for</span> available provider plugins on https://releases.hashicorp.com...
 - Downloading plugin <span style="color:#66d9ef">for</span> provider <span style="color:#e6db74">&#34;template&#34;</span> <span style="color:#f92672">(</span>1.0.0<span style="color:#f92672">)</span>...
 - Downloading plugin <span style="color:#66d9ef">for</span> provider <span style="color:#e6db74">&#34;random&#34;</span> <span style="color:#f92672">(</span>2.1.0<span style="color:#f92672">)</span>...
 - Downloading plugin <span style="color:#66d9ef">for</span> provider <span style="color:#e6db74">&#34;aws&#34;</span> <span style="color:#f92672">(</span>2.44.0<span style="color:#f92672">)</span>...
-   
+
 Terraform has been successfully initialized!
-   
+
 You may now begin working with Terraform. Try running <span style="color:#e6db74">&#34;terraform plan&#34;</span> to see
 any changes that are required <span style="color:#66d9ef">for</span> your infrastructure. All Terraform commands
 should now work.
-   
+
 If you ever set or change modules or backend configuration <span style="color:#66d9ef">for</span> Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to <span style="color:#66d9ef">do</span> so <span style="color:#66d9ef">if</span> necessary.
@@ -311,13 +328,13 @@ commands will detect it and remind you to <span style="color:#66d9ef">do</span> 
 </span><span style="color:#ae81ff"></span>  -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.46.128.76/32&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var region<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;us-east-1&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var kubernetes-version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.14.3&#34;</span>
-   
+
 chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform -v
 Terraform v0.11.15-oci
 + provider.aws v2.44.0
 + provider.random v2.1.0
 + provider.template v1.0.0
-   
+
 Your version of Terraform is out of date! The latest version
 is 0.12.19. You can update by downloading from www.terraform.io/downloads.html
 </code></pre></div></li>
@@ -419,7 +436,7 @@ Cloud-init v. 19.3-41-gc4735dd3-0ubuntu1~18.04.1 finished at Wed, <span style="c
 <li>
 <p>Finally, ask to Kubernetes to show all Cluster Nodes and its status.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem -- kubectl get nodes
-   
+
 NAME                           STATUS   ROLES    AGE   VERSION
 ip-10-0-100-154.ec2.internal   Ready    &lt;none&gt;   48m   v1.14.3
 ip-10-0-100-4.ec2.internal     Ready    master   49m   v1.14.3
@@ -479,6 +496,20 @@ I hope this helps.</p>
     </nav>
   </div>
 </footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 
   </div>

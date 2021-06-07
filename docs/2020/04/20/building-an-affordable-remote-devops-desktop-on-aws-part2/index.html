@@ -12,9 +12,10 @@
 <meta property="og:description" content="In the previous post Building an affordable remote DevOps desktop on AWS I shown you how to build a cheaper remote DevOps Desktop on AWS, now I&rsquo;ll explain you how to do that in approximately 3 minutes, instead of 25 minutes, using Hashicorp Packer to pre-bake an AWS AMI.
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chilcano.github.io/ghpages-holosecio/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/" />
-<meta property="article:published_time" content="2020-04-20T10:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-20T10:00:00+00:00" />
+<meta property="og:url" content="https://chilcano.github.io/ghpages-holosecio/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-04-20T10:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-04-20T10:00:00&#43;00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with Packer)"/>
@@ -26,7 +27,7 @@
     
   
   
-  <link rel="stylesheet" href="https://chilcano.github.io/ghpages-holosecio/css/style-light.css">
+  <link rel="stylesheet" href="https://chilcano.github.io/ghpages-holosecio/css/style-white.css">
   
   
   
@@ -41,6 +42,22 @@
 
   
   
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
   
   
 </head>
@@ -133,14 +150,14 @@ $ packer build ubuntu_gui.json
 </code></pre></div></li>
 <li>Once created the custom AMI, you are able to provision your Remote DevOps Desktop on AWS using Terraform.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ terraform init
-   
+
 $ terraform plan <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var node_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;devops2&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var ssh_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remotedesktop&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var developer_cidr_blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.32.214.211/32&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var ami_name_filter<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-ami-name-filter&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var ami_owner<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-ami-owner&#34;</span> 
-   
+
 $ terraform apply <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var node_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;devops2&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var ssh_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remotedesktop&#34;</span> <span style="color:#ae81ff">\
@@ -200,6 +217,20 @@ drwxr-xr-x <span style="color:#ae81ff">5</span> root root <span style="color:#ae
     </nav>
   </div>
 </footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 
   </div>

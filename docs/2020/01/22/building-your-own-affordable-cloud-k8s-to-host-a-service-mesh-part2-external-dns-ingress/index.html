@@ -17,9 +17,10 @@ The Solution
 The Kubernetes ExternalDNS will run a program in our affordable K8s which it will synchronize exposed Kubernetes Services and Ingresses with the Cloud Provider&rsquo;s DNS Service, in this case with AWS Route 53. Below you can view a high level diagram and current status of my Affordable Kubernetes Data Plane, I recommend look at first post about it{:target=&quot;_blank&quot;}.
 {:target=&quot;_blank&quot;}" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chilcano.github.io/ghpages-holosecio/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/" />
-<meta property="article:published_time" content="2020-01-22T10:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-22T10:00:00+00:00" />
+<meta property="og:url" content="https://chilcano.github.io/ghpages-holosecio/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-01-22T10:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-01-22T10:00:00&#43;00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Building your own affordable K8s to host a Service Mesh - Part 2: External DNS and Ingress"/>
@@ -36,7 +37,7 @@ The Kubernetes ExternalDNS will run a program in our affordable K8s which it wil
     
   
   
-  <link rel="stylesheet" href="https://chilcano.github.io/ghpages-holosecio/css/style-light.css">
+  <link rel="stylesheet" href="https://chilcano.github.io/ghpages-holosecio/css/style-white.css">
   
   
   
@@ -51,6 +52,22 @@ The Kubernetes ExternalDNS will run a program in our affordable K8s which it wil
 
   
   
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
   
   
 </head>
@@ -156,7 +173,7 @@ After cleaning up, reprovision a fresh Kubernetes Cluster.</p>
 </span><span style="color:#ae81ff"></span>  -var external-dns-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var nginx-ingress-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var nginx-ingress-domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ingress-nginx.cloud.holisticsecurity.io&#34;</span> 
-   
+
 $ terraform apply <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
@@ -176,7 +193,7 @@ $ export HZ_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(
 $ aws route53 list-resource-record-sets --hosted-zone-id $HZ_ID --query <span style="color:#e6db74">&#34;ResourceRecordSets[?Name == &#39;</span><span style="color:#e6db74">${</span>MY_SUBDOMAIN<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#39;].{Name:Name,Type:Type}&#34;</span> | jq -c <span style="color:#e6db74">&#39;.[]&#39;</span>
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;Name&#34;</span>:<span style="color:#e6db74">&#34;cloud.holisticsecurity.io.&#34;</span>,<span style="color:#e6db74">&#34;Type&#34;</span>:<span style="color:#e6db74">&#34;NS&#34;</span><span style="color:#f92672">}</span>
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;Name&#34;</span>:<span style="color:#e6db74">&#34;cloud.holisticsecurity.io.&#34;</span>,<span style="color:#e6db74">&#34;Type&#34;</span>:<span style="color:#e6db74">&#34;SOA&#34;</span><span style="color:#f92672">}</span>
-   
+
 <span style="color:#75715e"># I should remove those 10 records (of type A, TXT and SRV) </span>
 $ aws route53 list-resource-record-sets --hosted-zone-id $HZ_ID --query <span style="color:#e6db74">&#34;ResourceRecordSets[?Name != &#39;</span><span style="color:#e6db74">${</span>MY_SUBDOMAIN<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#39;].{Name:Name,Type:Type}&#34;</span> | jq -c <span style="color:#e6db74">&#39;.[]&#39;</span>
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;Name&#34;</span>:<span style="color:#e6db74">&#34;hello-svc-np.cloud.holisticsecurity.io.&#34;</span>,<span style="color:#e6db74">&#34;Type&#34;</span>:<span style="color:#e6db74">&#34;A&#34;</span><span style="color:#f92672">}</span>
@@ -189,7 +206,7 @@ $ aws route53 list-resource-record-sets --hosted-zone-id $HZ_ID --query <span st
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;Name&#34;</span>:<span style="color:#e6db74">&#34;_http._tcp.ingress-nginx.cloud.holisticsecurity.io.&#34;</span>,<span style="color:#e6db74">&#34;Type&#34;</span>:<span style="color:#e6db74">&#34;TXT&#34;</span><span style="color:#f92672">}</span>
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;Name&#34;</span>:<span style="color:#e6db74">&#34;_https._tcp.ingress-nginx.cloud.holisticsecurity.io.&#34;</span>,<span style="color:#e6db74">&#34;Type&#34;</span>:<span style="color:#e6db74">&#34;SRV&#34;</span><span style="color:#f92672">}</span>
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;Name&#34;</span>:<span style="color:#e6db74">&#34;_https._tcp.ingress-nginx.cloud.holisticsecurity.io.&#34;</span>,<span style="color:#e6db74">&#34;Type&#34;</span>:<span style="color:#e6db74">&#34;TXT&#34;</span><span style="color:#f92672">}</span>
-   
+
 <span style="color:#75715e"># Removing those unwanted records.</span>
 $ aws route53 list-resource-record-sets --hosted-zone-id $HZ_ID --query <span style="color:#e6db74">&#34;ResourceRecordSets[?Name != &#39;</span><span style="color:#e6db74">${</span>MY_SUBDOMAIN<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#39;]&#34;</span> | jq -c <span style="color:#e6db74">&#39;.[]&#39;</span> |
   <span style="color:#66d9ef">while</span> read -r RRS; <span style="color:#66d9ef">do</span>
@@ -197,7 +214,7 @@ $ aws route53 list-resource-record-sets --hosted-zone-id $HZ_ID --query <span st
     CHG_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws route53 change-resource-record-sets --hosted-zone-id $HZ_ID --change-batch <span style="color:#e6db74">&#39;{&#34;Changes&#34;:[{&#34;Action&#34;:&#34;DELETE&#34;,&#34;ResourceRecordSet&#34;: &#39;</span><span style="color:#e6db74">&#34;</span>$RRS<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39; }]}&#39;</span> --output text --query <span style="color:#e6db74">&#39;ChangeInfo.Id&#39;</span><span style="color:#66d9ef">)</span>
     echo <span style="color:#e6db74">&#34; - DELETING: </span>$type<span style="color:#e6db74"> </span>$name<span style="color:#e6db74"> - CHANGE ID: </span>$CHG_ID<span style="color:#e6db74">&#34;</span>    
   <span style="color:#66d9ef">done</span>
-   
+
  - DELETING: TXT ccc.cloud.holisticsecurity.io. - CHANGE ID: /change/CMCJ8CXRBIZ7M
  - DELETING: SRV ddd.cloud.holisticsecurity.io. - CHANGE ID: /change/C2KU4TEHWEDV2Y
 </code></pre></div><p>Only if it is required, you can delete the AWS Hosted Zone in this way:</p>
@@ -274,25 +291,25 @@ Note: Unnecessary use of -X or --request, GET is already inferred.
 <p>Deploy Hello Microservice and check the deployment status</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Get SSH access to K8s master node</span>
 $ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem
-   
+
 <span style="color:#75715e"># Deploy Hello microservices</span>
 ubuntu@ip-10-0-100-4:~$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-app.yaml
 namespace/hello created
 serviceaccount/hello-sa created
 deployment.extensions/hello-v1 created
 deployment.extensions/hello-v2 created
-   
+
 <span style="color:#75715e"># Create ClusterIP, LoadBalancer and NodePort Services for above Hello microservices</span>
 ubuntu@ip-10-0-100-4:~$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-svc.yaml
 service/hello-svc-cip created
 service/hello-svc-lb created
 service/hello-svc-np created
-   
+
 <span style="color:#75715e"># Create 2 Ingress Resources for above ClusterIP and NodePort Services</span>
 ubuntu@ip-10-0-100-4:~$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-ingress.yaml
 ingress.extensions/hello-ingress-cip created
 ingress.extensions/hello-ingress-np created
-   
+
 <span style="color:#75715e"># Get status</span>
 ubuntu@ip-10-0-100-4:~$ kubectl get pod,svc,ingress -n hello -o wide
 NAME                            READY   STATUS    RESTARTS   AGE   IP            NODE                          NOMINATED NODE   READINESS GATES
@@ -300,12 +317,12 @@ pod/hello-v1-66fc9c7d98-7b4b5   1/1     Running   <span style="color:#ae81ff">0<
 pod/hello-v1-66fc9c7d98-kb2kn   1/1     Running   <span style="color:#ae81ff">0</span>          32m   10.244.1.17   ip-10-0-100-22.ec2.internal   &lt;none&gt;           &lt;none&gt;
 pod/hello-v2-845749f774-fzg5f   1/1     Running   <span style="color:#ae81ff">0</span>          32m   10.244.1.18   ip-10-0-100-22.ec2.internal   &lt;none&gt;           &lt;none&gt;
 pod/hello-v2-845749f774-q9bk5   1/1     Running   <span style="color:#ae81ff">0</span>          31m   10.244.1.19   ip-10-0-100-22.ec2.internal   &lt;none&gt;           &lt;none&gt;
-   
+
 NAME                    TYPE           CLUSTER-IP      EXTERNAL-IP   PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>          AGE   SELECTOR
 service/hello-svc-cip   ClusterIP      10.108.175.6    &lt;none&gt;        5080/TCP         22m   app<span style="color:#f92672">=</span>hello
 service/hello-svc-lb    LoadBalancer   10.102.10.180   &lt;pending&gt;     5080:32379/TCP   22m   app<span style="color:#f92672">=</span>hello
 service/hello-svc-np    NodePort       10.105.22.106   &lt;none&gt;        5080:31002/TCP   22m   app<span style="color:#f92672">=</span>hello
-   
+
 NAME                                   HOSTS                                     ADDRESS   PORTS   AGE
 ingress.extensions/hello-ingress-cip   ingress-nginx.cloud.holisticsecurity.io             <span style="color:#ae81ff">80</span>      17m
 ingress.extensions/hello-ingress-np    hello-svc-np.cloud.holisticsecurity.io              <span style="color:#ae81ff">80</span>      17m
@@ -334,16 +351,16 @@ ingress.extensions/hello-ingress-np    hello-svc-np.cloud.holisticsecurity.io   
 $ kubectl get svc/hello-svc-cip -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.spec.ports[0].port}&#39;</span>
 $ export HELLO_SVC_CIP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get svc/hello-svc-cip -n hello -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.spec.clusterIP}&#39;</span><span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>kubectl get svc/hello-svc-cip -n hello -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.spec.ports[0].port}&#39;</span><span style="color:#66d9ef">)</span>
 $ echo $HELLO_SVC_CIP
-   
+
 $ curl http://<span style="color:#e6db74">${</span>HELLO_SVC_CIP<span style="color:#e6db74">}</span>/hello
 Hello version: v1, instance: hello-v1-5cb886df9d-k7rcq
-   
+
 $ curl http://<span style="color:#e6db74">${</span>HELLO_SVC_CIP<span style="color:#e6db74">}</span>/hello
 Hello version: v2, instance: hello-v2-6c7fbbb654-kq6sq
-   
+
 $ curl http://<span style="color:#e6db74">${</span>HELLO_SVC_CIP<span style="color:#e6db74">}</span>/hello
 Hello version: v1, instance: hello-v1-5cb886df9d-k7rcq
-   
+
 $ kubectl logs -f -l app<span style="color:#f92672">=</span>hello -n hello
  * Running on http://0.0.0.0:5000/ <span style="color:#f92672">(</span>Press CTRL+C to quit<span style="color:#f92672">)</span>
  * Running on http://0.0.0.0:5000/ <span style="color:#f92672">(</span>Press CTRL+C to quit<span style="color:#f92672">)</span>
@@ -353,7 +370,7 @@ $ kubectl logs -f -l app<span style="color:#f92672">=</span>hello -n hello
 </code></pre></div><p>Calling from Internet through Kubernetes Ingress Controller and its Fully Qualified Domain Name (<code>FQDN</code>).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ curl http://ingress-nginx.cloud.holisticsecurity.io/hello
 Hello version: v2, instance: hello-v2-845749f774-q9bk5
-   
+
 $ curl http://hello-svc-np.cloud.holisticsecurity.io/hello
 Hello version: v1, instance: hello-v1-66fc9c7d98-7b4b5
 </code></pre></div></li>
@@ -394,6 +411,20 @@ Stay tuned.</p>
     </nav>
   </div>
 </footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 
   </div>

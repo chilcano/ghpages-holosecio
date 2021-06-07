@@ -13,7 +13,7 @@
       <pubDate>Tue, 02 Feb 2021 11:31:09 +0100</pubDate>
       
       <guid>https://chilcano.github.io/ghpages-holosecio/about/</guid>
-      <description>About With The Systems Thinking Methodology we are able to see any problem in a complete and holistic manner, in fact, The Systems Thinking Methodology allows us to solve complex problems (IT Security, Global Warming, World Poverty, etc.) by considering new factors, elements and variables (usability, trust, quality, risk, etc.) which were not considered initially. Reach me at  ,  and  .  Previous Blog  HolisticSecurity on Wordpress (https://holisticsecurity.</description>
+      <description>About With The Systems Thinking Methodology we are able to see any problem in a complete and holistic manner, in fact, The Systems Thinking Methodology allows us to solve complex problems (IT Security, Global Warming, World Poverty, etc.) by considering new factors, elements and variables (usability, trust, quality, risk, etc.) which were not considered initially. Reach me at  ,  and  .  Previous Blog Posts Before 2019/Oct/14   https://holisticsecurity.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <guid>https://chilcano.github.io/ghpages-holosecio/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/</guid>
       <description>&lt;p&gt;As I stated in the previous post &amp;ldquo;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/2020/09/06/a-cloud-ide-for-the-masses&#34;&gt;A Cloud IDE for the masses&lt;/a&gt;&amp;rdquo;, in this post I will explain you how to deploy &lt;a href=&#34;https://github.com/cdr/code-server&#34;&gt;Code-Server&lt;/a&gt; on AWS. But to make it more interesting, I&amp;rsquo;m going to use &lt;a href=&#34;https://aws.amazon.com/cdk/&#34;&gt;AWS Cloud Development Kit (AWS CDK)&lt;/a&gt;, it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.&lt;/p&gt;
 &lt;p&gt;We are going to deploy &lt;a href=&#34;https://github.com/cdr/code-server&#34;&gt;Code-Server&lt;/a&gt; (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png&#34; alt=&#34;&#34;&gt;{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
