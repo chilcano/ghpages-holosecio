@@ -12,13 +12,15 @@ tags:
 - vscode ide
 title: Implementing VSCode-based (Code-Server) on Cloud with AWS CDK
 url: /2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk
+type: post
+layout: single_simple
 ---
 
 As I stated in the previous post "[A Cloud IDE for the masses](/2020/09/06/a-cloud-ide-for-the-masses)", in this post I will explain you how to deploy [Code-Server](https://github.com/cdr/code-server) on AWS. But to make it more interesting, I'm going to use [AWS Cloud Development Kit (AWS CDK)](https://aws.amazon.com/cdk/), it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.
 
 We are going to deploy [Code-Server](https://github.com/cdr/code-server) (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it. 
 
-![](/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png){:style="display:block;margin:auto;"}
+![](/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png)
 
 <!--more-->
 

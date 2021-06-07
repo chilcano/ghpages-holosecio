@@ -26,5 +26,17 @@ draft: false
 
 {{< /rawhtml >}}
 
-## Previous Blog
-- [HolisticSecurity on Wordpress (https://holisticsecurity.wordpress.com)](https://holisticsecurity.wordpress.com)
+## Previous Blog Posts
+
+{{< rawhtml >}}
+  <ul class="post-list">
+    <li class="post-item">
+      <div class="meta">
+        Before 2019/Oct/14
+      </div>
+      <span>
+        <a href="https://holisticsecurity.wordpress.com">https://holisticsecurity.wordpress.com</a>
+      </span> 
+    </li>
+  </ul>
+{{< /rawhtml >}}

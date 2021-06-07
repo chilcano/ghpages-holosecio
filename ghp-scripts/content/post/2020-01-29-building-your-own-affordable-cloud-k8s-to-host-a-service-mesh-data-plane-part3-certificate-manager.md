@@ -16,6 +16,8 @@ tags:
 title: 'Building your own affordable K8s to host a Service Mesh - Part 3: Certificate
   Manager'
 url: /2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager
+type: post
+layout: single_simple
 ---
 
 In this blog post I'll explain how to get a X.509 TLS Certificate from [Let's Encrypt](https://letsencrypt.org){:target="_blank"} automatically during the Terraform provision time, in this way we can now invoke the services additionally on port 443 (HTTPS/TLS).  

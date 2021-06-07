@@ -12,6 +12,8 @@ tags:
 - git
 title: Simple Windows 10 Environment for DevOps Engineers
 url: /2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers
+type: post
+layout: single_simple
 ---
 If you are working as a DevOps Engineer and want to automate the creation of your infrastructure on AWS from Windows 10, then you should install and configure a minimalist toolset to do [Infrastructure as Code (IaC)](https://en.wikipedia.org/wiki/Infrastructure_as_code) tasks. Since I'm using an older Surface 3 Pro (Windows 10 with 4GB RAM and 64GB SSD), I'm going to focus on Terraform coding, leaving out Docker, K8s, Jenkins, etc. for another article.
 

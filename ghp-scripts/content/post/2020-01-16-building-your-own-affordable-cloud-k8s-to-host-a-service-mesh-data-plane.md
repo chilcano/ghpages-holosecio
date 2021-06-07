@@ -13,6 +13,8 @@ tags:
 - microservice
 title: Building your own affordable K8s to host a Service Mesh - Part 1
 url: /2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane
+type: post
+layout: single_simple
 ---
 I want to build a Container-based Cloud to deploy any kind of workload (RESTful API, Microservices, Event-Driven, Functions, etc.) but it should be affordable, ready to use, reliable, secure and productionable. This means:
 

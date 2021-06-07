@@ -18,6 +18,8 @@ tags:
 - RASP
 title: Security along the Container-based SDLC
 url: /2020/02/10/security-along-the-container-based-sdlc
+type: post
+layout: single_simple
 ---
 
 Nowadays, containers are becoming the standard deployment unit of software, and that in the Cloud-based Application Security world means 2 things:

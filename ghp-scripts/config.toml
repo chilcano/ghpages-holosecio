@@ -5,7 +5,7 @@ theme = "hugo-theme-cactus"
 publishDir = "../ghp-content/docs"
 #copyright = "Roger Carhuatocto"
 #disqusShortname = "username"
-#googleAnalytics = ""
+googleAnalytics = "UA-156433649-1"
 paginate = 10
 #summaryLength = 2
 
@@ -34,9 +34,9 @@ paginate = 10
     startLevel = 2
 
 [params]
-  colortheme = "light" # dark, light, white, or classic
-  rss = true # generate rss feed. default value is false
-  googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
+  colortheme = "white"                        # dark, light, white, or classic
+  rss = true                                  # generate rss feed. default value is false
+  #googleAnalyticsAsync = true                 # use asynchronous tracking. Synchronous tracking by default (info: https://gohugo.io/templates/internal/)
 
   # Home page settings
   description = "With The Systems Thinking Methodology we are able to see any problem in a complete and holistic manner, in fact, The Systems Thinking Methodology allows us to solve complex problems (IT Security, Global Warming, World Poverty, etc.) by considering new factors, elements and variables (usability, trust, quality, risk, etc.) which were not considered initially."
@@ -57,15 +57,25 @@ paginate = 10
     enabled = false                           # default
     engine = "disqus"                         # more supported engines will be added.
 
-  #### the value of name should be an valid font awesome icon name (brands type)
-  # https://fontawesome.com/icons?d=gallery&s=brands
+#### the value of name should be an valid font awesome icon name (brands type)
+# https://fontawesome.com/icons?d=gallery&s=brands
 
-  [[params.social]]
-    name = "github"
-    link = "https://github.com/chilcano"
-  [[params.social]]
-    name = "linkedin"
-    link = "https://www.linkedin.com/in/chilcano"
-  [[params.social]]
-    name = "twitter"
-    link = "https://twitter.com/chilcano" 
+[[params.social]]
+  name = "github"
+  link = "https://github.com/chilcano"
+[[params.social]]
+  name = "linkedin"
+  link = "https://www.linkedin.com/in/chilcano"
+[[params.social]]
+  name = "twitter"
+  link = "https://twitter.com/chilcano" 
+
+    author = "Janne Kemppainen"
+    authorImage = "/images/janne.jpg"
+
+
+[taxonomies]
+  #tag = "categories"
+  tag = "tags"
+  author = "authors"
+  preserveTaxonomyNames = true

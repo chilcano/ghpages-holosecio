@@ -13,6 +13,8 @@ tags:
 - CI/CD
 title: DevOps is to SDLC as MLOps is to Machine Learning Applications
 url: /2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps
+type: post
+layout: single_simple
 ---
 If you have read the previous post about [Security along the Container-based SDLC](https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc), then you have noted that DevOps and Security practices should be applied and embeded along [SDLC](https://en.wikipedia.org/wiki/Systems_development_life_cycle). Before we had to understand the entire software production process and sub-processes in order to apply these DevOps and Security practices. Well, in this post I'll explain how to apply DevOps practices along Machine Learning Software Applications Development Life Cycle (ML-SDLC) and I'll share a set of tools focusing to implement MLOps.
 

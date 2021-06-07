@@ -14,6 +14,8 @@ tags:
 - mvp
 title: 'Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1'
 url: /2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1
+type: post
+layout: single_simple
 ---
 
 __Minimum Viable Security__ (MVSec) is a concept borrowed from the [Minimum Viable Product](https://en.wikipedia.org/wiki/Minimum_viable_product){:target="_blank"} (MVP) concept about the Product Development Strategy and from the [Pareto Principle or 80/20 rule](https://en.wikipedia.org/wiki/Pareto_principle){:target="_blank"}. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security). 

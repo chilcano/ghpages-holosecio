@@ -13,6 +13,8 @@ tags:
 - screen
 title: Android Tablet or iPad as extra monitor for Linux
 url: /2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux
+type: post
+layout: single_simple
 ---
 There are several applications out there that help us to use a spare Android Tablet or iPad as a external monitor in Windows PC or Mac OSX Laptop over WI-FI or using a USB cable. For example:
 - [TwomonUSB](http://www.easynlight.com/en/twomonusb/)
