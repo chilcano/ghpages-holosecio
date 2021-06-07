@@ -1,4 +1,5 @@
-baseURL = "https://chilcano.github.io/ghpages-holosecio/"
+#baseURL = "https://chilcano.github.io/ghpages-holosecio/"
+baseURL = "https://holisticsecurity.io/"
 languageCode = "en-us"
 title = "Holistic Security"
 theme = "hugo-theme-cactus"
