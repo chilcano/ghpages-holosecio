@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>awscli on Holistic Security</title>
-    <link>https://chilcano.github.io/ghpages-holosecio/tags/awscli/</link>
+    <link>https://holisticsecurity.io/tags/awscli/</link>
     <description>Recent content in awscli on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Mar 2020 18:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/awscli/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Mar 2020 18:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/awscli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Simple Windows 10 Environment for DevOps Engineers</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</link>
+      <link>https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</link>
       <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</guid>
+      <guid>https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</guid>
       <description>&lt;p&gt;If you are working as a DevOps Engineer and want to automate the creation of your infrastructure on AWS from Windows 10, then you should install and configure a minimalist toolset to do &lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as Code (IaC)&lt;/a&gt; tasks. Since I&amp;rsquo;m using an older Surface 3 Pro (Windows 10 with 4GB RAM and 64GB SSD), I&amp;rsquo;m going to focus on Terraform coding, leaving out Docker, K8s, Jenkins, etc. for another article.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200330b/20200330b-simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-1.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200330b/20200330b-simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-1.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
     </item>
     
   </channel>

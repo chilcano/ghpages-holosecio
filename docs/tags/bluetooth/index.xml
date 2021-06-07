@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bluetooth on Holistic Security</title>
-    <link>https://chilcano.github.io/ghpages-holosecio/tags/bluetooth/</link>
+    <link>https://holisticsecurity.io/tags/bluetooth/</link>
     <description>Recent content in bluetooth on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tips &amp; Tricks to use the Apple Magic Mouse in your Linux Ubuntu</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</link>
+      <link>https://holisticsecurity.io/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</link>
       <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</guid>
+      <guid>https://holisticsecurity.io/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</guid>
       <description>&lt;p&gt;This a set of resources (reported issues, blogs, drivers, tips and tricks) to eager to use your Apple Magic Mouse in your Linux Ubuntu.
 These resources are recommedations of many people whom tried and got successfully the Apple Magic Mouse working in Linux.
 Next you can review documentation about how to configure it in your Linux PC:&lt;/p&gt;</description>

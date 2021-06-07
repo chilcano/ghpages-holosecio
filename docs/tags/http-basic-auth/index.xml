@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HTTP Basic Auth on Holistic Security</title>
-    <link>https://chilcano.github.io/ghpages-holosecio/tags/http-basic-auth/</link>
+    <link>https://holisticsecurity.io/tags/http-basic-auth/</link>
     <description>Recent content in HTTP Basic Auth on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Mar 2020 00:10:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/http-basic-auth/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Mar 2020 00:10:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/http-basic-auth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</link>
+      <link>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</link>
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</guid>
-      <description>&lt;p&gt;In the &amp;ldquo;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt;&amp;rdquo; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the &lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) and &lt;strong&gt;Pareto Principle or 80/20 rule&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/a&gt;&lt;/p&gt;
+      <guid>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</guid>
+      <description>&lt;p&gt;In the &amp;ldquo;&lt;a href=&#34;https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt;&amp;rdquo; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the &lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) and &lt;strong&gt;Pareto Principle or 80/20 rule&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In this post I&amp;rsquo;ll explain how to enable and configure &lt;em&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Basic_access_authentication&#34;&gt;HTTP Basic Authentication&lt;/a&gt; over TLS&lt;/em&gt; in the &lt;a href=&#34;https://www.weave.works/oss/scope&#34;&gt;Weave Scope&lt;/a&gt; webapp running in the recently created K8s Cluster.&lt;/p&gt;</description>
     </item>
     

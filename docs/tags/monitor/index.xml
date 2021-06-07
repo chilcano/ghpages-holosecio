@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>monitor on Holistic Security</title>
-    <link>https://chilcano.github.io/ghpages-holosecio/tags/monitor/</link>
+    <link>https://holisticsecurity.io/tags/monitor/</link>
     <description>Recent content in monitor on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/monitor/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/monitor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android Tablet or iPad as extra monitor for Linux</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</link>
+      <link>https://holisticsecurity.io/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</guid>
+      <guid>https://holisticsecurity.io/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</guid>
       <description>&lt;p&gt;There are several applications out there that help us to use a spare Android Tablet or iPad as a external monitor in Windows PC or Mac OSX Laptop over WI-FI or using a USB cable. For example:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.easynlight.com/en/twomonusb/&#34;&gt;TwomonUSB&lt;/a&gt;&lt;/li&gt;

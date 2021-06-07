@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cloudformation on Holistic Security</title>
-    <link>https://chilcano.github.io/ghpages-holosecio/tags/cloudformation/</link>
+    <link>https://holisticsecurity.io/tags/cloudformation/</link>
     <description>Recent content in cloudformation on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Sep 2020 11:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/cloudformation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Sep 2020 11:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/cloudformation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Implementing VSCode-based (Code-Server) on Cloud with AWS CDK</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/</link>
+      <link>https://holisticsecurity.io/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/</link>
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/</guid>
-      <description>&lt;p&gt;As I stated in the previous post &amp;ldquo;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/2020/09/06/a-cloud-ide-for-the-masses&#34;&gt;A Cloud IDE for the masses&lt;/a&gt;&amp;rdquo;, in this post I will explain you how to deploy &lt;a href=&#34;https://github.com/cdr/code-server&#34;&gt;Code-Server&lt;/a&gt; on AWS. But to make it more interesting, I&amp;rsquo;m going to use &lt;a href=&#34;https://aws.amazon.com/cdk/&#34;&gt;AWS Cloud Development Kit (AWS CDK)&lt;/a&gt;, it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.&lt;/p&gt;
+      <guid>https://holisticsecurity.io/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/</guid>
+      <description>&lt;p&gt;As I stated in the previous post &amp;ldquo;&lt;a href=&#34;https://holisticsecurity.io/2020/09/06/a-cloud-ide-for-the-masses&#34;&gt;A Cloud IDE for the masses&lt;/a&gt;&amp;rdquo;, in this post I will explain you how to deploy &lt;a href=&#34;https://github.com/cdr/code-server&#34;&gt;Code-Server&lt;/a&gt; on AWS. But to make it more interesting, I&amp;rsquo;m going to use &lt;a href=&#34;https://aws.amazon.com/cdk/&#34;&gt;AWS Cloud Development Kit (AWS CDK)&lt;/a&gt;, it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.&lt;/p&gt;
 &lt;p&gt;We are going to deploy &lt;a href=&#34;https://github.com/cdr/code-server&#34;&gt;Code-Server&lt;/a&gt; (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

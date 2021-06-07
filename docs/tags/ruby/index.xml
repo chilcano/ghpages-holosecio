@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ruby on Holistic Security</title>
-    <link>https://chilcano.github.io/ghpages-holosecio/tags/ruby/</link>
+    <link>https://holisticsecurity.io/tags/ruby/</link>
     <description>Recent content in ruby on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2020 22:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Mar 2020 22:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub Pages and Jekyll on Windows 10</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/30/github-pages-and-jekyll-on-windows-10/</link>
+      <link>https://holisticsecurity.io/2020/03/30/github-pages-and-jekyll-on-windows-10/</link>
       <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/30/github-pages-and-jekyll-on-windows-10/</guid>
+      <guid>https://holisticsecurity.io/2020/03/30/github-pages-and-jekyll-on-windows-10/</guid>
       <description>&lt;p&gt;I have a&lt;a href=&#34;https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1&#34;&gt; Blog hosted on Github Pages created with Jekyll from Linux&lt;/a&gt;. That &lt;a href=&#34;https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2&#34;&gt;works perfectly and can publish posts frequently&lt;/a&gt;, but now I would like to do the same but from Windows 10 laptop (older Surface 3 Pro, 4GB RAM, 64GB SSD). The aim of this post is explain you how to prepare and configure Windows 10 to publish post in a new or existing static site created with Jekyll.&lt;/p&gt;
 &lt;p&gt;To do that I&amp;rsquo;m going to follow the &lt;a href=&#34;https://jekyllrb.com/docs/installation/windows&#34;&gt;Jekyll on Windows&lt;/a&gt; guide, basically I&amp;rsquo;ll &lt;a href=&#34;https://rubyinstaller.org/downloads&#34;&gt;download, install and configure a Ruby+Devkit&lt;/a&gt; version in Windows 10.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

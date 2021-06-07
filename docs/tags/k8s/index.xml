@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>k8s on Holistic Security</title>
-    <link>https://chilcano.github.io/ghpages-holosecio/tags/k8s/</link>
+    <link>https://holisticsecurity.io/tags/k8s/</link>
     <description>Recent content in k8s on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Aug 2020 18:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Aug 2020 18:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Cloud IDE for the masses</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2020/08/05/a-cloud-ide-for-the-masses/</link>
+      <link>https://holisticsecurity.io/2020/08/05/a-cloud-ide-for-the-masses/</link>
       <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2020/08/05/a-cloud-ide-for-the-masses/</guid>
+      <guid>https://holisticsecurity.io/2020/08/05/a-cloud-ide-for-the-masses/</guid>
       <description>&lt;p&gt;Nowadays, you likely are involved in development/devops tasks for the cloud and you are using a &lt;a href=&#34;https://en.wikipedia.org/wiki/Online_integrated_development_environment&#34;&gt;Cloud-based IDE (Integrated Development Environment)&lt;/a&gt; to accomplish your job, but if you don&amp;rsquo;t have any or you are not happy with yours, then this blog post will explain you how to get one, opensource and in a few minutes.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200805_cloud_ide/cloud-ide-1-evolution.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200805_cloud_ide/cloud-ide-1-evolution.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Simple Windows 10 Environment for DevOps Engineers</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</link>
+      <link>https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</link>
       <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</guid>
+      <guid>https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</guid>
       <description>&lt;p&gt;If you are working as a DevOps Engineer and want to automate the creation of your infrastructure on AWS from Windows 10, then you should install and configure a minimalist toolset to do &lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as Code (IaC)&lt;/a&gt; tasks. Since I&amp;rsquo;m using an older Surface 3 Pro (Windows 10 with 4GB RAM and 64GB SSD), I&amp;rsquo;m going to focus on Terraform coding, leaving out Docker, K8s, Jenkins, etc. for another article.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200330b/20200330b-simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-1.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200330b/20200330b-simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-1.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</link>
+      <link>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</link>
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</guid>
-      <description>&lt;p&gt;In the &amp;ldquo;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt;&amp;rdquo; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the &lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) and &lt;strong&gt;Pareto Principle or 80/20 rule&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/a&gt;&lt;/p&gt;
+      <guid>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</guid>
+      <description>&lt;p&gt;In the &amp;ldquo;&lt;a href=&#34;https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt;&amp;rdquo; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the &lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) and &lt;strong&gt;Pareto Principle or 80/20 rule&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In this post I&amp;rsquo;ll explain how to enable and configure &lt;em&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Basic_access_authentication&#34;&gt;HTTP Basic Authentication&lt;/a&gt; over TLS&lt;/em&gt; in the &lt;a href=&#34;https://www.weave.works/oss/scope&#34;&gt;Weave Scope&lt;/a&gt; webapp running in the recently created K8s Cluster.&lt;/p&gt;</description>
     </item>
     

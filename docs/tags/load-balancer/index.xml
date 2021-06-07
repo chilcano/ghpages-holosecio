@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>load balancer on Holistic Security</title>
-    <link>https://chilcano.github.io/ghpages-holosecio/tags/load-balancer/</link>
+    <link>https://holisticsecurity.io/tags/load-balancer/</link>
     <description>Recent content in load balancer on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/load-balancer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/load-balancer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sidecar Proxy: The Security Building Block</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2020/05/13/sidecar-proxy-the-security-building-block/</link>
+      <link>https://holisticsecurity.io/2020/05/13/sidecar-proxy-the-security-building-block/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2020/05/13/sidecar-proxy-the-security-building-block/</guid>
+      <guid>https://holisticsecurity.io/2020/05/13/sidecar-proxy-the-security-building-block/</guid>
       <description>&lt;p&gt;Just as a HTTP reverse proxy is sitting in front of a web application and a sidecar is attached to a motorcycle; a sidecar proxy is attached to a main application to extend or add functionality. A Sidecar Proxy is an application design pattern which abstracts certain features, such as inter-service communications, monitoring and &lt;strong&gt;security&lt;/strong&gt;, away from the main application to ease its maintainability, resilience and scalability of the application as a whole.&lt;/p&gt;
 &lt;p&gt;In this post I will show you how to use the Sidecar Pattern to address security challenges in the Cloud Native Applications.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-1-evolution.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;80%&amp;quot;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-1-evolution.png&#34; alt=&#34;&#34;&gt;{:width=&amp;ldquo;80%&amp;quot;}{:style=&amp;ldquo;display:block;margin:auto;&amp;quot;}&lt;/p&gt;</description>
     </item>
     
   </channel>

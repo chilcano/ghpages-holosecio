@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pki on Holistic Security</title>
-    <link>https://chilcano.github.io/ghpages-holosecio/tags/pki/</link>
+    <link>https://holisticsecurity.io/tags/pki/</link>
     <description>Recent content in pki on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jan 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://chilcano.github.io/ghpages-holosecio/tags/pki/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/pki/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building your own affordable K8s to host a Service Mesh - Part 3: Certificate Manager</title>
-      <link>https://chilcano.github.io/ghpages-holosecio/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</link>
+      <link>https://holisticsecurity.io/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</link>
       <pubDate>Wed, 29 Jan 2020 10:00:00 +0000</pubDate>
       
-      <guid>https://chilcano.github.io/ghpages-holosecio/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</guid>
+      <guid>https://holisticsecurity.io/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</guid>
       <description>&lt;p&gt;In this blog post I&amp;rsquo;ll explain how to get a X.509 TLS Certificate from &lt;a href=&#34;https://letsencrypt.org&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} automatically during the Terraform provision time, in this way we can now invoke the services additionally on port 443 (HTTPS/TLS).&lt;br&gt;
 During the Terraform execution, immediately after Kubernetes Cluster creation, the &lt;a href=&#34;https://github.com/jetstack/cert-manager&#34;&gt;JetStack Cert-Manager&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} is deployed in a Pod, it is who will request to &lt;a href=&#34;https://letsencrypt.org&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} service a X.509 TLS Certificate, once completed, the &lt;a href=&#34;https://github.com/jetstack/cert-manager&#34;&gt;JetStack Cert-Manager&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} will inject the X.509 Certificate as a Kubernetes Secret into NGINX Ingress Controller to enbale TLS.&lt;/p&gt;
 &lt;p&gt;At this point you must have created a Kubernetes Cluster with ExternalDNS and NGINX as Ingress Controller. If you don&amp;rsquo;t know how to achieve that, I recommend to follow these posts:&lt;/p&gt;
@@ -20,7 +20,7 @@ During the Terraform execution, immediately after Kubernetes Cluster creation, t
 &lt;li&gt;&lt;a href=&#34;http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane&#34;&gt;Part 1 - Building your own affordable K8s to host a Service Mesh&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress&#34;&gt;Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34;&gt;&lt;img src=&#34;https://chilcano.github.io/ghpages-holosecio/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34; alt=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&amp;rsquo;s Encrypt&#34; title=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&#39;s Encrypt&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34; alt=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&amp;rsquo;s Encrypt&#34; title=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&#39;s Encrypt&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;/p&gt;</description>
     </item>
     
   </channel>
