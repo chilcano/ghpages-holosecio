@@ -15,7 +15,7 @@ tags:
 title: Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with
   Packer)
 url: /2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2
-type: posts
+type: post
 layout: single_simple
 ---
 In the previous post [Building an affordable remote DevOps desktop on AWS](/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws) I shown you how to build a cheaper remote DevOps Desktop on AWS, now I'll explain you how to do that in approximately 3 minutes, instead of 25 minutes, using [Hashicorp Packer](https://www.packer.io) to pre-bake an AWS AMI. 

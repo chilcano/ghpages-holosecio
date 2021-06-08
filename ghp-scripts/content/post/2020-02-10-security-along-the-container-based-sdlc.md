@@ -18,7 +18,7 @@ tags:
 - RASP
 title: Security along the Container-based SDLC
 url: /2020/02/10/security-along-the-container-based-sdlc
-type: posts
+type: post
 layout: single_simple
 ---
 

@@ -10,7 +10,7 @@ tags:
 - ruby
 title: GitHub Pages and Jekyll on Windows 10
 url: /2020/03/30/github-pages-and-jekyll-on-windows-10
-type: posts
+type: post
 layout: single_simple
 ---
 I have a[ Blog hosted on Github Pages created with Jekyll from Linux](https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1). That [works perfectly and can publish posts frequently](https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2), but now I would like to do the same but from Windows 10 laptop (older Surface 3 Pro, 4GB RAM, 64GB SSD). The aim of this post is explain you how to prepare and configure Windows 10 to publish post in a new or existing static site created with Jekyll.

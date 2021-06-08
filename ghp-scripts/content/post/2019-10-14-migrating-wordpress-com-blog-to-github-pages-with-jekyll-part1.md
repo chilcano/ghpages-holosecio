@@ -13,7 +13,7 @@ tags:
 - python
 title: Migrating WordPress.com's blog to GitHub Pages with Jekyll - Part 1
 url: /2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1
-type: posts
+type: post
 layout: single_simple
 ---
 I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.

@@ -14,7 +14,7 @@ tags:
 - raspberry pi
 title: A Cloud IDE for the masses
 url: /2020/08/05/a-cloud-ide-for-the-masses
-type: posts
+type: post
 layout: single_simple
 ---
 Nowadays, you likely are involved in development/devops tasks for the cloud and you are using a [Cloud-based IDE (Integrated Development Environment)](https://en.wikipedia.org/wiki/Online_integrated_development_environment) to accomplish your job, but if you don't have any or you are not happy with yours, then this blog post will explain you how to get one, opensource and in a few minutes.

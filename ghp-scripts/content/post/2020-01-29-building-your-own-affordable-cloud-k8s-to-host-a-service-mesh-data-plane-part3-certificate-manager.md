@@ -16,7 +16,7 @@ tags:
 title: 'Building your own affordable K8s to host a Service Mesh - Part 3: Certificate
   Manager'
 url: /2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager
-type: posts
+type: post
 layout: single_simple
 ---
 

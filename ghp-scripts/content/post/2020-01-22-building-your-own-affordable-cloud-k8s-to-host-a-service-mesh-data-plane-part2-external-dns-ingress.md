@@ -17,7 +17,7 @@ tags:
 title: 'Building your own affordable K8s to host a Service Mesh - Part 2: External
   DNS and Ingress'
 url: /2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress
-type: posts
+type: post
 layout: single_simple
 ---
 In order to get an affordable Kubernetes, every part we're going to use should be affordable too, and ones of the expensive and tricky things are the [AWS Elastic Load Balancing (ELB)](https://aws.amazon.com/elasticloadbalancing) and the [AWS Route 53 (DNS)](https://aws.amazon.com/route53). Fortunately, Kubernetes SIGs are working to address this gap with the [Kubernetes ExternalDNS](https://github.com/kubernetes-sigs/external-dns).

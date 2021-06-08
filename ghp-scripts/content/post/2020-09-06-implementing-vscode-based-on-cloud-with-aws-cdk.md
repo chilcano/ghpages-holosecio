@@ -12,7 +12,7 @@ tags:
 - vscode ide
 title: Implementing VSCode-based (Code-Server) on Cloud with AWS CDK
 url: /2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk
-type: posts
+type: post
 layout: single_simple
 ---
 

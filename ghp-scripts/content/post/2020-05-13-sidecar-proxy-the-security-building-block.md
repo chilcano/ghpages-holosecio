@@ -14,7 +14,7 @@ tags:
 - load balancer
 title: 'Sidecar Proxy: The Security Building Block'
 url: /2020/05/13/sidecar-proxy-the-security-building-block
-type: posts
+type: post
 layout: single_simple
 ---
 Just as a HTTP reverse proxy is sitting in front of a web application and a sidecar is attached to a motorcycle; a sidecar proxy is attached to a main application to extend or add functionality. A Sidecar Proxy is an application design pattern which abstracts certain features, such as inter-service communications, monitoring and **security**, away from the main application to ease its maintainability, resilience and scalability of the application as a whole. 

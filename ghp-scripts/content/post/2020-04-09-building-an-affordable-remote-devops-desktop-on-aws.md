@@ -13,7 +13,7 @@ tags:
 - terraform
 title: Building an affordable remote DevOps desktop on AWS
 url: /2020/04/09/building-an-affordable-remote-devops-desktop-on-aws
-type: posts
+type: post
 layout: single_simple
 ---
 If you're going to work 100% remotely or are just tired of carrying a heavy laptop while commuting, why not spin up a DevOps Desktop PC in a public cloud and work from anywhere you want?
