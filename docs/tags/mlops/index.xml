@@ -14,7 +14,7 @@
       
       <guid>https://holisticsecurity.io/2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps/</guid>
       <description>&lt;p&gt;If you have read the previous post about &lt;a href=&#34;https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc&#34;&gt;Security along the Container-based SDLC&lt;/a&gt;, then you have noted that DevOps and Security practices should be applied and embeded along &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;SDLC&lt;/a&gt;. Before we had to understand the entire software production process and sub-processes in order to apply these DevOps and Security practices. Well, in this post I&amp;rsquo;ll explain how to apply DevOps practices along Machine Learning Software Applications Development Life Cycle (ML-SDLC) and I&amp;rsquo;ll share a set of tools focusing to implement MLOps.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200309/mlops-sdlc-devsecops-comparison.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200309/mlops-sdlc-devsecops-comparison.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;br&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200309/mlops-sdlc-devsecops-comparison.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200309/mlops-sdlc-devsecops-comparison.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;br&gt;
 &lt;em&gt;&lt;!-- raw HTML omitted --&gt;Data Science (&amp;amp; ML) Life Cycle&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     

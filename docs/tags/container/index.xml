@@ -18,9 +18,9 @@
 &lt;li&gt;The Software Applications are &lt;strong&gt;distributed&lt;/strong&gt; into containers.&lt;/li&gt;
 &lt;li&gt;The minimum unit of &lt;strong&gt;deployment&lt;/strong&gt; and &lt;strong&gt;shipment&lt;/strong&gt; is the container.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;In other words, using containers we are adding a new element to be considered along the &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;Software Development Life Cycle (SDLC)&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;} as a new additional piece of software (containers), and from Architectural point of view, those new pieces of software will be distributed.&lt;/p&gt;
+&lt;p&gt;In other words, using containers we are adding a new element to be considered along the &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;Software Development Life Cycle (SDLC)&lt;/a&gt; as a new additional piece of software (containers), and from Architectural point of view, those new pieces of software will be distributed.&lt;/p&gt;
 &lt;p&gt;Said that, the purpose of this post is explain you how to embed &lt;strong&gt;Security along the Container-based SDLC (Secure-SDLC)&lt;/strong&gt; and how to &lt;strong&gt;DevOps&lt;/strong&gt; practices will help its adoption.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;br&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;br&gt;
 &lt;em&gt;&lt;!-- raw HTML omitted --&gt;Security along the Container-based SDLC - Overview&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     

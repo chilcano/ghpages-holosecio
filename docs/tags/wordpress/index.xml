@@ -15,7 +15,7 @@
       <guid>https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/</guid>
       <description>&lt;p&gt;In the first blog post &lt;a href=&#34;https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1&#34; title=&#34;Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1&#34;&gt;I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages&lt;/a&gt;. Now, in this blog post (Part 2) I will explain how to manage the look&amp;amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&amp;rsquo;s blog to GitHub Pages.
 Also I&amp;rsquo;ll explain how to convert all HTML post files, obtained by using the &lt;code&gt;JekyllImport::Importers::WordpressDotCom&lt;/code&gt;, to Markdown format by using a simple Python script.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20191210-wp-github-jekyll-python-part2-1.png&#34; alt=&#34;Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll Part2&#34;&gt;{:width=&amp;ldquo;500&amp;rdquo;}&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20191210-wp-github-jekyll-python-part2-1.png&#34; alt=&#34;Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll Part2&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ Also I&amp;rsquo;ll explain how to convert all HTML post files, obtained by usin
       <description>&lt;p&gt;I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
 In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
 In the next blog post (Part 2) I will explain how to manage the look&amp;amp;feel, layouts, etc.
-&lt;img src=&#34;https://holisticsecurity.io/assets/img/2019-10-14-blog-migration-wp-github.png&#34; alt=&#34;Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll&#34;&gt;{:width=&amp;ldquo;400&amp;rdquo;}&lt;/p&gt;</description>
+&lt;img src=&#34;https://holisticsecurity.io/assets/img/2019-10-14-blog-migration-wp-github.png&#34; alt=&#34;Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll&#34;&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

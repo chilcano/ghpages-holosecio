@@ -12,7 +12,7 @@
 <meta property="og:description" content="I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
 In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
 In the next blog post (Part 2) I will explain how to manage the look&amp;feel, layouts, etc.
-{:width=&ldquo;400&rdquo;}" />
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-10-14T15:58:00&#43;00:00" />
@@ -24,7 +24,7 @@ In the next blog post (Part 2) I will explain how to manage the look&amp;feel, l
 <meta name="twitter:description" content="I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
 In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
 In the next blog post (Part 2) I will explain how to manage the look&amp;feel, layouts, etc.
-{:width=&ldquo;400&rdquo;}"/>
+"/>
 
   
   
@@ -101,12 +101,15 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1 </h1>
+  
   <div class="content" itemprop="articleBody">
   
     <p>I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
 In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
 In the next blog post (Part 2) I will explain how to manage the look&amp;feel, layouts, etc.
-<img src="/assets/img/2019-10-14-blog-migration-wp-github.png" alt="Migrating WordPress.com&rsquo;s blog to GitHub Pages by using Jekyll">{:width=&ldquo;400&rdquo;}</p>
+<img src="/assets/img/2019-10-14-blog-migration-wp-github.png" alt="Migrating WordPress.com&rsquo;s blog to GitHub Pages by using Jekyll"></p>
 <h2 id="create-a-github-pages-repository">Create a GitHub Pages repository</h2>
 <p>I created an empty GitHub repository, in my case is <a href="https://github.com/chilcano/ghpages-holosec"><code>ghpages-holosec</code></a>, to host my migrated WordPress.com&rsquo;s blog, then I followed the <a href="https://pages.github.com">https://pages.github.com</a> guide and configured it as <code>Project site</code>, no as <code>User or organization site</code> since my GitHub Account will host multiple Sites with different custom Domain Names.</p>
 <p>Once completed, you should configure your DNS records in your DNS Provider, in my case it is Gandi.Net and used the above <a href="https://gist.github.com/matt-bailey/bbbc181d5234c618e4dfe0642ad80297">Matt Bailey&rsquo;s good guide</a>. You have to consider that making these changes and their propagation across DNS and GitHub will take around 24 hours.</p>

@@ -99,6 +99,9 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> Implementing VSCode-based (Code-Server) on Cloud with AWS CDK </h1>
+  
   <div class="content" itemprop="articleBody">
   
     <p>As I stated in the previous post &ldquo;<a href="/2020/09/06/a-cloud-ide-for-the-masses">A Cloud IDE for the masses</a>&rdquo;, in this post I will explain you how to deploy <a href="https://github.com/cdr/code-server">Code-Server</a> on AWS. But to make it more interesting, I&rsquo;m going to use <a href="https://aws.amazon.com/cdk/">AWS Cloud Development Kit (AWS CDK)</a>, it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.</p>
@@ -133,7 +136,7 @@ $ nmp install
 </code></pre></div><p>And finally, deploy the CDK project:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cdk deploy
 </code></pre></div><p>You will get this output in your terminal. That means everything went well.
-<a href="/assets/blog20200906_cloudidecdk/1-cdk-deploy-output.png"><img src="/assets/blog20200906_cloudidecdk/1-cdk-deploy-output.png" alt="">{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}</a></p>
+<a href="/assets/blog20200906_cloudidecdk/1-cdk-deploy-output.png"><img src="/assets/blog20200906_cloudidecdk/1-cdk-deploy-output.png" alt=""></a></p>
 <h4 id="3-calling-the-code-server">3. Calling the Code-Server</h4>
 <p>From your AWS Web Console, get the <code>Public DNS (IPv4)</code> or <code>IPv4 Public IP</code> about the EC2 instance created, with that information connect to the host through SSH and get the Code-Server&rsquo;s password that generates by default:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh ubuntu@ec2-54-227-165-113.compute-1.amazonaws.com -i ~/Downloads/chilcan0.pem 
@@ -146,7 +149,7 @@ cert: false
 </code></pre></div><p>Now, create the SSH tunnel:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh -nNT -L 8123:localhost:8080 ubuntu@ec2-54-227-165-113.compute-1.amazonaws.com -i ~/Downloads/chilcan0.pem
 </code></pre></div><p>Finally, open the URL <a href="http://localhost:8123">http://localhost:8123</a> in your browser, you should see this:</p>
-<p><a href="/assets/blog20200906_cloudidecdk/2-app-2.png"><img src="/assets/blog20200906_cloudidecdk/2-app-2.png" alt="">{:width=&ldquo;360&rdquo;}</a> <a href="/assets/blog20200906_cloudidecdk/2-app-3.png"><img src="/assets/blog20200906_cloudidecdk/2-app-3.png" alt="">{:width=&ldquo;360&rdquo;}</a></p>
+<p><a href="/assets/blog20200906_cloudidecdk/2-app-3.png"><img src="/assets/blog20200906_cloudidecdk/2-app-2.png" alt=""></a></p>
 <h4 id="4-restoring-your-vscode-settings-in-code-server">4. Restoring your VSCode' settings in Code-Server</h4>
 <p>I&rsquo;m using a bash scripts as <code>userData</code> to install Code-Server and only the <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync">Settings-Sync</a> extension that will allow restore a previous Code-Server or VS Code settings, even other extensions. For that you need a Gist ID that your previous Code-Server or VS Code has generated. If you don&rsquo;t have one, you can use mine.</p>
 <blockquote>
@@ -154,7 +157,7 @@ cert: false
 Gist URL: <a href="https://gist.github.com/chilcano/b5f88127bd2d89289dc2cd36032ce856">https://gist.github.com/chilcano/b5f88127bd2d89289dc2cd36032ce856</a></p>
 </blockquote>
 <p>Once restored all Code-Server settings, you will see this:</p>
-<p><a href="/assets/blog20200906_cloudidecdk/2-app-3b.png"><img src="/assets/blog20200906_cloudidecdk/2-app-3b.png" alt="">{:width=&ldquo;360&rdquo;}</a> <a href="/assets/blog20200906_cloudidecdk/2-app-3c.png"><img src="/assets/blog20200906_cloudidecdk/2-app-3c.png" alt="">{:width=&ldquo;360&rdquo;}</a></p>
+<p><a href="/assets/blog20200906_cloudidecdk/2-app-3c.png"><img src="/assets/blog20200906_cloudidecdk/2-app-3b.png" alt=""></a></p>
 <p>That&rsquo;s it.
 Hope this helps.</p>
 <h3 id="references">References</h3>

@@ -9,9 +9,9 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1" />
-<meta property="og:description" content="Minimum Viable Security (MVSec) is a concept borrowed from the Minimum Viable Product{:target=&quot;_blank&quot;} (MVP) concept about the Product Development Strategy and from the Pareto Principle or 80/20 rule{:target=&quot;_blank&quot;}. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).
+<meta property="og:description" content="Minimum Viable Security (MVSec) is a concept borrowed from the Minimum Viable Product (MVP) concept about the Product Development Strategy and from the Pareto Principle or 80/20 rule. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).
 The purpose of this post is to explain how to implement TLS everywhere to become MVSec (roughly 80% of security with 20% of working) for a Kubernetised Webapp hosted on AWS.
-{:target=&quot;_blank&quot;}
+
 Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let&rsquo;s Encrypt" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/" /><meta property="article:section" content="post" />
@@ -21,9 +21,9 @@ Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ing
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1"/>
-<meta name="twitter:description" content="Minimum Viable Security (MVSec) is a concept borrowed from the Minimum Viable Product{:target=&quot;_blank&quot;} (MVP) concept about the Product Development Strategy and from the Pareto Principle or 80/20 rule{:target=&quot;_blank&quot;}. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).
+<meta name="twitter:description" content="Minimum Viable Security (MVSec) is a concept borrowed from the Minimum Viable Product (MVP) concept about the Product Development Strategy and from the Pareto Principle or 80/20 rule. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).
 The purpose of this post is to explain how to implement TLS everywhere to become MVSec (roughly 80% of security with 20% of working) for a Kubernetised Webapp hosted on AWS.
-{:target=&quot;_blank&quot;}
+
 Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let&rsquo;s Encrypt"/>
 
   
@@ -101,11 +101,14 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1 </h1>
+  
   <div class="content" itemprop="articleBody">
   
-    <p><strong>Minimum Viable Security</strong> (MVSec) is a concept borrowed from the <a href="https://en.wikipedia.org/wiki/Minimum_viable_product">Minimum Viable Product</a>{:target=&quot;_blank&quot;} (MVP) concept about the Product Development Strategy and from the <a href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto Principle or 80/20 rule</a>{:target=&quot;_blank&quot;}. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).</p>
+    <p><strong>Minimum Viable Security</strong> (MVSec) is a concept borrowed from the <a href="https://en.wikipedia.org/wiki/Minimum_viable_product">Minimum Viable Product</a> (MVP) concept about the Product Development Strategy and from the <a href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto Principle or 80/20 rule</a>. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).</p>
 <p>The purpose of this post is to explain how to implement <strong>TLS everywhere</strong> to become <strong>MVSec</strong> (roughly 80% of security with 20% of working) for a <strong>Kubernetised Webapp hosted on AWS</strong>.</p>
-<p><a href="/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png"><img src="/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png" alt=""></a>{:target=&quot;_blank&quot;}<br>
+<p><a href="/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png"><img src="/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png" alt=""></a><br>
 <em><!-- raw HTML omitted -->Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let&rsquo;s Encrypt<!-- raw HTML omitted --></em></p>
 <h2 id="why-_tls-everywhere_-meets-8020-rule">Why <em>TLS everywhere</em> meets 80/20 rule?</h2>
 <p>Part of the answer gives us Vilfredo Pareto with the Pareto Principle, but to have a complete answer we have to turn to The Security Design Principles that NIST, OWASP, NCSC and other Security References give us.</p>
@@ -178,9 +181,9 @@ Organization like OWASP recommends that all security controls should be designed
 <h3 id="create-an-kubernetes-cluster">Create an Kubernetes Cluster</h3>
 <p>This blog post will use the &ldquo;Building your own affordable K8s - Serie&rdquo;:</p>
 <ul>
-<li><a href="/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane">Part 1 - Building your own affordable K8s to host a Service Mesh</a>{:target=&quot;_blank&quot;}.</li>
-<li><a href="/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress">Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress</a>{:target=&quot;_blank&quot;}.</li>
-<li><a href="/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager">Part 3 - Building your own affordable K8s - Certificate Manager</a>{:target=&quot;_blank&quot;}.</li>
+<li><a href="/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane">Part 1 - Building your own affordable K8s to host a Service Mesh</a>.</li>
+<li><a href="/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress">Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress</a>.</li>
+<li><a href="/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager">Part 3 - Building your own affordable K8s - Certificate Manager</a>.</li>
 </ul>
 <p><strong>1) Clone the Affordable K8s Cluster Git Repo and run the Terraform scripts</strong></p>
 <p>I&rsquo;ll create a Kubernetes Cluster with this configuration:</p>
@@ -290,8 +293,8 @@ $ kubectl get -n weave svc weave-scope-app-svc-np -o jsonpath<span style="color:
 </code></pre></div><p><strong>Creating a SSH tunnel to Weave Scope</strong><br>
 Now let&rsquo;s create a SSH tunnel from your Admin Computer over Internet to Weave Scope&rsquo;s NodePort service.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh -nNT -L 4002:localhost:30002 ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem
-</code></pre></div><p>Now open your favorite browser and enter this url <a href="http://localhost:4002">http://localhost:4002</a>{:target=&quot;_blank&quot;} and you will be able to visualize all resources created in your Cluster in real-time.</p>
-<p><a href="/assets/blog20200308/20200308-tls-everywhere-part1-weave-scope-ssh-tunnel.png"><img src="/assets/blog20200308/20200308-tls-everywhere-part1-weave-scope-ssh-tunnel.png" alt="">{:width=&ldquo;80%&quot;}</a>{:target=&quot;_blank&rdquo;}</p>
+</code></pre></div><p>Now open your favorite browser and enter this url <a href="http://localhost:4002">http://localhost:4002</a> and you will be able to visualize all resources created in your Cluster in real-time.</p>
+<p>[<img src="/assets/blog20200308/20200308-tls-everywhere-part1-weave-scope-ssh-tunnel.png" alt=""></p>
 <h3 id="enabling-and-configuring-security-based-on-tls">Enabling and configuring Security based on TLS</h3>
 <p>Since I&rsquo;m using the <a href="https://github.com/chilcano/affordable-k8s">Affordable K8s</a>' Terraform scripts to build a K8s Cluster with the Jetstack Cert-Manager, to get, renew, revoke any kind of X.509 Certificates, and the NGINX Ingress Controller, to manage the traffic, now i would be able to improve security according the <strong>Minimum Viable Security</strong> (MVSec) and <strong>Pareto Principle or 80/20 rule</strong> both explained above.<br>
 In next posts I&rsquo;ll explain how to:</p>

@@ -10,7 +10,7 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="A Cloud IDE for the masses" />
 <meta property="og:description" content="Nowadays, you likely are involved in development/devops tasks for the cloud and you are using a Cloud-based IDE (Integrated Development Environment) to accomplish your job, but if you don&rsquo;t have any or you are not happy with yours, then this blog post will explain you how to get one, opensource and in a few minutes.
-{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}" />
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/08/05/a-cloud-ide-for-the-masses/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-08-05T18:00:00&#43;00:00" />
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A Cloud IDE for the masses"/>
 <meta name="twitter:description" content="Nowadays, you likely are involved in development/devops tasks for the cloud and you are using a Cloud-based IDE (Integrated Development Environment) to accomplish your job, but if you don&rsquo;t have any or you are not happy with yours, then this blog post will explain you how to get one, opensource and in a few minutes.
-{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}"/>
+"/>
 
   
   
@@ -97,10 +97,13 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> A Cloud IDE for the masses </h1>
+  
   <div class="content" itemprop="articleBody">
   
     <p>Nowadays, you likely are involved in development/devops tasks for the cloud and you are using a <a href="https://en.wikipedia.org/wiki/Online_integrated_development_environment">Cloud-based IDE (Integrated Development Environment)</a> to accomplish your job, but if you don&rsquo;t have any or you are not happy with yours, then this blog post will explain you how to get one, opensource and in a few minutes.</p>
-<p><img src="/assets/blog20200805_cloud_ide/cloud-ide-1-evolution.png" alt="">{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}</p>
+<p><img src="/assets/blog20200805_cloud_ide/cloud-ide-1-evolution.png" alt=""></p>
 <h3 id="is-there-any-white-label-cloud-ide">Is there any white-label Cloud IDE?</h3>
 <p>Who has used <a href="https://www.eclipse.org/eclipseide/">Eclipse IDE</a>?, I think many of us, and Who thought was using it when using another different purpose IDE?, e.g. While drawing BPEL processes, while <a href="https://directory.apache.org/studio/">configuring the Apache Directory Server</a> or while <a href="https://wso2.com/integration/integration-studio/">designing Integration Patterns</a>. Well, your thoughts are right, all these IDEs were built on top of Eclipse IDE.
 And nowadays, in the Cloud Native Application world, likely your Cloud-based IDE is built on top of some below:</p>
@@ -122,7 +125,7 @@ And nowadays, in the Cloud Native Application world, likely your Cloud-based IDE
 <li><a href="https://github.com/cdr/code-server">Code-Server</a>: It runs VSCode on any machine anywhere and access it in the browser.</li>
 </ol>
 <p>I&rsquo;ve been playing with <strong>Code-Server</strong> for a while, it is mature and ready to use, and in this blog post I will explain you how to get running easily it in less than 5 minutes. In fact, it is so easy and friendly as VSCode that I&rsquo;m using to write this blog post using Code-Server and <a href="https://jekyllrb.com">Jekyll</a>.</p>
-<p><a href="/assets/blog20200805_cloud_ide/cloud-ide-2-using-code-server-and-jekyll-on-wsl2.png"><img src="/assets/blog20200805_cloud_ide/cloud-ide-2-using-code-server-and-jekyll-on-wsl2.png" alt="">{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}</a></p>
+<p><a href="/assets/blog20200805_cloud_ide/cloud-ide-2-using-code-server-and-jekyll-on-wsl2.png"><img src="/assets/blog20200805_cloud_ide/cloud-ide-2-using-code-server-and-jekyll-on-wsl2.png" alt=""></a></p>
 <h4 id="installing-and-running-code-server-in-linux-freebsd-and-mac-osx">Installing and running Code-Server in Linux, FreeBSD and Mac OSX</h4>
 <p>Installing Code-Server in Linux (Debian, Ubuntu, Fedora, CentOS, RHEL, SUSE and Arch Linux) and Mac OSX is stright forward. Just go through the <a href="https://github.com/cdr/code-server/blob/master/doc/install.md">Installation guide</a> where you will be able to use the installation script <code>install.sh</code>.</p>
 <h4 id="installing-and-running-code-server-in-raspberry-pi-arm-based">Installing and running Code-Server in Raspberry Pi (ARM based)</h4>
@@ -144,7 +147,7 @@ A Linux running through WSL 2 has a few limitations like no <code>systemd</code>
 $ chmod +x code_server_install_wsl2.sh 
 $ . code_server_install_wsl2.sh
 </code></pre></div><p>Again, this script will install Code-Server, an extension called <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync"><code>Shan.code-settings-sync</code></a> and it will suggest you to use my shared <a href="https://gist.github.com/chilcano/b5f88127bd2d89289dc2cd36032ce856">Gist ID b5f88127bd2d89289dc2cd36032ce856</a>. Also, this script will install <a href="https://github.com/FiloSottile/mkcert"><code>mkcert</code></a> to issue a TLS certificate for the Code-Server.</p>
-<p><a href="/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png"><img src="/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png" alt="">{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}</a></p>
+<p><a href="/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png"><img src="/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png" alt=""></a></p>
 <p><strong>Removing Code-Server installation in WSL2 (Ubuntu 20.04).</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/resources/code_server_remove_wsl2.sh
 $ chmod +x code_server_remove_wsl2.sh

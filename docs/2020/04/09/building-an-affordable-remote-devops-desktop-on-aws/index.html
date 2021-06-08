@@ -101,6 +101,9 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> Building an affordable remote DevOps desktop on AWS </h1>
+  
   <div class="content" itemprop="articleBody">
   
     <p>If you&rsquo;re going to work 100% remotely or are just tired of carrying a heavy laptop while commuting, why not spin up a DevOps Desktop PC in a public cloud and work from anywhere you want?
@@ -206,12 +209,12 @@ X2Go is a X-windows remote access software that has clients for Windows, Mac, an
 Before lets get the FQDN of your EC2 instance.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-remote-desktop$ terraform output remotedevenv_fqdn
 ec2-100-26-48-80.compute-1.amazonaws.com
-</code></pre></div><p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1.png" alt="">{:width=&ldquo;300&rdquo;}</a><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-2.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-2.png" alt="">{:width=&ldquo;300&rdquo;}</a></p>
-<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-3.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-3.png" alt="">{:width=&ldquo;300&rdquo;}</a><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-4.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-4.png" alt="">{:width=&ldquo;300&rdquo;}</a></p>
+</code></pre></div><p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-2.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1.png" alt=""></a></p>
+<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-4.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-3.png" alt=""></a></p>
 <p>And finally here below the Remote DevOps Desktop.</p>
-<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-5.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-5.png" alt="">{:width=&ldquo;300&rdquo;}</a><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-6b.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-6b.png" alt="">{:width=&ldquo;400&rdquo;}</a></p>
+<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-6b.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-5.png" alt=""></a></p>
 <p>And here the configuration of a great feature: Sharing files between local and remote instance over SSH using X2Go Client.</p>
-<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7.png" alt="">{:width=&ldquo;300&rdquo;}</a><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7b.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7b.png" alt="">{:width=&ldquo;400&rdquo;}</a></p>
+<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7b.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7.png" alt=""></a></p>
 <h2 id="conclusions">Conclusions</h2>
 <ol>
 <li>AWS EC2 Spot is still the cheaper Public Cloud resource in the market, although you could get cheaper one in <a href="https://www.digitalocean.com">Digital Ocean</a> and <a href="https://cloud.google.com">Google Cloud</a>.</li>

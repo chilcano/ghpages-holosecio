@@ -11,7 +11,7 @@
   <meta property="og:title" content="GitHub Pages and Jekyll on Windows 10" />
 <meta property="og:description" content="I have a Blog hosted on Github Pages created with Jekyll from Linux. That works perfectly and can publish posts frequently, but now I would like to do the same but from Windows 10 laptop (older Surface 3 Pro, 4GB RAM, 64GB SSD). The aim of this post is explain you how to prepare and configure Windows 10 to publish post in a new or existing static site created with Jekyll.
 To do that I&rsquo;m going to follow the Jekyll on Windows guide, basically I&rsquo;ll download, install and configure a Ruby&#43;Devkit version in Windows 10.
-{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}" />
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/03/30/github-pages-and-jekyll-on-windows-10/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-03-30T22:00:00&#43;00:00" />
@@ -22,7 +22,7 @@ To do that I&rsquo;m going to follow the Jekyll on Windows guide, basically I&rs
 <meta name="twitter:title" content="GitHub Pages and Jekyll on Windows 10"/>
 <meta name="twitter:description" content="I have a Blog hosted on Github Pages created with Jekyll from Linux. That works perfectly and can publish posts frequently, but now I would like to do the same but from Windows 10 laptop (older Surface 3 Pro, 4GB RAM, 64GB SSD). The aim of this post is explain you how to prepare and configure Windows 10 to publish post in a new or existing static site created with Jekyll.
 To do that I&rsquo;m going to follow the Jekyll on Windows guide, basically I&rsquo;ll download, install and configure a Ruby&#43;Devkit version in Windows 10.
-{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}"/>
+"/>
 
   
   
@@ -99,11 +99,14 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> GitHub Pages and Jekyll on Windows 10 </h1>
+  
   <div class="content" itemprop="articleBody">
   
     <p>I have a<a href="https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1"> Blog hosted on Github Pages created with Jekyll from Linux</a>. That <a href="https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2">works perfectly and can publish posts frequently</a>, but now I would like to do the same but from Windows 10 laptop (older Surface 3 Pro, 4GB RAM, 64GB SSD). The aim of this post is explain you how to prepare and configure Windows 10 to publish post in a new or existing static site created with Jekyll.</p>
 <p>To do that I&rsquo;m going to follow the <a href="https://jekyllrb.com/docs/installation/windows">Jekyll on Windows</a> guide, basically I&rsquo;ll <a href="https://rubyinstaller.org/downloads">download, install and configure a Ruby+Devkit</a> version in Windows 10.</p>
-<p><a href="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png"><img src="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png" alt="">{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}</a></p>
+<p><a href="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png"><img src="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png" alt=""></a></p>
 <h3 id="steps">Steps</h3>
 <p>Once downloaded and installed Ruby+Devkit, open a CMD as standard user and check the installed version:</p>
 <pre><code>C:\Users\rmce&gt; ruby --version
@@ -141,7 +144,7 @@ Configuration file: Y:/__gitrepos/ghpages-holosec/_config.yml
 $&gt; Set-Variable -name JEKYLL_ENV -value production; bundle exec jekyll serve --incremental --watch
 </code></pre></div><p>And if you have posts in draft, run this. Only be aware to place your posts in <code>&lt;site&gt;\_drafts\</code> folder without <code>date</code> and <code>permalink</code> in the front-matter.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell">$&gt; Set-Variable -name JEKYLL_ENV -value production; bundle exec jekyll serve --watch --drafts
-</code></pre></div><p><a href="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-2.png"><img src="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-2.png" alt="">{:width=&ldquo;400&rdquo;}{:style=&ldquo;display:block;margin:auto;&quot;}</a></p>
+</code></pre></div><p><a href="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-2.png"><img src="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-2.png" alt=""></a></p>
   
   </div>
 </article>

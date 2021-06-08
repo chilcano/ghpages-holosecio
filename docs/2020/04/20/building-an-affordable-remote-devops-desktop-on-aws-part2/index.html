@@ -97,6 +97,9 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with Packer) </h1>
+  
   <div class="content" itemprop="articleBody">
   
     <p>In the previous post <a href="/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws">Building an affordable remote DevOps desktop on AWS</a> I shown you how to build a cheaper remote DevOps Desktop on AWS, now I&rsquo;ll explain you how to do that in approximately 3 minutes, instead of 25 minutes, using <a href="https://www.packer.io">Hashicorp Packer</a> to pre-bake an AWS AMI.</p>
@@ -168,8 +171,8 @@ $ terraform apply <span style="color:#ae81ff">\
 </ol>
 <h3 id="verifying-the-process">Verifying the process</h3>
 <h3 id="check-the-ami-and-snapshot-created">Check the AMI and Snapshot created</h3>
-<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-1-create-default-vpc.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-1-create-default-vpc.png" alt="">{:width=&ldquo;300&rdquo;}</a><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-2-create-default-vpc.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-2-create-default-vpc.png" alt="">{:width=&ldquo;300&rdquo;}</a></p>
-<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-3-snapshot-ebs.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-3-snapshot-ebs.png" alt="">{:width=&ldquo;300&rdquo;}</a><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-4-ec2-ami.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-4-ec2-ami.png" alt="">{:width=&ldquo;300&rdquo;}</a></p>
+<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-2-create-default-vpc.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-1-create-default-vpc.png" alt=""></a></p>
+<p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-4-ec2-ami.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-3-snapshot-ebs.png" alt=""></a></p>
 <h3 id="check-the-ec2-instance-created">Check the EC2 Instance created</h3>
 <p>After a few minutes, connect to EC2 instance created above.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$  terraform output remotedesktop_fqdn

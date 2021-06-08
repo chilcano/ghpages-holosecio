@@ -17,7 +17,7 @@ Affordable: cheaper.
 Ready to use: able to be automated (DevOps and IaC) with a mature management API.
 
 Below a high level architecture of Container-based Cloud I want to get. I will focus on the Service Mesh Data Plane.
-{:target=&quot;_blank&quot;}
+
 These requeriments restric some options, all of them using any Public Cloud Provider, but considering the AWS Spot Instances and Google Cloud Preemptible VM Instances. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/" /><meta property="article:section" content="post" />
@@ -35,7 +35,7 @@ Affordable: cheaper.
 Ready to use: able to be automated (DevOps and IaC) with a mature management API.
 
 Below a high level architecture of Container-based Cloud I want to get. I will focus on the Service Mesh Data Plane.
-{:target=&quot;_blank&quot;}
+
 These requeriments restric some options, all of them using any Public Cloud Provider, but considering the AWS Spot Instances and Google Cloud Preemptible VM Instances. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers."/>
 
   
@@ -113,6 +113,9 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> Building your own affordable K8s to host a Service Mesh - Part 1 </h1>
+  
   <div class="content" itemprop="articleBody">
   
     <p>I want to build a Container-based Cloud to deploy any kind of workload (RESTful API, Microservices, Event-Driven, Functions, etc.) but it should be affordable, ready to use, reliable, secure and productionable. This means:</p>
@@ -123,7 +126,7 @@ if (!doNotTrack) {
 <li>Ready to use: able to be automated (DevOps and IaC) with a mature management API.</li>
 </ul>
 <p>Below a high level architecture of Container-based Cloud I want to get. I will focus on the Service Mesh Data Plane.<br>
-<a href="/assets/img/20200116-service-mesh-01-reference-arch-2.png"><img src="/assets/img/20200116-service-mesh-01-reference-arch-2.png" alt="" title="Service Mesh hosted in a Container-based Cloud"></a>{:target=&quot;_blank&quot;}</p>
+<a href="/assets/img/20200116-service-mesh-01-reference-arch-2.png"><img src="/assets/img/20200116-service-mesh-01-reference-arch-2.png" alt="" title="Service Mesh hosted in a Container-based Cloud"></a></p>
 <p>These requeriments restric some options, all of them using any Public Cloud Provider, but considering the <a href="https://aws.amazon.com/ec2/spot">AWS Spot Instances</a> and <a href="https://cloud.google.com/preemptible-vms">Google Cloud Preemptible VM Instances</a>. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers.</p>
 <p>For further information, you can read these articles:</p>
 <ul>
@@ -133,7 +136,7 @@ if (!doNotTrack) {
 <p>The automation can be achieved using Terraform, Python, Bash, etc. and the 2 Cloud Providers (AWS and Google Cloud) choosen for this project have a mature Management API which can be used to automatization and configuration.</p>
 <h2 id="how-much-will-the-kubernetes-cluster-cost-me">How much will the Kubernetes Cluster cost me?</h2>
 <p>Well, It is too difficult to know the cost exactly right now, however, I can estimate what it will cost me for a month. Below you can see two images, the first one is the High level AWS design and the next one is the approximate cost of the all AWS resources used during a month.</p>
-<p><a href="/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png"><img src="/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png" alt="" title="Kubernetes Cluster using AWS Spot Instances"></a>{:target=&quot;_blank&quot;}</p>
+<p><a href="/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png"><img src="/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png" alt="" title="Kubernetes Cluster using AWS Spot Instances"></a></p>
 <p>You can see below that my K8s Cluster using AWS Spot instances will cost approx. <code>6.79 Euros</code>, that includes:</p>
 <ul>
 <li>Instances EC2 Spot: 2</li>
@@ -144,7 +147,7 @@ if (!doNotTrack) {
 <li>S3 Get and other / mo(K): 2880</li>
 <li>Backup into S3 cron expression: &ldquo;*/15 * * * *&rdquo;</li>
 </ul>
-<p><a href="/assets/img/20200116-service-mesh-04-affordable-k8s-aws-budget.png"><img src="/assets/img/20200116-service-mesh-04-affordable-k8s-aws-budget.png" alt="" title="K8s Cluster hosted using AWS Spot Instances - Cost"></a>{:target=&quot;_blank&quot;}</p>
+<p><a href="/assets/img/20200116-service-mesh-04-affordable-k8s-aws-budget.png"><img src="/assets/img/20200116-service-mesh-04-affordable-k8s-aws-budget.png" alt="" title="K8s Cluster hosted using AWS Spot Instances - Cost"></a></p>
 <h2 id="what-about-digital-ocean-hetzner-cloud-scaleway-and-other-providers">What about Digital Ocean, Hetzner Cloud, Scaleway and other Providers?</h2>
 <p>Yes, all of them are worthy of being considered too and will do it in next blog posts, but let&rsquo;s start with AWS and Google first.
 Ah, if you don&rsquo;t want to wait, I suggest you read the <a href="https://github.com/hobby-kube/guide">Kubernetes clusters for the hobbyist</a> guide written by Patrick Stadler. This guide explains how to build a Kubernetes Cluster on <a href="https://www.digitalocean.com">Digital Ocean</a>, <a href="https://www.hetzner.com/">Hetzner Cloud</a> and/or <a href="https://www.scaleway.com">Scaleway</a>, and this guide is accompanied by a fully automated cluster setup based on Terraform recipes. The guide suggests that <a href="https://www.linode.com/">Linode</a>, <a href="https://www.vultr.com">Vultr</a> are other viable options.</p>
@@ -217,7 +220,7 @@ aws_secret_access_key <span style="color:#f92672">=</span> &lt;SECRET-ACCESS-KEY
 <ol>
 <li>
 <p>Clone the Github repo.</p>
-<p>You can clone the <a href="https://github.com/chilcano/kubeadm-aws">forked GitHub repo</a>{:target=&quot;_blank&quot;} and switch to <code>0.2.1-chilcano</code> branch.</p>
+<p>You can clone the <a href="https://github.com/chilcano/kubeadm-aws">forked GitHub repo</a> and switch to <code>0.2.1-chilcano</code> branch.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos$ git clone https://github.com/chilcano/kubeadm-aws affordable-k8s-tf
 
 Cloning into <span style="color:#e6db74">&#39;affordable-k8s-tf&#39;</span>...
@@ -348,7 +351,7 @@ terraform graph | dot -Tsvg &gt; your-graph.svg
 </code></pre></div><blockquote>
 <p>You can download my updated DOT file from here <a href="/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.dot">20200116-service-mesh-02-affordable-k8s-aws-graph.dot</a>.</p>
 </blockquote>
-<p><a href="/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg"><img src="/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg" alt="Affordable K8s Data Plane hosted in AWS Graph" title="Affordable K8s Data Plane hosted in AWS Graph"></a>{:target=&quot;_blank&quot;}</p>
+<p><a href="/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg"><img src="/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg" alt="Affordable K8s Data Plane hosted in AWS Graph" title="Affordable K8s Data Plane hosted in AWS Graph"></a></p>
 </li>
 <li>
 <p>Apply the Terraform Plan.</p>

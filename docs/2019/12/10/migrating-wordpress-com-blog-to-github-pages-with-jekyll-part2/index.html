@@ -11,7 +11,7 @@
   <meta property="og:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2" />
 <meta property="og:description" content="In the first blog post I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
 Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the JekyllImport::Importers::WordpressDotCom, to Markdown format by using a simple Python script.
-{:width=&ldquo;500&rdquo;}" />
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-12-10T10:00:00&#43;00:00" />
@@ -22,7 +22,7 @@ Also I&rsquo;ll explain how to convert all HTML post files, obtained by using th
 <meta name="twitter:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2"/>
 <meta name="twitter:description" content="In the first blog post I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
 Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the JekyllImport::Importers::WordpressDotCom, to Markdown format by using a simple Python script.
-{:width=&ldquo;500&rdquo;}"/>
+"/>
 
   
   
@@ -99,11 +99,14 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2 </h1>
+  
   <div class="content" itemprop="articleBody">
   
     <p>In the first blog post <a href="/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1" title="Migrating WordPress.com's blog to GitHub Pages with Jekyll - Part 1">I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages</a>. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
 Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the <code>JekyllImport::Importers::WordpressDotCom</code>, to Markdown format by using a simple Python script.</p>
-<p><img src="/assets/img/20191210-wp-github-jekyll-python-part2-1.png" alt="Migrating WordPress.com&rsquo;s blog to GitHub Pages by using Jekyll Part2">{:width=&ldquo;500&rdquo;}</p>
+<p><img src="/assets/img/20191210-wp-github-jekyll-python-part2-1.png" alt="Migrating WordPress.com&rsquo;s blog to GitHub Pages by using Jekyll Part2"></p>
 <h2 id="lookfeel-themes-and-layouts">Look&amp;Feel: Themes and Layouts</h2>
 <p>When I created the Jekyll site (by running the <code>jekyll new &lt;PATH&gt;</code> command), Jekyll installed a site that uses a gem-based theme called <a href="https://github.com/jekyll/minima">Minima</a>.</p>
 <p>Then, the best way to change the Look&amp;Feel of your Github Page site is changing existing Theme/Layout; Jekyll supports an easy way to do it and here this is explained very well:</p>

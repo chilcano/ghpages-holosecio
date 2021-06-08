@@ -11,7 +11,7 @@
   <meta property="og:title" content="Sidecar Proxy: The Security Building Block" />
 <meta property="og:description" content="Just as a HTTP reverse proxy is sitting in front of a web application and a sidecar is attached to a motorcycle; a sidecar proxy is attached to a main application to extend or add functionality. A Sidecar Proxy is an application design pattern which abstracts certain features, such as inter-service communications, monitoring and security, away from the main application to ease its maintainability, resilience and scalability of the application as a whole.
 In this post I will show you how to use the Sidecar Pattern to address security challenges in the Cloud Native Applications.
-{:width=&ldquo;80%&quot;}{:style=&ldquo;display:block;margin:auto;&quot;}" />
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/05/13/sidecar-proxy-the-security-building-block/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-05-13T00:00:00&#43;00:00" />
@@ -22,7 +22,7 @@ In this post I will show you how to use the Sidecar Pattern to address security 
 <meta name="twitter:title" content="Sidecar Proxy: The Security Building Block"/>
 <meta name="twitter:description" content="Just as a HTTP reverse proxy is sitting in front of a web application and a sidecar is attached to a motorcycle; a sidecar proxy is attached to a main application to extend or add functionality. A Sidecar Proxy is an application design pattern which abstracts certain features, such as inter-service communications, monitoring and security, away from the main application to ease its maintainability, resilience and scalability of the application as a whole.
 In this post I will show you how to use the Sidecar Pattern to address security challenges in the Cloud Native Applications.
-{:width=&ldquo;80%&quot;}{:style=&ldquo;display:block;margin:auto;&quot;}"/>
+"/>
 
   
   
@@ -99,11 +99,14 @@ if (!doNotTrack) {
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  
+  <h1 class="posttitle" itemprop="name headline"> Sidecar Proxy: The Security Building Block </h1>
+  
   <div class="content" itemprop="articleBody">
   
     <p>Just as a HTTP reverse proxy is sitting in front of a web application and a sidecar is attached to a motorcycle; a sidecar proxy is attached to a main application to extend or add functionality. A Sidecar Proxy is an application design pattern which abstracts certain features, such as inter-service communications, monitoring and <strong>security</strong>, away from the main application to ease its maintainability, resilience and scalability of the application as a whole.</p>
 <p>In this post I will show you how to use the Sidecar Pattern to address security challenges in the Cloud Native Applications.</p>
-<p><img src="/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-1-evolution.png" alt="">{:width=&ldquo;80%&quot;}{:style=&ldquo;display:block;margin:auto;&quot;}</p>
+<p><img src="/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-1-evolution.png" alt=""></p>
 <h3 id="the-proxy-pattern">The Proxy Pattern</h3>
 <p>Wikipedia gives us a good detailed definition.</p>
 <blockquote>
@@ -242,7 +245,7 @@ if (!doNotTrack) {
 <li>Leveraging existing components. | Sidecar can implement the &ldquo;Container Ambassador Pattern&rdquo; which provides a standard and homogeneous proxy to get a knew application interface, in this way avoid increase the attack surface of multiple different applications.</li>
 </ol>
 <p>As you can see above, a single Sidecar implementation <strong>potentialy can address all security concerns</strong> what <a href="https://github.com/OWASP/DevGuide/blob/master/02-Design/01-Principles%20of%20Security%20Engineering.md">OWASP Security Design Principles</a> states.</p>
-<p><img src="/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-2-owasp-security-principles.png" alt="">{:width=&ldquo;100%&quot;}{:style=&ldquo;display:block;margin:auto;&quot;}</p>
+<p><img src="/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-2-owasp-security-principles.png" alt=""></p>
 <p>The only difficult is be able to identify the security use case and understand your own technical constrains (i.e. don&rsquo;t introduce aditional hops, able to modify main application, etc.). A good reading about this is the Christian Posta&rsquo;s presentation published on Nov 19, 2019 (<a href="https://www.slideshare.net/ceposta/the-truth-about-the-service-mesh-data-plane">The Truth About the Service Mesh Data Plane</a>).</p>
 <h3 id="why-a-security-building-block">Why a Security Building Block?</h3>
 <p><strong>What is a Building Block?</strong><br>
@@ -267,11 +270,11 @@ Some examples:</p>
 <li>End-to-end security (along the traffic) is only possible if security is implemented in both endpoints, but using a sidecar proxy always is mandatory in the last-mile.</li>
 <li>If you are going to use a combination of proxies, try to use those that implement a standard interface (API) or implement the &ldquo;Adapter Pattern&rdquo;. In other words, choose an API Gateway and Sidecar Proxy if both speak the same idiom or if both implement the same Management API. For example, Gloo (as API Gateway and Ingress Controller) and Envoy Proxy. Other combination is Ambassador (API Gateway) and Envoy.</li>
 </ol>
-<p><img src="/assets/blog20200513_sidecar/envoy-proxy-logo.png" alt="">{:width=&ldquo;40%&quot;}{:style=&ldquo;display:block;margin:auto;&quot;}<br>
+<p><img src="/assets/blog20200513_sidecar/envoy-proxy-logo.png" alt=""><br>
 <em><!-- raw HTML omitted -->Envoy Proxy can be used as Sidecar, Ingress Controller, API Gateway, LB or a WAF<!-- raw HTML omitted --></em></p>
 <h3 id="proxy-load-balancer-gateway-ingress-and-sidecar-comparison">Proxy, Load Balancer, Gateway, Ingress and Sidecar comparison</h3>
 <p>The list below is an attempting to collect all active proxy implementations, open source and commercial products, highlighting their security features and comparing others.</p>
-<p><a href=""></a>{:name=&ldquo;proxy-doc-link&rdquo;}</p>
+<p><a href=""></a></p>
 <!-- raw HTML omitted -->
 <p><em><!-- raw HTML omitted -->Proxies, LB, Gateway and Sidecar Tools<!-- raw HTML omitted --></em></p>
 <h3 id="references">References</h3>
