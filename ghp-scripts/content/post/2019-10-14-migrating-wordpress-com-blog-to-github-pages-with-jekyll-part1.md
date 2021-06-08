@@ -30,8 +30,10 @@ I created an empty GitHub repository, in my case is [`ghpages-holosec`](https://
 Once completed, you should configure your DNS records in your DNS Provider, in my case it is Gandi.Net and used the above [Matt Bailey's good guide](https://gist.github.com/matt-bailey/bbbc181d5234c618e4dfe0642ad80297). You have to consider that making these changes and their propagation across DNS and GitHub will take around 24 hours.
 
 How to set up DNS records on gandi.net to use a custom domain on Github Pages
-<script src="https://gist.github.com/matt-bailey/bbbc181d5234c618e4dfe0642ad80297.js"></script>
 
+{{< rawhtml >}}
+<script src="https://gist.github.com/matt-bailey/bbbc181d5234c618e4dfe0642ad80297.js"></script>
+{{</ rawhtml >}}
 
 ## Install Ruby on Ubuntu
 
