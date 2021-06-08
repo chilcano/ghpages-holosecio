@@ -14,14 +14,14 @@ tags:
 - load balancer
 title: 'Sidecar Proxy: The Security Building Block'
 url: /2020/05/13/sidecar-proxy-the-security-building-block
-type: post
+type: posts
 layout: single_simple
 ---
 Just as a HTTP reverse proxy is sitting in front of a web application and a sidecar is attached to a motorcycle; a sidecar proxy is attached to a main application to extend or add functionality. A Sidecar Proxy is an application design pattern which abstracts certain features, such as inter-service communications, monitoring and **security**, away from the main application to ease its maintainability, resilience and scalability of the application as a whole. 
 
 In this post I will show you how to use the Sidecar Pattern to address security challenges in the Cloud Native Applications. 
 
-![](/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-1-evolution.png){:width="80%"}{:style="display:block;margin:auto;"}
+![](/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-1-evolution.png)
 
 <!--more--> 
 
@@ -110,7 +110,7 @@ OWASP Security Design Principle | Security concern / Use case
 As you can see above, a single Sidecar implementation **potentialy can address all security concerns** what [OWASP Security Design Principles](https://github.com/OWASP/DevGuide/blob/master/02-Design/01-Principles%20of%20Security%20Engineering.md) states. 
 
 
-![](/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-2-owasp-security-principles.png){:width="100%"}{:style="display:block;margin:auto;"}
+![](/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-2-owasp-security-principles.png)
 
 The only difficult is be able to identify the security use case and understand your own technical constrains (i.e. don't introduce aditional hops, able to modify main application, etc.). A good reading about this is the Christian Posta's presentation published on Nov 19, 2019 ([The Truth About the Service Mesh Data Plane](https://www.slideshare.net/ceposta/the-truth-about-the-service-mesh-data-plane)).
 
@@ -137,14 +137,14 @@ Some examples:
 3. End-to-end security (along the traffic) is only possible if security is implemented in both endpoints, but using a sidecar proxy always is mandatory in the last-mile.
 4. If you are going to use a combination of proxies, try to use those that implement a standard interface (API) or implement the "Adapter Pattern". In other words, choose an API Gateway and Sidecar Proxy if both speak the same idiom or if both implement the same Management API. For example, Gloo (as API Gateway and Ingress Controller) and Envoy Proxy. Other combination is Ambassador (API Gateway) and Envoy.
 
-![](/assets/blog20200513_sidecar/envoy-proxy-logo.png){:width="40%"}{:style="display:block;margin:auto;"}  
+![](/assets/blog20200513_sidecar/envoy-proxy-logo.png)  
 _<center>Envoy Proxy can be used as Sidecar, Ingress Controller, API Gateway, LB or a WAF</center>_
 
 ### Proxy, Load Balancer, Gateway, Ingress and Sidecar comparison
 
 The list below is an attempting to collect all active proxy implementations, open source and commercial products, highlighting their security features and comparing others.  
 
-[](){:name="proxy-doc-link"}
+[]()
 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRm6AK8YknTLJlm3ZcCq8NuWflMU6P2fJ1ixtdebwGFYGxz98gtCAgzYWMJ7YXFYoNTho2gx7-se1Cz/pubhtml?widget=true&amp;headers=false" width="800" height="800"></iframe>
 

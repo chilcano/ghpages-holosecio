@@ -7,7 +7,7 @@ tags:
 - python
 title: Setting a Python 3 local programming environment
 url: /2019/12/08/python3-setting-a-local-env
-type: post
+type: posts
 layout: single_simple
 ---
 

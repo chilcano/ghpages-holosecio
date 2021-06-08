@@ -14,12 +14,12 @@ tags:
 - raspberry pi
 title: A Cloud IDE for the masses
 url: /2020/08/05/a-cloud-ide-for-the-masses
-type: post
+type: posts
 layout: single_simple
 ---
 Nowadays, you likely are involved in development/devops tasks for the cloud and you are using a [Cloud-based IDE (Integrated Development Environment)](https://en.wikipedia.org/wiki/Online_integrated_development_environment) to accomplish your job, but if you don't have any or you are not happy with yours, then this blog post will explain you how to get one, opensource and in a few minutes.
 
-![](/assets/blog20200805_cloud_ide/cloud-ide-1-evolution.png){:width="400"}{:style="display:block;margin:auto;"}
+![](/assets/blog20200805_cloud_ide/cloud-ide-1-evolution.png)
 
 <!--more-->
 
@@ -48,7 +48,7 @@ I would like to mention 2 forked projects based on VSCode, they are:
 
 I've been playing with __Code-Server__ for a while, it is mature and ready to use, and in this blog post I will explain you how to get running easily it in less than 5 minutes. In fact, it is so easy and friendly as VSCode that I'm using to write this blog post using Code-Server and [Jekyll](https://jekyllrb.com).
 
-[![](/assets/blog20200805_cloud_ide/cloud-ide-2-using-code-server-and-jekyll-on-wsl2.png){:width="400"}{:style="display:block;margin:auto;"}](/assets/blog20200805_cloud_ide/cloud-ide-2-using-code-server-and-jekyll-on-wsl2.png)
+[![](/assets/blog20200805_cloud_ide/cloud-ide-2-using-code-server-and-jekyll-on-wsl2.png)](/assets/blog20200805_cloud_ide/cloud-ide-2-using-code-server-and-jekyll-on-wsl2.png)
 
 #### Installing and running Code-Server in Linux, FreeBSD and Mac OSX
 
@@ -86,7 +86,7 @@ $ . code_server_install_wsl2.sh
 ```
 Again, this script will install Code-Server, an extension called [`Shan.code-settings-sync`](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) and it will suggest you to use my shared [Gist ID b5f88127bd2d89289dc2cd36032ce856](https://gist.github.com/chilcano/b5f88127bd2d89289dc2cd36032ce856). Also, this script will install [`mkcert`](https://github.com/FiloSottile/mkcert) to issue a TLS certificate for the Code-Server.
 
-[![](/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png){:width="400"}{:style="display:block;margin:auto;"}](/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png)
+[![](/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png)](/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png)
 
 __Removing Code-Server installation in WSL2 (Ubuntu 20.04).__   
 ```sh

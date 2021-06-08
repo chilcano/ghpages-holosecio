@@ -13,12 +13,12 @@ tags:
 - CI/CD
 title: DevOps is to SDLC as MLOps is to Machine Learning Applications
 url: /2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps
-type: post
+type: posts
 layout: single_simple
 ---
 If you have read the previous post about [Security along the Container-based SDLC](https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc), then you have noted that DevOps and Security practices should be applied and embeded along [SDLC](https://en.wikipedia.org/wiki/Systems_development_life_cycle). Before we had to understand the entire software production process and sub-processes in order to apply these DevOps and Security practices. Well, in this post I'll explain how to apply DevOps practices along Machine Learning Software Applications Development Life Cycle (ML-SDLC) and I'll share a set of tools focusing to implement MLOps.
 
-[![](/assets/blog20200309/mlops-sdlc-devsecops-comparison.png)](/assets/blog20200309/mlops-sdlc-devsecops-comparison.png){:target="_blank"}  
+[![](/assets/blog20200309/mlops-sdlc-devsecops-comparison.png)](/assets/blog20200309/mlops-sdlc-devsecops-comparison.png)  
 _<center>Data Science (& ML) Life Cycle</center>_
 
 <!--more-->
@@ -47,7 +47,7 @@ _<center>Data Science (& ML) Life Cycle</center>_
 
 Undoubtedly this era belongs to Artificial Intelligence (AI), and this results in the use of Machine Learning in almost every field, trying to solve different kind of problems from healthcare, in business fields, and technical spaces, Machine Learning is everywhere. That, the Open Source Software (OSS) and Cloud-based Distributed Computing have caused the appearance of many tools, techniques, and algorithms and the ___development of Machine Learning models to solve a problem is not a challenge, the real challenge lies in the management of these models and their data at a massive scale___. 
 
-[![](/assets/blog20200309/PGS-Software-MLOps-2.png){:width="800"}](/assets/blog20200309/PGS-Software-MLOps-2.png) | More Effective Machine Learning Production with MLOps, December 11, 2019 Maciej Mazur (https://www.pgs-soft.com/blog/more-effective-machine-learning-production-with-mlops)  
+[![](/assets/blog20200309/PGS-Software-MLOps-2.png)](/assets/blog20200309/PGS-Software-MLOps-2.png) | More Effective Machine Learning Production with MLOps, December 11, 2019 Maciej Mazur (https://www.pgs-soft.com/blog/more-effective-machine-learning-production-with-mlops)  
 
 The Data Science (& ML) Development Process needs to learn from SDLC (Software Engineering) in order to face these challenges, and What are these challenges?. The answer is: They are the same challenges that SDLC (Software Engineering) is facing by adopting the DevOps Practices, for example:
 
@@ -69,7 +69,7 @@ Monitoring, Alerting, Visualization and Metrics.
 The effort involved in solving MLOps challenges can be reduced by leveraging a platform and applying it to the particular case.  
 The AI (& ML) tool landscape is complex with different tools specialising in different niches and in some cases there are competing tools approaching similar problems in different ways (see the below Linux Foundation's AI project for a categorised lists of tools).
 
-[![](/assets/blog20200309/202003109-linux-foundation-ai-landscape.png)](/assets/blog20200309/202003109-linux-foundation-ai-landscape.png){:target="_blank"}  
+[![](/assets/blog20200309/202003109-linux-foundation-ai-landscape.png)](/assets/blog20200309/202003109-linux-foundation-ai-landscape.png)  
 _<center>The Linux Foundation's AI (& ML) tool landscape - 2020/03/09</center>_
 
 
@@ -93,7 +93,7 @@ Kubernetes and Containers are the new platform where our Applications are going 
 I don’t want to waste efforts integrating heterogeneous tools, I want a stack or platform with mature tools already integrated seamlessly.
 
 
-[](){:name="oss-doc-link"}
+[]()
 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXcNBZjmHMfFHGmwizy_olJ0WP3aOA_lax4lRe9Y1DjG7XARstwm53ovFaovkirt7ybeyq8ybr9Tck/pubhtml?widget=true&amp;headers=false" width="800" height="800"></iframe>
 _<center>Open Source Tools (Platforms) to support the MLOps</center>_

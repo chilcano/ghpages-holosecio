@@ -15,7 +15,7 @@ tags:
 title: Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with
   Packer)
 url: /2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2
-type: post
+type: posts
 layout: single_simple
 ---
 In the previous post [Building an affordable remote DevOps desktop on AWS](/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws) I shown you how to build a cheaper remote DevOps Desktop on AWS, now I'll explain you how to do that in approximately 3 minutes, instead of 25 minutes, using [Hashicorp Packer](https://www.packer.io) to pre-bake an AWS AMI. 
@@ -112,9 +112,9 @@ Finally, if you don't have any customized AMI with `XFCE4` and `X2Go Server` pre
 
 ### Check the AMI and Snapshot created
 
-[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-1-create-default-vpc.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-1-create-default-vpc.png)[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-2-create-default-vpc.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-2-create-default-vpc.png)
+[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-1-create-default-vpc.png)](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-2-create-default-vpc.png)
 
-[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-3-snapshot-ebs.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-3-snapshot-ebs.png)[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-4-ec2-ami.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-4-ec2-ami.png)
+[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-3-snapshot-ebs.png)](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-4-ec2-ami.png)
 
 ### Check the EC2 Instance created
 

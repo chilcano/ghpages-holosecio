@@ -14,15 +14,15 @@ tags:
 - mvp
 title: 'Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1'
 url: /2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1
-type: post
+type: posts
 layout: single_simple
 ---
 
-__Minimum Viable Security__ (MVSec) is a concept borrowed from the [Minimum Viable Product](https://en.wikipedia.org/wiki/Minimum_viable_product){:target="_blank"} (MVP) concept about the Product Development Strategy and from the [Pareto Principle or 80/20 rule](https://en.wikipedia.org/wiki/Pareto_principle){:target="_blank"}. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security). 
+__Minimum Viable Security__ (MVSec) is a concept borrowed from the [Minimum Viable Product](https://en.wikipedia.org/wiki/Minimum_viable_product) (MVP) concept about the Product Development Strategy and from the [Pareto Principle or 80/20 rule](https://en.wikipedia.org/wiki/Pareto_principle). The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security). 
 
 The purpose of this post is to explain how to implement __TLS everywhere__ to become __MVSec__ (roughly 80% of security with 20% of working) for a __Kubernetised Webapp hosted on AWS__.
 
-[![](/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png)](/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png){:target="_blank"}  
+[![](/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png)](/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png)  
 _<center>Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let's Encrypt</center>_
 
 <!--more--> 
@@ -74,9 +74,9 @@ Pillar of Security | Description                                                
 ### Create an Kubernetes Cluster
 
 This blog post will use the "Building your own affordable K8s - Serie":
-- [Part 1 - Building your own affordable K8s to host a Service Mesh](/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane){:target="_blank"}.
-- [Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress](/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress){:target="_blank"}.
-- [Part 3 - Building your own affordable K8s - Certificate Manager](/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager){:target="_blank"}.
+- [Part 1 - Building your own affordable K8s to host a Service Mesh](/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane).
+- [Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress](/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress).
+- [Part 3 - Building your own affordable K8s - Certificate Manager](/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager).
 
 
 **1) Clone the Affordable K8s Cluster Git Repo and run the Terraform scripts**
@@ -213,9 +213,9 @@ Now let's create a SSH tunnel from your Admin Computer over Internet to Weave Sc
 $ ssh -nNT -L 4002:localhost:30002 ubuntu@$(terraform output master_dns) -i ~/Downloads/ssh-key-for-us-east-1.pem
 ```
 
-Now open your favorite browser and enter this url [http://localhost:4002](http://localhost:4002){:target="_blank"} and you will be able to visualize all resources created in your Cluster in real-time.
+Now open your favorite browser and enter this url [http://localhost:4002](http://localhost:4002) and you will be able to visualize all resources created in your Cluster in real-time.
 
-[![](/assets/blog20200308/20200308-tls-everywhere-part1-weave-scope-ssh-tunnel.png){:width="80%"}](/assets/blog20200308/20200308-tls-everywhere-part1-weave-scope-ssh-tunnel.png){:target="_blank"}
+[![](/assets/blog20200308/20200308-tls-everywhere-part1-weave-scope-ssh-tunnel.png)
 
 
 ### Enabling and configuring Security based on TLS

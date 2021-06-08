@@ -16,19 +16,19 @@ tags:
 title: 'Building your own affordable K8s to host a Service Mesh - Part 3: Certificate
   Manager'
 url: /2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager
-type: post
+type: posts
 layout: single_simple
 ---
 
-In this blog post I'll explain how to get a X.509 TLS Certificate from [Let's Encrypt](https://letsencrypt.org){:target="_blank"} automatically during the Terraform provision time, in this way we can now invoke the services additionally on port 443 (HTTPS/TLS).  
-During the Terraform execution, immediately after Kubernetes Cluster creation, the [JetStack Cert-Manager](https://github.com/jetstack/cert-manager){:target="_blank"} is deployed in a Pod, it is who will request to [Let's Encrypt](https://letsencrypt.org){:target="_blank"} service a X.509 TLS Certificate, once completed, the [JetStack Cert-Manager](https://github.com/jetstack/cert-manager){:target="_blank"} will inject the X.509 Certificate as a Kubernetes Secret into NGINX Ingress Controller to enbale TLS.
+In this blog post I'll explain how to get a X.509 TLS Certificate from [Let's Encrypt](https://letsencrypt.org) automatically during the Terraform provision time, in this way we can now invoke the services additionally on port 443 (HTTPS/TLS).  
+During the Terraform execution, immediately after Kubernetes Cluster creation, the [JetStack Cert-Manager](https://github.com/jetstack/cert-manager) will inject the X.509 Certificate as a Kubernetes Secret into NGINX Ingress Controller to enbale TLS.
 
 At this point you must have created a Kubernetes Cluster with ExternalDNS and NGINX as Ingress Controller. If you don't know how to achieve that, I recommend to follow these posts:
 
-* [Part 1 - Building your own affordable K8s to host a Service Mesh](http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane){:target="_blank"}.
-* [Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress](http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress){:target="_blank"}.
+* [Part 1 - Building your own affordable K8s to host a Service Mesh](http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane).
+* [Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress](http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress).
 
-[![K8s Cluster created using AWS Spot Instances - Cert-Manager and Let's Encrypt](/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png "K8s Cluster created using AWS Spot Instances - Cert-Manager and Let's Encrypt")](/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png){:target="_blank"}
+[![K8s Cluster created using AWS Spot Instances - Cert-Manager and Let's Encrypt](/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png "K8s Cluster created using AWS Spot Instances - Cert-Manager and Let's Encrypt")](/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png)
 
 <!--more-->
 
@@ -68,12 +68,12 @@ $ aws route53 list-resource-record-sets --hosted-zone-id $HZ_ID --query "Resourc
 ```
 
 For further details and an explanation about above step review this post:
-* [Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress](http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress){:target="_blank"}.
+* [Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress](http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress).
 
 
 ### 2. Create a fresh K8s Cluster with JetStack Cert-Manager installed
 
-Note the `cert-manager-enabled="1"` and `cert-manager-email="cheapk8s@holisticsecurity.io"` parameters which are required to create a Kubernetes Cluster with the [JetStack Cert-Manager](https://github.com/jetstack/cert-manager){:target="_blank"} installed.
+Note the `cert-manager-enabled="1"` and `cert-manager-email="cheapk8s@holisticsecurity.io"` parameters which are required to create a Kubernetes Cluster with the [JetStack Cert-Manager](https://github.com/jetstack/cert-manager) installed.
 
 ```sh
 $ terraform plan \
@@ -237,6 +237,6 @@ Stay tuned.
 
 ## References
 
-1. [JetStack Cert Manager - x.509 Certs for Kubernetes](https://github.com/jetstack/cert-manager){:target="_blank"}
-2. [Part 1 - Building your own affordable K8s to host a Service Mesh](http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane){:target="_blank"}.
-3. [Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress](http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress){:target="_blank"}.
+1. [JetStack Cert Manager - x.509 Certs for Kubernetes](https://github.com/jetstack/cert-manager)
+2. [Part 1 - Building your own affordable K8s to host a Service Mesh](http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane).
+3. [Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress](http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress).

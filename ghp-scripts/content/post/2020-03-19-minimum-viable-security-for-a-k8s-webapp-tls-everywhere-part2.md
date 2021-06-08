@@ -15,12 +15,12 @@ tags:
 title: 'Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS
   - Part2'
 url: /2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2
-type: post
+type: posts
 layout: single_simple
 ---
 In the "[Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1](/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1)" I used the [Affordable K8s](https://github.com/chilcano/affordable-k8s)' Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the __Minimum Viable Security__ (MVSec) and __Pareto Principle or 80/20 rule__. 
 
-[![](/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png){:width="400"}{:style="display:block;margin:auto;"}](/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png)
+[![](/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png)](/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png)
 
 
 In this post I'll explain how to enable and configure _[HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) over TLS_ in the [Weave Scope](https://www.weave.works/oss/scope) webapp running in the recently created K8s Cluster. 
@@ -170,8 +170,8 @@ Now, if you open this url `https://weave-scope.cloud.holisticsecurity.io` in you
 > 
 > The issue is most likely with the website, and there is nothing you can do.
 
-[![](/assets/blog20200319/mvp-sec-part2-weave-1-tls-http-basic-auth-fake-cert-error.png){:width="350"}](/assets/blog20200319/mvp-sec-part2-weave-1-tls-http-basic-auth-fake-cert-error.png)
-[![](/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png){:width="350"}](/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png)
+[![](/assets/blog20200319/mvp-sec-part2-weave-1-tls-http-basic-auth-fake-cert-error.png)](/assets/blog20200319/mvp-sec-part2-weave-1-tls-http-basic-auth-fake-cert-error.png)
+[![](/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png)](/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png)
 
 **3. Create the Ingress resource and getting a Production Certificate**
 
@@ -246,12 +246,12 @@ order.acme.cert-manager.io/cert-tls-1393507612-2800536094   valid   66s
 
 Now, if you open this url `https://weave-scope.cloud.holisticsecurity.io` in your browser you will be prompted for user and password to get access to Weave Scope.
 
-[![](/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png){:width="350"}](/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png)
-[![](/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png){:width="350"}](/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png)
+[![](/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png)](/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png)
+[![](/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png)](/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png)
 
 Once authenticated, you will be able to check the TLS Certificate issued by Let's Encrypt.
-[![](/assets/blog20200319/mvp-sec-part2-weave-5-tls-http-basic-auth-certificates.png){:width="350"}](/assets/blog20200319/mvp-sec-part2-weave-5-tls-http-basic-auth-certificates.png)
-[![](/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png){:width="350"}](/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png)
+[![](/assets/blog20200319/mvp-sec-part2-weave-5-tls-http-basic-auth-certificates.png)](/assets/blog20200319/mvp-sec-part2-weave-5-tls-http-basic-auth-certificates.png)
+[![](/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png)](/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png)
 
 
 

@@ -17,21 +17,21 @@ tags:
 title: 'Building your own affordable K8s to host a Service Mesh - Part 2: External
   DNS and Ingress'
 url: /2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress
-type: post
+type: posts
 layout: single_simple
 ---
-In order to get an affordable Kubernetes, every part we're going to use should be affordable too, and ones of the expensive and tricky things are the [AWS Elastic Load Balancing (ELB)](https://aws.amazon.com/elasticloadbalancing){:target="_blank"} and the [AWS Route 53 (DNS)](https://aws.amazon.com/route53){:target="_blank"}. Fortunately, Kubernetes SIGs are working to address this gap with the [Kubernetes ExternalDNS](https://github.com/kubernetes-sigs/external-dns){:target="_blank"}.
+In order to get an affordable Kubernetes, every part we're going to use should be affordable too, and ones of the expensive and tricky things are the [AWS Elastic Load Balancing (ELB)](https://aws.amazon.com/elasticloadbalancing) and the [AWS Route 53 (DNS)](https://aws.amazon.com/route53). Fortunately, Kubernetes SIGs are working to address this gap with the [Kubernetes ExternalDNS](https://github.com/kubernetes-sigs/external-dns).
 
 **But what is the problem?**
 
 Apart of it is expensive, the problem is every time I deploy a `Service` in Kubernetes I have to update and add a new DNS entry in the Cloud Provider's DNS manually. Yes, of course, the process can be automated, but the idea is doing it during the provisioning time. In other words, every developer can publish theirs services adding the DNS name as annotation for that services can be called over Internet.
-Yes, [Kubernetes brings by default a DNS](https://github.com/kubernetes/dns){:target="_blank"} but this is an internal one and it is only to work resolving DNS names over the Kubernetes Network, not for internet facing services.
+Yes, [Kubernetes brings by default a DNS](https://github.com/kubernetes/dns) but this is an internal one and it is only to work resolving DNS names over the Kubernetes Network, not for internet facing services.
 
 **The Solution**
 
-The Kubernetes ExternalDNS will run a program in our affordable K8s which it will synchronize exposed Kubernetes Services and Ingresses with the Cloud Provider's DNS Service, in this case with AWS Route 53. Below you can view a high level diagram and current status of my [Affordable Kubernetes Data Plane, I recommend look at first post about it](http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane){:target="_blank"}.
+The Kubernetes ExternalDNS will run a program in our affordable K8s which it will synchronize exposed Kubernetes Services and Ingresses with the Cloud Provider's DNS Service, in this case with AWS Route 53. Below you can view a high level diagram and current status of my [Affordable Kubernetes Data Plane, I recommend look at first post about it](http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane).
 
-[![Service Mesh hosted using AWS Spot Instances](/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png "Service Mesh using AWS Spot Instances")](/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png){:target="_blank"}
+[![Service Mesh hosted using AWS Spot Instances](/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png "Service Mesh using AWS Spot Instances")](/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png)
 
 <!--more-->
 
@@ -43,7 +43,7 @@ Then, let's do it.
 
 I'm going to register the subdomain `cloud.holisticsecurity.io` of existing Root domain name `holisticsecurity.io` into AWS Route 53. I'll follow the below AWS Route 53 explanation.
 
-* [Using Amazon Route 53 as the DNS Service for Subdomains Without Migrating the Parent Domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/creating-migrating.html){:target="_blank"}
+* [Using Amazon Route 53 as the DNS Service for Subdomains Without Migrating the Parent Domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/creating-migrating.html)
 
 You can create subdomain records using either the Amazon Route 53 console or the Route 53 API. Since I have already `AWS CLI` configured in my PC, then let's use it.
 
@@ -93,7 +93,7 @@ Ah, also you should wait some minutes or hours to propagate these changes. That 
 ### 2. Provision of Kubernetes Cluster with ExternalDNS through Terraform
 
 
-If you have read the first post about how to create an affordable Kubernetes Data Plane, then you will know that I used Terraform to provision it. I'm using the [Really cheap Kubernetes cluster on AWS with kubeadm](https://github.com/cablespaghetti/kubeadm-aws){:target="_blank"} Guide's [Sam Weston](https://cablespaghetti.github.io){:target="_blank"} which already uses Kubernetes ExternalDNS, then I'm going to re-apply the Terraform scripts activating the installation of ExternalDNS.
+If you have read the first post about how to create an affordable Kubernetes Data Plane, then you will know that I used Terraform to provision it. I'm using the [Really cheap Kubernetes cluster on AWS with kubeadm](https://github.com/cablespaghetti/kubeadm-aws) which already uses Kubernetes ExternalDNS, then I'm going to re-apply the Terraform scripts activating the installation of ExternalDNS.
 
 
 **1) Create a fresh affordable Kubernetes Cluster**
@@ -102,7 +102,7 @@ If you have read the first post about how to create an affordable Kubernetes Dat
 
    > If you want a cheap K8s Infrastructure on AWS, I recommend to clone this GitHub repo I've updated for you.
    >  
-   > [https://github.com/chilcano/kubeadm-aws/tree/0.2.1-chilcano](https://github.com/chilcano/kubeadm-aws/tree/0.2.1-chilcano){:target="_blank"}
+   > [https://github.com/chilcano/kubeadm-aws/tree/0.2.1-chilcano](https://github.com/chilcano/kubeadm-aws/tree/0.2.1-chilcano)
    >  
    
    Once cloned, first of all run `terraform destroy` to remove all AWS resources provisioned previously. TThat will avoid increasing your bill.
@@ -210,7 +210,7 @@ $ dig +short @ns-789.awsdns-34.net. ingress-nginx.cloud.holisticsecurity.io.
 54.159.75.179
 ```
 
-Both above IP addresses are the `IPv4 Public IP` addresses assigned to Kubernetes Master Node and Kubernetes Worker Node. If I add a new Node to existing Kubernetes Cluster, the `NGINX Ingress Controller` will be installed in the new Node and its new `IPv4 Public IP` address will resolve to `ingress-nginx.cloud.holisticsecurity.io`, that is why the `NGINX Ingress Controller` was deployed into Kubernetes as a [`DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){:target="_blank"}. Let's to verify it.
+Both above IP addresses are the `IPv4 Public IP` addresses assigned to Kubernetes Master Node and Kubernetes Worker Node. If I add a new Node to existing Kubernetes Cluster, the `NGINX Ingress Controller` will be installed in the new Node and its new `IPv4 Public IP` address will resolve to `ingress-nginx.cloud.holisticsecurity.io`, that is why the `NGINX Ingress Controller` was deployed into Kubernetes as a [`DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/). Let's to verify it.
 
 
 ```sh
@@ -231,7 +231,7 @@ nginx-ingress-controller-q4bgh          1/1     Running   0          14h   10.0.
 **3) Verify ExternalDNS and NGINX Ingress work together (Health Check example)**
 
 
-Since the `CheapK8s` only exposes RESTful services over `80` and `443` ports, then to verify that I need to call the `Health Check` service of my [NGINX Ingress Controller](https://github.com/chilcano/kubeadm-aws/blob/0.2.1-chilcano/manifests/nginx-ingress-mandatory.yaml){:target="_blank"} deployed through Terraform in previous step. This procedure also verify that the `NGINX Ingress Controller` has got a DNS name (subdomain `ingress-nginx.cloud.holisticsecurity.io`) from `ExternalDNS` successfully. This part has been configured in the file [`manifests/nginx-ingress-nodeport.yaml.tmpl`](https://github.com/chilcano/kubeadm-aws/blob/0.2.1-chilcano/manifests/nginx-ingress-nodeport.yaml.tmpl){:target="_blank"}.
+Since the `CheapK8s` only exposes RESTful services over `80` and `443` ports, then to verify that I need to call the `Health Check` service of my [NGINX Ingress Controller](https://github.com/chilcano/kubeadm-aws/blob/0.2.1-chilcano/manifests/nginx-ingress-mandatory.yaml) deployed through Terraform in previous step. This procedure also verify that the `NGINX Ingress Controller` has got a DNS name (subdomain `ingress-nginx.cloud.holisticsecurity.io`) from `ExternalDNS` successfully. This part has been configured in the file [`manifests/nginx-ingress-nodeport.yaml.tmpl`](https://github.com/chilcano/kubeadm-aws/blob/0.2.1-chilcano/manifests/nginx-ingress-nodeport.yaml.tmpl).
 
 
 ```sh
@@ -304,7 +304,7 @@ Note: Unnecessary use of -X or --request, GET is already inferred.
 
 2. Understanding how works microservice exposition and how they should be called
 
-   Since the `ExternalDNS` and `NGINX Ingress Controller` have been configured in the `CheapK8s` Cluster, the only way to call the [Hello Microservices](https://github.com/chilcano/kubeadm-aws/blob/0.2.1-chilcano/examples/hello-cheapk8s-app.yaml){:target="_blank"} is through their [`Ingress Resources`](https://github.com/chilcano/kubeadm-aws/blob/0.2.1-chilcano/examples/hello-cheapk8s-ingress.yaml){:target="_blank"} and their [`Services`](https://github.com/chilcano/kubeadm-aws/blob/0.2.1-chilcano/examples/hello-cheapk8s-svc.yaml){:target="_blank"}.
+   Since the `ExternalDNS` and `NGINX Ingress Controller` have been configured in the `CheapK8s` Cluster, the only way to call the [Hello Microservices](https://github.com/chilcano/kubeadm-aws/blob/0.2.1-chilcano/examples/hello-cheapk8s-app.yaml) and their [`Services`](https://github.com/chilcano/kubeadm-aws/blob/0.2.1-chilcano/examples/hello-cheapk8s-svc.yaml).
    
    It is very important to understand how Kubernetes exposes our microservices. Next, I copy some concepts (Kubernetes' primitives) and references to understand the whole operation.
    
@@ -313,12 +313,12 @@ Note: Unnecessary use of -X or --request, GET is already inferred.
    > * `LoadBalancer`: Exposes the Service externally using a cloud provider’s load balancer. `NodePort` and `ClusterIP` Services, to which the external load balancer routes, are automatically created.
    > * `NodePort`: Exposes the Service on each Node’s IP at a static port (the `NodePort`). A `ClusterIP` Service, to which the `NodePort` Service routes, is automatically created. You’ll be able to contact the `NodePort` Service, from outside the cluster, by requesting `<NodeIP>:<NodePort>`.
    >  
-   > Info: [Kubernetes - Publishing Services (ServiceTypes)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types){:target="_blank"}
+   > Info: [Kubernetes - Publishing Services (ServiceTypes)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
    >  
    
    And this is my favorite one.
    > 
-   > [The Hardest Part of Microservices: Calling Your Services by Christian Posta, 2017/April/25](https://blog.christianposta.com/microservices/the-hardest-part-of-microservices-calling-your-services){:target="_blank"}
+   > [The Hardest Part of Microservices: Calling Your Services by Christian Posta, 2017/April/25](https://blog.christianposta.com/microservices/the-hardest-part-of-microservices-calling-your-services)
    >  
    
 3. Calling Hello Microservices
@@ -361,12 +361,12 @@ Note: Unnecessary use of -X or --request, GET is already inferred.
 
 ## References
 
-1. [Kubernetes SIGs ExternalDNS's github repo](https://github.com/kubernetes-sigs/external-dns){:target="_blank"}
-2. [The missing piece - Kubernetes ExternalDNS by Lachlan Evenson, 2017/Aug/09](https://www.youtube.com/watch?v=9HQ2XgL9YVI){:target="_blank"}
-3. [The NGINX Ingress Controller](https://github.com/kubernetes/ingress-nginx){:target="_blank"}
-4. [Kubernetes concepts - Service](https://kubernetes.io/docs/concepts/services-networking/service/){:target="_blank"}
-5. [Kubernetes concepts - Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/){:target="_blank"}
-6. [The Hardest Part of Microservices: Calling Your Services by Christian Posta, 2017/April/25](https://blog.christianposta.com/microservices/the-hardest-part-of-microservices-calling-your-services){:target="_blank"}
+1. [Kubernetes SIGs ExternalDNS's github repo](https://github.com/kubernetes-sigs/external-dns)
+2. [The missing piece - Kubernetes ExternalDNS by Lachlan Evenson, 2017/Aug/09](https://www.youtube.com/watch?v=9HQ2XgL9YVI)
+3. [The NGINX Ingress Controller](https://github.com/kubernetes/ingress-nginx)
+4. [Kubernetes concepts - Service](https://kubernetes.io/docs/concepts/services-networking/service/)
+5. [Kubernetes concepts - Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+6. [The Hardest Part of Microservices: Calling Your Services by Christian Posta, 2017/April/25](https://blog.christianposta.com/microservices/the-hardest-part-of-microservices-calling-your-services)
 
 In the next blog post I'll explain how to generate TLS Certificates for your Microservices.
 Stay tuned.

@@ -13,7 +13,7 @@ tags:
 - microservice
 title: Building your own affordable K8s to host a Service Mesh - Part 1
 url: /2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane
-type: post
+type: posts
 layout: single_simple
 ---
 I want to build a Container-based Cloud to deploy any kind of workload (RESTful API, Microservices, Event-Driven, Functions, etc.) but it should be affordable, ready to use, reliable, secure and productionable. This means:
@@ -24,7 +24,7 @@ I want to build a Container-based Cloud to deploy any kind of workload (RESTful 
 - Ready to use: able to be automated (DevOps and IaC) with a mature management API.
 
 Below a high level architecture of Container-based Cloud I want to get. I will focus on the Service Mesh Data Plane.  
-[![](/assets/img/20200116-service-mesh-01-reference-arch-2.png "Service Mesh hosted in a Container-based Cloud")](/assets/img/20200116-service-mesh-01-reference-arch-2.png){:target="_blank"}
+[![](/assets/img/20200116-service-mesh-01-reference-arch-2.png "Service Mesh hosted in a Container-based Cloud")](/assets/img/20200116-service-mesh-01-reference-arch-2.png)
 
 These requeriments restric some options, all of them using any Public Cloud Provider, but considering the [AWS Spot Instances](https://aws.amazon.com/ec2/spot) and [Google Cloud Preemptible VM Instances](https://cloud.google.com/preemptible-vms). Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers. 
 
@@ -41,7 +41,7 @@ The automation can be achieved using Terraform, Python, Bash, etc. and the 2 Clo
 
 Well, It is too difficult to know the cost exactly right now, however, I can estimate what it will cost me for a month. Below you can see two images, the first one is the High level AWS design and the next one is the approximate cost of the all AWS resources used during a month.
 
-[![](/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png "Kubernetes Cluster using AWS Spot Instances")](/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png){:target="_blank"}
+[![](/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png "Kubernetes Cluster using AWS Spot Instances")](/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png)
 
 You can see below that my K8s Cluster using AWS Spot instances will cost approx. `6.79 Euros`, that includes:
 * Instances EC2 Spot: 2
@@ -52,7 +52,7 @@ You can see below that my K8s Cluster using AWS Spot instances will cost approx.
 * S3 Get and other / mo(K): 2880
 * Backup into S3 cron expression: "*/15 * * * *" 
 
-[![](/assets/img/20200116-service-mesh-04-affordable-k8s-aws-budget.png "K8s Cluster hosted using AWS Spot Instances - Cost")](/assets/img/20200116-service-mesh-04-affordable-k8s-aws-budget.png){:target="_blank"}
+[![](/assets/img/20200116-service-mesh-04-affordable-k8s-aws-budget.png "K8s Cluster hosted using AWS Spot Instances - Cost")](/assets/img/20200116-service-mesh-04-affordable-k8s-aws-budget.png)
 
 
 ## What about Digital Ocean, Hetzner Cloud, Scaleway and other Providers?
@@ -141,7 +141,7 @@ Although AWS CLI isn't needed for the purpose of running Terraform, that will be
 
 1. Clone the Github repo.
 
-   You can clone the [forked GitHub repo](https://github.com/chilcano/kubeadm-aws){:target="_blank"} and switch to `0.2.1-chilcano` branch. 
+   You can clone the [forked GitHub repo](https://github.com/chilcano/kubeadm-aws) and switch to `0.2.1-chilcano` branch. 
    
    ```sh
    chilcano@inti:~/git-repos$ git clone https://github.com/chilcano/kubeadm-aws affordable-k8s-tf
@@ -301,7 +301,7 @@ Although AWS CLI isn't needed for the purpose of running Terraform, that will be
    > You can download my updated DOT file from here [20200116-service-mesh-02-affordable-k8s-aws-graph.dot](/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.dot).
    > 
 
-   [![Affordable K8s Data Plane hosted in AWS Graph](/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg "Affordable K8s Data Plane hosted in AWS Graph")](/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg){:target="_blank"}
+   [![Affordable K8s Data Plane hosted in AWS Graph](/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg "Affordable K8s Data Plane hosted in AWS Graph")](/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg)
 
 6. Apply the Terraform Plan.
 

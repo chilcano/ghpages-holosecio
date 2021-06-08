@@ -11,7 +11,7 @@ tags:
 - bluetooth
 title: Tips & Tricks to use the Apple Magic Mouse in your Linux Ubuntu
 url: /2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu
-type: post
+type: posts
 layout: single_simple
 ---
 This a set of resources (reported issues, blogs, drivers, tips and tricks) to eager to use your Apple Magic Mouse in your Linux Ubuntu.

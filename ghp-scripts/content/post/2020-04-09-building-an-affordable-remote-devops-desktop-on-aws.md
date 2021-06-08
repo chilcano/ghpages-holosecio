@@ -13,7 +13,7 @@ tags:
 - terraform
 title: Building an affordable remote DevOps desktop on AWS
 url: /2020/04/09/building-an-affordable-remote-devops-desktop-on-aws
-type: post
+type: posts
 layout: single_simple
 ---
 If you're going to work 100% remotely or are just tired of carrying a heavy laptop while commuting, why not spin up a DevOps Desktop PC in a public cloud and work from anywhere you want?
@@ -97,17 +97,17 @@ Before lets get the FQDN of your EC2 instance.
 chilcano@inti:~/git-repos/affordable-remote-desktop$ terraform output remotedevenv_fqdn
 ec2-100-26-48-80.compute-1.amazonaws.com
 ```
-[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1.png)[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-2.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-2.png)
+[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1.png)](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-2.png)
 
-[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-3.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-3.png)[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-4.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-4.png)
+[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-3.png)](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-4.png)
 
 And finally here below the Remote DevOps Desktop.   
 
-[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-5.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-5.png)[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-6b.png){:width="400"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-6b.png)
+[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-5.png)](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-6b.png)
 
 And here the configuration of a great feature: Sharing files between local and remote instance over SSH using X2Go Client.   
 
-[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7.png){:width="300"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7.png)[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7b.png){:width="400"}](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7b.png)
+[![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7.png)](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-7b.png)
 
 
 ## Conclusions

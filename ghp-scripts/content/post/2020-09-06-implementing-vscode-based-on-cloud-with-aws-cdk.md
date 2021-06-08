@@ -12,7 +12,7 @@ tags:
 - vscode ide
 title: Implementing VSCode-based (Code-Server) on Cloud with AWS CDK
 url: /2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk
-type: post
+type: posts
 layout: single_simple
 ---
 
@@ -83,7 +83,7 @@ $ cdk deploy
 ```
 
 You will get this output in your terminal. That means everything went well.
-[![](/assets/blog20200906_cloudidecdk/1-cdk-deploy-output.png){:width="400"}{:style="display:block;margin:auto;"}](/assets/blog20200906_cloudidecdk/1-cdk-deploy-output.png)
+[![](/assets/blog20200906_cloudidecdk/1-cdk-deploy-output.png)](/assets/blog20200906_cloudidecdk/1-cdk-deploy-output.png)
 
 
 #### 3. Calling the Code-Server
@@ -105,7 +105,7 @@ $ ssh -nNT -L 8123:localhost:8080 ubuntu@ec2-54-227-165-113.compute-1.amazonaws.
 ```  
 Finally, open the URL [http://localhost:8123](http://localhost:8123) in your browser, you should see this:  
 
-[![](/assets/blog20200906_cloudidecdk/2-app-2.png){:width="360"}](/assets/blog20200906_cloudidecdk/2-app-2.png) [![](/assets/blog20200906_cloudidecdk/2-app-3.png){:width="360"}](/assets/blog20200906_cloudidecdk/2-app-3.png)
+[![](/assets/blog20200906_cloudidecdk/2-app-2.png)](/assets/blog20200906_cloudidecdk/2-app-3.png)
 
 
 #### 4. Restoring your VSCode' settings in Code-Server
@@ -119,7 +119,7 @@ I'm using a bash scripts as `userData` to install Code-Server and only the [Sett
 
 Once restored all Code-Server settings, you will see this:   
 
-[![](/assets/blog20200906_cloudidecdk/2-app-3b.png){:width="360"}](/assets/blog20200906_cloudidecdk/2-app-3b.png) [![](/assets/blog20200906_cloudidecdk/2-app-3c.png){:width="360"}](/assets/blog20200906_cloudidecdk/2-app-3c.png)
+[![](/assets/blog20200906_cloudidecdk/2-app-3b.png)](/assets/blog20200906_cloudidecdk/2-app-3c.png)
 
 
 That's it.
