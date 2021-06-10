@@ -9,7 +9,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2" />
-<meta property="og:description" content="In the &ldquo;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&rdquo; I used the Affordable K8s&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.
+<meta property="og:description" content="In the Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1 I used the Affordable K8s&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.
 
 In this post I&rsquo;ll explain how to enable and configure HTTP Basic Authentication over TLS in the Weave Scope webapp running in the recently created K8s Cluster." />
 <meta property="og:type" content="article" />
@@ -20,7 +20,7 @@ In this post I&rsquo;ll explain how to enable and configure HTTP Basic Authentic
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2"/>
-<meta name="twitter:description" content="In the &ldquo;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&rdquo; I used the Affordable K8s&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.
+<meta name="twitter:description" content="In the Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1 I used the Affordable K8s&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.
 
 In this post I&rsquo;ll explain how to enable and configure HTTP Basic Authentication over TLS in the Weave Scope webapp running in the recently created K8s Cluster."/>
 
@@ -104,9 +104,9 @@ if (!doNotTrack) {
   
   <div class="content" itemprop="articleBody">
   
-    <p>In the &ldquo;<a href="/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1">Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1</a>&rdquo; I used the <a href="https://github.com/chilcano/affordable-k8s">Affordable K8s</a>' Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the <strong>Minimum Viable Security</strong> (MVSec) and <strong>Pareto Principle or 80/20 rule</strong>.</p>
+    <p>In the <a href="/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1">Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1</a> I used the <a href="https://github.com/chilcano/affordable-k8s">Affordable K8s</a>' Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.</p>
 <p><a href="/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png"><img src="/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png" alt=""></a></p>
-<p>In this post I&rsquo;ll explain how to enable and configure <em><a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a> over TLS</em> in the <a href="https://www.weave.works/oss/scope">Weave Scope</a> webapp running in the recently created K8s Cluster.</p>
+<p>In this post I&rsquo;ll explain how to enable and configure <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a> over TLS in the <a href="https://www.weave.works/oss/scope">Weave Scope</a> webapp running in the recently created K8s Cluster.</p>
 <p>I recommend follow the <a href="/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1">Part 1</a> to get this scenario.
 Let&rsquo;s explore the K8s services created.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl get svc -n weave
@@ -125,7 +125,7 @@ $ cd affordable-k8s/examples/
 $ htpasswd -bc auth YOUR_USR YOUR_PWD
 $ kubectl create secret generic secret-http-basic-auth --from-file<span style="color:#f92672">=</span>auth -n weave
 </code></pre></div><h3 id="enabling-and-configuring-http-basic-authentication-over-tls">Enabling and configuring HTTP Basic Authentication over TLS</h3>
-<p><strong>1. Create a Let’s Encrypt Issuer</strong></p>
+<h4 id="1-create-a-lets-encrypt-issuer">1. Create a Let’s Encrypt Issuer</h4>
 <p>A Certificate issuer is the definition for where <a href="https://cert-manager.io/docs/concepts/issuer/#namespaces">Jetstack Cert-Manager</a> will get request TLS certs. An <code>Issuer</code> is specific to a single namespace in Kubernetes, and a <code>ClusterIssuer</code> is meant to be a cluster-wide definition for the same purpose.</p>
 <p>In a scenario or project real, we should generate certificates for testing (<code>staging</code>) purporses, once tested the process to get and configure testing certificates, the next step is to get and use final (<code>production</code>) certificates. That is the reason I provide <code>letsencrypt-issuer-staging.yaml</code> and <code>letsencrypt-issuer-prod.yaml</code>. Then, let&rsquo;s create both issuers.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl apply -f letsencrypt-issuer-staging.yaml -n weave
@@ -147,7 +147,7 @@ secret/weave-scope-token-vb7vg              kubernetes.io/service-account-token 
 $ kubectl describe issuer letsencrypt-issuer-staging -n weave
 $ kubectl describe issuer letsencrypt-issuer-prod -n weave
 </code></pre></div><p>If you have under <code>Status</code> this <code>Reason: ACMEAccountRegistered</code> message in both issuers, that means they are ready to get certificates from Let&rsquo;s Encrypt.</p>
-<p><strong>2. Create the Ingress resource with a Staging Certificate</strong></p>
+<h4 id="2-create-the-ingress-resource-with-a-staging-certificate">2. Create the Ingress resource with a Staging Certificate</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl apply -f weave-scope-app-ingress.yaml 
 </code></pre></div><p>With <code>weave-scope-app-ingress.yaml</code> I&rsquo;ll have a testing certificate.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">extensions/v1beta1</span>
@@ -218,8 +218,8 @@ Events:
 means that Firefox can only connect to it securely. You can&rsquo;t add an exceptions to visit this site.</p>
 <p>The issue is most likely with the website, and there is nothing you can do.</p>
 </blockquote>
-<p><a href="/assets/blog20200319/mvp-sec-part2-weave-1-tls-http-basic-auth-fake-cert-error.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-1-tls-http-basic-auth-fake-cert-error.png" alt=""></a>
-<a href="/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png" alt=""></a></p>
+<p><a href="/assets/blog20200319/mvp-sec-part2-weave-1-tls-http-basic-auth-fake-cert-error.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-1-tls-http-basic-auth-fake-cert-error.png" alt=""></a></p>
+<p><a href="/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png" alt=""></a></p>
 <p><strong>3. Create the Ingress resource and getting a Production Certificate</strong></p>
 <p>In this point we are ready to get a certificate for production purposes, before we should remove the previous ingress resource and its corresponding generated secret.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl delete ingress weave-scope-app-ingress -n weave
@@ -275,11 +275,11 @@ certificaterequest.cert-manager.io/cert-tls-1393507612   True    66s
 NAME                                                        STATE   AGE
 order.acme.cert-manager.io/cert-tls-1393507612-2800536094   valid   66s
 </code></pre></div><p>Now, if you open this url <code>https://weave-scope.cloud.holisticsecurity.io</code> in your browser you will be prompted for user and password to get access to Weave Scope.</p>
-<p><a href="/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png" alt=""></a>
-<a href="/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png" alt=""></a></p>
+<p><a href="/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png" alt=""></a></p>
+<p><a href="/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png" alt=""></a></p>
 <p>Once authenticated, you will be able to check the TLS Certificate issued by Let&rsquo;s Encrypt.
-<a href="/assets/blog20200319/mvp-sec-part2-weave-5-tls-http-basic-auth-certificates.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-5-tls-http-basic-auth-certificates.png" alt=""></a>
-<a href="/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png" alt=""></a></p>
+<a href="/assets/blog20200319/mvp-sec-part2-weave-5-tls-http-basic-auth-certificates.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-5-tls-http-basic-auth-certificates.png" alt=""></a></p>
+<p><a href="/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png" alt=""></a></p>
 <p><strong>4. Troubleshooting with logs</strong></p>
 <p>Check the Cert-Manager logs to see if the TLS Cert, Keys, CSR, etc. were requested and approved successfully.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl logs -f -n cert-manager -lapp<span style="color:#f92672">=</span>cert-manager
