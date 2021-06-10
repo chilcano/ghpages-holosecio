@@ -38,7 +38,7 @@ HUGO_CONTENT_BRANCH="${HUGO_CONTENT_DIR}"
 if [ -z ${_COMMIT_MSG+x} ]; then
     if [ "`git status -s`" ]
     then
-        printf "==> The working directory is dirty. Please commit any pending changes or re-run this bash with param '--commit_msg' or '-m'. \n"
+        printf "==> The working directory is dirty. Please commit any pending changes or re-run this script with '--commit_msg' or '-m' params. \n"
         exit 1;
     fi
 else
