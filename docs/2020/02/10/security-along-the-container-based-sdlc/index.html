@@ -140,36 +140,21 @@ if (!doNotTrack) {
 </ul>
 <h2 id="security-related-techniques-and-practices">Security-related Techniques and Practices</h2>
 <p>In the above picture you can see some security-related techniques and practices used in traditional security approaches that still can and must use. Yes, there are not nothing new. The only thing that changes are the tools. Below, at the end of post, you will see a list of <em>open source security tools</em> that can be used in each security technique proposed in the <em>Secure-SDLC</em>.</p>
-<p><strong>SAST (Static Application Security Testing)</strong>, also known as “white box testing” has been around for more than a decade.<br>
-<strong>DAST (Dynamic Application Security Testing)</strong>, also known as “black box” testing, can find security vulnerabilities and weaknesses in a running application, typically web apps.</p>
-<blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Dynamic_application_security_testing">https://en.wikipedia.org/wiki/Dynamic_application_security_testing</a></p>
-</blockquote>
-<p><strong>IAST (Interactive Application Security Testing)</strong>.</p>
-<blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Application_security">https://en.wikipedia.org/wiki/Application_security</a></p>
-</blockquote>
-<p><strong>RASP (Run-time Application Security Protection)</strong>. Run­time Application Security Protection, works inside the application, but it is less a testing tool and more a security tool. It&rsquo;s plugged into an application or its run­time environment and can control application execution. That allows RASP to protect the app even if a network&rsquo;s perimeter defenses are breached and the apps contain security vulnerabilities missed by the development team. RASP lets an app run continuous security checks on itself and respond to live attacks by terminating an attacker’s session and alerting defenders to the attack.</p>
-<blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Runtime_application_self-protection%5D">https://en.wikipedia.org/wiki/Runtime_application_self-protection</a></p>
-</blockquote>
-<p><strong>Misuse cases</strong>.</p>
-<blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Misuse_case">https://en.wikipedia.org/wiki/Misuse_case</a></p>
-</blockquote>
-<p><strong>Abuse cases</strong>.</p>
-<blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Abuse_case">https://en.wikipedia.org/wiki/Abuse_case</a></p>
-</blockquote>
-<p><strong>Intrusion Detection System (IDS)</strong></p>
-<blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Intrusion_detection_system">https://en.wikipedia.org/wiki/Intrusion_detection_system</a></p>
-</blockquote>
-<p><strong>Software Composition Analysis (SCA) / Software Supply Chain</strong></p>
-<blockquote>
-<p><a href="https://owasp.org/www-community/Component_Analysis">https://owasp.org/www-community/Component_Analysis</a>
-<a href="https://cloud.google.com/solutions/secure-software-supply-chains-on-google-kubernetes-engine">https://cloud.google.com/solutions/secure-software-supply-chains-on-google-kubernetes-engine</a></p>
-</blockquote>
+<ol>
+<li><strong>SAST (Static Application Security Testing)</strong>, also known as “white box testing” has been around for more than a decade.</li>
+<li><strong>DAST (Dynamic Application Security Testing)</strong>, also known as “black box” testing, can find security vulnerabilities and weaknesses in a running application, typically web apps. Info: <a href="https://en.wikipedia.org/wiki/Dynamic_application_security_testing">https://en.wikipedia.org/wiki/Dynamic_application_security_testing</a></li>
+<li><strong>IAST (Interactive Application Security Testing)</strong>. Info: <a href="https://en.wikipedia.org/wiki/Application_security">https://en.wikipedia.org/wiki/Application_security</a></li>
+<li><strong>RASP (Run-time Application Security Protection)</strong>. Run­time Application Security Protection, works inside the application, but it is less a testing tool and more a security tool. It&rsquo;s plugged into an application or its run­time environment and can control application execution. That allows RASP to protect the app even if a network&rsquo;s perimeter defenses are breached and the apps contain security vulnerabilities missed by the development team. RASP lets an app run continuous security checks on itself and respond to live attacks by terminating an attacker’s session and alerting defenders to the attack. Info: <a href="https://en.wikipedia.org/wiki/Runtime_application_self-protection%5D">https://en.wikipedia.org/wiki/Runtime_application_self-protection</a></li>
+<li><strong>Misuse cases</strong>. More information: <a href="https://en.wikipedia.org/wiki/Misuse_case">https://en.wikipedia.org/wiki/Misuse_case</a></li>
+<li><strong>Abuse cases</strong>. More information: <a href="https://en.wikipedia.org/wiki/Abuse_case">https://en.wikipedia.org/wiki/Abuse_case</a></li>
+<li><strong>Intrusion Detection System (IDS)</strong>. More information here: <a href="https://en.wikipedia.org/wiki/Intrusion_detection_system">https://en.wikipedia.org/wiki/Intrusion_detection_system</a></li>
+<li><strong>Software Composition Analysis (SCA) / Software Supply Chain</strong>.
+<ul>
+<li><a href="https://owasp.org/www-community/Component_Analysis">https://owasp.org/www-community/Component_Analysis</a></li>
+<li><a href="https://cloud.google.com/solutions/secure-software-supply-chains-on-google-kubernetes-engine">https://cloud.google.com/solutions/secure-software-supply-chains-on-google-kubernetes-engine</a></li>
+</ul>
+</li>
+</ol>
 <h2 id="from-old-school-sdlc-to-container-based-secure-sdlc">From Old-school SDLC to Container-based Secure-SDLC</h2>
 <p>Three things to consider:</p>
 <h3 id="mixing-old-with-new-adapt-old-to-new-along-all-stages">Mixing old with new, adapt old to new along all stages</h3>
@@ -191,15 +176,17 @@ We know that every year come new security problems and new attack vectors, it is
 <ol>
 <li>Adaptable or ready to be used with containers.</li>
 <li>DevOps friendly.</li>
-<li>Recommended to be used with The Best Security Practices (OWASP, NIST, CIS, etc.)</li>
+<li>Recommended to be used with The Best Security Practices (OWASP, NIST, etc.)</li>
 <li>Open Source.</li>
 </ol>
-<p><a href=""></a></p>
-<!-- raw HTML omitted -->
-<blockquote>
-<p><a href="/assets/pages/2020-02-10-security-along-the-container-based-sdlc-oss-tool-list-ro">See whole Sheet (read only) &gt;&gt;</a><br>
+<p><a href="#"></a></p>
+
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTLn8bLX-Sp6JEbKcJIludCb6wJbTM-5xV5te94srdYnmLYutCu9vcgmiWcc2taioH5cJcj2xXH_Ba/pubhtml?widget=true&amp;headers=false" width="800" height="800"></iframe>
+
+
+<p><a href="/assets/pages/2020-02-10-security-along-the-container-based-sdlc-oss-tools-list.pdf">Click here to download the list in PDF format</a>.<br>
 If don&rsquo;t see a open source security product in the document that is worth being reviewed, please, drop me an email and I&rsquo;ll add to document and review it.</p>
-</blockquote>
 <h2 id="conclusions">Conclusions</h2>
 <ol>
 <li>Although you can do it, you shouln&rsquo;d use all those open source security tools without outlining your SDLC before, without identifying the security challenges you want to face in each SDLC' stage and without to identifying the existing security practices you are using.</li>
