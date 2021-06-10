@@ -6,6 +6,23 @@
 
 # *** THIS SCRIPT MUST BE IN THE ROOT OF REPO ***
 
+unset _COMMIT_MSG
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --commit_msg*|-m*)
+      _COMMIT_MSG="${1#*=}"
+      ;;
+    --help|-h)
+      printf "Publish Hugo content."
+      exit 0
+      ;;
+    *)
+      >&2 printf "Error: Invalid argument: '$1' \n"
+      exit 1
+      ;;
+  esac
+  shift
+done
 
 printf "\n"
 echo "###############################################################"
@@ -14,20 +31,19 @@ echo "###############################################################"
 
 CURRENT_DIR="${PWD##*/}"
 
-#GIT_REPO="ghpages-holosecio"
-#GIT_PARENT_DIR="${HOME}/gitrepos"
-
 HUGO_SCRIPTS_DIR="ghp-scripts"
 HUGO_CONTENT_DIR="ghp-content"
 HUGO_CONTENT_BRANCH="${HUGO_CONTENT_DIR}"
 
-#printf "==> Changing to '${GIT_PARENT_DIR}/${GIT_REPO}/' as root working dir. \n"
-#cd ${GIT_PARENT_DIR}/${GIT_REPO}
-
-if [ "`git status -s`" ]
-then
-    printf "==> The working directory is dirty. Please commit any pending changes. \n"
-    exit 1;
+if [ -z ${_COMMIT_MSG+x} ]; then
+    if [ "`git status -s`" ]
+    then
+        printf "==> The working directory is dirty. Please commit any pending changes or re-run this bash with param '--commit_msg' or '-m'. \n"
+        exit 1;
+    fi
+else
+    printf "==> Pushing previous changes.\n" 
+    git add .; git commit -m "Published content: ${_COMMIT_MSG}"; git push
 fi
 
 printf "==> Deleting older content and history of '${HUGO_CONTENT_BRANCH}' \n" 
@@ -39,10 +55,8 @@ rm -rf .git/worktrees/${HUGO_CONTENT_DIR}/
 printf "==> This worktree will allow us to get all content in '${HUGO_CONTENT_BRANCH}' branch as a dir. \n"
 git worktree add -B ${HUGO_CONTENT_BRANCH} ${HUGO_CONTENT_DIR} origin/${HUGO_CONTENT_BRANCH}
 printf "==> Deleting older content under '${HUGO_CONTENT_BRANCH}' except CNAME \n" 
-#rm -rf ${HUGO_CONTENT_DIR}/docs/*
-#find ${GIT_PARENT_DIR}/${GIT_REPO}/${HUGO_CONTENT_DIR}/docs/* ! -name 'CNAME' -exec rm -rf {} +
+
 find ${HUGO_CONTENT_DIR}/docs/* ! -name 'CNAME' -exec rm -rf {} +
-#git worktree add -B ghp-content ghp-content origin/ghp-content
 
 printf "==> Regenerating Hugo content in <root>/${HUGO_CONTENT_DIR}/docs dir. \n"
 cd ${HUGO_SCRIPTS_DIR}; hugo
