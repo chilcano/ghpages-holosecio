@@ -226,30 +226,75 @@ if (!doNotTrack) {
 <table>
 <thead>
 <tr>
+<th>No</th>
 <th>OWASP Security Design Principle</th>
 <th>Security concern / Use case</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td>1)</td>
+<td>Defense in depth.</td>
+<td>Sidecar is a <strong>distributed firewall</strong> and a <strong>security layer in the last-mile</strong>.</td>
+</tr>
+<tr>
+<td>2)</td>
+<td>Fail safe.</td>
+<td>Sidecar can implement the <strong>Container Adapter Pattern</strong> providing a secure default interface.</td>
+</tr>
+<tr>
+<td>3)</td>
+<td>Least privilege.</td>
+<td>Sidecar bootstraps credentials to initialize and secure data plane, you can not communicate with other without sidecar.</td>
+</tr>
+<tr>
+<td>4)</td>
+<td>Separation of duties.</td>
+<td>Once established a data plane connecting sidecars you will be able to create segments based on business domains or duties.</td>
+</tr>
+<tr>
+<td>5)</td>
+<td>Economy of mechanism.</td>
+<td>Sidecar&rsquo;s purpose is to reduce complexity of main application. Sidecar offloads that complexity from main application.</td>
+</tr>
+<tr>
+<td>6)</td>
+<td>Complete mediation.</td>
+<td>Sidecar is the single entry point to main application. All incoming communication to main application are checked.</td>
+</tr>
+<tr>
+<td>7)</td>
+<td>Open Design.</td>
+<td>All sidecars are managed through its standard and public API.</td>
+</tr>
+<tr>
+<td>8)</td>
+<td>Least common mechanism.</td>
+<td>Related with segmentation. Sidecars can load a single configuration profile according the type or role of main application.</td>
+</tr>
+<tr>
+<td>9)</td>
+<td>Psychological acceptability.</td>
+<td>A standard and mature RESTful API helps to its smooth adoption.</td>
+</tr>
+<tr>
+<td>10)</td>
+<td>Weakest link.</td>
+<td>Sidecar allows injecting faults to simulate service disruption with intention of make it reliable and resilient.</td>
+</tr>
+<tr>
+<td>11)</td>
+<td>Leveraging existing components.</td>
+<td>Sidecar can implement the <strong>Container Ambassador Pattern</strong> which provides a standard and homogeneous proxy to get a knew application interface, in this way avoid increase the attack surface of multiple different applications.</td>
+</tr>
+</tbody>
 </table>
-<ol>
-<li>Defense in depth.            | Sidecar is a <strong>distributed firewall</strong> and a <strong>security layer in the last-mile</strong>.</li>
-<li>Fail safe.                   | Sidecar can implement the &ldquo;Container Adapter Pattern&rdquo; providing a secure default interface.</li>
-<li>Least privilege.             | Sidecar bootstraps credentials to initialize and secure data plane, you can not communicate with other without sidecar.</li>
-<li>Separation of duties.        | Once established a data plane connecting sidecars you will be able to create segments based on business domains or duties.</li>
-<li>Economy of mechanism.        | Sidecar&rsquo;s purpose is to reduce complexity of main application. Sidecar offloads that complexity from main application.</li>
-<li>Complete mediation.          | Sidecar is the single entry point to main application. All incoming communication to main application are checked.</li>
-<li>Open Design.                 | All sidecars are managed through its standard and public API.</li>
-<li>Least common mechanism.      | Related with segmentation. Sidecars can load a single configuration profile according the type or role of main application.</li>
-<li>Psychological acceptability. | A standard and mature RESTful API helps to its smooth adoption.</li>
-<li>Weakest link.               | Sidecar allows injecting faults to simulate service disruption with intention of make it reliable and resilient.</li>
-<li>Leveraging existing components. | Sidecar can implement the &ldquo;Container Ambassador Pattern&rdquo; which provides a standard and homogeneous proxy to get a knew application interface, in this way avoid increase the attack surface of multiple different applications.</li>
-</ol>
 <p>As you can see above, a single Sidecar implementation <strong>potentialy can address all security concerns</strong> what <a href="https://github.com/OWASP/DevGuide/blob/master/02-Design/01-Principles%20of%20Security%20Engineering.md">OWASP Security Design Principles</a> states.</p>
 <p><img src="/assets/blog20200513_sidecar/proxy-pattern-reverse-api-gateway-lb-sidecar-2-owasp-security-principles.png" alt=""></p>
 <p>The only difficult is be able to identify the security use case and understand your own technical constrains (i.e. don&rsquo;t introduce aditional hops, able to modify main application, etc.). A good reading about this is the Christian Posta&rsquo;s presentation published on Nov 19, 2019 (<a href="https://www.slideshare.net/ceposta/the-truth-about-the-service-mesh-data-plane">The Truth About the Service Mesh Data Plane</a>).</p>
 <h3 id="why-a-security-building-block">Why a Security Building Block?</h3>
-<p><strong>What is a Building Block?</strong><br>
-According to <a href="https://en.wikipedia.org/wiki/Building_block">Wikipedia</a>, there are multiples meanings, this for example:</p>
+<h4 id="what-is-a-building-block">What is a Building Block?</h4>
+<p>According to <a href="https://en.wikipedia.org/wiki/Building_block">Wikipedia</a>, there are multiples meanings, this for example:</p>
 <blockquote>
 <p>Components that are part of a larger system.</p>
 </blockquote>
@@ -271,12 +316,20 @@ Some examples:</p>
 <li>If you are going to use a combination of proxies, try to use those that implement a standard interface (API) or implement the &ldquo;Adapter Pattern&rdquo;. In other words, choose an API Gateway and Sidecar Proxy if both speak the same idiom or if both implement the same Management API. For example, Gloo (as API Gateway and Ingress Controller) and Envoy Proxy. Other combination is Ambassador (API Gateway) and Envoy.</li>
 </ol>
 <p><img src="/assets/blog20200513_sidecar/envoy-proxy-logo.png" alt=""><br>
-<em><!-- raw HTML omitted -->Envoy Proxy can be used as Sidecar, Ingress Controller, API Gateway, LB or a WAF<!-- raw HTML omitted --></em></p>
+
+
+<i><center>Envoy Proxy can be used as Sidecar, Ingress Controller, API Gateway, LB or a WAF</center></i>
+
+</p>
 <h3 id="proxy-load-balancer-gateway-ingress-and-sidecar-comparison">Proxy, Load Balancer, Gateway, Ingress and Sidecar comparison</h3>
 <p>The list below is an attempting to collect all active proxy implementations, open source and commercial products, highlighting their security features and comparing others.</p>
-<p><a href=""></a></p>
-<!-- raw HTML omitted -->
-<p><em><!-- raw HTML omitted -->Proxies, LB, Gateway and Sidecar Tools<!-- raw HTML omitted --></em></p>
+<p><a href="#"></a></p>
+
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRm6AK8YknTLJlm3ZcCq8NuWflMU6P2fJ1ixtdebwGFYGxz98gtCAgzYWMJ7YXFYoNTho2gx7-se1Cz/pubhtml?widget=true&amp;headers=false" width="800" height="800"></iframe>
+<i><center>Proxies, LB, Gateway and Sidecar Tools</center></i>
+
+
 <h3 id="references">References</h3>
 <ul>
 <li><a href="https://blog.envoyproxy.io/the-universal-data-plane-api-d15cec7a">The universal data plane API - Matt Klein / Sep 6, 2017</a></li>

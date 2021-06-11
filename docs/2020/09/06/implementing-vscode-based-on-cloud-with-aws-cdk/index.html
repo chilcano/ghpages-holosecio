@@ -9,7 +9,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Implementing VSCode-based (Code-Server) on Cloud with AWS CDK" />
-<meta property="og:description" content="As I stated in the previous post &ldquo;A Cloud IDE for the masses&rdquo;, in this post I will explain you how to deploy Code-Server on AWS. But to make it more interesting, I&rsquo;m going to use AWS Cloud Development Kit (AWS CDK), it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.
+<meta property="og:description" content="As I stated in the previous post A Cloud IDE for the masses, in this post I will explain you how to deploy Code-Server on AWS. But to make it more interesting, I&rsquo;m going to use AWS Cloud Development Kit (AWS CDK), it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.
 We are going to deploy Code-Server (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it.
 " />
 <meta property="og:type" content="article" />
@@ -20,7 +20,7 @@ We are going to deploy Code-Server (a NodeJS web app) into an EC2 instance, usin
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Implementing VSCode-based (Code-Server) on Cloud with AWS CDK"/>
-<meta name="twitter:description" content="As I stated in the previous post &ldquo;A Cloud IDE for the masses&rdquo;, in this post I will explain you how to deploy Code-Server on AWS. But to make it more interesting, I&rsquo;m going to use AWS Cloud Development Kit (AWS CDK), it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.
+<meta name="twitter:description" content="As I stated in the previous post A Cloud IDE for the masses, in this post I will explain you how to deploy Code-Server on AWS. But to make it more interesting, I&rsquo;m going to use AWS Cloud Development Kit (AWS CDK), it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.
 We are going to deploy Code-Server (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it.
 "/>
 
@@ -104,7 +104,7 @@ if (!doNotTrack) {
   
   <div class="content" itemprop="articleBody">
   
-    <p>As I stated in the previous post &ldquo;<a href="/2020/09/06/a-cloud-ide-for-the-masses">A Cloud IDE for the masses</a>&rdquo;, in this post I will explain you how to deploy <a href="https://github.com/cdr/code-server">Code-Server</a> on AWS. But to make it more interesting, I&rsquo;m going to use <a href="https://aws.amazon.com/cdk/">AWS Cloud Development Kit (AWS CDK)</a>, it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.</p>
+    <p>As I stated in the previous post <a href="/2020/09/06/a-cloud-ide-for-the-masses">A Cloud IDE for the masses</a>, in this post I will explain you how to deploy <a href="https://github.com/cdr/code-server">Code-Server</a> on AWS. But to make it more interesting, I&rsquo;m going to use <a href="https://aws.amazon.com/cdk/">AWS Cloud Development Kit (AWS CDK)</a>, it is a framework to model and provision your cloud applications and resources using knew programming language (TypeScript, Python, Java, etc.), no more YAML or Json.</p>
 <p>We are going to deploy <a href="https://github.com/cdr/code-server">Code-Server</a> (a NodeJS web app) into an EC2 instance, using Ubuntu AMI and provisioning all package through a bash scripts (UserData), as in the below diagram depict it.</p>
 <p><img src="/assets/blog20200906_cloudidecdk/0-cloud-ide-aws-arch-cdk-ec2-ami-userdata-vscode-code-server.png" alt=""></p>
 <h3 id="persisting-the-code">Persisting the code</h3>
