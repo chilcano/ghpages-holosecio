@@ -8,7 +8,6 @@ draft: false
 # About
 
 {{< rawhtml >}}
-
 <section id="about">
      With <a href="https://en.wikipedia.org/wiki/Systems_thinking">The Systems Thinking Methodology</a> we are able to see any problem in a complete and holistic manner, in fact, The Systems Thinking Methodology allows us to solve complex problems (IT Security, Global Warming, World Poverty, etc.) by considering new factors, elements and variables (usability, trust, quality, risk, etc.) which were not considered initially.
       <p>Reach me at
@@ -23,7 +22,6 @@ draft: false
         </a>.
       </p>
   </section>
-
 {{< /rawhtml >}}
 
 ## Previous Blog Posts
