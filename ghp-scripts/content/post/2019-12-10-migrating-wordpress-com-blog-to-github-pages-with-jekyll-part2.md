@@ -162,8 +162,7 @@ Where:
 
 If you have gone through exportation and importation process you will have a Blog with some WordPress's HTML with unrecognizable tags and metadata, and missing links, that is normal and annoying too. For that, I looked out for some Ruby Gems or Python scripts to convert to Markdown, tweak the code and improve the readibility of new Markdown converted Posts.
 
-I've used the (`Jekyll WordPress.com Importer`)[https://import.jekyllrb.com/docs/wordpressdotcom/], it extracts all posts and download attachments from the WordPress Export XML File and place them into `<GHPAGE_SITE_ROOT>/_posts/` and `<GHPAGE_SITE_ROOT>/assets/` folders, once done I'll run the prepared Python script:
-
+I've used the [Jekyll WordPress.com Importer](https://import.jekyllrb.com/docs/wordpressdotcom), it extracts all posts and download attachments from the WordPress Export XML File and place them into `<GHPAGE_SITE_ROOT>/_posts/` and `<GHPAGE_SITE_ROOT>/assets/` folders, once done I'll run the prepared Python script:
 
 Activate the Python 3 Environment. If you want to know how to get it, here I've prepared its explanation: [Setting a Python 3 local programming environment](/2019/12/08/python3-setting-a-local-env "Setting a Python 3 local programming environment").
 

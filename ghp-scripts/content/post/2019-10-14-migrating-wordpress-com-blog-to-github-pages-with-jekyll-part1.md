@@ -65,18 +65,18 @@ $ mkdir -p $HOME/gitrepos/ghpages-holosec/; cd $HOME/gitrepos/ghpages-holosec/
 $ git clone https://github.com/chilcano/ghpages-holosec 
 ```
 
-> __Creating a Jekyll project from scratch__
-> 
-> In this case the `ghpages-holosec` is an empty project, then run next commands.
-> ```sh
-> $ bundle init
-> $ bundle add jekyll
-> ```
-> 
-> Once Jekyll is installed, we can use it to create the scaffolding for our site.
-> ```sh
-> $ bundle exec jekyll new --force --skip-bundle .
-> ```
+__Creating a Jekyll project from scratch__
+
+In this case the `ghpages-holosec` is an empty project, then run next commands.
+```sh
+$ bundle init
+$ bundle add jekyll
+```
+ 
+Once Jekyll is installed, we can use it to create the scaffolding for our site.
+```sh
+$ bundle exec jekyll new --force --skip-bundle .
+```
 
 If `ghpages-holosec` is already a Jekyll project, then run next commands:
 ```sh
@@ -123,16 +123,19 @@ $ bundle exec jekyll serve
 ```
 
 If you are using Google Analytics plugin configured, you can try this:
+
 ```sh
 $ JEKYLL_ENV=production bundle exec jekyll serve --incremental --watch
 ```
 
 If you have posts in draft (place your posts in `<site>\_drafts\` folder without `date` and `permalink` in the front-matter.
+
 ```sh
 $ JEKYLL_ENV=production bundle exec jekyll serve --watch --drafts
 ```
 
 You will see that all posts were imported.
+
 ![Holistic Security About page](/assets/img/2019-10-14-wp-to-github-holosec-1st.png)
 
 ## References
