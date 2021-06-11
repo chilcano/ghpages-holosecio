@@ -107,39 +107,53 @@ if (!doNotTrack) {
     <p>I have a<a href="https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1"> Blog hosted on Github Pages created with Jekyll from Linux</a>. That <a href="https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2">works perfectly and can publish posts frequently</a>, but now I would like to do the same but from Windows 10 laptop (older Surface 3 Pro, 4GB RAM, 64GB SSD). The aim of this post is explain you how to prepare and configure Windows 10 to publish post in a new or existing static site created with Jekyll.</p>
 <p>To do that I&rsquo;m going to follow the <a href="https://jekyllrb.com/docs/installation/windows">Jekyll on Windows</a> guide, basically I&rsquo;ll <a href="https://rubyinstaller.org/downloads">download, install and configure a Ruby+Devkit</a> version in Windows 10.</p>
 <p><a href="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png"><img src="/assets/blog20200330/20200330-github-pages-and-jekyll-on-windows-10-1.png" alt=""></a></p>
-<h3 id="steps">Steps</h3>
-<p>Once downloaded and installed Ruby+Devkit, open a CMD as standard user and check the installed version:</p>
-<pre><code>C:\Users\rmce&gt; ruby --version
+<h2 id="steps">Steps</h2>
+<ol>
+<li>Once downloaded and installed Ruby+Devkit, open a CMD as standard user and check the installed version:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; ruby --version
 ruby 2.6.5p114 (2019-10-01 revision 67812) [x64-mingw32]
-</code></pre><p>Download existing the Github Pages site:</p>
-<pre><code>C:\Users\rmce&gt; y:
+</code></pre></div><ol start="2">
+<li>Download existing the Github Pages site:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; y:
 Y:\&gt; cd __gitrepos
-Y:\__gitrepos&gt; git clone https://github.com/chilcano/ghpages-holosec
+Y:\__gitrepos&gt; git clone https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/chilcano/ghpages-holosec
 Y:\__gitrepos&gt; cd ghpages-holosec
-</code></pre><p>Install Bundler:</p>
-<pre><code>Y:\__gitrepos\ghpages-holosec&gt; gem install bundler
-Y:\__gitrepos\ghpages-holosec&gt; bundle config set path 'vendor/bundle'
-</code></pre><p>Install Jekyll and all Gems via Bundler:</p>
-<pre><code>Y:\__gitrepos\ghpages-holosec&gt; bundle 
-</code></pre><p>Check if Jekyll was installed properly:</p>
-<pre><code>Y:\__gitrepos\ghpages-holosec&gt; bundle exec jekyll -v
+</code></pre></div><ol start="3">
+<li>Install Bundler:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Y:\__gitrepos\ghpages-holosec&gt; gem install bundler
+Y:\__gitrepos\ghpages-holosec&gt; bundle config set path <span style="color:#e6db74">&#39;vendor/bundle&#39;</span>
+</code></pre></div><ol start="4">
+<li>Install Jekyll and all Gems via Bundler:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Y:\__gitrepos\ghpages-holosec&gt; bundle 
+</code></pre></div><ol start="5">
+<li>Check if Jekyll was installed properly:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Y:\__gitrepos\ghpages-holosec&gt; bundle exec jekyll -v
 jekyll 4.0.0
-</code></pre><p>Now we are ready to serve the site in our computer:</p>
-<pre><code>Y:\__gitrepos\ghpages-holosec&gt; bundle exec jekyll serve
-</code></pre><p>If you are using Google Analytics plugin configured, you can try this:</p>
-<pre><code>Y:\__gitrepos\ghpages-holosec&gt; set JEKYLL_ENV=production 
+</code></pre></div><ol start="6">
+<li>Now we are ready to serve the site in our computer:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Y:\__gitrepos\ghpages-holosec&gt; bundle exec jekyll serve
+</code></pre></div><ol start="7">
+<li>If you are using Google Analytics plugin configured, you can try this:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Y:\__gitrepos\ghpages-holosec&gt; set JEKYLL_ENV=production 
 Y:\__gitrepos\ghpages-holosec&gt; bundle exec jekyll serve --incremental --watch 
-Configuration file: Y:/__gitrepos/ghpages-holosec/_config.yml
-            Source: Y:/__gitrepos/ghpages-holosec
-       Destination: Y:/__gitrepos/ghpages-holosec/_site
- Incremental build: enabled
+Configuration file<span style="color:#960050;background-color:#1e0010">:</span> Y:/__gitrepos/ghpages-holosec/_config.yml
+            Source<span style="color:#960050;background-color:#1e0010">:</span> Y:/__gitrepos/ghpages-holosec
+       Destination<span style="color:#960050;background-color:#1e0010">:</span> Y:/__gitrepos/ghpages-holosec/_site
+ Incremental build<span style="color:#960050;background-color:#1e0010">:</span> enabled
       Generating...
-       Jekyll Feed: Generating feed for posts
-                    done in 192.797 seconds.
- Auto-regeneration: enabled for 'Y:/__gitrepos/ghpages-holosec'
-    Server address: http://127.0.0.1:4000/
+       Jekyll Feed<span style="color:#960050;background-color:#1e0010">:</span> Generating feed <span style="color:#66d9ef">for</span> posts
+                    done <span style="color:#66d9ef">in</span> 192.797 seconds.
+ Auto-regeneration<span style="color:#960050;background-color:#1e0010">:</span> enabled <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;Y:/__gitrepos/ghpages-holosec&#39;</span>
+    Server address<span style="color:#960050;background-color:#1e0010">:</span> http<span style="color:#960050;background-color:#1e0010">:</span>//127.0.0.1<span style="color:#960050;background-color:#1e0010">:</span>4000/
   Server running... press ctrl-c to stop.
-</code></pre><p>Or instead of CMD using PowerShell Terminal.</p>
+</code></pre></div><p>Or instead of CMD using PowerShell Terminal.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell">Y:\__gitrepos\ghpages-holosec&gt;
 $&gt; Set-Variable -name JEKYLL_ENV -value production; bundle exec jekyll serve --incremental --watch
 </code></pre></div><p>And if you have posts in draft, run this. Only be aware to place your posts in <code>&lt;site&gt;\_drafts\</code> folder without <code>date</code> and <code>permalink</code> in the front-matter.</p>
