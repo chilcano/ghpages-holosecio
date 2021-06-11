@@ -25,19 +25,19 @@ _<center>Data Science (& ML) Life Cycle</center>_
 
 ## Concepts and definitions
 
-**Artificial Intelligence**
+### Artificial Intelligence
 > Computer science defines AI research as the study of "intelligent agents": any device that perceives its environment and takes actions that maximize its chance of successfully achieving its goals. A more elaborate definition characterizes AI as "a system's ability to correctly interpret external data, to learn from such data, and to use those learnings to achieve specific goals and tasks through flexible adaptation."  
 > [https://en.wikipedia.org/wiki/Artificial_intelligence](https://en.wikipedia.org/wiki/Artificial_intelligence)
 
-**Machine Learning**
+### Machine Learning
 > Machine learning (ML) is the scientific study of algorithms and statistical models that computer systems use to perform a specific task without using explicit instructions, relying on patterns and inference instead.
 > [https://en.wikipedia.org/wiki/Machine_learning](https://en.wikipedia.org/wiki/Machine_learning)
 
-**Inference**
+### Inference
 > Inferences are steps in reasoning, moving from premises to logical consequences; etymologically, the word infer means to "carry forward". Inference is theoretically traditionally divided into deduction and induction.
 > [https://en.wikipedia.org/wiki/Inference](https://en.wikipedia.org/wiki/Inference)
 
-**Data Science**
+### Data Science
 > Data science is an inter-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from many structural and unstructured data. Data science is related to data mining and big data.  
 > Data science is a "concept to unify statistics, data analysis, machine learning and their related methods" in order to "understand and analyze actual phenomena" with data.  
 > [https://en.wikipedia.org/wiki/Data_science](https://en.wikipedia.org/wiki/Data_science)
@@ -47,31 +47,35 @@ _<center>Data Science (& ML) Life Cycle</center>_
 
 Undoubtedly this era belongs to Artificial Intelligence (AI), and this results in the use of Machine Learning in almost every field, trying to solve different kind of problems from healthcare, in business fields, and technical spaces, Machine Learning is everywhere. That, the Open Source Software (OSS) and Cloud-based Distributed Computing have caused the appearance of many tools, techniques, and algorithms and the ___development of Machine Learning models to solve a problem is not a challenge, the real challenge lies in the management of these models and their data at a massive scale___. 
 
-[![](/assets/blog20200309/PGS-Software-MLOps-2.png)](/assets/blog20200309/PGS-Software-MLOps-2.png) | More Effective Machine Learning Production with MLOps, December 11, 2019 Maciej Mazur (https://www.pgs-soft.com/blog/more-effective-machine-learning-production-with-mlops)  
+[![](/assets/blog20200309/PGS-Software-MLOps-2.png)](/assets/blog20200309/PGS-Software-MLOps-2.png)
+{{< rawhtml >}}
+<i><center>More Effective Machine Learning Production with MLOps, December 11, 2019 Maciej Mazur (https://www.pgs-soft.com/blog/more-effective-machine-learning-production-with-mlops)</center></i>
+{{</ rawhtml >}}
 
 The Data Science (& ML) Development Process needs to learn from SDLC (Software Engineering) in order to face these challenges, and What are these challenges?. The answer is: They are the same challenges that SDLC (Software Engineering) is facing by adopting the DevOps Practices, for example:
 
-**1. Data challenges**  
+### 1. Data challenges
 Dataset dependencies. Data in training and in evaluation stages can vary in real-world scenarios.
   
-**2. Model challenges**  
+### 2. Model challenges
 ML models are built in a Data scientist sandbox. It was not developed to take scalability in mind; rather, it was just developed to get good accuracies and right algorithm.   
 Scale ML Applications.  
 
-**3. Automation**  
+### 3. Automation
 Training a simple model and putting it into inference and generating prediction is a simple and manual task. In real-world cases (at scale) that must be automated everything and anywhere.   
 Automation is the only way to achieve scalability in the different stages of ML-SDLC.
 
-**4. Observability**  
+### 4. Observability
 Monitoring, Alerting, Visualization and Metrics.  
 
-**5. The MLOps Tool Scene**  
+### 5. The MLOps Tool Scene
 The effort involved in solving MLOps challenges can be reduced by leveraging a platform and applying it to the particular case.  
 The AI (& ML) tool landscape is complex with different tools specialising in different niches and in some cases there are competing tools approaching similar problems in different ways (see the below Linux Foundation's AI project for a categorised lists of tools).
 
-[![](/assets/blog20200309/202003109-linux-foundation-ai-landscape.png)](/assets/blog20200309/202003109-linux-foundation-ai-landscape.png)  
-_<center>The Linux Foundation's AI (& ML) tool landscape - 2020/03/09</center>_
-
+[![](/assets/blog20200309/202003109-linux-foundation-ai-landscape.png)](/assets/blog20200309/202003109-linux-foundation-ai-landscape.png)
+{{< rawhtml >}}
+<i><center>The Linux Foundation's AI (& ML) tool landscape - 2020/03/09</center></i>
+{{</ rawhtml >}}
 
 ## What is MLOps?
 
@@ -83,23 +87,23 @@ _<center>The Linux Foundation's AI (& ML) tool landscape - 2020/03/09</center>_
 
 If you have reviewed above [The Linux Foundation’s AI project landscape (categorised lists of tools)](https://landscape.lfai.foundation/images/landscape.png), you have realized that there a plenty of different tools, commercial and opensource. Well, the next list of products is a subset of products that follow this criteria:
 
-**1. Open Source**  
+### 1. Open Source
 Perfect for early adopters, also suitable to implement easily Proof-of-concepts or starting your own personal project.
 
-**2. Kubernetes-based**  
+### 2. Kubernetes-based
 Kubernetes and Containers are the new platform where our Applications are going to run and live, even the ML Applications.
 
-**3. Platform**  
+### 3. Platform
 I don’t want to waste efforts integrating heterogeneous tools, I want a stack or platform with mature tools already integrated seamlessly.
 
+[](#)
 
-[]()
-
+{{< rawhtml >}}
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXcNBZjmHMfFHGmwizy_olJ0WP3aOA_lax4lRe9Y1DjG7XARstwm53ovFaovkirt7ybeyq8ybr9Tck/pubhtml?widget=true&amp;headers=false" width="800" height="800"></iframe>
-_<center>Open Source Tools (Platforms) to support the MLOps</center>_
+<i><center>Open Source Tools (Platforms) to support the MLOps</center></i>
+{{</ rawhtml >}}
 
 ## References
-
 
 * [What would machine learning look like if you mixed in DevOps? Wonder no more, we lift the lid on MLOps - By Ryan Dawson, 7 Mar 2020](https://www.theregister.co.uk/2020/03/07/devops_machine_learning_mlops)
 * [MLOps Platform: Productionizing Machine Learning Models - By Navdeep Singh Gill, 2 Sep 2019](https://www.xenonstack.com/blog/mlops)

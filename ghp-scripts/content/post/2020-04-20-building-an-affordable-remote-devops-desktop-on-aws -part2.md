@@ -28,14 +28,14 @@ By default, this article uses Terraform and Packer to provision a cheap AWS EC2 
 
 ## Getting started
 
-### Clone this repository
+### 1. Clone this repository
 
 ```sh
 $ git clone https://github.com/chilcano/affordable-remote-desktop
 $ cd affordable-remote-desktop
 ```
 
-### Execute Terraform plan using customized AMI (by default)
+### 2. Execute Terraform plan using customized AMI (by default)
 
 This process uses my customized public AMI (Name `chilcano/images/hvm-instance/ubuntu-bionic-18.04-amd64-gui` and Owner `Chilcano`). This customized AMI with `XFCE4` and `X2Go Server` pre-installed has been created using Hashicorp Packer.
 
@@ -53,7 +53,7 @@ $ terraform apply \
   -var developer_cidr_blocks="83.32.214.211/32" 
 ```
 
-### Execute Terraform plan providing a customized AMI (using Packer.io)
+### 3. Execute Terraform plan providing a customized AMI (using Packer.io)
 
 The Terraform plan I share here detects if the base AMI used to build the EC2 Instance has `XFCE4` and `X2Go Server` pre-installed, if so Terraform will install both packages taking ~20 minutes more. In the below example, the Terraform plan execution will install both packages because the `ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server` AMI owned by `099720109477` (Ubuntu) doesn't include any GUI Desktop Environment installed.
 
@@ -75,48 +75,48 @@ $ terraform apply \
   -var ami_owner="099720109477" 
 ```
 
-#### Crerating a custom AMI with Packer
+#### 3.1. Crerating a custom AMI with Packer
 
 Finally, if you don't have any customized AMI with `XFCE4` and `X2Go Server` pre-installed, and you want one but `private`, then you are lucky because [I've shared Packer scripts to cook your own](https://github.com/chilcano/affordable-remote-desktop/tree/master/resources/packer). Then the steps are:
 
 1. Install and configure Packer.
 2. Download Packer (`ubuntu_gui.json`) script.
-   ```sh
-   $ cd affordable-remote-desktop/resources/packer
-   $ export AWS_ACCESS_KEY_ID="your-access-key-id"; export AWS_SECRET_ACCESS_KEY="your-secret-access-key"
-   $ export AWS_VPC_ID="your-vpc-id-07c2fc78af4aca574"; export AWS_SUBNET_ID="your-subnet-id-00096b5a3329dd4b2" 
+```sh
+$ cd affordable-remote-desktop/resources/packer
+$ export AWS_ACCESS_KEY_ID="your-access-key-id"; export AWS_SECRET_ACCESS_KEY="your-secret-access-key"
+$ export AWS_VPC_ID="your-vpc-id-07c2fc78af4aca574"; export AWS_SUBNET_ID="your-subnet-id-00096b5a3329dd4b2" 
 
-   $ packer validate ubuntu_gui.json
-   $ packer build ubuntu_gui.json
-   ```
-2. Once created the custom AMI, you are able to provision your Remote DevOps Desktop on AWS using Terraform.
-   ```sh
-   $ terraform init
-   
-   $ terraform plan \
-     -var node_name="devops2" \
-     -var ssh_key="remotedesktop" \
-     -var developer_cidr_blocks="83.32.214.211/32" \
-     -var ami_name_filter="your-ami-name-filter"\
-     -var ami_owner="your-ami-owner" 
-   
-   $ terraform apply \
-     -var node_name="devops2" \
-     -var ssh_key="remotedesktop" \
-     -var developer_cidr_blocks="83.32.214.211/32" \
-     -var ami_name_filter="your-ami-name-filter"\
-     -var ami_owner="your-ami-owner" 
-   ```
+$ packer validate ubuntu_gui.json
+$ packer build ubuntu_gui.json
+```
+3. Once created the custom AMI, you are able to provision your Remote DevOps Desktop on AWS using Terraform.
+```sh
+$ terraform init
 
-### Verifying the process
+$ terraform plan \
+  -var node_name="devops2" \
+  -var ssh_key="remotedesktop" \
+  -var developer_cidr_blocks="83.32.214.211/32" \
+  -var ami_name_filter="your-ami-name-filter"\
+  -var ami_owner="your-ami-owner" 
 
-### Check the AMI and Snapshot created
+$ terraform apply \
+  -var node_name="devops2" \
+  -var ssh_key="remotedesktop" \
+  -var developer_cidr_blocks="83.32.214.211/32" \
+  -var ami_name_filter="your-ami-name-filter"\
+  -var ami_owner="your-ami-owner" 
+```
+
+### 4. Verifying the process
+
+#### 4.1. Check the AMI and Snapshot created
 
 [![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-1-create-default-vpc.png)](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-2-create-default-vpc.png)
 
 [![](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-3-snapshot-ebs.png)](https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/resources/packer/imgs/packer-ubuntu-ami-gui-4-ec2-ami.png)
 
-### Check the EC2 Instance created
+#### 4.2. Check the EC2 Instance created
 
 After a few minutes, connect to EC2 instance created above.
 
@@ -140,7 +140,7 @@ drwxr-xr-x 5 root root 4096 Apr 15 18:35 ..
 
 The `install_devops.sh` and `install_gui.sh` were created by Terraform during provisioning, both bash scripts install and configure the DevOps tools and GUI tools respectively.
 
-### Further information
+### 5. Further information
 
-1. [Creating an Ubuntu-based AMI with minimum GUI based on XFCE4 and X2Go](https://github.com/chilcano/affordable-remote-desktop/tree/master/resources/packer)
+* [Creating an Ubuntu-based AMI with minimum GUI based on XFCE4 and X2Go](https://github.com/chilcano/affordable-remote-desktop/tree/master/resources/packer)
 

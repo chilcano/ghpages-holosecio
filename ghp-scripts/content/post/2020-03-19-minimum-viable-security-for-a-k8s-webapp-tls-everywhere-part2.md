@@ -26,6 +26,8 @@ In this post I'll explain how to enable and configure [HTTP Basic Authentication
 
 <!--more--> 
 
+## Getting started
+
 I recommend follow the [Part 1](/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1) to get this scenario.
 Let's explore the K8s services created.
 ```sh
@@ -67,7 +69,7 @@ $ kubectl apply -f letsencrypt-issuer-staging.yaml -n weave
 $ kubectl apply -f letsencrypt-issuer-prod.yaml -n weave
 ```
 
-Checking the Let's Encrypt Issuers. If you got `"Reason: ACMEAccountRegistered"`, the Issuer is ready to issue certificates.
+Checking the Let's Encrypt Issuers. If you got `Reason: ACMEAccountRegistered`, the Issuer is ready to issue certificates.
 ```sh
 $ kubectl get issuer,secret -n weave
 NAME                                                READY   AGE
@@ -175,7 +177,7 @@ Now, if you open this url `https://weave-scope.cloud.holisticsecurity.io` in you
 
 [![](/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png)](/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png)
 
-**3. Create the Ingress resource and getting a Production Certificate**
+#### 3. Create the Ingress resource and getting a Production Certificate
 
 
 In this point we are ready to get a certificate for production purposes, before we should remove the previous ingress resource and its corresponding generated secret.
@@ -259,7 +261,7 @@ Once authenticated, you will be able to check the TLS Certificate issued by Let'
 
 
 
-**4. Troubleshooting with logs**
+#### 4. Troubleshooting with logs
 
 Check the Cert-Manager logs to see if the TLS Cert, Keys, CSR, etc. were requested and approved successfully.
 ```sh

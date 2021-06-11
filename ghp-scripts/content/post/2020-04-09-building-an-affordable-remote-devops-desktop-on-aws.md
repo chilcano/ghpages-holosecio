@@ -28,7 +28,7 @@ This article uses Terraform to provision a cheap AWS EC2 Spot instance. The appr
 
 ## Getting started
 
-You have to clone the **[Affordable Remote DevOps Desktop](https://github.com/chilcano/affordable-remote-desktop)** and run through all steps explained there. Next a compacted list of commands:
+You have to clone the [Affordable Remote DevOps Desktop](https://github.com/chilcano/affordable-remote-desktop) and run through all steps explained there. Next a compacted list of commands:
 
 ```sh
 $ git clone https://github.com/chilcano/affordable-remote-desktop

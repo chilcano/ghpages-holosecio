@@ -21,23 +21,23 @@ If you are working as a DevOps Engineer and want to automate the creation of you
 
 <!--more-->
 
-### Steps
+## Steps
 
-#### 1. Install VS Code
+### 1. Install VS Code
 
 Download and install VS Code manually from here [https://code.visualstudio.com/download](https://code.visualstudio.com/download).
 
-__Recommended extensions:__
+#### Recommended extensions:
 1. [https://github.com/oderwat/vscode-indent-rainbow](https://github.com/oderwat/vscode-indent-rainbow)
 2. [https://github.com/usernamehw/vscode-indent-one-space](https://github.com/usernamehw/vscode-indent-one-space)
 3. [https://github.com/mauve/vscode-terraform](https://github.com/mauve/vscode-terraform)
 4. [https://github.com/yzhang-gh/vscode-markdown](https://github.com/yzhang-gh/vscode-markdown)
 
-#### 2. Install GIT, AWS Client and Terraform
+### 2. Install GIT, AWS Client and Terraform
 
 Open CMD as Admin user and execute below commands.
 
-```ps
+```powershell
 // Install Git
 C:\WINDOWS\system32> choco install git -y
 
@@ -50,7 +50,7 @@ C:\WINDOWS\system32> choco install awscli -y
 
 Close the CMD and open it again but as Standard user, after that check all versions installed.
 
-```ps
+```powershell
 C:\Users\rmce> git version
 git version 2.26.0.windows.1
 
@@ -64,18 +64,18 @@ C:\Users\rmce> aws --version
 aws-cli/2.0.5 Python/3.7.5 Windows/10 botocore/2.0.0dev9
 ```
 
-#### 3. Set up Git in VS Code
+### 3. Set up Git in VS Code
 
 Open CMD and run the following commands.
 
-```ps
+```powershell
 C:\Users\rmce> git config --global user.email "you@example.com"
 C:\Users\rmce> git config --global user.name "Your Name"
 ```
 
 This optional. Make Git store the username and password and it will never ask for them.
 
-```ps
+```powershell
 C:\Users\rmce> git config --global credential.helper store
 
 // Save the username and password for a session
@@ -87,7 +87,7 @@ C:\Users\rmce> git config --global credential.helper 'cache --timeout=600'
 
 Create a folder to allocate the Github repos. In this case I'm going to use my [Affordable-K8s](https://github.com/chilcano/affordable-k8s) Repo. It is a Terraform plan to create a K8s Cluster in AWS using Spot Instances.
 
-```ps
+```powershell
 C:\Users\rmce> y:
 Y:\> mkdir __gitrepos
 Y:\> cd __gitrepos
@@ -97,17 +97,17 @@ Y:\__gitrepos> cd affordable-k8s
 
 Modify any file and push your changes.
 
-```ps
+```powershell
 Y:\__gitrepos\affordable-k8s> git add .
 Y:\__gitrepos\affordable-k8s> git commit -m "README updated"
 Y:\__gitrepos\affordable-k8s> git push
 ```
 
-#### 4. Open an existing Terraform project from VS Code
+### 4. Open an existing Terraform project from VS Code
 
 Once cloned [Affordable-K8s](https://github.com/chilcano/affordable-k8s) Repo into a local folder, now I'll open it executing this command.
 
-```ps
+```powershell
 Y:\__gitrepos\affordable-k8s> code .
 ```
 

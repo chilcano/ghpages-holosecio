@@ -21,53 +21,52 @@ To do that I'm going to follow the [Jekyll on Windows](https://jekyllrb.com/docs
 
 <!--more-->
 
-### Steps
+## Steps
 
-Once downloaded and installed Ruby+Devkit, open a CMD as standard user and check the installed version:
+1. Once downloaded and installed Ruby+Devkit, open a CMD as standard user and check the installed version:
 
-```
+```powershell
 C:\Users\rmce> ruby --version
 ruby 2.6.5p114 (2019-10-01 revision 67812) [x64-mingw32]
 ```
  
-Download existing the Github Pages site:
+2. Download existing the Github Pages site:
 
-```
+```powershell
 C:\Users\rmce> y:
 Y:\> cd __gitrepos
 Y:\__gitrepos> git clone https://github.com/chilcano/ghpages-holosec
 Y:\__gitrepos> cd ghpages-holosec
 ```
 
-Install Bundler:
-
-```
+3. Install Bundler:
+```powershell
 Y:\__gitrepos\ghpages-holosec> gem install bundler
 Y:\__gitrepos\ghpages-holosec> bundle config set path 'vendor/bundle'
 ```
 
-Install Jekyll and all Gems via Bundler:
+4. Install Jekyll and all Gems via Bundler:
 
-```
+```powershell
 Y:\__gitrepos\ghpages-holosec> bundle 
 ```
 
-Check if Jekyll was installed properly:
+5. Check if Jekyll was installed properly:
 
-```
+```powershell
 Y:\__gitrepos\ghpages-holosec> bundle exec jekyll -v
 jekyll 4.0.0
 ```
 
-Now we are ready to serve the site in our computer:
+6. Now we are ready to serve the site in our computer:
 
-```
+```powershell
 Y:\__gitrepos\ghpages-holosec> bundle exec jekyll serve
 ```
 
-If you are using Google Analytics plugin configured, you can try this:
+7. If you are using Google Analytics plugin configured, you can try this:
 
-```
+```powershell
 Y:\__gitrepos\ghpages-holosec> set JEKYLL_ENV=production 
 Y:\__gitrepos\ghpages-holosec> bundle exec jekyll serve --incremental --watch 
 Configuration file: Y:/__gitrepos/ghpages-holosec/_config.yml
