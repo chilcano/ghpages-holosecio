@@ -178,7 +178,7 @@ $ terraform apply <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var cert-manager-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var cert-manager-email<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s@holisticsecurity.io&#34;</span> 
 </code></pre></div><h3 id="3-checking-recently-created-k8s-cluster-and-jetstack-cert-manager">3. Checking recently created K8s Cluster and JetStack Cert-Manager</h3>
-<p><strong>1. Exploring the JetStack Cert-Manager resources created in the K8s Cluster</strong></p>
+<h4 id="31-exploring-the-jetstack-cert-manager-resources-created-in-the-k8s-cluster">3.1. Exploring the JetStack Cert-Manager resources created in the K8s Cluster</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Get SSH access to K8s master node</span>
 $ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem
 
@@ -202,7 +202,7 @@ deployment.apps/cert-manager   1/1     <span style="color:#ae81ff">1</span>     
 
 NAME                                      DESIRED   CURRENT   READY   AGE
 replicaset.apps/cert-manager-54d94bb6fc   <span style="color:#ae81ff">1</span>         <span style="color:#ae81ff">1</span>         <span style="color:#ae81ff">1</span>       5h22m
-</code></pre></div><p><strong>2. Calling Ingress' <code>health check</code> over TLS.</strong></p>
+</code></pre></div><h4 id="32-calling-ingress-health-check-over-tls">3.2. Calling Ingress' <code>health check</code> over TLS.</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ curl https://ingress-nginx.cloud.holisticsecurity.io/healthz -v -k
 <span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
 &lt; HTTP/2 <span style="color:#ae81ff">200</span> 
@@ -212,7 +212,7 @@ replicaset.apps/cert-manager-54d94bb6fc   <span style="color:#ae81ff">1</span>  
 &lt; content-length: <span style="color:#ae81ff">0</span>
 &lt; 
 * Connection <span style="color:#75715e">#0 to host ingress-nginx.cloud.holisticsecurity.io left intact</span>
-</code></pre></div><p><strong>3. Getting the TLS Certificate using <code>openssl</code></strong></p>
+</code></pre></div><h4 id="33-getting-the-tls-certificate-using-openssl">3.3. Getting the TLS Certificate using <code>openssl</code></h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ echo | openssl s_client -showcerts -servername ingress-nginx.cloud.holisticsecurity.io -connect ingress-nginx.cloud.holisticsecurity.io:443 2&gt;/dev/null | openssl x509 -inform pem -noout -text
 </code></pre></div><h3 id="4-calling-a-microservice-over-https-port-443">4. Calling a Microservice over HTTPS (port 443)</h3>
 <p>Since all Microservices and RESTful API were configured to be invoked over 80/HTTP and 443/HTTPS and routed through the NGINX Ingress Controller. The only thing to do is call them through their FQDN (Fully Qualified Domain Name) and the Microservices' FQDN could be <code>https://ingress-nginx.cloud.holisticsecurity.io/&lt;MICROSERVICE_NAME&gt;</code>.</p>

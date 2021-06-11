@@ -121,8 +121,12 @@ In this post I&amp;rsquo;ll explain you how to build your own Remote DevOps Desk
       <guid>https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) is a concept borrowed from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Minimum_viable_product&#34;&gt;Minimum Viable Product&lt;/a&gt; (MVP) concept about the Product Development Strategy and from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Pareto_principle&#34;&gt;Pareto Principle or 80/20 rule&lt;/a&gt;. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).&lt;/p&gt;
 &lt;p&gt;The purpose of this post is to explain how to implement &lt;strong&gt;TLS everywhere&lt;/strong&gt; to become &lt;strong&gt;MVSec&lt;/strong&gt; (roughly 80% of security with 20% of working) for a &lt;strong&gt;Kubernetised Webapp hosted on AWS&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;br&gt;
-&lt;em&gt;&lt;!-- raw HTML omitted --&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let&amp;rsquo;s Encrypt&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;
+
+
+&lt;i&gt;&lt;center&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let&#39;s Encrypt&lt;/center&gt;&lt;/i&gt;
+
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -165,10 +169,10 @@ During the Terraform execution, immediately after Kubernetes Cluster creation, t
       
       <guid>https://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/</guid>
       <description>&lt;p&gt;In order to get an affordable Kubernetes, every part we&amp;rsquo;re going to use should be affordable too, and ones of the expensive and tricky things are the &lt;a href=&#34;https://aws.amazon.com/elasticloadbalancing&#34;&gt;AWS Elastic Load Balancing (ELB)&lt;/a&gt; and the &lt;a href=&#34;https://aws.amazon.com/route53&#34;&gt;AWS Route 53 (DNS)&lt;/a&gt;. Fortunately, Kubernetes SIGs are working to address this gap with the &lt;a href=&#34;https://github.com/kubernetes-sigs/external-dns&#34;&gt;Kubernetes ExternalDNS&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;But what is the problem?&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;but-what-is-the-problem&#34;&gt;But what is the problem?&lt;/h2&gt;
 &lt;p&gt;Apart of it is expensive, the problem is every time I deploy a &lt;code&gt;Service&lt;/code&gt; in Kubernetes I have to update and add a new DNS entry in the Cloud Provider&amp;rsquo;s DNS manually. Yes, of course, the process can be automated, but the idea is doing it during the provisioning time. In other words, every developer can publish theirs services adding the DNS name as annotation for that services can be called over Internet.
 Yes, &lt;a href=&#34;https://github.com/kubernetes/dns&#34;&gt;Kubernetes brings by default a DNS&lt;/a&gt; but this is an internal one and it is only to work resolving DNS names over the Kubernetes Network, not for internet facing services.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;The Solution&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-solution&#34;&gt;The Solution&lt;/h2&gt;
 &lt;p&gt;The Kubernetes ExternalDNS will run a program in our affordable K8s which it will synchronize exposed Kubernetes Services and Ingresses with the Cloud Provider&amp;rsquo;s DNS Service, in this case with AWS Route 53. Below you can view a high level diagram and current status of my &lt;a href=&#34;http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane&#34;&gt;Affordable Kubernetes Data Plane, I recommend look at first post about it&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20200122-service-mesh-01-affordablek8s-aws-arch.png&#34; alt=&#34;Service Mesh hosted using AWS Spot Instances&#34; title=&#34;Service Mesh using AWS Spot Instances&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
