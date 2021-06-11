@@ -135,15 +135,13 @@ $ gem install bundler
 I will download my empty created GitHub Page repository into <code>~/gitrepos/ghpages-holosec/</code> directory.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mkdir -p $HOME/gitrepos/ghpages-holosec/; cd $HOME/gitrepos/ghpages-holosec/ 
 $ git clone https://github.com/chilcano/ghpages-holosec 
-</code></pre></div><blockquote>
-<p><strong>Creating a Jekyll project from scratch</strong></p>
+</code></pre></div><p><strong>Creating a Jekyll project from scratch</strong></p>
 <p>In this case the <code>ghpages-holosec</code> is an empty project, then run next commands.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bundle init
 $ bundle add jekyll
 </code></pre></div><p>Once Jekyll is installed, we can use it to create the scaffolding for our site.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bundle exec jekyll new --force --skip-bundle .
-</code></pre></div></blockquote>
-<p>If <code>ghpages-holosec</code> is already a Jekyll project, then run next commands:</p>
+</code></pre></div><p>If <code>ghpages-holosec</code> is already a Jekyll project, then run next commands:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">// This installs Jekyll and all gems present in Gemfile
 $ bundle config set path vendor/bundle
 
@@ -171,8 +169,8 @@ Now, you will see only <code>Welcome to Jekyll!</code> sample post.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ JEKYLL_ENV<span style="color:#f92672">=</span>production bundle exec jekyll serve --incremental --watch
 </code></pre></div><p>If you have posts in draft (place your posts in <code>&lt;site&gt;\_drafts\</code> folder without <code>date</code> and <code>permalink</code> in the front-matter.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ JEKYLL_ENV<span style="color:#f92672">=</span>production bundle exec jekyll serve --watch --drafts
-</code></pre></div><p>You will see that all posts were imported.
-<img src="/assets/img/2019-10-14-wp-to-github-holosec-1st.png" alt="Holistic Security About page"></p>
+</code></pre></div><p>You will see that all posts were imported.</p>
+<p><img src="/assets/img/2019-10-14-wp-to-github-holosec-1st.png" alt="Holistic Security About page"></p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://github.com/chilcano/how-tos/blob/master/resources/setting_jekyll_in_ubuntu.sh">Bash Script to install Jekyll in Ubuntu</a></li>
