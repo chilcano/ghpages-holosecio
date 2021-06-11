@@ -22,8 +22,10 @@ __Minimum Viable Security__ (MVSec) is a concept borrowed from the [Minimum Viab
 
 The purpose of this post is to explain how to implement __TLS everywhere__ to become __MVSec__ (roughly 80% of security with 20% of working) for a __Kubernetised Webapp hosted on AWS__.
 
-[![](/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png)](/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png)  
-_<center>Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let's Encrypt</center>_
+[![](/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png)](/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png)
+{{< rawhtml >}}
+<i><center>Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let's Encrypt</center></i>
+{{</ rawhtml >}}
 
 <!--more--> 
 
@@ -31,41 +33,41 @@ _<center>Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with 
 
 Part of the answer gives us Vilfredo Pareto with the Pareto Principle, but to have a complete answer we have to turn to The Security Design Principles that NIST, OWASP, NCSC and other Security References give us.  
 
-> The Security Design Principles to consider are:
-> - [Building Secure Software: How to Avoid Security Problems the Right Way by Gary McGraw, John Viega, released September 2001](https://www.oreilly.com/library/view/building-secure-software/9780672334092) and the ["Exploiting Software: How to Break Code"](/assets/blog20200308/20200308-exploiting-software-how-to-break-code-2004-gary-mcgraw-cigital.pdf) Presentation by Gary McGrow, 2004.
-> - OWASP Security by Design Principles:
->   * [10 Security Principles, archived by 2016 ](https://wiki.owasp.org/index.php/Security_by_Design_Principles)
->   * [11 Security Principles, updated by October 2015](https://github.com/OWASP/DevGuide/blob/master/02-Design/01-Principles%20of%20Security%20Engineering.md)
-> - [Systems Security Engineering by NIST, SP 800-160 Vol. 1, updated 21/Mar/2018](https://csrc.nist.gov/publications/detail/sp/800-160/vol-1/final):
->   * There are 32 principles.
-> - [Secure Design Principles by NCSC, version 1.0, updated 21/May/2019](https://www.ncsc.gov.uk/collection/cyber-security-design-principles): 
->   * There are 31 and 15 principles in total.
-> - [Cliff Berg’s Principles for High-Assurance Design (Architecting Secure and Reliable Enterprise Applications), 23/October/2005](https://www.amazon.com/High-Assurance-Design-Architecting-Enterprise-Applications/dp/0321793277), etc.
+The Security Design Principles to consider are:  
+- [Building Secure Software: How to Avoid Security Problems the Right Way by Gary McGraw, John Viega, released September 2001](https://www.oreilly.com/library/view/building-secure-software/9780672334092) and the ["Exploiting Software: How to Break Code"](/assets/blog20200308/20200308-exploiting-software-how-to-break-code-2004-gary-mcgraw-cigital.pdf) Presentation by Gary McGrow, 2004.
+- OWASP Security by Design Principles:
+  * [10 Security Principles, archived by 2016 ](https://wiki.owasp.org/index.php/Security_by_Design_Principles)
+  * [11 Security Principles, updated by October 2015](https://github.com/OWASP/DevGuide/blob/master/02-Design/01-Principles%20of%20Security%20Engineering.md)
+- [Systems Security Engineering by NIST, SP 800-160 Vol. 1, updated 21/Mar/2018](https://csrc.nist.gov/publications/detail/sp/800-160/vol-1/final):
+  * There are 32 principles.
+- [Secure Design Principles by NCSC, version 1.0, updated 21/May/2019](https://www.ncsc.gov.uk/collection/cyber-security-design-principles): 
+  * There are 31 and 15 principles in total.
+- [Cliff Berg’s Principles for High-Assurance Design (Architecting Secure and Reliable Enterprise Applications), 23/October/2005](https://www.amazon.com/High-Assurance-Design-Architecting-Enterprise-Applications/dp/0321793277), etc.
   
 There are many similarities between them at fundamental level, let's explore the OWASP for example and do a quick analysis to see how TLS can help us to meet these Security Principles.
 
-OWASP Security Design Principles| Explanation                   | How to TLS help us?
----                             | ---                           | ---
-1) Defense in Depth.            | Also known as layered defense.| TLS over HTTP provides a new secure layer.
-2) Fail Safe.                   | Unless a subject is given explicit access to an object, it should be denied access to that object. | TLS Certificates can encrypt at rest and in transit these objects.
-3) Least Privilege.             | A Process is given only the minimum level of access rights (privileges) that is necessary for that Process to complete an assigned operation. | Transit of sensitive objects must be over TLS.
-4) Separation of Duties.        | Also known as the [compartmentalization principle](https://en.wikipedia.org/wiki/Compartmentalization_(information_security)), or separation of privilege. | HTTPS is for sensitive transactions and HTTP for non-sensitive.
-5) Economy of Mechanism.        | Also known as [Keep It Simple, Stupid principle](https://en.wikipedia.org/wiki/KISS_principle). | The accepted and supported [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) includes TLS by default. So, if HTTP is insecure, why is it still being used?.
-6) Complete Mediation.          | All accesses to objects must be checked to ensure that they are allowed. | TLS provides Simple and [Mutual (Two-Way) Authentication](https://en.wikipedia.org/wiki/Mutual_authentication) and allways once crypto keys have been verified a secure communication is stablished. 
-7) Open Design.                 | The security of a mechanism should not depend on the secrecy of its design or implementation. | The disclosure of TLS' using in software designs don't put in risk the application.
-8) Least Common Mechanism       | It disallows the sharing of mechanisms that are common to more than one user or process if the users and processes are at different levels of privilege. | TLS is a common secure mechanism shared along the application.
-9) Psychological acceptability. | Tries maximizing the usage and adoption of the security functionality in the application by making it more usable. | TLS is a feature by default in HTTP/2. HTTP requires implement TLS and deal the crypto keys.  
-10) Weakest Link.               | The resiliency of your software against hacker attempts will depend heavily on the protection of its weakest components. | TLS helps to harden the access to resources and secure the traffic.
-11) Leveraging Existing Components. | It focuses on ensuring that the attack surface is not increased. | TLS is a feature by default in HTTP/2 for securing data in transit and data at rest, don't try to bring or implement your own _TLS_.
+| # | OWASP Security Design Principles| Explanation                   | How to TLS help us?
+| - | ---                             | ---                           | ---
+| 1)|  Defense in Depth.              | Also known as layered defense.| TLS over HTTP provides a new secure layer.
+| 2)|  Fail Safe.                     | Unless a subject is given explicit access to an object, it should be denied access to that object. | TLS Certificates can encrypt at rest and in transit these objects.
+| 3)|  Least Privilege.               | A Process is given only the minimum level of access rights (privileges) that is necessary for that Process to complete an assigned operation. | Transit of sensitive objects must be over TLS.
+| 4)|  Separation of Duties.          | Also known as the [compartmentalization principle](https://en.wikipedia.org/wiki/Compartmentalization_(information_security)), or separation of privilege. | HTTPS is for sensitive transactions and HTTP for non-sensitive.
+| 5)|  Economy of Mechanism.          | Also known as [Keep It Simple, Stupid principle](https://en.wikipedia.org/wiki/KISS_principle). | The accepted and supported [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) includes TLS by default. So, if HTTP is insecure, why is it still being used?.
+| 6)|  Complete Mediation.            | All accesses to objects must be checked to ensure that they are allowed. | TLS provides Simple and [Mutual (Two-Way) Authentication](https://en.wikipedia.org/wiki/Mutual_authentication) and allways once crypto keys have been verified a secure communication is stablished. 
+| 7)|  Open Design.                   | The security of a mechanism should not depend on the secrecy of its design or implementation. | The disclosure of TLS' using in software designs don't put in risk the application.
+| 8)|  Least Common Mechanism         | It disallows the sharing of mechanisms that are common to more than one user or process if the users and processes are at different levels of privilege. | TLS is a common secure mechanism shared along the application.
+| 9)|  Psychological acceptability.   | Tries maximizing the usage and adoption of the security functionality in the application by making it more usable. | TLS is a feature by default in HTTP/2. HTTP requires implement TLS and deal the crypto keys.  
+| 10)|  Weakest Link.                 | The resiliency of your software against hacker attempts will depend heavily on the protection of its weakest components. | TLS helps to harden the access to resources and secure the traffic.
+| 11)|  Leveraging Existing Components. | It focuses on ensuring that the attack surface is not increased. | TLS is a feature by default in HTTP/2 for securing data in transit and data at rest, don't try to bring or implement your own _TLS_.
 
 If this quick analysis does not convince you, then refer to the [Pillars of Security](https://en.wikipedia.org/wiki/Information_security), they are axioms and don't require be demostration.
 Organization like OWASP recommends that all security controls should be designed with the __Core pillars of Information Security__ in mind:
 
-Pillar of Security | Description                                                                   | How TLS apply?
----                | ---                                                                           | ---
-1. Confidentiality | Only allow access to data for which the user is permitted.                    | Access Control(*) using TLS and Mutual TLS Authn.
-2. Integrity       | Ensure data is not tampered or altered by unauthorised users.                 | Data no altered using TLS(*) encryption at rest.
-3. Availability    | Ensure systems and data are available to authorised users when they need it.  | Mutual TLS Authn(*) helps to availability only to authorised users.
+| # | Pillar of Security | Description                                                                   | How TLS apply?
+| - | ---                | ---                                                                           | ---
+| 1.|  Confidentiality | Only allow access to data for which the user is permitted.                    | Access Control(*) using TLS and Mutual TLS Authn.
+| 2.|  Integrity       | Ensure data is not tampered or altered by unauthorised users.                 | Data no altered using TLS(*) encryption at rest.
+| 3.|  Availability    | Ensure systems and data are available to authorised users when they need it.  | Mutual TLS Authn(*) helps to availability only to authorised users.
 
 > (*) These Axioms refer to _access control_, _data no altered_, _unauthorised users_, etc. and that is implemented following the [Identity-based Security](https://en.wikipedia.org/wiki/Identity-based_security) Strategy.
 
@@ -73,13 +75,13 @@ Pillar of Security | Description                                                
 
 ### Create an Kubernetes Cluster
 
-This blog post will use the "Building your own affordable K8s - Serie":
+This blog post will use the **Building your own affordable K8s - Serie**:
 - [Part 1 - Building your own affordable K8s to host a Service Mesh](/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane).
 - [Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress](/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress).
 - [Part 3 - Building your own affordable K8s - Certificate Manager](/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager).
 
 
-**1) Clone the Affordable K8s Cluster Git Repo and run the Terraform scripts**
+#### 1) Clone the Affordable K8s Cluster Git Repo and run the Terraform scripts
 
 I'll create a Kubernetes Cluster with this configuration:
 
@@ -121,8 +123,7 @@ $ terraform apply \
   -var cert_manager_email="cheapk8s@holisticsecurity.io"
 ```
 
-**2) Checking the K8s Cluster, NGINX Ingress Controller, Cert-Manager are running correctly**
-
+#### 2) Checking the K8s Cluster, NGINX Ingress Controller, Cert-Manager are running correctly
 
 ```sh
 // SSH to the cluster
@@ -176,7 +177,8 @@ I love [Weave Scope](https://www.weave.works/docs/scope/latest/introducing), it 
 
 > __Weave Scope__ is a visualization and monitoring tool for Docker and Kubernetes. It provides a top down view into your app as well as your entire infrastructure, and allows you to diagnose any problems with your distributed containerized app, in real time, as it is being deployed to a cloud provider.
 
-**Installing Weave Scope**  
+#### Installing Weave Scope
+
 ```sh
 # Get ssh access and in your K8s Cluster, run below command to install Weave Scope with everything by default.
 $ kubectl apply -f "https://cloud.weave.works/k8s/scope.yaml?k8s-version=$(kubectl version | base64 | tr -d '\n')"
@@ -189,7 +191,8 @@ $ kubectl get -n weave svc weave-scope-app -o jsonpath='{.spec.ports[0].targetPo
 4040
 ```
 
-**Creating NodePort service for Weave Scope**  
+#### Creating NodePort service for Weave Scope
+
 Since `ClusterIP` is for internal use only, I'll need that Weave Scope be exposed and reachable from Internet that I can make a SSH tunnel. I can do it by creating a new `NodePort` service, also I'll create and register in AWS Route 53 a fqdn for Weave-Scope, in this case it will be `weave-scope.cloud.holisticsecurity.io`, although this fqdn isn't required to make the SSH tunnel.
 ```sh
 # Let's create a NodePort Resource for Weave Scope.
@@ -207,7 +210,8 @@ $ kubectl get -n weave svc weave-scope-app-svc-np -o jsonpath='{.spec.ports[0].n
 30002
 ```
 
-**Creating a SSH tunnel to Weave Scope**  
+#### Creating a SSH tunnel to Weave Scope
+
 Now let's create a SSH tunnel from your Admin Computer over Internet to Weave Scope's NodePort service. 
 ```sh
 $ ssh -nNT -L 4002:localhost:30002 ubuntu@$(terraform output master_dns) -i ~/Downloads/ssh-key-for-us-east-1.pem
@@ -232,24 +236,24 @@ In next posts I'll explain how to:
 ## Troubleshooting
 
 1. Getting Kubernetes installation logs:
-   Access to Cluster via SSH and get the logs.
-   ```sh
-   $ cat /var/log/cloud-init-output.log
-   ```
+Access to Cluster via SSH and get the logs.
+```sh
+$ cat /var/log/cloud-init-output.log
+```
 2. Getting NGINX Ingress Controller logs:
-   ```sh
-   $ kubectl get pods -n ingress-nginx 
-   $ kubectl exec -it -n ingress-nginx nginx-ingress-controller-p5qz5 -- cat /etc/nginx/nginx.conf | grep ssl
-   $ kubectl logs -f -n ingress-nginx nginx-ingress-controller-p5qz5 | grep Error
-   $ kubectl logs -f -n ingress-nginx -lapp.kubernetes.io/name=ingress-nginx
-   $ kubectl logs -f -n ingress-nginx -lapp.kubernetes.io/part-of=ingress-nginx
-   ```
+```sh
+$ kubectl get pods -n ingress-nginx 
+$ kubectl exec -it -n ingress-nginx nginx-ingress-controller-p5qz5 -- cat /etc/nginx/nginx.conf | grep ssl
+$ kubectl logs -f -n ingress-nginx nginx-ingress-controller-p5qz5 | grep Error
+$ kubectl logs -f -n ingress-nginx -lapp.kubernetes.io/name=ingress-nginx
+$ kubectl logs -f -n ingress-nginx -lapp.kubernetes.io/part-of=ingress-nginx
+```
 3. Getting Jetstack Cert-Manager logs:
-   ```sh
-   $ kubectl get pods -n cert-manager
-   $ kubectl exec -it -n ingress-nginx cert-manager-54d94bb6fc-fmhcc -- cat /etc/nginx/nginx.conf | grep ssl
-   $ kubectl logs -f -n cert-manager cert-manager-54d94bb6fc-fmhcc 
-   $ kubectl logs -f -n cert-manager -lapp=cert-manager
-   $ kubectl logs -f -n cert-manager -lapp=cainjector
-   $ kubectl logs -f -n cert-manager -lapp=webhook
-   ```
+```sh
+$ kubectl get pods -n cert-manager
+$ kubectl exec -it -n ingress-nginx cert-manager-54d94bb6fc-fmhcc -- cat /etc/nginx/nginx.conf | grep ssl
+$ kubectl logs -f -n cert-manager cert-manager-54d94bb6fc-fmhcc 
+$ kubectl logs -f -n cert-manager -lapp=cert-manager
+$ kubectl logs -f -n cert-manager -lapp=cainjector
+$ kubectl logs -f -n cert-manager -lapp=webhook
+```

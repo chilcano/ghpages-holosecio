@@ -41,7 +41,6 @@ If you are using the Terraform scripts to create an affordable K8s Cluster I've 
 > If you want a cheap K8s Infrastructure on AWS, I recommend to use this GitHub repo I've updated for you:
 > [https://github.com/chilcano/kubeadm-aws/tree/0.2.1-chilcano](https://github.com/chilcano/kubeadm-aws/tree/0.2.1-chilcano)
 
-
 Removing existing K8s Cluster.
 ```sh
 $ terraform destroy \
@@ -103,7 +102,7 @@ $ terraform apply \
 
 ### 3. Checking recently created K8s Cluster and JetStack Cert-Manager
 
-**1. Exploring the JetStack Cert-Manager resources created in the K8s Cluster**
+#### 3.1. Exploring the JetStack Cert-Manager resources created in the K8s Cluster
 
 ```sh
 # Get SSH access to K8s master node
@@ -132,7 +131,7 @@ replicaset.apps/cert-manager-54d94bb6fc   1         1         1       5h22m
 ```
 
 
-**2. Calling Ingress' `health check` over TLS.**
+#### 3.2. Calling Ingress' `health check` over TLS.
 
 ```sh
 $ curl https://ingress-nginx.cloud.holisticsecurity.io/healthz -v -k
@@ -146,7 +145,7 @@ $ curl https://ingress-nginx.cloud.holisticsecurity.io/healthz -v -k
 * Connection #0 to host ingress-nginx.cloud.holisticsecurity.io left intact
 ```
 
-**3. Getting the TLS Certificate using `openssl`**
+#### 3.3. Getting the TLS Certificate using `openssl`
 
 ```sh
 $ echo | openssl s_client -showcerts -servername ingress-nginx.cloud.holisticsecurity.io -connect ingress-nginx.cloud.holisticsecurity.io:443 2>/dev/null | openssl x509 -inform pem -noout -text
