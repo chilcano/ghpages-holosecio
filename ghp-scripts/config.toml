@@ -7,7 +7,7 @@ publishDir = "../ghp-content/docs"
 #copyright = "Roger Carhuatocto"
 #disqusShortname = "username"
 googleAnalytics = "UA-156433649-1"
-paginate = 10
+paginate = 12
 #summaryLength = 2
 
 ###### Main menu which appears below site header.
@@ -21,13 +21,17 @@ paginate = 10
   url = "/post"
   weight = 2
 [[menu.main]]
+  name = "Categories"
+  url = "/categories"
+  weight = 3
+[[menu.main]]
   name = "Tags"
   url = "/tags"
-  weight = 3
+  weight = 4
 [[menu.main]]
   name = "About"
   url = "/about"
-  weight = 4
+  weight = 5
 [markup]
   [markup.tableOfContents]
     endLevel = 4
@@ -43,7 +47,7 @@ paginate = 10
   description = "With The Systems Thinking Methodology we are able to see any problem in a complete and holistic manner, in fact, The Systems Thinking Methodology allows us to solve complex problems (IT Security, Global Warming, World Poverty, etc.) by considering new factors, elements and variables (usability, trust, quality, risk, etc.) which were not considered initially."
   #mainSection = "posts"                      # your main section
   showAllPostsOnHomePage = false              # default
-  postsOnHomePage = 5                         # this option will be ignored if showAllPostsOnHomePage is set to true
+  postsOnHomePage = 10                        # this option will be ignored if showAllPostsOnHomePage is set to true
   tagsOverview = true                         # show tags overview by default.
   showProjectsList = true                     # show projects list by default (if projects data file exists).
   projectsUrl = "https://github.com/chilcano" # title link for projects list
@@ -74,9 +78,8 @@ paginate = 10
     author = "Janne Kemppainen"
     authorImage = "/images/janne.jpg"
 
-
 [taxonomies]
-  #tag = "categories"
+  category = "categories"
   tag = "tags"
   author = "authors"
   preserveTaxonomyNames = true
