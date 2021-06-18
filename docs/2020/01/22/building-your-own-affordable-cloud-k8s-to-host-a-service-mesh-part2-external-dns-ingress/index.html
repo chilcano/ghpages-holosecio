@@ -96,10 +96,6 @@ if (!doNotTrack) {
       
         <li><a href="/post">Writings</a></li>
       
-        <li><a href="/categories">Categories</a></li>
-      
-        <li><a href="/tags">Tags</a></li>
-      
         <li><a href="/about">About</a></li>
       
     </ul>
@@ -114,6 +110,52 @@ if (!doNotTrack) {
   
   <h1 class="posttitle" itemprop="name headline"> Building your own affordable K8s to host a Service Mesh - Part 2: External DNS and Ingress </h1>
   
+
+  <ul class="post-list">  
+      <li class="post-item">
+        <div class="meta">
+          <time datetime="2020-01-22 10:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-22</time>
+        </div>
+        <span>    
+          
+          
+          <div class="article-category">
+              
+              
+              <a class="category-link" href="/categories/cloud">cloud</a>
+              
+               · 
+              <a class="category-link" href="/categories/service-mesh">service-mesh</a>
+              
+              · 
+          </div>
+          
+          
+          <div class="article-tag">
+              
+              
+              <a class="tag-link" href="/tags/aws" rel="tag">aws</a>
+              
+               · 
+              <a class="tag-link" href="/tags/microservice" rel="tag">microservice</a>
+              
+               · 
+              <a class="tag-link" href="/tags/dns" rel="tag">dns</a>
+              
+               · 
+              <a class="tag-link" href="/tags/ingress" rel="tag">ingress</a>
+              
+               · 
+              <a class="tag-link" href="/tags/nginx" rel="tag">nginx</a>
+              
+          </div>
+          
+  
+        </span>
+      </li>  
+    </ul>
+
+
   <div class="content" itemprop="articleBody">
   
     <p>In order to get an affordable Kubernetes, every part we&rsquo;re going to use should be affordable too, and ones of the expensive and tricky things are the <a href="https://aws.amazon.com/elasticloadbalancing">AWS Elastic Load Balancing (ELB)</a> and the <a href="https://aws.amazon.com/route53">AWS Route 53 (DNS)</a>. Fortunately, Kubernetes SIGs are working to address this gap with the <a href="https://github.com/kubernetes-sigs/external-dns">Kubernetes ExternalDNS</a>.</p>
@@ -391,10 +433,6 @@ Stay tuned.</p>
         <li><a href="/">Home</a></li>
          
         <li><a href="/post">Writings</a></li>
-         
-        <li><a href="/categories">Categories</a></li>
-         
-        <li><a href="/tags">Tags</a></li>
          
         <li><a href="/about">About</a></li>
         

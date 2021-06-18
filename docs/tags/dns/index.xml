@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>external dns on Holistic Security</title>
-    <link>https://holisticsecurity.io/tags/external-dns/</link>
-    <description>Recent content in external dns on Holistic Security</description>
+    <title>dns on Holistic Security</title>
+    <link>https://holisticsecurity.io/tags/dns/</link>
+    <description>Recent content in dns on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jan 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/external-dns/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Jan 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building your own affordable K8s to host a Service Mesh - Part 2: External DNS and Ingress</title>
       <link>https://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/</link>

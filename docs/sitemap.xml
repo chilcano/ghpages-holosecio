@@ -158,9 +158,6 @@
     <loc>https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</loc>
     <lastmod>2020-03-08T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/container/</loc>
-    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/dast/</loc>
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
@@ -171,9 +168,6 @@
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/iast/</loc>
-    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/pentesting/</loc>
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/rasp/</loc>
@@ -188,13 +182,7 @@
     <loc>https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc/</loc>
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/categories/apaas/</loc>
-    <lastmod>2020-01-29T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</loc>
-    <lastmod>2020-01-29T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/data-plane/</loc>
     <lastmod>2020-01-29T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/pki/</loc>
@@ -203,13 +191,16 @@
     <loc>https://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/</loc>
     <lastmod>2020-01-22T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/external-dns/</loc>
+    <loc>https://holisticsecurity.io/tags/dns/</loc>
     <lastmod>2020-01-22T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/nginx/</loc>
     <lastmod>2020-01-22T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/</loc>
+    <lastmod>2020-01-16T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/data-plane/</loc>
     <lastmod>2020-01-16T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/</loc>

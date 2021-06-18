@@ -233,7 +233,7 @@
     </item>
     
     <item>
-      <title>kubernetes</title>
+      <title>Kubernetes</title>
       <link>https://holisticsecurity.io/tags/kubernetes/</link>
       <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
       
@@ -247,15 +247,6 @@
       <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/mlops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>container</title>
-      <link>https://holisticsecurity.io/tags/container/</link>
-      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/container/</guid>
       <description></description>
     </item>
     
@@ -274,15 +265,6 @@
       <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/iast/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pentesting</title>
-      <link>https://holisticsecurity.io/tags/pentesting/</link>
-      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/pentesting/</guid>
       <description></description>
     </item>
     
@@ -314,15 +296,6 @@
     </item>
     
     <item>
-      <title>data plane</title>
-      <link>https://holisticsecurity.io/tags/data-plane/</link>
-      <pubDate>Wed, 29 Jan 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/data-plane/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>pki</title>
       <link>https://holisticsecurity.io/tags/pki/</link>
       <pubDate>Wed, 29 Jan 2020 10:00:00 +0000</pubDate>
@@ -332,11 +305,11 @@
     </item>
     
     <item>
-      <title>external dns</title>
-      <link>https://holisticsecurity.io/tags/external-dns/</link>
+      <title>dns</title>
+      <link>https://holisticsecurity.io/tags/dns/</link>
       <pubDate>Wed, 22 Jan 2020 10:00:00 +0000</pubDate>
       
-      <guid>https://holisticsecurity.io/tags/external-dns/</guid>
+      <guid>https://holisticsecurity.io/tags/dns/</guid>
       <description></description>
     </item>
     
@@ -346,6 +319,15 @@
       <pubDate>Wed, 22 Jan 2020 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-plane</title>
+      <link>https://holisticsecurity.io/tags/data-plane/</link>
+      <pubDate>Thu, 16 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/data-plane/</guid>
       <description></description>
     </item>
     

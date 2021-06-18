@@ -62,7 +62,7 @@
     </item>
     
     <item>
-      <title>service mesh</title>
+      <title>service-mesh</title>
       <link>https://holisticsecurity.io/categories/service-mesh/</link>
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
@@ -112,15 +112,6 @@
       <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/categories/holism/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apaas</title>
-      <link>https://holisticsecurity.io/categories/apaas/</link>
-      <pubDate>Wed, 29 Jan 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/categories/apaas/</guid>
       <description></description>
     </item>
     
