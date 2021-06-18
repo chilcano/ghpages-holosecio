@@ -5,11 +5,10 @@ categories:
 comments: true
 date: "2020-04-09T10:00:00Z"
 tags:
-- remote
 - aws
 - docker
 - git
-- vs code
+- vscode
 - terraform
 title: Building an affordable remote DevOps desktop on AWS
 url: /2020/04/09/building-an-affordable-remote-devops-desktop-on-aws

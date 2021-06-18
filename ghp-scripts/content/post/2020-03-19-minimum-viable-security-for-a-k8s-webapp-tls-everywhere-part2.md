@@ -1,7 +1,7 @@
 ---
 categories:
 - cloud
-- service mesh
+- service-mesh
 comments: true
 date: "2020-03-19T00:10:00Z"
 tags:
@@ -11,7 +11,6 @@ tags:
 - x509
 - tls
 - mvp
-- HTTP Basic Auth
 title: 'Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS
   - Part2'
 url: /2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2

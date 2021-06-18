@@ -3,9 +3,7 @@ categories:
 - Bigdata
 - DevOps
 - SDLC
-- Data Science
-- AI
-- ML
+- Data-Science
 date: "2020-03-10T10:00:00Z"
 tags:
 - Kubernetes

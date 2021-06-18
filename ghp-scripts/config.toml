@@ -48,7 +48,7 @@ paginate = 12
   #mainSection = "posts"                      # your main section
   showAllPostsOnHomePage = false              # default
   postsOnHomePage = 10                        # this option will be ignored if showAllPostsOnHomePage is set to true
-  tagsOverview = true                         # show tags overview by default.
+  tagsOverview = false                         # show tags overview by default.
   showProjectsList = true                     # show projects list by default (if projects data file exists).
   projectsUrl = "https://github.com/chilcano" # title link for projects list
 
@@ -57,6 +57,8 @@ paginate = 12
 
   # Post page settings
   show_updated = false                        # default
+
+  custom_css = ["css/custom-cactus-style-white.css"]
 
   [params.comments]
     enabled = false                           # default
@@ -74,9 +76,6 @@ paginate = 12
 [[params.social]]
   name = "twitter"
   link = "https://twitter.com/chilcano" 
-
-    author = "Janne Kemppainen"
-    authorImage = "/images/janne.jpg"
 
 [taxonomies]
   category = "categories"

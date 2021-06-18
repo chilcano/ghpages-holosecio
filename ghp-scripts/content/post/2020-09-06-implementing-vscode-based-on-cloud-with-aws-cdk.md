@@ -9,7 +9,7 @@ tags:
 - cdk
 - cloudformation
 - code-server
-- vscode ide
+- vscode
 title: Implementing VSCode-based (Code-Server) on Cloud with AWS CDK
 url: /2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk
 type: post

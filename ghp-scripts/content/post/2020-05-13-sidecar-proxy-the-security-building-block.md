@@ -1,7 +1,6 @@
 ---
 categories:
 - cloud
-- apaas
 - security
 - patterns
 comments: true
@@ -11,7 +10,6 @@ tags:
 - proxy
 - ingress
 - gateway
-- load balancer
 title: 'Sidecar Proxy: The Security Building Block'
 url: /2020/05/13/sidecar-proxy-the-security-building-block
 type: post

@@ -1,13 +1,12 @@
 ---
 categories:
 - cloud
-- apaas
-- service mesh
+- service-mesh
 comments: true
 date: "2020-03-08T10:00:00Z"
 tags:
 - aws
-- kubernetes
+- k8s
 - microservice
 - x509
 - tls

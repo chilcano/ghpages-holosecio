@@ -5,11 +5,10 @@ categories:
 comments: true
 date: "2020-04-20T10:00:00Z"
 tags:
-- remote
 - aws
 - docker
 - git
-- vs code
+- vscode
 - terraform
 - packer
 title: Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with

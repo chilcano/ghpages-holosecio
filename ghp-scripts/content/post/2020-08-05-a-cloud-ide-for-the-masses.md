@@ -9,7 +9,6 @@ tags:
 - k8s
 - docker
 - git
-- wsl
 - linux
 - raspberry pi
 title: A Cloud IDE for the masses
