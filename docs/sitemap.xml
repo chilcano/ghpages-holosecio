@@ -38,7 +38,7 @@
     <loc>https://holisticsecurity.io/tags/</loc>
     <lastmod>2020-09-06T11:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/vscode-ide/</loc>
+    <loc>https://holisticsecurity.io/tags/vscode/</loc>
     <lastmod>2020-09-06T11:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/08/05/a-cloud-ide-for-the-masses/</loc>
@@ -59,19 +59,10 @@
     <loc>https://holisticsecurity.io/tags/raspberry-pi/</loc>
     <lastmod>2020-08-05T18:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/wsl/</loc>
-    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/apaas/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/gateway/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/ingress/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/load-balancer/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/patterns/</loc>
@@ -95,13 +86,7 @@
     <loc>https://holisticsecurity.io/tags/packer/</loc>
     <lastmod>2020-04-20T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/remote/</loc>
-    <lastmod>2020-04-20T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/terraform/</loc>
-    <lastmod>2020-04-20T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/vs-code/</loc>
     <lastmod>2020-04-20T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws/</loc>
@@ -134,9 +119,6 @@
     <loc>https://holisticsecurity.io/tags/windows-10/</loc>
     <lastmod>2020-03-29T18:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/http-basic-auth/</loc>
-    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/microservice/</loc>
     <lastmod>2020-03-19T00:10:00+00:00</lastmod>
   </url><url>
@@ -155,9 +137,6 @@
     <loc>https://holisticsecurity.io/tags/x509/</loc>
     <lastmod>2020-03-19T00:10:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/categories/ai/</loc>
-    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/categories/bigdata/</loc>
     <lastmod>2020-03-10T10:00:00+00:00</lastmod>
   </url><url>
@@ -168,9 +147,6 @@
     <lastmod>2020-03-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/kubernetes/</loc>
-    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/ml/</loc>
     <lastmod>2020-03-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/mlops/</loc>
@@ -211,6 +187,9 @@
   </url><url>
     <loc>https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc/</loc>
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/apaas/</loc>
+    <lastmod>2020-01-29T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</loc>
     <lastmod>2020-01-29T10:00:00+00:00</lastmod>

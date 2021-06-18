@@ -44,11 +44,11 @@
     </item>
     
     <item>
-      <title>vscode ide</title>
-      <link>https://holisticsecurity.io/tags/vscode-ide/</link>
+      <title>vscode</title>
+      <link>https://holisticsecurity.io/tags/vscode/</link>
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
-      <guid>https://holisticsecurity.io/tags/vscode-ide/</guid>
+      <guid>https://holisticsecurity.io/tags/vscode/</guid>
       <description></description>
     </item>
     
@@ -98,15 +98,6 @@
     </item>
     
     <item>
-      <title>wsl</title>
-      <link>https://holisticsecurity.io/tags/wsl/</link>
-      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/wsl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>gateway</title>
       <link>https://holisticsecurity.io/tags/gateway/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
@@ -121,15 +112,6 @@
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/ingress/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>load balancer</title>
-      <link>https://holisticsecurity.io/tags/load-balancer/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/load-balancer/</guid>
       <description></description>
     </item>
     
@@ -161,29 +143,11 @@
     </item>
     
     <item>
-      <title>remote</title>
-      <link>https://holisticsecurity.io/tags/remote/</link>
-      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/remote/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>terraform</title>
       <link>https://holisticsecurity.io/tags/terraform/</link>
       <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/terraform/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vs code</title>
-      <link>https://holisticsecurity.io/tags/vs-code/</link>
-      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/vs-code/</guid>
       <description></description>
     </item>
     
@@ -229,15 +193,6 @@
       <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/windows-10/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTTP Basic Auth</title>
-      <link>https://holisticsecurity.io/tags/http-basic-auth/</link>
-      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/http-basic-auth/</guid>
       <description></description>
     </item>
     
