@@ -7,11 +7,7 @@ categories:
 comments: true
 date: "2020-02-10T10:00:00Z"
 tags:
-- kubernetes
-- container
-- microservice
 - sca
-- pentesting
 - SAST
 - DAST
 - IAST

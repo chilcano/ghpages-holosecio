@@ -1,0 +1,62 @@
+{{ define "main"}}
+<div id="archive">
+  <ul class="post-list">
+  {{ range (sort .Paginator.Pages "Date" "desc") }}
+    {{ $pageYear := (.Date.Format "2006") }}
+    {{ if (ne $pageYear ($.Scratch.Get "year")) }}
+    {{ $.Scratch.Set "year" $pageYear }}
+    <h2>{{ $pageYear }}</h2>
+    {{ end }}
+
+
+    <li class="post-item">
+      <div class="meta">
+        <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
+      </div>
+      <span>    
+        
+        {{ if gt .Params.categories 0 }}
+        <div class="article-category">
+            {{ range $index, $value := .Params.categories }}
+            {{ if gt $index 0 }} {{ print "·" }} {{ end }}
+            <a class="category-link" href="{{ "/categories/" | relLangURL }}{{ $value | urlize }}">{{ $value }}</a>
+            {{ end }}
+            {{ print "·" }} 
+        </div>
+        {{ end }}
+        {{ if gt .Params.tags 0 }}
+        <div class="article-tag">
+            {{ range $index, $value := .Params.tags }}
+            {{ if gt $index 0 }} {{ print "·" }} {{ end }}
+            <a class="tag-link" href="{{ "/tags/" | relLangURL }}{{ $value | urlize }}" rel="tag">{{ $value }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+
+      </span>
+    </li>
+    <li class="post-item">
+      <span>    
+        <a href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
+      </span>
+    </li>
+    <li class="post-item"><span>&nbsp;</span></li>
+
+    {{ end }}
+  </ul>
+  {{ partial "pagination.html" . }}
+
+  <ul class="post-list">
+    <h2>Posts before ...</h2>
+    <li class="post-item">
+      <div class="meta">
+        2019/Oct/14
+      </div>
+      <span>
+        <a href="https://holisticsecurity.wordpress.com">https://holisticsecurity.wordpress.com</a>
+      </span> 
+    </li>
+  </ul>  
+</div>
+
+{{ end }}

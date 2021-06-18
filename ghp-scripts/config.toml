@@ -21,17 +21,9 @@ paginate = 12
   url = "/post"
   weight = 2
 [[menu.main]]
-  name = "Categories"
-  url = "/categories"
-  weight = 3
-[[menu.main]]
-  name = "Tags"
-  url = "/tags"
-  weight = 4
-[[menu.main]]
   name = "About"
   url = "/about"
-  weight = 5
+  weight = 3
 [markup]
   [markup.tableOfContents]
     endLevel = 4

@@ -1,17 +1,13 @@
 ---
 categories:
 - cloud
-- apaas
-- service mesh
+- service-mesh
 comments: true
 date: "2020-01-22T10:00:00Z"
 tags:
 - aws
-- docker
-- kubernetes
-- data plane
 - microservice
-- external dns
+- dns
 - ingress
 - nginx
 title: 'Building your own affordable K8s to host a Service Mesh - Part 2: External

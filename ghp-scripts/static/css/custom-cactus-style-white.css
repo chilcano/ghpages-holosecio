@@ -22,7 +22,7 @@
     }
     .article-tag:before,
     .article-category:before {
-      content: "|";
+      content: "";
     }
   }
 
