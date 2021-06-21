@@ -1,16 +1,8 @@
 ---
-categories:
-- cloud
-- service-mesh
+categories: [Cloud, Service Mesh]
 comments: true
 date: "2020-03-08T10:00:00Z"
-tags:
-- aws
-- k8s
-- microservice
-- x509
-- tls
-- mvp
+tags:  [AWS, K8s, Microservice, X509, TLS, MVP]
 title: 'Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1'
 url: /2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1
 type: post

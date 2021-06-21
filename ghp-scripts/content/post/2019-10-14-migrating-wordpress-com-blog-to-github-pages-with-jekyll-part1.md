@@ -1,16 +1,8 @@
 ---
-categories:
-- misc
-- cms
+categories: [Misc, CMS]
 comments: true
 date: "2019-10-14T15:58:00Z"
-tags:
-- github
-- cdk
-- wordpress
-- jekyll
-- migration
-- python
+tags: [Github, Wordpress, Jekyll, Python]
 title: Migrating WordPress.com's blog to GitHub Pages with Jekyll - Part 1
 url: /2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1
 type: post

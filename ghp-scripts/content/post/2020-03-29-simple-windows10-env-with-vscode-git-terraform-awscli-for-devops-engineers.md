@@ -1,15 +1,8 @@
 ---
-categories:
-- cloud
-- devops
+categories: [Cloud, DevOps]
 comments: true
 date: "2020-03-29T18:00:00Z"
-tags:
-- awscli
-- k8s
-- terraform
-- windows 10
-- git
+tags: [AWS, K8s, Terraform, Windows 10, Git]
 title: Simple Windows 10 Environment for DevOps Engineers
 url: /2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers
 type: post

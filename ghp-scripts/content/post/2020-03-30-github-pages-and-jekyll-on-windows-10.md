@@ -1,13 +1,8 @@
 ---
-categories:
-- misc
-- cms
+categories: [misc, cms]
 comments: true
 date: "2020-03-30T22:00:00Z"
-tags:
-- github
-- jekyll
-- ruby
+tags: [Github, Jekyll, Ruby]
 title: GitHub Pages and Jekyll on Windows 10
 url: /2020/03/30/github-pages-and-jekyll-on-windows-10
 type: post

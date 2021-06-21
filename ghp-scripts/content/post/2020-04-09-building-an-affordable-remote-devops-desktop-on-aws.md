@@ -1,15 +1,8 @@
 ---
-categories:
-- cloud
-- devops
+categories: [Cloud, DevOps]
 comments: true
 date: "2020-04-09T10:00:00Z"
-tags:
-- aws
-- docker
-- git
-- vscode
-- terraform
+tags: [AWS, Docker, git, VSCode, Terraform]
 title: Building an affordable remote DevOps desktop on AWS
 url: /2020/04/09/building-an-affordable-remote-devops-desktop-on-aws
 type: post

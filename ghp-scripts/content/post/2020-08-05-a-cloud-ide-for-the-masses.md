@@ -1,16 +1,8 @@
 ---
-categories:
-- cloud
-- devops
+categories: [Cloud, DevOps, Linux]
 comments: true
 date: "2020-08-05T18:00:00Z"
-tags:
-- aws
-- k8s
-- docker
-- git
-- linux
-- raspberry pi
+tags: [AWS, Docker, git, Raspberry Pi]
 title: A Cloud IDE for the masses
 url: /2020/08/05/a-cloud-ide-for-the-masses
 type: post

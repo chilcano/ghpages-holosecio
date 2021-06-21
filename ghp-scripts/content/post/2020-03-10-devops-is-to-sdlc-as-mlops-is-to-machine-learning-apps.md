@@ -1,14 +1,7 @@
 ---
-categories:
-- Bigdata
-- DevOps
-- SDLC
-- Data-Science
+categories: [Bigdata, DevOps, MLOps]
 date: "2020-03-10T10:00:00Z"
-tags:
-- Kubernetes
-- MLOps
-- CI/CD
+tags: [K8s, CI/CD]
 title: DevOps is to SDLC as MLOps is to Machine Learning Applications
 url: /2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps
 type: post

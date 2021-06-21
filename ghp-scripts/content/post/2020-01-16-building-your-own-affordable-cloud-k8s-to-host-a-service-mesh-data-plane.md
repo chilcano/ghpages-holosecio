@@ -1,13 +1,8 @@
 ---
-categories:
-- cloud
-- service-mesh
+categories: [Cloud, Service Mesh]
 comments: true
 date: "2020-01-16T10:00:00Z"
-tags:
-- aws
-- data-plane
-- microservice
+tags: [AWS, Data Plane, Microservice]
 title: Building your own affordable K8s to host a Service Mesh - Part 1
 url: /2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane
 type: post

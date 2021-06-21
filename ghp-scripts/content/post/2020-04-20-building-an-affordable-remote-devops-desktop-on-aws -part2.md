@@ -1,18 +1,9 @@
 ---
-categories:
-- cloud
-- devops
+categories: [Cloud, DevOps]
 comments: true
 date: "2020-04-20T10:00:00Z"
-tags:
-- aws
-- docker
-- git
-- vscode
-- terraform
-- packer
-title: Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with
-  Packer)
+tags: [AWS, Docker, git, VSCode, Terraform, Packer]
+title: Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with Packer)
 url: /2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2
 type: post
 layout: single_simple

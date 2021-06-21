@@ -1,10 +1,8 @@
 ---
-categories:
-- development
+categories: [Development]
 comments: false
 date: "2019-12-08T10:00:00Z"
-tags:
-- python
+tags: [Python]
 title: Setting a Python 3 local programming environment
 url: /2019/12/08/python3-setting-a-local-env
 type: post

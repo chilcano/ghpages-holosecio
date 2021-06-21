@@ -3,7 +3,7 @@
   {{ $AllRegularPagesCount := len .Site.RegularPages }}
   <ul>
   {{ range $elem := .Site.Taxonomies.categories.Alphabetical }}
-    <li><a href="{{ $elem.Page.Permalink }}">{{- .Page.Title -}} ({{ $elem.Count }})</a></li>
+    <li><a href="{{ $elem.Page.Permalink }}">{{- .Page.Title -}} &nbsp; ({{ $elem.Count }})</a></li>
   {{ end }}
   </ul>
 </span>

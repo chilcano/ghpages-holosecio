@@ -1,14 +1,8 @@
 ---
-categories:
-- cloud
-- service-mesh
+categories: [Cloud, Service Mesh]
 comments: true
 date: "2020-01-29T10:00:00Z"
-tags:
-- aws
-- microservice
-- x509
-- pki
+tags: [AWS, Microservice, X509, PKI]
 title: 'Building your own affordable K8s to host a Service Mesh - Part 3: Certificate
   Manager'
 url: /2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager

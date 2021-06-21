@@ -1,14 +1,8 @@
 ---
-categories:
-- misc
-- linux
+categories: [Misc, Linux]
 comments: false
 date: "2019-10-18T00:00:00Z"
-tags:
-- ubuntu
-- apple
-- magic mouse
-- bluetooth
+tags: [Ubuntu, Apple, magic mouse, Bluetooth]
 title: Tips & Tricks to use the Apple Magic Mouse in your Linux Ubuntu
 url: /2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu
 type: post

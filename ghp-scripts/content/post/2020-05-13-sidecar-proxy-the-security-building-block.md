@@ -1,15 +1,8 @@
 ---
-categories:
-- cloud
-- security
-- patterns
+categories: [Cloud, Security, Pattern]
 comments: true
 date: "2020-05-13T00:00:00Z"
-tags:
-- sidecar
-- proxy
-- ingress
-- gateway
+tags: [Sidecar, Proxy, Ingress, Gateway]
 title: 'Sidecar Proxy: The Security Building Block'
 url: /2020/05/13/sidecar-proxy-the-security-building-block
 type: post

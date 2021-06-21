@@ -1,15 +1,8 @@
 ---
-categories:
-- cloud
-- service-mesh
+categories: [Cloud, Service Mesh]
 comments: true
 date: "2020-01-22T10:00:00Z"
-tags:
-- aws
-- microservice
-- dns
-- ingress
-- nginx
+tags: [AWS, Microservice, DNS, Ingress, Nginx]
 title: 'Building your own affordable K8s to host a Service Mesh - Part 2: External
   DNS and Ingress'
 url: /2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress
