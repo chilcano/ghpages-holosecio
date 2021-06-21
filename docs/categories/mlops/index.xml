@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kubernetes on Holistic Security</title>
-    <link>https://holisticsecurity.io/tags/kubernetes/</link>
-    <description>Recent content in Kubernetes on Holistic Security</description>
+    <title>MLOps on Holistic Security</title>
+    <link>https://holisticsecurity.io/categories/mlops/</link>
+    <description>Recent content in MLOps on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Mar 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Mar 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/categories/mlops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DevOps is to SDLC as MLOps is to Machine Learning Applications</title>
       <link>https://holisticsecurity.io/2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps/</link>

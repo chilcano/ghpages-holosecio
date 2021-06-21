@@ -53,10 +53,7 @@
     <loc>https://holisticsecurity.io/tags/git/</loc>
     <lastmod>2020-08-05T18:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/k8s/</loc>
-    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/linux/</loc>
+    <loc>https://holisticsecurity.io/categories/linux/</loc>
     <lastmod>2020-08-05T18:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/raspberry-pi/</loc>
@@ -68,7 +65,7 @@
     <loc>https://holisticsecurity.io/tags/ingress/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/categories/patterns/</loc>
+    <loc>https://holisticsecurity.io/categories/pattern/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/proxy/</loc>
@@ -113,7 +110,7 @@
     <loc>https://holisticsecurity.io/tags/ruby/</loc>
     <lastmod>2020-03-30T22:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/awscli/</loc>
+    <loc>https://holisticsecurity.io/tags/k8s/</loc>
     <lastmod>2020-03-29T18:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</loc>
@@ -143,19 +140,10 @@
     <loc>https://holisticsecurity.io/categories/bigdata/</loc>
     <lastmod>2020-03-10T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/categories/data-science/</loc>
-    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps/</loc>
     <lastmod>2020-03-10T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/kubernetes/</loc>
-    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/mlops/</loc>
-    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/sdlc/</loc>
+    <loc>https://holisticsecurity.io/categories/mlops/</loc>
     <lastmod>2020-03-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</loc>
@@ -180,6 +168,9 @@
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/sca/</loc>
+    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/sdlc/</loc>
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc/</loc>
@@ -209,9 +200,6 @@
     <loc>https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/</loc>
     <lastmod>2019-12-10T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/migration/</loc>
-    <lastmod>2019-12-10T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/python/</loc>
     <lastmod>2019-12-10T10:00:00+00:00</lastmod>
   </url><url>
@@ -224,16 +212,13 @@
     <loc>https://holisticsecurity.io/2019/12/08/python3-setting-a-local-env/</loc>
     <lastmod>2019-12-08T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/dual/</loc>
-    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</loc>
     <lastmod>2019-10-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/extended/</loc>
+    <loc>https://holisticsecurity.io/tags/dual/</loc>
     <lastmod>2019-10-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/categories/linux/</loc>
+    <loc>https://holisticsecurity.io/tags/extended/</loc>
     <lastmod>2019-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/monitor/</loc>

@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Sep 2020 11:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>aws</title>
+      <title>AWS</title>
       <link>https://holisticsecurity.io/tags/aws/</link>
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>cdk</title>
+      <title>CDK</title>
       <link>https://holisticsecurity.io/tags/cdk/</link>
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>cloudformation</title>
+      <title>CloudFormation</title>
       <link>https://holisticsecurity.io/tags/cloudformation/</link>
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
@@ -35,7 +35,7 @@
     </item>
     
     <item>
-      <title>code-server</title>
+      <title>Code-Server</title>
       <link>https://holisticsecurity.io/tags/code-server/</link>
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
@@ -44,7 +44,7 @@
     </item>
     
     <item>
-      <title>vscode</title>
+      <title>VSCode</title>
       <link>https://holisticsecurity.io/tags/vscode/</link>
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
@@ -53,7 +53,7 @@
     </item>
     
     <item>
-      <title>docker</title>
+      <title>Docker</title>
       <link>https://holisticsecurity.io/tags/docker/</link>
       <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
       
@@ -62,7 +62,7 @@
     </item>
     
     <item>
-      <title>git</title>
+      <title>Git</title>
       <link>https://holisticsecurity.io/tags/git/</link>
       <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
       
@@ -71,25 +71,7 @@
     </item>
     
     <item>
-      <title>k8s</title>
-      <link>https://holisticsecurity.io/tags/k8s/</link>
-      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/k8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://holisticsecurity.io/tags/linux/</link>
-      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>raspberry pi</title>
+      <title>Raspberry Pi</title>
       <link>https://holisticsecurity.io/tags/raspberry-pi/</link>
       <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
       
@@ -98,7 +80,7 @@
     </item>
     
     <item>
-      <title>gateway</title>
+      <title>Gateway</title>
       <link>https://holisticsecurity.io/tags/gateway/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
@@ -107,7 +89,7 @@
     </item>
     
     <item>
-      <title>ingress</title>
+      <title>Ingress</title>
       <link>https://holisticsecurity.io/tags/ingress/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
@@ -116,7 +98,7 @@
     </item>
     
     <item>
-      <title>proxy</title>
+      <title>Proxy</title>
       <link>https://holisticsecurity.io/tags/proxy/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
@@ -125,7 +107,7 @@
     </item>
     
     <item>
-      <title>sidecar</title>
+      <title>Sidecar</title>
       <link>https://holisticsecurity.io/tags/sidecar/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
@@ -134,7 +116,7 @@
     </item>
     
     <item>
-      <title>packer</title>
+      <title>Packer</title>
       <link>https://holisticsecurity.io/tags/packer/</link>
       <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
       
@@ -143,7 +125,7 @@
     </item>
     
     <item>
-      <title>terraform</title>
+      <title>Terraform</title>
       <link>https://holisticsecurity.io/tags/terraform/</link>
       <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
       
@@ -152,7 +134,7 @@
     </item>
     
     <item>
-      <title>github</title>
+      <title>Github</title>
       <link>https://holisticsecurity.io/tags/github/</link>
       <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
       
@@ -161,7 +143,7 @@
     </item>
     
     <item>
-      <title>jekyll</title>
+      <title>Jekyll</title>
       <link>https://holisticsecurity.io/tags/jekyll/</link>
       <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
       
@@ -170,7 +152,7 @@
     </item>
     
     <item>
-      <title>ruby</title>
+      <title>Ruby</title>
       <link>https://holisticsecurity.io/tags/ruby/</link>
       <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
       
@@ -179,16 +161,16 @@
     </item>
     
     <item>
-      <title>awscli</title>
-      <link>https://holisticsecurity.io/tags/awscli/</link>
+      <title>K8s</title>
+      <link>https://holisticsecurity.io/tags/k8s/</link>
       <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
       
-      <guid>https://holisticsecurity.io/tags/awscli/</guid>
+      <guid>https://holisticsecurity.io/tags/k8s/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>windows 10</title>
+      <title>Windows 10</title>
       <link>https://holisticsecurity.io/tags/windows-10/</link>
       <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
       
@@ -197,7 +179,7 @@
     </item>
     
     <item>
-      <title>microservice</title>
+      <title>Microservice</title>
       <link>https://holisticsecurity.io/tags/microservice/</link>
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
@@ -206,7 +188,7 @@
     </item>
     
     <item>
-      <title>mvp</title>
+      <title>MVP</title>
       <link>https://holisticsecurity.io/tags/mvp/</link>
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
@@ -215,7 +197,7 @@
     </item>
     
     <item>
-      <title>tls</title>
+      <title>TLS</title>
       <link>https://holisticsecurity.io/tags/tls/</link>
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
@@ -224,29 +206,11 @@
     </item>
     
     <item>
-      <title>x509</title>
+      <title>X509</title>
       <link>https://holisticsecurity.io/tags/x509/</link>
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/x509/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://holisticsecurity.io/tags/kubernetes/</link>
-      <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MLOps</title>
-      <link>https://holisticsecurity.io/tags/mlops/</link>
-      <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/mlops/</guid>
       <description></description>
     </item>
     
@@ -287,7 +251,7 @@
     </item>
     
     <item>
-      <title>sca</title>
+      <title>SCA</title>
       <link>https://holisticsecurity.io/tags/sca/</link>
       <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
       
@@ -296,7 +260,7 @@
     </item>
     
     <item>
-      <title>pki</title>
+      <title>PKI</title>
       <link>https://holisticsecurity.io/tags/pki/</link>
       <pubDate>Wed, 29 Jan 2020 10:00:00 +0000</pubDate>
       
@@ -305,7 +269,7 @@
     </item>
     
     <item>
-      <title>dns</title>
+      <title>DNS</title>
       <link>https://holisticsecurity.io/tags/dns/</link>
       <pubDate>Wed, 22 Jan 2020 10:00:00 +0000</pubDate>
       
@@ -314,7 +278,7 @@
     </item>
     
     <item>
-      <title>nginx</title>
+      <title>Nginx</title>
       <link>https://holisticsecurity.io/tags/nginx/</link>
       <pubDate>Wed, 22 Jan 2020 10:00:00 +0000</pubDate>
       
@@ -323,7 +287,7 @@
     </item>
     
     <item>
-      <title>data-plane</title>
+      <title>Data Plane</title>
       <link>https://holisticsecurity.io/tags/data-plane/</link>
       <pubDate>Thu, 16 Jan 2020 10:00:00 +0000</pubDate>
       
@@ -332,16 +296,7 @@
     </item>
     
     <item>
-      <title>migration</title>
-      <link>https://holisticsecurity.io/tags/migration/</link>
-      <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/migration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
+      <title>Python</title>
       <link>https://holisticsecurity.io/tags/python/</link>
       <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
       
@@ -350,7 +305,7 @@
     </item>
     
     <item>
-      <title>wordpress</title>
+      <title>Wordpress</title>
       <link>https://holisticsecurity.io/tags/wordpress/</link>
       <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
       
@@ -359,7 +314,7 @@
     </item>
     
     <item>
-      <title> dual</title>
+      <title>Dual</title>
       <link>https://holisticsecurity.io/tags/dual/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -368,7 +323,7 @@
     </item>
     
     <item>
-      <title>extended</title>
+      <title>Extended</title>
       <link>https://holisticsecurity.io/tags/extended/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -377,7 +332,7 @@
     </item>
     
     <item>
-      <title>monitor</title>
+      <title>Monitor</title>
       <link>https://holisticsecurity.io/tags/monitor/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -386,7 +341,7 @@
     </item>
     
     <item>
-      <title>screen</title>
+      <title>Screen</title>
       <link>https://holisticsecurity.io/tags/screen/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -395,7 +350,7 @@
     </item>
     
     <item>
-      <title>tablet</title>
+      <title>Tablet</title>
       <link>https://holisticsecurity.io/tags/tablet/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -404,7 +359,7 @@
     </item>
     
     <item>
-      <title>ubuntu</title>
+      <title>Ubuntu</title>
       <link>https://holisticsecurity.io/tags/ubuntu/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -413,7 +368,7 @@
     </item>
     
     <item>
-      <title>apple</title>
+      <title>Apple</title>
       <link>https://holisticsecurity.io/tags/apple/</link>
       <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -422,7 +377,7 @@
     </item>
     
     <item>
-      <title>bluetooth</title>
+      <title>Bluetooth</title>
       <link>https://holisticsecurity.io/tags/bluetooth/</link>
       <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
       

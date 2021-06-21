@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Sep 2020 11:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>cloud</title>
+      <title>Cloud</title>
       <link>https://holisticsecurity.io/categories/cloud/</link>
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
@@ -26,16 +26,25 @@
     </item>
     
     <item>
-      <title>patterns</title>
-      <link>https://holisticsecurity.io/categories/patterns/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      <title>Linux</title>
+      <link>https://holisticsecurity.io/categories/linux/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
       
-      <guid>https://holisticsecurity.io/categories/patterns/</guid>
+      <guid>https://holisticsecurity.io/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>security</title>
+      <title>Pattern</title>
+      <link>https://holisticsecurity.io/categories/pattern/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/categories/pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
       <link>https://holisticsecurity.io/categories/security/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
@@ -44,7 +53,7 @@
     </item>
     
     <item>
-      <title>cms</title>
+      <title>CMS</title>
       <link>https://holisticsecurity.io/categories/cms/</link>
       <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
       
@@ -53,7 +62,7 @@
     </item>
     
     <item>
-      <title>misc</title>
+      <title>Misc</title>
       <link>https://holisticsecurity.io/categories/misc/</link>
       <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
       
@@ -62,7 +71,7 @@
     </item>
     
     <item>
-      <title>service-mesh</title>
+      <title>Service Mesh</title>
       <link>https://holisticsecurity.io/categories/service-mesh/</link>
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
@@ -80,20 +89,11 @@
     </item>
     
     <item>
-      <title>Data-Science</title>
-      <link>https://holisticsecurity.io/categories/data-science/</link>
+      <title>MLOps</title>
+      <link>https://holisticsecurity.io/categories/mlops/</link>
       <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
       
-      <guid>https://holisticsecurity.io/categories/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sdlc</title>
-      <link>https://holisticsecurity.io/categories/sdlc/</link>
-      <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/categories/sdlc/</guid>
+      <guid>https://holisticsecurity.io/categories/mlops/</guid>
       <description></description>
     </item>
     
@@ -107,7 +107,7 @@
     </item>
     
     <item>
-      <title>holism</title>
+      <title>Holism</title>
       <link>https://holisticsecurity.io/categories/holism/</link>
       <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
       
@@ -116,20 +116,20 @@
     </item>
     
     <item>
-      <title>development</title>
-      <link>https://holisticsecurity.io/categories/development/</link>
-      <pubDate>Sun, 08 Dec 2019 10:00:00 +0000</pubDate>
+      <title>SDLC</title>
+      <link>https://holisticsecurity.io/categories/sdlc/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
       
-      <guid>https://holisticsecurity.io/categories/development/</guid>
+      <guid>https://holisticsecurity.io/categories/sdlc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://holisticsecurity.io/categories/linux/</link>
-      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      <title>Development</title>
+      <link>https://holisticsecurity.io/categories/development/</link>
+      <pubDate>Sun, 08 Dec 2019 10:00:00 +0000</pubDate>
       
-      <guid>https://holisticsecurity.io/categories/linux/</guid>
+      <guid>https://holisticsecurity.io/categories/development/</guid>
       <description></description>
     </item>
     
