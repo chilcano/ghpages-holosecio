@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<!-- TODO: gallery -->
+  <div class="content" itemprop="articleBody">
+  <!-- h1 title added -->
+  <h1 class="posttitle" itemprop="name headline"> {{ .Title }} </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Categories</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">
+        {{ partial "topics_categories_list.html" . }}
+      </td>
+      <td style="vertical-align: top;">
+        {{ partial "topics_tags_list.html" . }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+</article>
+{{ end }}

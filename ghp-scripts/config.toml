@@ -17,13 +17,18 @@ paginate = 12
   url = "/"
   weight = 1
 [[menu.main]]
-  name = "Writings"
+  ##name = "Writings"
+  name = "Blog"
   url = "/post"
   weight = 2
 [[menu.main]]
+  name = "Taxonomy"
+  url = "/taxonomy"
+  weight = 3
+[[menu.main]]
   name = "About"
   url = "/about"
-  weight = 3
+  weight = 4
 [markup]
   [markup.tableOfContents]
     endLevel = 4
@@ -40,7 +45,8 @@ paginate = 12
   #mainSection = "posts"                      # your main section
   showAllPostsOnHomePage = false              # default
   postsOnHomePage = 10                        # this option will be ignored if showAllPostsOnHomePage is set to true
-  tagsOverview = false                         # show tags overview by default.
+  tagsOverview = true                         # show tags overview by default.
+  showTaxonomiesOnHomePage = false            # custom param to show taxonomies on home page
   showProjectsList = true                     # show projects list by default (if projects data file exists).
   projectsUrl = "https://github.com/chilcano" # title link for projects list
 

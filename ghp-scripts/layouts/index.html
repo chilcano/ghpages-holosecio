@@ -37,10 +37,12 @@
   </section>
 
   <section id="writing">
-    <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">Writings</a></span>  
+    <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">Blog</a></span>  
     
-    {{ partial "topics_tags.html" . }} 
-    {{ partial "topics_categories.html" . }}
+    {{ if (and (and (isset .Site.Params "showtaxonomiesonhomepage") (eq .Site.Params.showTaxonomiesOnHomePage true))) }}
+      {{ partial "topics_tags_cloud.html" . }} 
+      {{ partial "topics_categories_cloud.html" . }}
+    {{ end }}
 
     <span class="h2">Most recent</span>
     {{ $showAllPostsOnHomePage := false }}

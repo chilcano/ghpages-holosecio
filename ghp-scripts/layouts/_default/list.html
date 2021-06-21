@@ -1,5 +1,8 @@
 {{ define "main"}}
 <div id="archive">
+  <!-- h1 title added -->
+  <h1 class="posttitle" itemprop="name headline"> {{ .Title }} </h1>
+
   <ul class="post-list">
   {{ range (sort .Paginator.Pages "Date" "desc") }}
     {{ $pageYear := (.Date.Format "2006") }}
@@ -8,13 +11,11 @@
     <h2>{{ $pageYear }}</h2>
     {{ end }}
 
-
     <li class="post-item">
       <div class="meta">
         <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
       </div>
       <span>    
-        
         {{ if gt .Params.categories 0 }}
         <div class="article-category">
             {{ range $index, $value := .Params.categories }}
@@ -32,7 +33,6 @@
             {{ end }}
         </div>
         {{ end }}
-
       </span>
     </li>
     <li class="post-item">
@@ -46,17 +46,5 @@
   </ul>
   {{ partial "pagination.html" . }}
 
-  <ul class="post-list">
-    <h2>Posts before ...</h2>
-    <li class="post-item">
-      <div class="meta">
-        2019/Oct/14
-      </div>
-      <span>
-        <a href="https://holisticsecurity.wordpress.com">https://holisticsecurity.wordpress.com</a>
-      </span> 
-    </li>
-  </ul>  
 </div>
-
 {{ end }}

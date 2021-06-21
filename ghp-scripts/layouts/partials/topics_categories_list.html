@@ -1,11 +1,10 @@
 {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.categories) 0)) }}
-<span class="h2">Categories</span>
 <span class="widget tagcloud">
   {{ $AllRegularPagesCount := len .Site.RegularPages }}
+  <ul>
   {{ range $elem := .Site.Taxonomies.categories.Alphabetical }}
-  <a style="font-size: {{ (add 0.5 (mul 2 (div (float $elem.Count) $AllRegularPagesCount))) }}rem;" href="{{ $elem.Page.Permalink }}">
-    {{- .Page.Title -}}
-  </a>
+    <li><a href="{{ $elem.Page.Permalink }}">{{- .Page.Title -}} ({{ $elem.Count }})</a></li>
   {{ end }}
+  </ul>
 </span>
 {{ end }}
