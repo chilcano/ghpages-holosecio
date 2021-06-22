@@ -6,7 +6,22 @@
     <description>Recent content in Misc on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2020 22:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/categories/misc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 20:00:00 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/categories/misc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From a WordPress.com&#39;s blog to Jekyll and then to Hugo</title>
+      <link>https://holisticsecurity.io/post/2021-06-20-from-wordpress-blog-to-jekyll-and-then-to-hugo/</link>
+      <pubDate>Sun, 20 Jun 2021 20:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/post/2021-06-20-from-wordpress-blog-to-jekyll-and-then-to-hugo/</guid>
+      <description>&lt;p&gt;I promise, I won&amp;rsquo;t change it again. I had (still have it) my first blog on &lt;a href=&#34;https://holisticsecurity.wordpress.com&#34;&gt;WordPress.com&lt;/a&gt; but I migrated it to &lt;a href=&#34;https://pages.github.com&#34;&gt;GitHub Pages&lt;/a&gt; using &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;, after 2 years using it I made the decission to replace Jekyll for &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The decision was made based on these points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I didn&amp;rsquo;t want waste my time fixing Ruby (Jekyll) dependencies every time I wanted to write a new blog post.&lt;/li&gt;
+&lt;li&gt;I wanted to continue using Github Pages with the same workflow and reuse previous published content.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20210620-from-wordpress-to-jekyll-then-to-hugo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>GitHub Pages and Jekyll on Windows 10</title>
       <link>https://holisticsecurity.io/2020/03/30/github-pages-and-jekyll-on-windows-10/</link>

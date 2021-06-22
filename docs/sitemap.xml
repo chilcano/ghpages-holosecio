@@ -2,16 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://holisticsecurity.io/tags/caddy/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/docker/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/post/2021-06-22-hands-on-with-tls-authentication-for-microservices/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/post/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/proxy/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/security/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/sidecar/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/talk/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/tls/</loc>
+    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/api/</loc>
+    <lastmod>2021-06-21T22:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/gateway/</loc>
+    <lastmod>2021-06-21T22:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/post/2021-06-21-un-layer4-layer7-gateway-para-proteger-tu-data/</loc>
+    <lastmod>2021-06-21T22:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://holisticsecurity.io/taxonomy/</loc>
     <lastmod>2021-06-21T11:31:09+01:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/cms/</loc>
+    <lastmod>2021-06-20T20:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/post/2021-06-20-from-wordpress-blog-to-jekyll-and-then-to-hugo/</loc>
+    <lastmod>2021-06-20T20:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/github/</loc>
+    <lastmod>2021-06-20T20:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/go/</loc>
+    <lastmod>2021-06-20T20:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/hugo/</loc>
+    <lastmod>2021-06-20T20:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/jekyll/</loc>
+    <lastmod>2021-06-20T20:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/misc/</loc>
+    <lastmod>2021-06-20T20:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/wordpress/</loc>
+    <lastmod>2021-06-20T20:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/about/</loc>
     <lastmod>2021-02-02T11:31:09+01:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/aws/</loc>
-    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/</loc>
     <lastmod>2020-09-06T11:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/cdk/</loc>
@@ -29,25 +95,13 @@
     <loc>https://holisticsecurity.io/categories/devops/</loc>
     <lastmod>2020-09-06T11:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/</loc>
-    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk/</loc>
-    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/post/</loc>
-    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/</loc>
     <lastmod>2020-09-06T11:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/vscode/</loc>
     <lastmod>2020-09-06T11:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/08/05/a-cloud-ide-for-the-masses/</loc>
-    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/docker/</loc>
     <lastmod>2020-08-05T18:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/git/</loc>
@@ -59,22 +113,10 @@
     <loc>https://holisticsecurity.io/tags/raspberry-pi/</loc>
     <lastmod>2020-08-05T18:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/gateway/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/ingress/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/pattern/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/proxy/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/security/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/sidecar/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/05/13/sidecar-proxy-the-security-building-block/</loc>
@@ -92,19 +134,7 @@
     <loc>https://holisticsecurity.io/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws/</loc>
     <lastmod>2020-04-09T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/categories/cms/</loc>
-    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/github/</loc>
-    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/2020/03/30/github-pages-and-jekyll-on-windows-10/</loc>
-    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/jekyll/</loc>
-    <lastmod>2020-03-30T22:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/misc/</loc>
     <lastmod>2020-03-30T22:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/ruby/</loc>
@@ -129,9 +159,6 @@
     <lastmod>2020-03-19T00:10:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/service-mesh/</loc>
-    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/tls/</loc>
     <lastmod>2020-03-19T00:10:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/x509/</loc>
@@ -201,9 +228,6 @@
     <lastmod>2019-12-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/python/</loc>
-    <lastmod>2019-12-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/wordpress/</loc>
     <lastmod>2019-12-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/development/</loc>

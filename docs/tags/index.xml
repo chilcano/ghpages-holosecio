@@ -6,7 +6,115 @@
     <description>Recent content in Tags on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Sep 2020 11:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Jun 2021 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Caddy</title>
+      <link>https://holisticsecurity.io/tags/caddy/</link>
+      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/caddy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://holisticsecurity.io/tags/docker/</link>
+      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Proxy</title>
+      <link>https://holisticsecurity.io/tags/proxy/</link>
+      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sidecar</title>
+      <link>https://holisticsecurity.io/tags/sidecar/</link>
+      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/sidecar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TLS</title>
+      <link>https://holisticsecurity.io/tags/tls/</link>
+      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/tls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>https://holisticsecurity.io/tags/api/</link>
+      <pubDate>Mon, 21 Jun 2021 22:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gateway</title>
+      <link>https://holisticsecurity.io/tags/gateway/</link>
+      <pubDate>Mon, 21 Jun 2021 22:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/gateway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://holisticsecurity.io/tags/github/</link>
+      <pubDate>Sun, 20 Jun 2021 20:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://holisticsecurity.io/tags/go/</link>
+      <pubDate>Sun, 20 Jun 2021 20:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://holisticsecurity.io/tags/hugo/</link>
+      <pubDate>Sun, 20 Jun 2021 20:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jekyll</title>
+      <link>https://holisticsecurity.io/tags/jekyll/</link>
+      <pubDate>Sun, 20 Jun 2021 20:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wordpress</title>
+      <link>https://holisticsecurity.io/tags/wordpress/</link>
+      <pubDate>Sun, 20 Jun 2021 20:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/wordpress/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>AWS</title>
       <link>https://holisticsecurity.io/tags/aws/</link>
@@ -53,15 +161,6 @@
     </item>
     
     <item>
-      <title>Docker</title>
-      <link>https://holisticsecurity.io/tags/docker/</link>
-      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Git</title>
       <link>https://holisticsecurity.io/tags/git/</link>
       <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
@@ -80,38 +179,11 @@
     </item>
     
     <item>
-      <title>Gateway</title>
-      <link>https://holisticsecurity.io/tags/gateway/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/gateway/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Ingress</title>
       <link>https://holisticsecurity.io/tags/ingress/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/ingress/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Proxy</title>
-      <link>https://holisticsecurity.io/tags/proxy/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sidecar</title>
-      <link>https://holisticsecurity.io/tags/sidecar/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/sidecar/</guid>
       <description></description>
     </item>
     
@@ -130,24 +202,6 @@
       <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/terraform/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Github</title>
-      <link>https://holisticsecurity.io/tags/github/</link>
-      <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jekyll</title>
-      <link>https://holisticsecurity.io/tags/jekyll/</link>
-      <pubDate>Mon, 30 Mar 2020 22:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/jekyll/</guid>
       <description></description>
     </item>
     
@@ -193,15 +247,6 @@
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/mvp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TLS</title>
-      <link>https://holisticsecurity.io/tags/tls/</link>
-      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/tls/</guid>
       <description></description>
     </item>
     
@@ -301,15 +346,6 @@
       <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wordpress</title>
-      <link>https://holisticsecurity.io/tags/wordpress/</link>
-      <pubDate>Tue, 10 Dec 2019 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/wordpress/</guid>
       <description></description>
     </item>
     
