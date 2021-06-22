@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# source <(curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/resources/hugo_publish_holosec.sh)
+# source <(curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/hugo_publish_site.sh)
 
 # Ref: https://gohugo.io/hosting-and-deployment/hosting-on-github/
 
@@ -26,7 +26,7 @@ done
 
 printf "\n"
 echo "###############################################################"
-echo "#             Publishing HoloSec Hugo content                 #"
+echo "#             Publishing Website / Hugo content               #"
 echo "###############################################################"
 
 CURRENT_DIR="${PWD##*/}"
@@ -62,7 +62,7 @@ printf "==> Regenerating Hugo content in <root>/${HUGO_CONTENT_DIR}/docs dir. \n
 cd ${HUGO_SCRIPTS_DIR}; hugo
 
 printf "==> Updating Hugo content in '${HUGO_CONTENT_BRANCH}' branch. \n"
-msg="Published content (hugo_publish_holosec.sh)"
+msg="Published content (hugo_publish_site.sh)"
 cd ../${HUGO_CONTENT_DIR}; git add .; git commit -m "$msg" --quiet
 
 printf "\n"
