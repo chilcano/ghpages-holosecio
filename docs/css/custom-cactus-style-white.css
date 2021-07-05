@@ -29,3 +29,14 @@
   .post-title {
     font-style: normal;
   }
+
+.highlight {
+  padding: 5px 5px;
+  background: #2b2b2b;
+}
+
+article .content blockquote {
+  margin: 0.5rem 5px;
+  padding: 0em 0px;
+  font-weight: normal;
+}
