@@ -3,7 +3,7 @@ categories: [Cloud, SDLC, DevSecOps, Holism]
 comments: true
 date: "2020-02-10T10:00:00Z"
 tags: [SCA, SAST, DAST, IAST, RASP]
-title: Security along the Container-based SDLC
+title: Security along the Cloud based SDLC
 url: /2020/02/10/security-along-the-container-based-sdlc
 type: post
 layout: single_simple
