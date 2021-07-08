@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 10 Feb 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/dast/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Security along the SDLC for Cloud-Native Apps</title>
-      <link>https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc/</link>
+      <link>https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/</link>
       <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
       
-      <guid>https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc/</guid>
+      <guid>https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/</guid>
       <description>&lt;p&gt;Nowadays, containers are becoming the standard deployment unit of software, and that in the Cloud-based Application Security world means 2 things:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The Software Applications are &lt;strong&gt;distributed&lt;/strong&gt; into containers.&lt;/li&gt;
