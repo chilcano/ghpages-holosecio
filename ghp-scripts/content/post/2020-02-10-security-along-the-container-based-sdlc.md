@@ -3,7 +3,7 @@ categories: [Cloud, SDLC, DevSecOps, Holism]
 comments: true
 date: "2020-02-10T10:00:00Z"
 tags: [SCA, SAST, DAST, IAST, RASP]
-title: Security along the Cloud based SDLC
+title: Security along the SDLC for Cloud-Native Apps
 url: /2020/02/10/security-along-the-container-based-sdlc
 type: post
 layout: single_simple
@@ -18,8 +18,10 @@ In other words, using containers we are adding a new element to be considered al
 
 Said that, the purpose of this post is explain you how to embed **Security along the Container-based SDLC (Secure-SDLC)** and how to **DevOps** practices will help its adoption.
 
-[![](/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png)](/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png)   
-_<center>Security along the Container-based SDLC - Overview</center>_
+[![](/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png)](/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png)
+{{< rawhtml >}} 
+<i><center>Security along the Container-based SDLC - Overview</center></i>
+{{</ rawhtml >}}
 
 <!--more--> 
 
@@ -74,7 +76,9 @@ DevOps is a culture of collaboration between teams, Developers and Operations wh
 
 But what about security?. Security people also work towards to same goal. Then why they don't work together where everyone is responsible for security. If so, that will allow teams release software faster, reliably and secure.
 
-## Open Source Container Security Tools
+{{< rawhtml >}}<a id="oss-sec-list"></a>{{</ rawhtml >}}
+
+## Open Source Security Tools
 
 The criteria I'm going to use to select the tools are:
 
@@ -82,8 +86,6 @@ The criteria I'm going to use to select the tools are:
 2. DevOps friendly.
 3. Recommended to be used with The Best Security Practices (OWASP, NIST, etc.)
 4. Open Source.
-
-[](#)
 
 {{< rawhtml >}}
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTLn8bLX-Sp6JEbKcJIludCb6wJbTM-5xV5te94srdYnmLYutCu9vcgmiWcc2taioH5cJcj2xXH_Ba/pubhtml?widget=true&amp;headers=false" width="800" height="800"></iframe>
