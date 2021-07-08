@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Feb 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/sast/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Security along the Cloud based SDLC</title>
+      <title>Security along the SDLC for Cloud-Native Apps</title>
       <link>https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc/</link>
       <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
       
@@ -20,8 +20,12 @@
 &lt;/ul&gt;
 &lt;p&gt;In other words, using containers we are adding a new element to be considered along the &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;Software Development Life Cycle (SDLC)&lt;/a&gt; as a new additional piece of software (containers), and from Architectural point of view, those new pieces of software will be distributed.&lt;/p&gt;
 &lt;p&gt;Said that, the purpose of this post is explain you how to embed &lt;strong&gt;Security along the Container-based SDLC (Secure-SDLC)&lt;/strong&gt; and how to &lt;strong&gt;DevOps&lt;/strong&gt; practices will help its adoption.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;br&gt;
-&lt;em&gt;&lt;!-- raw HTML omitted --&gt;Security along the Container-based SDLC - Overview&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;
+
+ 
+&lt;i&gt;&lt;center&gt;Security along the Container-based SDLC - Overview&lt;/center&gt;&lt;/i&gt;
+
+&lt;/p&gt;</description>
     </item>
     
   </channel>
