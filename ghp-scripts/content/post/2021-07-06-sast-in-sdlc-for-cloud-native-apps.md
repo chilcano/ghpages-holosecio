@@ -6,6 +6,9 @@ type: post
 layout: single_simple
 categories: [Cloud, SDLC, DevSecOps, Holism]
 tags: [SAST]
+url: /2021/07/06/sast-in-sdlc-for-cloud-native-apps
+aliases: 
+   - /post//2021/07/06/sast-in-sdlc-for-cloud-native-apps
 ---
 
 [SAST](https://en.wikipedia.org/wiki/Static_application_security_testing) stands for "Static Application Security Testing" and it is used to identify vulnerabilities by reviewing the source code. The best point or place to implement this Security Testing, and according the Security Best Practices, is in early stages of your CI/CD Pipeline. But What about of SAST in Cloud Native Applications?. You will see in this post 😉 how to deal with that using only opensource.

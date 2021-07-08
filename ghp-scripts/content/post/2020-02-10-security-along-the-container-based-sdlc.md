@@ -4,7 +4,11 @@ comments: true
 date: "2020-02-10T10:00:00Z"
 tags: [SCA, SAST, DAST, IAST, RASP]
 title: Security along the SDLC for Cloud-Native Apps
-url: /2020/02/10/security-along-the-container-based-sdlc
+url: /2020/02/10/security-along-the-sdlc-for-cloud-native-apps
+aliases: 
+   - /2020/02/10/security-along-the-container-based-sdlc
+   - /post/2020/02/10/security-along-the-container-based-sdlc
+   - /post/2020/02/10/security-along-the-sdlc-for-cloud-native-apps
 type: post
 layout: single_simple
 ---
