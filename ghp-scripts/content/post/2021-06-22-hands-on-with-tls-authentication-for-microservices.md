@@ -6,6 +6,7 @@ type: post
 layout: single_simple
 categories: [Security, Talk]
 tags: [Docker, TLS, Sidecar, Caddy, Proxy]
+url: /2021/06/22/hands-on-with-tls-authentication-for-microservices
 ---
 
 On March 25th I had the opportunity to collaborate with a workshop at [The DevOps Playground](https://www.meetup.com/DevOpsPlayground/) Meetup about How to use TLS to authenticate and authorize communications between and to Microservices. 

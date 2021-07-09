@@ -6,6 +6,7 @@ type: post
 layout: single_simple
 categories: [Security, Talk]
 tags: [API, Gateway, Sidecar, Proxy]
+url: /2021/06/21/un-layer4-layer7-gateway-para-proteger-tu-data
 ---
 
 On October 15th, 2020 I had the opportunity to participate at [API Addicts Days 20](https://apiaddictsday.apiaddicts.org/), the biggest evento of API experts in Latam and Spain. 

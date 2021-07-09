@@ -7,6 +7,7 @@ layout: single_simple
 categories: [Misc, CMS]
 tags: [Github, Wordpress, Jekyll, Hugo, Go]
 comments: true
+url: /2021/06/20/from-wordpress-blog-to-jekyll-and-then-to-hugo
 ---
 
 I promise, I won't change it again. I had (still have it) my first blog on [WordPress.com](https://holisticsecurity.wordpress.com) but I migrated it to [GitHub Pages](https://pages.github.com) using [Jekyll](https://jekyllrb.com), after 2 years using it I made the decission to replace Jekyll for [Hugo](https://gohugo.io). 
