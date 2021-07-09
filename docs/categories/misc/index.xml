@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 20 Jun 2021 20:00:00 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/categories/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>From a WordPress.com&#39;s blog to Jekyll and then to Hugo</title>
-      <link>https://holisticsecurity.io/post/2021-06-20-from-wordpress-blog-to-jekyll-and-then-to-hugo/</link>
+      <link>https://holisticsecurity.io/2021/06/20/from-wordpress-blog-to-jekyll-and-then-to-hugo/</link>
       <pubDate>Sun, 20 Jun 2021 20:00:00 +0200</pubDate>
       
-      <guid>https://holisticsecurity.io/post/2021-06-20-from-wordpress-blog-to-jekyll-and-then-to-hugo/</guid>
+      <guid>https://holisticsecurity.io/2021/06/20/from-wordpress-blog-to-jekyll-and-then-to-hugo/</guid>
       <description>&lt;p&gt;I promise, I won&amp;rsquo;t change it again. I had (still have it) my first blog on &lt;a href=&#34;https://holisticsecurity.wordpress.com&#34;&gt;WordPress.com&lt;/a&gt; but I migrated it to &lt;a href=&#34;https://pages.github.com&#34;&gt;GitHub Pages&lt;/a&gt; using &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;, after 2 years using it I made the decission to replace Jekyll for &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The decision was made based on these points:&lt;/p&gt;
 &lt;ul&gt;
