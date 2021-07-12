@@ -47,17 +47,21 @@ I'm going to list only a few SAST tools, but if you want to browse the full list
 | 4.  | [AWS Serverless Rules](https://github.com/awslabs/serverless-rules) | ![]()                                                 | Serverless Patterns in CloudFormation |
 | 5.  | [Bandit](https://github.com/PyCQA/bandit)                   | ![](/assets/blog20210706_sast/sast-bandit.png)             | Python code |
 | 6.  | [Checkmarx KICS](https://github.com/Checkmarx/kics)         | ![](/assets/blog20210706_sast/sast-checkmarx-kics.png)     | Terraform (.tf, tfvars), CloudFormation (.json or .yaml), Ansible (.yaml), Dockerfile, K8s manifests, OpenAPI (.json or .yaml) |
-| 7.  | [Clair](https://github.com/quay/clair)                      | ![](/assets/blog20210706_sast/sast-clair.png)              | Containers                            |
-| 8.  | [Dagda](https://github.com/eliasgranderubio/dagda)          | ![]()                                                      | Containers and monitor Docker daemon  |
-| 9.  | [Dockle](https://github.com/goodwithtech/dockle)            | ![](/assets/blog20210706_sast/sast-dockle.png)             | Containers and support CIS Benchmarks |
-| 10. | [GolangCI-Lint](https://github.com/golangci/golangci-lint)  | ![](/assets/blog20210706_sast/sast-golangci-lint.png)      | Golang code |
-| 11. | [GoSec](https://github.com/securego/gosec)                  | ![](/assets/blog20210706_sast/sast-gosec.png)              | Golang code |
-| 12. | [PHPStan](https://github.com/phpstan/phpstan)               | ![](/assets/blog20210706_sast/sast-phpstan.png)            | PHP code    |
-| 13. | [Pylint](https://www.pylint.org)                            | ![](/assets/blog20210706_sast/sast-pylint.png)             | Python code |
-| 14. | [Skyscanner CFrippe](https://github.com/Skyscanner/cfrippe) | ![](/assets/blog20210706_sast/sast-skyscanner-cfrippe.png) | CloudFormation (.json, .yaml). Rules in Python |
-| 15. | [SonarQube CE](https://www.sonarqube.org)                   | ![](/assets/blog20210706_sast/sast-sonarqube.png)          | Platform and carry out analysis of over 20 programming languages |
-| 16. | [Stelligent cfn_nag](https://github.com/stelligent/cfn_nag) | ![](/assets/blog20210706_sast/sast-stelligent-cfn_nag.png) | CloudFormation (.json, .yaml). Rules in Ruby   |
-| 17. | [Terraform Linter](https://github.com/terraform-linters/tflint)  | ![]()                                                 | Terraform (.tf, .tfvars) |
+| 7.  | [Checkov](https://github.com/bridgecrewio/checkov)          | ![](/assets/blog20210706_sast/sast-checkov.png)              | Terraform, CloudFormation, Kubernetes, Dockerfile, ARM Templates. |
+| 8.  | [Clair](https://github.com/quay/clair)                      | ![](/assets/blog20210706_sast/sast-clair.png)              | Containers                            |
+| 9.  | [Dagda](https://github.com/eliasgranderubio/dagda)          | ![]()                                                      | Containers and monitor Docker daemon  |
+| 10.  | [Dockle](https://github.com/goodwithtech/dockle)            | ![](/assets/blog20210706_sast/sast-dockle.png)             | Containers and support CIS Benchmarks |
+| 11. | [GolangCI-Lint](https://github.com/golangci/golangci-lint)  | ![](/assets/blog20210706_sast/sast-golangci-lint.png)      | Golang code |
+| 12. | [GoSec](https://github.com/securego/gosec)                  | ![](/assets/blog20210706_sast/sast-gosec.png)              | Golang code |
+| 13. | [huskyCI](https://github.com/globocom/huskyCI)              | ![](/assets/blog20210706_sast/sast-huskyci.png)            | Orchestrate security test (Python, JS, Ruby, Tf, Golang, Java, ...) and centralizes all results |
+| 14. | [PHPStan](https://github.com/phpstan/phpstan)               | ![](/assets/blog20210706_sast/sast-phpstan.png)            | PHP code    |
+| 15. | [Pylint](https://www.pylint.org)                            | ![](/assets/blog20210706_sast/sast-pylint.png)             | Python code |
+| 16. | [Skyscanner CFrippe](https://github.com/Skyscanner/cfrippe) | ![](/assets/blog20210706_sast/sast-skyscanner-cfrippe.png) | CloudFormation (.json, .yaml). Rules in Python |
+| 17. | [SonarQube CE](https://www.sonarqube.org)                   | ![](/assets/blog20210706_sast/sast-sonarqube.png)          | Platform and carry out analysis of over 20 programming languages |
+| 18. | [SpotBugs](https://github.com/spotbugs/spotbugs)            | ![](/assets/blog20210706_sast/sast-spotbugs.png)           | Java. SpotBugs is the spiritual successor of FindBugs.   |
+| 19. | [Stelligent cfn_nag](https://github.com/stelligent/cfn_nag) | ![](/assets/blog20210706_sast/sast-stelligent-cfn_nag.png) | CloudFormation (.json, .yaml). Rules in Ruby   |
+| 20. | [Terraform Linter](https://github.com/terraform-linters/tflint)  | ![]()                                                 | Terraform (.tf, .tfvars) |
+| 21. | [tfsec](https://github.com/aquasecurity/tfsec)      | ![](/assets/blog20210706_sast/sast-tfsec.png)              | Terraform templates and support Terraform CDK. |
 |-    |                                                                  |                                                       |                          |
 
 ## Designing the CI/CD Pipeline with a SAST stages
