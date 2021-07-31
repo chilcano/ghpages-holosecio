@@ -122,3 +122,14 @@ xyz
 
 1. [Awesome Open Source / The Top 254 Static Analysis Open Source Projects](https://awesomeopensource.com/projects/static-analysis)
 2. [analysis-tools-dev / static-analysis](https://github.com/analysis-tools-dev/static-analysis)
+
+How do I add new user accounts with SSH access to my Amazon EC2 Linux instance?
+https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/
+
+How can I use a single SSH key pair for all my AWS Regions?
+https://aws.amazon.com/premiumsupport/knowledge-center/ec2-ssh-key-pair-regions/
+https://alestic.com/2010/10/ec2-ssh-keys/
+
+ssh-keygen / samples
+https://linux.101hacks.com/unix/ssh-keygen/
+
