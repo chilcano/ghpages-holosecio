@@ -33,7 +33,7 @@ For example, a standard Cloud Native Application stack is composed of:
 4. Infrastructure as Code (Terraform, CloudFormation, Kubernetes manifests, ...)
 5. Configuration code (Chef, Bash, Ansible, ...)
 
-Then, we are going to require 5 or less different SAST tools to review statically the code for each kind of code or artifact. Below I show a SAST tool list where you can pickup any tool for convenience or requirements.
+Then, we are going to require 5 or less different SAST tools to review statically the code for each kind of code or artifact. Below I show a SAST tool list where you can pickup any tool for convenience or based on your requirements.
 
 ### Opensource SAST tools for Cloud-Native stacks
 
@@ -64,27 +64,27 @@ I'm going to list only a few SAST tools, but if you want to browse the full list
 | 21. | [tfsec](https://github.com/aquasecurity/tfsec)      | ![](/assets/blog20210706_sast/sast-tfsec.png)              | Terraform templates and support Terraform CDK. |
 |-    |                                                                  |                                                       |                          |
 
-## Designing the CI/CD Pipeline with a SAST stages
+## The CI/CD Tooling and the Pipeline with SAST 
+
+In order to embed the SAST process in our CI/CD pipeline, we will need at least 3 things:
+
+1. The CI/CD server
+  * It will orchestrate the multiple tasks (stages) defined in our CI/CD workflow.
+  * A CI/CD workflow or pipeline is a sequence of tasks or stages. In this post, I'm going to use Jenkins with a pipeline with 4 stages: clone the GIT repository, run the SAST tools, get the report or outcomes and promote the code if the code is free of bugs.
+2. The SAST tool(s)
+  * It will allow us to scan for vulnerabilities in our IaC (Terraform, Ansible, CloudFormation, Docker, Kubernetes, etc.) used in the project.
+  * As above, there are many SAST tool, each one is for each type of code. That means we will need one or more SAST tool. Although I could use AWS Cfn-Lint or AquaSec Trivy, I choose KICKS because It integrates multiple IaC Linters in one. 
+3. The CI/CD portal server
+  * It will work as our web portal to consolidate all our outcomes in a single point. 
+  * Initially, I wanted to use SonarQube, but unfortunatelly it has limitations to [import third party generated reports](https://docs.sonarqube.org/latest/analysis/external-issues/), although It can be used as SAST tool as well, in this post I'm going to use Jenkins and HTML reports.
 
 [![](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png)](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png)
 {{< rawhtml >}}
 <i><center>SAST stage in CI/CD Pipeline</center></i>
 {{</ rawhtml >}}
 
-I am going to pick up the next tools to implement my CI/CD Pipeline with SAST stages:
 
-1. Jenkins
-  * It will be our CI/CD Server and will orchestrate our CI/CD workflow.
-2. SonarQube
-  * It will work as our Platform to consolidate all our outcomes, it has multiple default Linters (Python, Golang, etc) that will be used as a SAST tool according the source code in our project.
-3. Checkmarx KICS
-  * It will allow us scan for vulnerabilities in our IaC (Terraform, Ansible, CloudFormation, Docker, Kubernetes, etc.) used in our project.
-
-### Why Checkmarx KICS
-
-Although I could use AWS Cfn-Lint or AquaSec Trivy, I choose KICKS because It integrates multiple IaC Linters in one.
-
-## Implementing the CI/CD Pipeline with a SAST stages
+## Implementing the CI/CD Pipeline with a SAST stage
 
 * I'm going to use AWS EC2 to deploy everything.
 * Everything will be Dockerized.
