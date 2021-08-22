@@ -1,8 +1,8 @@
 ---
 categories: [Cloud, SDLC, DevSecOps, Holism]
+tags: [SCA, SAST, DAST, IAST, RASP]
 comments: true
 date: "2020-02-10T10:00:00Z"
-tags: [SCA, SAST, DAST, IAST, RASP]
 title: Security along the SDLC for Cloud-Native Apps
 url: /2020/02/10/security-along-the-sdlc-for-cloud-native-apps
 aliases: 

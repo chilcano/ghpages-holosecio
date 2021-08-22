@@ -1,9 +1,9 @@
 ---
-title:  "Security along the Container-based SDLC - OSS Tool List"
-date:   2020-02-10 10:00:00 +0100
 categories: ['cloud','sdlc','DevSecOps'] 
 tags: ['kubernetes', 'container', 'microservice', 'sca', 'pentesting', 'SAST', 'DAST', 'IAST', 'RASP']
 comments: false
+date: "2020-02-10T10:00:00Z"
+title: "Security along the SDLC for Cloud-Native Apps - OSS Tool List"
 #url: 2020-02-10-security-along-the-container-based-sdlc-oss-tool-list-ro
 #layout: embedded-content
 #layout: single
