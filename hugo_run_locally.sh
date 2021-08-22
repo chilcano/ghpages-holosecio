@@ -7,9 +7,8 @@ echo "###############################################################"
 echo "#                    Running Hugo locally                     #"
 echo "###############################################################"
 
-
-IP_ADDRESS_ETH0=$(ip a s eth0)
 IP_ADDRESS=""
+IP_ADDRESS_ETH0=$(ip a s eth0)
 
 if [ $? == 0 ]; then
     # eth0 exist
