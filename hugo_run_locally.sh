@@ -19,7 +19,7 @@ else
     echo "Eth0 device doesn't exist. Using 'hostname -I'."
     IP_LIST=$(hostname -I)
     IP_LIST_ARRAY=($IP_LIST)
-    IP_ADDRESS=IP_LIST_ARRAY[0]
+    IP_ADDRESS=${IP_LIST_ARRAY[0]}
 fi
 
 hugo server --source ghp-scripts --bind 0.0.0.0 --baseURL http://${IP_ADDRESS}:1313/ -D -v
