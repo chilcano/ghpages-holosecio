@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Caddy on Holistic Security</title>
+    <link>https://holisticsecurity.io/tags/caddy/</link>
+    <description>Recent content in Caddy on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Jun 2021 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/caddy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hands on with TLS Authentication for Microservices</title>
+      <link>https://holisticsecurity.io/2021/06/22/hands-on-with-tls-authentication-for-microservices/</link>
+      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/2021/06/22/hands-on-with-tls-authentication-for-microservices/</guid>
+      <description>&lt;p&gt;On March 25th I had the opportunity to collaborate with a workshop at &lt;a href=&#34;https://www.meetup.com/DevOpsPlayground/&#34;&gt;The DevOps Playground&lt;/a&gt; Meetup about How to use TLS to authenticate and authorize communications between and to Microservices.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20210622-devops-playground-mtls-authn-for-microservices.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This event was very special for me because it was my second event in English after many years. There are many things to improve, but that does not discourage me from following this path, in fact I am already preparing the next workshop.
+From here I thank &lt;a href=&#34;https://www.meetup.com/DevOpsPlayground/&#34;&gt;The DevOps Playground&lt;/a&gt; and &lt;a href=&#34;https://ecs.co.uk&#34;&gt;ECS&lt;/a&gt; for supporting me before, during and after the event, I also thank everyone who attended the playground, and if you want read the presentation, go through the code or watch the playground session again, below you will find the details:&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

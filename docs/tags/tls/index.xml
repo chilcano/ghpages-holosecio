@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TLS on Holistic Security</title>
+    <link>https://holisticsecurity.io/tags/tls/</link>
+    <description>Recent content in TLS on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Jun 2021 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/tls/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hands on with TLS Authentication for Microservices</title>
+      <link>https://holisticsecurity.io/2021/06/22/hands-on-with-tls-authentication-for-microservices/</link>
+      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/2021/06/22/hands-on-with-tls-authentication-for-microservices/</guid>
+      <description>&lt;p&gt;On March 25th I had the opportunity to collaborate with a workshop at &lt;a href=&#34;https://www.meetup.com/DevOpsPlayground/&#34;&gt;The DevOps Playground&lt;/a&gt; Meetup about How to use TLS to authenticate and authorize communications between and to Microservices.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20210622-devops-playground-mtls-authn-for-microservices.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This event was very special for me because it was my second event in English after many years. There are many things to improve, but that does not discourage me from following this path, in fact I am already preparing the next workshop.
+From here I thank &lt;a href=&#34;https://www.meetup.com/DevOpsPlayground/&#34;&gt;The DevOps Playground&lt;/a&gt; and &lt;a href=&#34;https://ecs.co.uk&#34;&gt;ECS&lt;/a&gt; for supporting me before, during and after the event, I also thank everyone who attended the playground, and if you want read the presentation, go through the code or watch the playground session again, below you will find the details:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2</title>
+      <link>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</link>
+      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this post I&amp;rsquo;ll explain how to enable and configure &lt;a href=&#34;https://en.wikipedia.org/wiki/Basic_access_authentication&#34;&gt;HTTP Basic Authentication&lt;/a&gt; over TLS in the &lt;a href=&#34;https://www.weave.works/oss/scope&#34;&gt;Weave Scope&lt;/a&gt; webapp running in the recently created K8s Cluster.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1</title>
+      <link>https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</link>
+      <pubDate>Sun, 08 Mar 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) is a concept borrowed from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Minimum_viable_product&#34;&gt;Minimum Viable Product&lt;/a&gt; (MVP) concept about the Product Development Strategy and from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Pareto_principle&#34;&gt;Pareto Principle or 80/20 rule&lt;/a&gt;. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).&lt;/p&gt;
+&lt;p&gt;The purpose of this post is to explain how to implement &lt;strong&gt;TLS everywhere&lt;/strong&gt; to become &lt;strong&gt;MVSec&lt;/strong&gt; (roughly 80% of security with 20% of working) for a &lt;strong&gt;Kubernetised Webapp hosted on AWS&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;
+
+
+&lt;i&gt;&lt;center&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let&#39;s Encrypt&lt;/center&gt;&lt;/i&gt;
+
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

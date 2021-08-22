@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2 | Holistic Security</title>
+  <meta name="description" content="With The Systems Thinking Methodology we are able to see any problem in a complete and holistic manner, in fact, The Systems Thinking Methodology allows us to solve complex problems (IT Security, Global Warming, World Poverty, etc.) by considering new factors, elements and variables (usability, trust, quality, risk, etc.) which were not considered initially.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2" />
+<meta property="og:description" content="In the first blog post I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
+Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the JekyllImport::Importers::WordpressDotCom, to Markdown format by using a simple Python script.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-12-10T10:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-10T10:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2"/>
+<meta name="twitter:description" content="In the first blog post I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
+Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the JekyllImport::Importers::WordpressDotCom, to Markdown format by using a simple Python script.
+"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://holisticsecurity.io/css/style-white.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://holisticsecurity.io/images/favicon.ico" />
+
+  
+  
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  
+  
+
+  <link rel="stylesheet" href="https://holisticsecurity.io/css/custom-cactus-style-white.css">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://holisticsecurity.io/">
+  
+    <div id="logo" style="background-image: url(https://holisticsecurity.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Holistic Security</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/post">Blog</a></li>
+      
+        <li><a href="/taxonomy">Taxonomy</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+  <h1 class="posttitle" itemprop="name headline"> Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2 </h1>
+
+  <ul class="post-list">  
+      <li class="post-item">
+        <div class="meta">
+          <time datetime="2019-12-10 10:00:00 &#43;0000 UTC" itemprop="datePublished">2019-12-10</time>
+        </div>
+        <span>    
+          
+          
+          <div class="article-category">
+              
+              
+              <a class="category-link" href="/categories/misc">Misc</a>
+              
+               · 
+              <a class="category-link" href="/categories/cms">CMS</a>
+              
+              · 
+          </div>
+          
+          
+          <div class="article-tag">
+              
+              
+              <a class="tag-link" href="/tags/github" rel="tag">Github</a>
+              
+               · 
+              <a class="tag-link" href="/tags/wordpress" rel="tag">Wordpress</a>
+              
+               · 
+              <a class="tag-link" href="/tags/jekyll" rel="tag">Jekyll</a>
+              
+               · 
+              <a class="tag-link" href="/tags/python" rel="tag">Python</a>
+              
+          </div>
+          
+  
+        </span>
+      </li>  
+    </ul>
+
+  <div class="content" itemprop="articleBody">
+  
+    <p>In the first blog post <a href="/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1" title="Migrating WordPress.com's blog to GitHub Pages with Jekyll - Part 1">I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages</a>. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
+Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the <code>JekyllImport::Importers::WordpressDotCom</code>, to Markdown format by using a simple Python script.</p>
+<p><img src="/assets/img/20191210-wp-github-jekyll-python-part2-1.png" alt="Migrating WordPress.com&rsquo;s blog to GitHub Pages by using Jekyll Part2"></p>
+<h2 id="lookfeel-themes-and-layouts">Look&amp;Feel: Themes and Layouts</h2>
+<p>When I created the Jekyll site (by running the <code>jekyll new &lt;PATH&gt;</code> command), Jekyll installed a site that uses a gem-based theme called <a href="https://github.com/jekyll/minima">Minima</a>.</p>
+<p>Then, the best way to change the Look&amp;Feel of your Github Page site is changing existing Theme/Layout; Jekyll supports an easy way to do it and here this is explained very well:</p>
+<ul>
+<li><a href="https://jekyllrb.com/docs/layouts/">Jekyll Layouts</a></li>
+<li><a href="https://jekyllrb.com/docs/themes/">Jekyll Themes</a></li>
+</ul>
+<p>So, in order to make changes in the Look&amp;Feel I will override the Minima&rsquo;s Gem. First of all I&rsquo;ll locate where the Minima&rsquo;s Theme/Layout Gem is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ bundle show
+Gems included by the bundle:
+  * addressable <span style="color:#f92672">(</span>2.7.0<span style="color:#f92672">)</span>
+  * bundler <span style="color:#f92672">(</span>2.0.2<span style="color:#f92672">)</span>
+  * colorator <span style="color:#f92672">(</span>1.1.0<span style="color:#f92672">)</span>
+  * concurrent-ruby <span style="color:#f92672">(</span>1.1.5<span style="color:#f92672">)</span>
+  * em-websocket <span style="color:#f92672">(</span>0.5.1<span style="color:#f92672">)</span>
+  * eventmachine <span style="color:#f92672">(</span>1.2.7<span style="color:#f92672">)</span>
+  * fastercsv <span style="color:#f92672">(</span>1.5.5<span style="color:#f92672">)</span>
+  * ffi <span style="color:#f92672">(</span>1.11.1<span style="color:#f92672">)</span>
+  * forwardable-extended <span style="color:#f92672">(</span>2.6.0<span style="color:#f92672">)</span>
+  * hpricot <span style="color:#f92672">(</span>0.8.6<span style="color:#f92672">)</span>
+  * http_parser.rb <span style="color:#f92672">(</span>0.6.0<span style="color:#f92672">)</span>
+  * i18n <span style="color:#f92672">(</span>1.7.0<span style="color:#f92672">)</span>
+  * jekyll <span style="color:#f92672">(</span>4.0.0<span style="color:#f92672">)</span>
+  * jekyll-feed <span style="color:#f92672">(</span>0.12.1<span style="color:#f92672">)</span>
+  * jekyll-import <span style="color:#f92672">(</span>0.19.0<span style="color:#f92672">)</span>
+  * jekyll-paginate <span style="color:#f92672">(</span>1.1.0<span style="color:#f92672">)</span>
+  * jekyll-sass-converter <span style="color:#f92672">(</span>2.0.1<span style="color:#f92672">)</span>
+  * jekyll-seo-tag <span style="color:#f92672">(</span>2.6.1<span style="color:#f92672">)</span>
+  * jekyll-watch <span style="color:#f92672">(</span>2.2.1<span style="color:#f92672">)</span>
+  * kramdown <span style="color:#f92672">(</span>2.1.0<span style="color:#f92672">)</span>
+  * kramdown-parser-gfm <span style="color:#f92672">(</span>1.1.0<span style="color:#f92672">)</span>
+  * liquid <span style="color:#f92672">(</span>4.0.3<span style="color:#f92672">)</span>
+  * listen <span style="color:#f92672">(</span>3.2.0<span style="color:#f92672">)</span>
+  * mercenary <span style="color:#f92672">(</span>0.3.6<span style="color:#f92672">)</span>
+  * mini_portile2 <span style="color:#f92672">(</span>2.4.0<span style="color:#f92672">)</span>
+  * minima <span style="color:#f92672">(</span>2.5.1<span style="color:#f92672">)</span>
+...
+
+chilcano@inti:~/git-repos/ghpages-holosec$ bundle show minima
+/home/chilcano/git-repos/ghpages-holosec/vendor/bundle/ruby/2.5.0/gems/minima-2.5.1
+
+chilcano@inti:~/git-repos/ghpages-holosec$ tree /home/chilcano/git-repos/ghpages-holosec/vendor/bundle/ruby/2.5.0/gems/minima-2.5.1
+/home/chilcano/git-repos/ghpages-holosec/vendor/bundle/ruby/2.5.0/gems/minima-2.5.1
+├── assets
+│   ├── main.scss
+│   └── minima-social-icons.svg
+├── _includes
+│   ├── disqus_comments.html
+│   ├── footer.html
+│   ├── google-analytics.html
+│   ├── header.html
+│   ├── head.html
+│   ├── icon-github.html
+│   ├── icon-github.svg
+│   ├── icon-twitter.html
+│   ├── icon-twitter.svg
+│   └── social.html
+├── _layouts
+│   ├── default.html
+│   ├── home.html
+│   ├── page.html
+│   └── post.html
+├── LICENSE.txt
+├── README.md
+└── _sass
+    ├── minima
+    │   ├── _base.scss
+    │   ├── _layout.scss
+    │   └── _syntax-highlighting.scss
+    └── minima.scss
+
+<span style="color:#ae81ff">5</span> directories, <span style="color:#ae81ff">22</span> files
+</code></pre></div><p>With a clear understanding of the theme’s files, you can now override any theme file by creating a similarly named file in your Jekyll site directory.
+For example:</p>
+<ol>
+<li>Create the <code>&lt;GHPAGE_SITE_ROOT&gt;/_layouts/</code> and/or <code>&lt;GHPAGE_SITE_ROOT&gt;/assets/</code> folder if they don&rsquo;t exist.</li>
+<li>Create a specific and simlarly file under <code>&lt;GHPAGE_SITE_ROOT&gt;/_layouts/</code>, if you want to change that specific part of Layout, or under <code>&lt;GHPAGE_SITE_ROOT&gt;/assets/</code>, if you want to change the Theme.</li>
+<li>Once done you can add your own code in these created files. In my case I&rsquo;ve created <code>home.html</code> and <code>post.html</code> in <code>&lt;GHPAGE_SITE_ROOT&gt;/_layouts_/</code> to modify the Minima&rsquo;s Layout and created <code>main.scss</code> in <code>&lt;GHPAGE_SITE_ROOT&gt;/assets/</code> to change the colors and fonts.</li>
+</ol>
+<p>You can view these files here:</p>
+<ul>
+<li><code>&lt;GHPAGE_SITE_ROOT&gt;/assets/main.scss</code></li>
+<li><code>&lt;GHPAGE_SITE_ROOT&gt;/_layouts/home.html</code></li>
+<li><code>&lt;GHPAGE_SITE_ROOT&gt;/_layouts/post.html</code></li>
+</ul>
+<h2 id="blog-post-pagination-and-excerpts">Blog post Pagination and Excerpts</h2>
+<p>By default Jekyll since version 3 includes the <code>jekyll-paginate</code> plugin in the <code>Gemfile</code> and in the <code>_config.yml</code> under the plugins section.
+But if you don&rsquo;t have it, add it with this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ bundle add jekyll-paginate
+</code></pre></div><p>To configure the Blog pagination and the showing excerpts we have to edit the <code>_config.yml</code> file which affect at global level.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">...
+...
+<span style="color:#75715e">## Pagination for blog posts: https://jekyllrb.com/docs/pagination/</span>
+<span style="color:#f92672">paginate</span>: <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">paginate_path</span>: <span style="color:#e6db74">&#34;/blog/pg:num&#34;</span>
+
+<span style="color:#75715e">#show_excerpts: false</span>
+<span style="color:#f92672">excerpt_separator</span>: <span style="color:#ae81ff">&lt;!--more--&gt;</span>
+</code></pre></div><p>Once done, we have to create the <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code> which it will render the Blog Posts list. I recommend to start with the code snippet available <a href="https://jekyllrb.com/docs/pagination/">here - https://jekyllrb.com/docs/pagination/</a>, or if you prefer you can use my modified <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code> <a href="/blog/index.html">file</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">layout</span>: <span style="color:#ae81ff">page</span>
+<span style="color:#f92672">title</span>: <span style="color:#ae81ff">Blog</span>
+<span style="color:#f92672">show_excerpts</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#75715e">#excerpt_separator: &lt;!--more--&gt;</span>
+---
+...
+...
+</code></pre></div><p>Where:</p>
+<ul>
+<li><code>paginate: 5</code>: means 5 blog post for each page.</li>
+<li><code>paginate_path: &quot;/blog/pg:num&quot;</code>: the path to the file with which all Blog Posts will be rendered and viewed, also it will include the pagination controls.</li>
+<li><code>#show_excerpts: false</code>: inclusion of excerpts is disabled at global level, but enabled in <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code>.</li>
+<li><code>excerpt_separator: &lt;!--more--&gt;</code>: excerpt deparator is enabled at global level, but disabled in <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code>.</li>
+</ul>
+<h2 id="converting-html-post-files-to-markdown-using-python">Converting HTML post files to Markdown using Python</h2>
+<p>If you have gone through exportation and importation process you will have a Blog with some WordPress&rsquo;s HTML with unrecognizable tags and metadata, and missing links, that is normal and annoying too. For that, I looked out for some Ruby Gems or Python scripts to convert to Markdown, tweak the code and improve the readibility of new Markdown converted Posts.</p>
+<p>I&rsquo;ve used the <a href="https://import.jekyllrb.com/docs/wordpressdotcom">Jekyll WordPress.com Importer</a>, it extracts all posts and download attachments from the WordPress Export XML File and place them into <code>&lt;GHPAGE_SITE_ROOT&gt;/_posts/</code> and <code>&lt;GHPAGE_SITE_ROOT&gt;/assets/</code> folders, once done I&rsquo;ll run the prepared Python script:</p>
+<p>Activate the Python 3 Environment. If you want to know how to get it, here I&rsquo;ve prepared its explanation: <a href="/2019/12/08/python3-setting-a-local-env" title="Setting a Python 3 local programming environment">Setting a Python 3 local programming environment</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ source ../abc/myenv3/bin/activate
+<span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/ghpages-holosec$ 
+</code></pre></div><p>Once activated, execute the provided Python script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/ghpages-holosec$ python ./wp_export/simple_html_wp_to_md.py ./_posts/
+&gt; Loading and splitting <span style="color:#ae81ff">89</span> HTML files from ./_posts/
+	 2010-09-10-agile-bpm-systems-development-with-camunda-fox-and-alfresco-activiti.html
+...
+&gt; Saving <span style="color:#ae81ff">89</span> markdown files in ./_posts/
+	 2010-09-10-agile-bpm-systems-development-with-camunda-fox-and-alfresco-activiti.md
+...
+</code></pre></div><p>And I will get:</p>
+<ol>
+<li>Convert HTML to Markdown.</li>
+<li>Update all Markdown files to Jekyll&rsquo;s Markdown with a Front Matter&rsquo;s header.</li>
+<li>Tweak all Markdown files to do compatible with Jekyll, it is removing no used tags, metadata, removing blank lines, adding break lines, etc.</li>
+</ol>
+<p>You can download the Python script here: <a href="/wp_export/simple_html_wp_to_md.py">simple_html_wp_to_md.py</a>.</p>
+<p>I had issues trying to improve the generated Markdown files, I used <code>BeautifulSoup</code> to manage XML, <code>html2text</code> to generate the Markdown and <code>re</code> massively to tweak the Markdown. If you know a best option, please, let me know it.</p>
+<h2 id="more-things-to-consider">More things to consider</h2>
+<ul>
+<li><a href="https://nhoizey.github.io/jekyll-postfiles/">A Jekyll plugin that copies static files from the _posts to the _site folder</a></li>
+<li><a href="https://www.raymondcamden.com/2018/07/21/building-a-stats-page-for-jekyll-blogs">Building a Stats Page for Jekyll Blogs</a></li>
+<li><a href="https://github.com/fluca1978/jekyll-simple-stats">A simple script to generate some stats about a Jekyll blog.</a></li>
+<li><a href="https://github.com/hendrikschneider/jekyll-analytics">Plugin to easily add webanalytics to your jekyll site</a></li>
+<li><a href="https://desiredpersona.com/google-analytics-jekyll/">Google Analytics for Jekyll</a></li>
+</ul>
+<p>That&rsquo;s all, if you find this post helpful, please, share it.
+Regards.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1">Migrating WordPress.com&rsquo;s blog to GitHub Pages with Jekyll - Part 1</a></li>
+<li><a href="https://jekyllrb.com/docs/layouts/">Jekyll Layouts</a></li>
+<li><a href="https://jekyllrb.com/docs/themes/">Jekyll Themes</a></li>
+<li><a href="https://jekyllrb.com/docs/pagination/">Jekyll Pagination</a></li>
+<li><a href="https://import.jekyllrb.com/docs/wordpressdotcom/">WordPress.com Jekyll Importer</a></li>
+</ul>
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Holistic Security 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/post">Blog</a></li>
+         
+        <li><a href="/taxonomy">Taxonomy</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>

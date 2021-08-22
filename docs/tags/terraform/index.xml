@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terraform on Holistic Security</title>
+    <link>https://holisticsecurity.io/tags/terraform/</link>
+    <description>Recent content in Terraform on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Apr 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with Packer)</title>
+      <link>https://holisticsecurity.io/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/</link>
+      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/</guid>
+      <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://holisticsecurity.io/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws&#34;&gt;Building an affordable remote DevOps desktop on AWS&lt;/a&gt; I shown you how to build a cheaper remote DevOps Desktop on AWS, now I&amp;rsquo;ll explain you how to do that in approximately 3 minutes, instead of 25 minutes, using &lt;a href=&#34;https://www.packer.io&#34;&gt;Hashicorp Packer&lt;/a&gt; to pre-bake an AWS AMI.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1-arch-packer.png&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1-arch-packer.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building an affordable remote DevOps desktop on AWS</title>
+      <link>https://holisticsecurity.io/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws/</link>
+      <pubDate>Thu, 09 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;re going to work 100% remotely or are just tired of carrying a heavy laptop while commuting, why not spin up a DevOps Desktop PC in a public cloud and work from anywhere you want?
+So, if you like the idea, this post for you.
+In this post I&amp;rsquo;ll explain you how to build your own Remote DevOps Desktop on AWS and configure your thinner Local PC to connect to remote one.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-0-arch.png&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-0-arch.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Simple Windows 10 Environment for DevOps Engineers</title>
+      <link>https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</link>
+      <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</guid>
+      <description>&lt;p&gt;If you are working as a DevOps Engineer and want to automate the creation of your infrastructure on AWS from Windows 10, then you should install and configure a minimalist toolset to do &lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as Code (IaC)&lt;/a&gt; tasks. Since I&amp;rsquo;m using an older Surface 3 Pro (Windows 10 with 4GB RAM and 64GB SSD), I&amp;rsquo;m going to focus on Terraform coding, leaving out Docker, K8s, Jenkins, etc. for another article.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200330b/20200330b-simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K8s on Holistic Security</title>
+    <link>https://holisticsecurity.io/tags/k8s/</link>
+    <description>Recent content in K8s on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Mar 2020 18:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple Windows 10 Environment for DevOps Engineers</title>
+      <link>https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</link>
+      <pubDate>Sun, 29 Mar 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/</guid>
+      <description>&lt;p&gt;If you are working as a DevOps Engineer and want to automate the creation of your infrastructure on AWS from Windows 10, then you should install and configure a minimalist toolset to do &lt;a href=&#34;https://en.wikipedia.org/wiki/Infrastructure_as_code&#34;&gt;Infrastructure as Code (IaC)&lt;/a&gt; tasks. Since I&amp;rsquo;m using an older Surface 3 Pro (Windows 10 with 4GB RAM and 64GB SSD), I&amp;rsquo;m going to focus on Terraform coding, leaving out Docker, K8s, Jenkins, etc. for another article.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200330b/20200330b-simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2</title>
+      <link>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</link>
+      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this post I&amp;rsquo;ll explain how to enable and configure &lt;a href=&#34;https://en.wikipedia.org/wiki/Basic_access_authentication&#34;&gt;HTTP Basic Authentication&lt;/a&gt; over TLS in the &lt;a href=&#34;https://www.weave.works/oss/scope&#34;&gt;Weave Scope&lt;/a&gt; webapp running in the recently created K8s Cluster.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DevOps is to SDLC as MLOps is to Machine Learning Applications</title>
+      <link>https://holisticsecurity.io/2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps/</link>
+      <pubDate>Tue, 10 Mar 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps/</guid>
+      <description>&lt;p&gt;If you have read the previous post about &lt;a href=&#34;https://holisticsecurity.io/2020/02/10/security-along-the-container-based-sdlc&#34;&gt;Security along the Container-based SDLC&lt;/a&gt;, then you have noted that DevOps and Security practices should be applied and embeded along &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;SDLC&lt;/a&gt;. Before we had to understand the entire software production process and sub-processes in order to apply these DevOps and Security practices. Well, in this post I&amp;rsquo;ll explain how to apply DevOps practices along Machine Learning Software Applications Development Life Cycle (ML-SDLC) and I&amp;rsquo;ll share a set of tools focusing to implement MLOps.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200309/mlops-sdlc-devsecops-comparison.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200309/mlops-sdlc-devsecops-comparison.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;em&gt;&lt;!-- raw HTML omitted --&gt;Data Science (&amp;amp; ML) Life Cycle&lt;!-- raw HTML omitted --&gt;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1</title>
+      <link>https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</link>
+      <pubDate>Sun, 08 Mar 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) is a concept borrowed from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Minimum_viable_product&#34;&gt;Minimum Viable Product&lt;/a&gt; (MVP) concept about the Product Development Strategy and from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Pareto_principle&#34;&gt;Pareto Principle or 80/20 rule&lt;/a&gt;. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).&lt;/p&gt;
+&lt;p&gt;The purpose of this post is to explain how to implement &lt;strong&gt;TLS everywhere&lt;/strong&gt; to become &lt;strong&gt;MVSec&lt;/strong&gt; (roughly 80% of security with 20% of working) for a &lt;strong&gt;Kubernetised Webapp hosted on AWS&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;
+
+
+&lt;i&gt;&lt;center&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let&#39;s Encrypt&lt;/center&gt;&lt;/i&gt;
+
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

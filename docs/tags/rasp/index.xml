@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RASP on Holistic Security</title>
+    <link>https://holisticsecurity.io/tags/rasp/</link>
+    <description>Recent content in RASP on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Feb 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/rasp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security along the SDLC for Cloud-Native Apps</title>
+      <link>https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/</guid>
+      <description>&lt;p&gt;Nowadays, containers are becoming the standard deployment unit of software, and that in the Cloud-based Application Security world means 2 things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Software Applications are &lt;strong&gt;distributed&lt;/strong&gt; into containers.&lt;/li&gt;
+&lt;li&gt;The minimum unit of &lt;strong&gt;deployment&lt;/strong&gt; and &lt;strong&gt;shipment&lt;/strong&gt; is the container.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other words, using containers we are adding a new element to be considered along the &lt;a href=&#34;https://en.wikipedia.org/wiki/Systems_development_life_cycle&#34;&gt;Software Development Life Cycle (SDLC)&lt;/a&gt; as a new additional piece of software (containers), and from Architectural point of view, those new pieces of software will be distributed.&lt;/p&gt;
+&lt;p&gt;Said that, the purpose of this post is explain you how to embed &lt;strong&gt;Security along the Container-based SDLC (Secure-SDLC)&lt;/strong&gt; and how to &lt;strong&gt;DevOps&lt;/strong&gt; practices will help its adoption.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200210/20200210-security-along-container-based-sdlc-v2.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;
+
+ 
+&lt;i&gt;&lt;center&gt;Security along the Container-based SDLC - Overview&lt;/center&gt;&lt;/i&gt;
+
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

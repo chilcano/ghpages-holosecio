@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API on Holistic Security</title>
+    <link>https://holisticsecurity.io/tags/api/</link>
+    <description>Recent content in API on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Jun 2021 22:00:00 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Un L4/L7 gateway para proteger tu Data</title>
+      <link>https://holisticsecurity.io/2021/06/21/un-layer4-layer7-gateway-para-proteger-tu-data/</link>
+      <pubDate>Mon, 21 Jun 2021 22:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/2021/06/21/un-layer4-layer7-gateway-para-proteger-tu-data/</guid>
+      <description>&lt;p&gt;On October 15th, 2020 I had the opportunity to participate at &lt;a href=&#34;https://apiaddictsday.apiaddicts.org/&#34;&gt;API Addicts Days 20&lt;/a&gt;, the biggest evento of API experts in Latam and Spain.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20210621-apiaddictsdays20-l4-l7-gateway-para-proteger-tu-data.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This event was important for me because it allowed me come back to online conferences in Spanish bringing a Security topic to The API World.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

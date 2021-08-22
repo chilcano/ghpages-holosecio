@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Packer on Holistic Security</title>
+    <link>https://holisticsecurity.io/tags/packer/</link>
+    <description>Recent content in Packer on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Apr 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/packer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building an affordable remote DevOps desktop on AWS - Part2 (custom AMI with Packer)</title>
+      <link>https://holisticsecurity.io/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/</link>
+      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/</guid>
+      <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://holisticsecurity.io/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws&#34;&gt;Building an affordable remote DevOps desktop on AWS&lt;/a&gt; I shown you how to build a cheaper remote DevOps Desktop on AWS, now I&amp;rsquo;ll explain you how to do that in approximately 3 minutes, instead of 25 minutes, using &lt;a href=&#34;https://www.packer.io&#34;&gt;Hashicorp Packer&lt;/a&gt; to pre-bake an AWS AMI.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1-arch-packer.png&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1-arch-packer.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Holistic Security</title>
+    <link>https://holisticsecurity.io/categories/linux/</link>
+    <description>Recent content in Linux on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Aug 2020 18:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Cloud IDE for the masses</title>
+      <link>https://holisticsecurity.io/2020/08/05/a-cloud-ide-for-the-masses/</link>
+      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2020/08/05/a-cloud-ide-for-the-masses/</guid>
+      <description>&lt;p&gt;Nowadays, you likely are involved in development/devops tasks for the cloud and you are using a &lt;a href=&#34;https://en.wikipedia.org/wiki/Online_integrated_development_environment&#34;&gt;Cloud-based IDE (Integrated Development Environment)&lt;/a&gt; to accomplish your job, but if you don&amp;rsquo;t have any or you are not happy with yours, then this blog post will explain you how to get one, opensource and in a few minutes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200805_cloud_ide/cloud-ide-1-evolution.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Android Tablet or iPad as extra monitor for Linux</title>
+      <link>https://holisticsecurity.io/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2019/10/28/android-tablet-or-ipad-as-extra-monitor-for-linux/</guid>
+      <description>&lt;p&gt;There are several applications out there that help us to use a spare Android Tablet or iPad as a external monitor in Windows PC or Mac OSX Laptop over WI-FI or using a USB cable. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.easynlight.com/en/twomonusb/&#34;&gt;TwomonUSB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.duetdisplay.com/&#34;&gt;DuetDisplay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lunadisplay.com/&#34;&gt;LunaDisplay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.apple.com/en-gb/HT210380&#34;&gt;Apple Sidecar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.splashtop.com/wiredxdisplay&#34;&gt;SplashTop Wired xDisplay&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tips &amp; Tricks to use the Apple Magic Mouse in your Linux Ubuntu</title>
+      <link>https://holisticsecurity.io/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/2019/10/18/tips-and-tricks-to-use-the-apple-magic-mouse-in-your-linux-ubuntu/</guid>
+      <description>&lt;p&gt;This a set of resources (reported issues, blogs, drivers, tips and tricks) to eager to use your Apple Magic Mouse in your Linux Ubuntu.
+These resources are recommedations of many people whom tried and got successfully the Apple Magic Mouse working in Linux.
+Next you can review documentation about how to configure it in your Linux PC:&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
