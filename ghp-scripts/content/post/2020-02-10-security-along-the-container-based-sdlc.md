@@ -95,7 +95,14 @@ The criteria I'm going to use to select the tools are:
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTLn8bLX-Sp6JEbKcJIludCb6wJbTM-5xV5te94srdYnmLYutCu9vcgmiWcc2taioH5cJcj2xXH_Ba/pubhtml?widget=true&amp;headers=false" width="800" height="800"></iframe>
 {{</ rawhtml >}}
 
-[Click here to download the list in PDF format](/assets/pages/2020-02-10-security-along-the-container-based-sdlc-oss-tools-list.pdf).  
+{{< rawhtml >}}
+<ul>
+<li><a href="/assets/blog20200210/Security along the SDLC for Cloud-Native Apps - OSS Tool List.pdf">Download PDF format</a>.
+<li><a href="/sec-sdlc-oss-tool-list">Google Docs format</a>.
+</ul>
+{{</ rawhtml >}}
+
+
 If don't see a open source security product in the document that is worth being reviewed, please, drop me an email and I'll add to document and review it.
 
 ## Conclusions
