@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resources on Holistic Security</title>
+    <link>https://holisticsecurity.io/resources/</link>
+    <description>Recent content in Resources on Holistic Security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Feb 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/resources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security along the SDLC for Cloud-Native Apps - OSS Tool List</title>
+      <link>https://holisticsecurity.io/sec-sdlc-oss-tool-list/</link>
+      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/sec-sdlc-oss-tool-list/</guid>
+      <description>Security along the SDLC for Cloud-Native Apps Open Source Software Tool List &amp;lt;&amp;lt; Back to Post
+ &amp;lt;&amp;lt; Back to Post</description>
+    </item>
+    
+  </channel>
+</rss>
