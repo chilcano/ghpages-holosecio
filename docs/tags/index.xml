@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Jun 2021 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jul 2021 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SAST</title>
+      <link>https://holisticsecurity.io/tags/sast/</link>
+      <pubDate>Tue, 06 Jul 2021 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/sast/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Caddy</title>
       <link>https://holisticsecurity.io/tags/caddy/</link>
@@ -283,15 +292,6 @@
       <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/rasp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SAST</title>
-      <link>https://holisticsecurity.io/tags/sast/</link>
-      <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/sast/</guid>
       <description></description>
     </item>
     

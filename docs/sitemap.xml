@@ -2,22 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://holisticsecurity.io/tags/caddy/</loc>
-    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/categories/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/cloud/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/devsecops/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/holism/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/post/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/sast/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/2021/07/06/sast-in-sdlc-for-cloud-native-apps/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/sdlc/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/</loc>
+    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/caddy/</loc>
     <lastmod>2021-06-22T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/docker/</loc>
     <lastmod>2021-06-22T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2021/06/22/hands-on-with-tls-authentication-for-microservices/</loc>
-    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/</loc>
-    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/post/</loc>
     <lastmod>2021-06-22T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/proxy/</loc>
@@ -27,9 +48,6 @@
     <lastmod>2021-06-22T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/sidecar/</loc>
-    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/</loc>
     <lastmod>2021-06-22T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/talk/</loc>
@@ -81,9 +99,6 @@
     <lastmod>2020-09-06T11:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/cdk/</loc>
-    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/cloud/</loc>
     <lastmod>2020-09-06T11:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/cloudformation/</loc>
@@ -179,12 +194,6 @@
     <loc>https://holisticsecurity.io/tags/dast/</loc>
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/categories/devsecops/</loc>
-    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/holism/</loc>
-    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/iast/</loc>
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
@@ -194,13 +203,7 @@
     <loc>https://holisticsecurity.io/resources/</loc>
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/sast/</loc>
-    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/sca/</loc>
-    <lastmod>2020-02-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/sdlc/</loc>
     <lastmod>2020-02-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/</loc>
