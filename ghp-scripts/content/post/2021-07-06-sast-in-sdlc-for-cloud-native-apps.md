@@ -47,21 +47,22 @@ I'm going to list only a few SAST tools, but if you want to browse the full list
 | 4.  | [AWS Serverless Rules](https://github.com/awslabs/serverless-rules) | ![]()                                                 | Serverless Patterns in CloudFormation |
 | 5.  | [Bandit](https://github.com/PyCQA/bandit)                   | ![](/assets/blog20210706_sast/sast-bandit.png)             | Python code |
 | 6.  | [Checkmarx KICS](https://github.com/Checkmarx/kics)         | ![](/assets/blog20210706_sast/sast-checkmarx-kics.png)     | Terraform (.tf, tfvars), CloudFormation (.json or .yaml), Ansible (.yaml), Dockerfile, K8s manifests, OpenAPI (.json or .yaml) |
-| 7.  | [Checkov](https://github.com/bridgecrewio/checkov)          | ![](/assets/blog20210706_sast/sast-checkov.png)              | Terraform, CloudFormation, Kubernetes, Dockerfile, ARM Templates. |
+| 7.  | [Checkov](https://github.com/bridgecrewio/checkov)          | ![](/assets/blog20210706_sast/sast-checkov.png)            | Terraform, CloudFormation, Kubernetes, Dockerfile, ARM Templates. |
 | 8.  | [Clair](https://github.com/quay/clair)                      | ![](/assets/blog20210706_sast/sast-clair.png)              | Containers                            |
 | 9.  | [Dagda](https://github.com/eliasgranderubio/dagda)          | ![]()                                                      | Containers and monitor Docker daemon  |
-| 10.  | [Dockle](https://github.com/goodwithtech/dockle)            | ![](/assets/blog20210706_sast/sast-dockle.png)             | Containers and support CIS Benchmarks |
+| 10. | [Dockle](https://github.com/goodwithtech/dockle)            | ![](/assets/blog20210706_sast/sast-dockle.png)             | Containers and support CIS Benchmarks |
 | 11. | [GolangCI-Lint](https://github.com/golangci/golangci-lint)  | ![](/assets/blog20210706_sast/sast-golangci-lint.png)      | Golang code |
 | 12. | [GoSec](https://github.com/securego/gosec)                  | ![](/assets/blog20210706_sast/sast-gosec.png)              | Golang code |
 | 13. | [huskyCI](https://github.com/globocom/huskyCI)              | ![](/assets/blog20210706_sast/sast-huskyci.png)            | Orchestrate security test (Python, JS, Ruby, Tf, Golang, Java, ...) and centralizes all results |
 | 14. | [PHPStan](https://github.com/phpstan/phpstan)               | ![](/assets/blog20210706_sast/sast-phpstan.png)            | PHP code    |
 | 15. | [Pylint](https://www.pylint.org)                            | ![](/assets/blog20210706_sast/sast-pylint.png)             | Python code |
-| 16. | [Skyscanner CFrippe](https://github.com/Skyscanner/cfrippe) | ![](/assets/blog20210706_sast/sast-skyscanner-cfrippe.png) | CloudFormation (.json, .yaml). Rules in Python |
-| 17. | [SonarQube CE](https://www.sonarqube.org)                   | ![](/assets/blog20210706_sast/sast-sonarqube.png)          | Platform and carry out analysis of over 20 programming languages |
-| 18. | [SpotBugs](https://github.com/spotbugs/spotbugs)            | ![](/assets/blog20210706_sast/sast-spotbugs.png)           | Java. SpotBugs is the spiritual successor of FindBugs.   |
-| 19. | [Stelligent cfn_nag](https://github.com/stelligent/cfn_nag) | ![](/assets/blog20210706_sast/sast-stelligent-cfn_nag.png) | CloudFormation (.json, .yaml). Rules in Ruby   |
-| 20. | [Terraform Linter](https://github.com/terraform-linters/tflint)  | ![]()                                                 | Terraform (.tf, .tfvars) |
-| 21. | [tfsec](https://github.com/aquasecurity/tfsec)      | ![](/assets/blog20210706_sast/sast-tfsec.png)              | Terraform templates and support Terraform CDK. |
+| 16. | [Semgrep](https://semgrep.dev/) | ![](/assets/blog20210706_sast/sast-semgrep.png) | Works on 17+ languages. Write rules that look like your code. |
+| 17. | [Skyscanner CFrippe](https://github.com/Skyscanner/cfrippe) | ![](/assets/blog20210706_sast/sast-skyscanner-cfrippe.png) | CloudFormation (.json, .yaml). Rules in Python |
+| 18. | [SonarQube CE](https://www.sonarqube.org)                   | ![](/assets/blog20210706_sast/sast-sonarqube.png)          | Platform and carry out analysis of over 20 programming languages |
+| 19. | [SpotBugs](https://github.com/spotbugs/spotbugs)            | ![](/assets/blog20210706_sast/sast-spotbugs.png)           | Java. SpotBugs is the spiritual successor of FindBugs.   |
+| 20. | [Stelligent cfn_nag](https://github.com/stelligent/cfn_nag) | ![](/assets/blog20210706_sast/sast-stelligent-cfn_nag.png) | CloudFormation (.json, .yaml). Rules in Ruby   |
+| 21. | [Terraform Linter](https://github.com/terraform-linters/tflint)  | ![]()                                                 | Terraform (.tf, .tfvars) |
+| 22. | [tfsec](https://github.com/aquasecurity/tfsec)      | ![](/assets/blog20210706_sast/sast-tfsec.png)              | Terraform templates and support Terraform CDK. |
 |-    |                                                                  |                                                       |                          |
 
 ## The CI/CD Tooling and the Pipeline with SAST 
@@ -89,47 +90,34 @@ In order to embed the SAST process in our CI/CD pipeline, we will need at least 
 * I'm going to use AWS EC2 to deploy everything.
 * Everything will be Dockerized.
 * The Project I'm going to use as example will be [Weaveworks Sock Shop](https://microservices-demo.github.io), specifically the version for AWS ECS which contains CloudFormation Templates. 
-In fact, you could use any kind of Cloud-Native Project, the only thing you need is the GitHub Repository URL.
+In fact, you could use any kind of Cloud-Native Project, the only thing you need is the GitHub Repository URL. The Jenkins Pipeline I've created uses by default [TerraGoat](https://github.com/bridgecrewio/terragoat.git).
 
 
 ### Steps
 
-#### 1. Deploy your DevOps Infraestructure and Tooling
+I've created a Github repository with a CDK Project that automate the creation of AWS EC2 instance, with bash scripts to automate the installation of Jenkins and default plugins and a [Jenkins Pipeline](https://github.com/chilcano/aws-cdk-examples/blob/main/simple-ec2/_scripts/sast-pipeline-kics.groovy) that includes SAST stages in the CI/CD process.
 
 ```sh
-xyz
+git clone https://github.com/chilcano/aws-cdk-examples.git
+
+cd aws-cdk-examples/simple-ec2/
+
+npm install @aws-cdk/aws-ec2 @aws-cdk/aws-iam dotenv
+
+cdk deploy --profile es --require-approval never --outputs-file output.json
 ```
 
-#### 2. Implement your CI/CD Pipeline with SAST stages
+Further details can be found in the [Chilcano/AWS-CDK-Examples](https://github.com/chilcano/aws-cdk-examples) GitHub repository.
 
-```sh
-xyz
-```
-
-#### 3. Run Jenkins Pipeline againts your Cloud-Native Project
-
-```sh
-xyz
-```
 
 ## Conclusions
 
- Since that a Cloud-Native App stack is composed of multiple building blocks, artifacts and different programming languages, you will need SAST Tools for each of them, although that is not a problem, 
- the hard part will be consolidate all outcomes comming from multiple SAST Tools in a single point, and then to make the right decisions during CI/CD-runtime (Jenkins runtime). Said that, SonarQube CE covers this part while you don't have any approach in place yet.
- 
+1. Since that a Cloud-Native App stack is composed of multiple building blocks, artifacts and different programming languages, you will need SAST Tools for each of them, although that is not a problem, the hard part will be consolidate all outcomes comming from multiple SAST Tools in a single point, and then to make the right decisions during CI/CD-runtime (Jenkins runtime). Said that, SonarQube CE covers this part while you don't have any approach in place yet, however importing third party reports into SonarQube is difficult.
+
+2. Kics is a good SAST tool for Infrastructure as Code, It integrates multiple IaC Linters in one, but what if your project includes Golang code, Python code or Java code?. You will need to use other SAST Tools like GoSec, PyLint or Bandit, add a few stages to your Jenkins Pipeline and finally import all different reports generated for all SAST tools, even the Kics' report, in a single point, correlate and track all vulnerabilities using a common criteria, etc, being that a real headache. At this point, [Jenkins and Warnings-NG Plugin](https://plugins.jenkins.io/warnings-ng/) help a lot. In a next post I will explain how to do that.
+
 
 ## References
 
 1. [Awesome Open Source / The Top 254 Static Analysis Open Source Projects](https://awesomeopensource.com/projects/static-analysis)
-2. [analysis-tools-dev / static-analysis](https://github.com/analysis-tools-dev/static-analysis)
-
-How do I add new user accounts with SSH access to my Amazon EC2 Linux instance?
-https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/
-
-How can I use a single SSH key pair for all my AWS Regions?
-https://aws.amazon.com/premiumsupport/knowledge-center/ec2-ssh-key-pair-regions/
-https://alestic.com/2010/10/ec2-ssh-keys/
-
-ssh-keygen / samples
-https://linux.101hacks.com/unix/ssh-keygen/
-
+2. [Analysis-Tools-Dev / Static-Analysis](https://github.com/analysis-tools-dev/static-analysis)
