@@ -107,7 +107,7 @@ npm install @aws-cdk/aws-ec2 @aws-cdk/aws-iam dotenv
 cdk deploy --profile es --require-approval never --outputs-file output.json
 ```
 
-Further details can be found in the [Chilcano/AWS-CDK-Examples](https://github.com/chilcano/aws-cdk-examples) GitHub repository.
+Further details can be found in the *[Chilcano/AWS-CDK-Examples](https://github.com/chilcano/aws-cdk-examples/tree/main/simple-ec2)* GitHub repository.
 
 
 ## Conclusions
