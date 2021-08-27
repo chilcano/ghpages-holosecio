@@ -1,7 +1,7 @@
 ---
 title: SAST in your SDLC for Cloud-Native Apps
 date: 2021-07-06T10:00:10+02:00
-draft: true
+draft: false
 type: post
 layout: single_simple
 categories: [Cloud, SDLC, DevSecOps, Holism]
