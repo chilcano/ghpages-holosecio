@@ -114,6 +114,12 @@ cdk deploy --profile es --require-approval never --outputs-file output.json
 Further details can be found in the **[Chilcano/AWS-CDK-Examples](https://github.com/chilcano/aws-cdk-examples/tree/main/simple-ec2)** GitHub repository.
 
 
+[![](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png)](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png)
+{{< rawhtml >}}
+<i><center>Reviewing the SAST scanning (Kics outcomes)</center></i>
+{{</ rawhtml >}}
+
+
 ## Conclusions
 
 1. Since that a Cloud-Native App stack is composed of multiple building blocks, artifacts and different programming languages, you will need SAST Tools for each of them, although that is not a problem, the hard part will be consolidate all outcomes comming from multiple SAST Tools in a single point, and then to make the right decisions during CI/CD-runtime (Jenkins runtime). Said that, SonarQube CE covers this part while you don't have any approach in place yet, however importing third party reports into SonarQube is difficult.
