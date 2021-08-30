@@ -12,8 +12,9 @@ aliases:
 ---
 
 [SAST](https://en.wikipedia.org/wiki/Static_application_security_testing) stands for "Static Application Security Testing" and it is used to identify vulnerabilities 
-by reviewing the source code. The best point or place to implement this Security Testing, and according the Security Best Practices, is in early stages of your 
-CI/CD Pipeline. But What about of SAST in Cloud Native Applications?. You will see in this post 😉 how to deal with that using only opensource.
+by reviewing the source code. The best point or place to implement this kind of Security Testing is in early stages of your CI/CD Pipeline ([Shift-left Testing](https://en.wikipedia.org/wiki/Shift-left_testing)). 
+But What if you are building a Cloud Native Applications wich includes new artifacts or building blocks as Docker and/or Cloud Resources, what should do now to use SAST tools and techniques?. 
+In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with a SAST stage and everything using AWS CDK.
 
 [![](/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png)](/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png)
 {{< rawhtml >}}
@@ -24,7 +25,7 @@ CI/CD Pipeline. But What about of SAST in Cloud Native Applications?. You will s
 
 ## SAST in Cloud-Native Applications
 
-Implement SAST in old-school or traditional Application is/was easy because you have to deal with a big block or a monolithic stack, but how to do the same with Cloud 
+Implement SAST in old-school or traditional Application was straight forward because you have to deal with a big block or a monolithic stack, but how to do the same with Cloud 
 Native Applications?. The answer is using as many SAST tools as different types of code, artifacts or building blocks compose your stack.   
 For example, a standard Cloud Native Application stack is composed of:
 1. Microservices in different languages (Python, Golang, PHP, ...)
@@ -33,11 +34,11 @@ For example, a standard Cloud Native Application stack is composed of:
 4. Infrastructure as Code (Terraform, CloudFormation, Kubernetes manifests, ...)
 5. Configuration code (Chef, Bash, Ansible, ...)
 
-Then, we are going to require 5 or less different SAST tools to review statically the code for each kind of code or artifact. Below I show a SAST tool list where you can pickup any tool for convenience or based on your requirements.
+Thus, for a satandard Cloud-Native Application, we are going to require 5 or less different SAST tools to review statically the code for each kind of code or artifact. Below I show a SAST tool list from which you can pick up any tool for convenience or based on your requirements.
 
 ### Opensource SAST tools for Cloud-Native stacks
 
-I'm going to list only a few SAST tools, but if you want to browse the full list, even DAST, IAST or RASP tools, look my post about [Security along the SDLC for Cloud-Native Apps](/2020/02/10/security-along-the-container-based-sdlc/#oss-sec-list).
+I'm going to list only a few SAST tools, but if you want to browse the full list, even DAST, IAST or RASP tools, you can check out my post about [Security along the SDLC for Cloud-Native Apps](/2020/02/10/security-along-the-container-based-sdlc/#oss-sec-list).
 
 | No. | SAST Tool                                                   |                                                               | Vulnerability scanner for   |
 |---  |---                                                          |---                                                            |---                          |
@@ -65,9 +66,10 @@ I'm going to list only a few SAST tools, but if you want to browse the full list
 | 22. | [tfsec](https://github.com/aquasecurity/tfsec)      | ![](/assets/blog20210706_sast/sast-tfsec.png)              | Terraform templates and support Terraform CDK. |
 |-    |                                                                  |                                                       |                          |
 
-## The CI/CD Tooling and the Pipeline with SAST 
+## Designing the CI/CD Pipeline with a SAST stage
 
-In order to embed the SAST process in our CI/CD pipeline, we will need at least 3 things:
+In this point we have a Cloud-Native Application that requires be statically scanned for security vulnerabilities, now is time to design and get ready our CI/CD Tooling. 
+In order to embed the SAST process in your CI/CD pipeline, you will need at least 3 things:
 
 1. The CI/CD server
   * It will orchestrate the multiple tasks (stages) defined in our CI/CD workflow.
@@ -79,19 +81,21 @@ In order to embed the SAST process in our CI/CD pipeline, we will need at least 
   * It will work as our web portal to consolidate all our outcomes in a single point. 
   * Initially, I wanted to use SonarQube, but unfortunatelly it has limitations to [import third party generated reports](https://docs.sonarqube.org/latest/analysis/external-issues/), although It can be used as SAST tool as well, in this post I'm going to use Jenkins and HTML reports.
 
-[![](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png)](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png)
+[![](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png)](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png)
 {{< rawhtml >}}
-<i><center>SAST stage in CI/CD Pipeline</center></i>
+<i><center>CI/CD design</center></i>
 {{</ rawhtml >}}
-
 
 ## Implementing the CI/CD Pipeline with a SAST stage
 
 * I'm going to use AWS EC2 to deploy everything.
 * Everything will be Dockerized.
-* The Project I'm going to use as example will be [Weaveworks Sock Shop](https://microservices-demo.github.io), specifically the version for AWS ECS which contains CloudFormation Templates. 
-In fact, you could use any kind of Cloud-Native Project, the only thing you need is the GitHub Repository URL. The Jenkins Pipeline I've created uses by default [TerraGoat](https://github.com/bridgecrewio/terragoat.git).
+* The Project I'm going to use as example will be [TerraGoat](https://github.com/bridgecrewio/terragoat.git), although you could use any kind of Cloud-Native Project, the only thing you need is provide the GitHub Repository URL when kicking off the Jenkins Pipeline.
 
+[![](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png)](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png)
+{{< rawhtml >}}
+<i><center>SAST stage in CI/CD Pipeline implementation</center></i>
+{{</ rawhtml >}}
 
 ### Steps
 
@@ -119,5 +123,6 @@ Further details can be found in the **[Chilcano/AWS-CDK-Examples](https://github
 
 ## References
 
-1. [Awesome Open Source / The Top 254 Static Analysis Open Source Projects](https://awesomeopensource.com/projects/static-analysis)
-2. [Analysis-Tools-Dev / Static-Analysis](https://github.com/analysis-tools-dev/static-analysis)
+1. [Security along the SDLC for Cloud-Native Apps](/2020/02/10/security-along-the-container-based-sdlc/#oss-sec-list) - Posted on 2020/02/10
+2. [Awesome Open Source / The Top 254 Static Analysis Open Source Projects](https://awesomeopensource.com/projects/static-analysis)
+3. [Analysis-Tools-Dev / Static-Analysis](https://github.com/analysis-tools-dev/static-analysis)
