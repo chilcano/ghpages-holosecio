@@ -14,8 +14,8 @@ Also I&rsquo;ll explain how to convert all HTML post files, obtained by using th
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-12-10T10:00:00+00:00" />
-<meta property="article:modified_time" content="2019-12-10T10:00:00+00:00" />
+<meta property="article:published_time" content="2019-12-10T10:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-12-10T10:00:00&#43;00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -158,7 +158,7 @@ Also I&rsquo;ll explain how to convert all HTML post files, obtained by using th
 <li><a href="https://jekyllrb.com/docs/themes/">Jekyll Themes</a></li>
 </ul>
 <p>So, in order to make changes in the Look&amp;Feel I will override the Minima&rsquo;s Gem. First of all I&rsquo;ll locate where the Minima&rsquo;s Theme/Layout Gem is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ bundle show
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ bundle show
 Gems included by the bundle:
   * addressable <span style="color:#f92672">(</span>2.7.0<span style="color:#f92672">)</span>
   * bundler <span style="color:#f92672">(</span>2.0.2<span style="color:#f92672">)</span>
@@ -238,9 +238,9 @@ For example:</p>
 <h2 id="blog-post-pagination-and-excerpts">Blog post Pagination and Excerpts</h2>
 <p>By default Jekyll since version 3 includes the <code>jekyll-paginate</code> plugin in the <code>Gemfile</code> and in the <code>_config.yml</code> under the plugins section.
 But if you don&rsquo;t have it, add it with this command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ bundle add jekyll-paginate
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ bundle add jekyll-paginate
 </code></pre></div><p>To configure the Blog pagination and the showing excerpts we have to edit the <code>_config.yml</code> file which affect at global level.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">...
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">...
 ...
 <span style="color:#75715e">## Pagination for blog posts: https://jekyllrb.com/docs/pagination/</span>
 <span style="color:#f92672">paginate</span>: <span style="color:#ae81ff">5</span>
@@ -249,7 +249,7 @@ But if you don&rsquo;t have it, add it with this command:</p>
 <span style="color:#75715e">#show_excerpts: false</span>
 <span style="color:#f92672">excerpt_separator</span>: <span style="color:#ae81ff">&lt;!--more--&gt;</span>
 </code></pre></div><p>Once done, we have to create the <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code> which it will render the Blog Posts list. I recommend to start with the code snippet available <a href="https://jekyllrb.com/docs/pagination/">here - https://jekyllrb.com/docs/pagination/</a>, or if you prefer you can use my modified <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code> <a href="/blog/index.html">file</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 <span style="color:#f92672">layout</span>: <span style="color:#ae81ff">page</span>
 <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Blog</span>
 <span style="color:#f92672">show_excerpts</span>: <span style="color:#66d9ef">true</span>
@@ -268,10 +268,10 @@ But if you don&rsquo;t have it, add it with this command:</p>
 <p>If you have gone through exportation and importation process you will have a Blog with some WordPress&rsquo;s HTML with unrecognizable tags and metadata, and missing links, that is normal and annoying too. For that, I looked out for some Ruby Gems or Python scripts to convert to Markdown, tweak the code and improve the readibility of new Markdown converted Posts.</p>
 <p>I&rsquo;ve used the <a href="https://import.jekyllrb.com/docs/wordpressdotcom">Jekyll WordPress.com Importer</a>, it extracts all posts and download attachments from the WordPress Export XML File and place them into <code>&lt;GHPAGE_SITE_ROOT&gt;/_posts/</code> and <code>&lt;GHPAGE_SITE_ROOT&gt;/assets/</code> folders, once done I&rsquo;ll run the prepared Python script:</p>
 <p>Activate the Python 3 Environment. If you want to know how to get it, here I&rsquo;ve prepared its explanation: <a href="/2019/12/08/python3-setting-a-local-env" title="Setting a Python 3 local programming environment">Setting a Python 3 local programming environment</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ source ../abc/myenv3/bin/activate
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ source ../abc/myenv3/bin/activate
 <span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/ghpages-holosec$ 
 </code></pre></div><p>Once activated, execute the provided Python script.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/ghpages-holosec$ python ./wp_export/simple_html_wp_to_md.py ./_posts/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/ghpages-holosec$ python ./wp_export/simple_html_wp_to_md.py ./_posts/
 &gt; Loading and splitting <span style="color:#ae81ff">89</span> HTML files from ./_posts/
 	 2010-09-10-agile-bpm-systems-development-with-camunda-fox-and-alfresco-activiti.html
 ...

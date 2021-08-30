@@ -14,8 +14,9 @@
       
       <guid>https://holisticsecurity.io/2021/07/06/sast-in-sdlc-for-cloud-native-apps/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Static_application_security_testing&#34;&gt;SAST&lt;/a&gt; stands for &amp;ldquo;Static Application Security Testing&amp;rdquo; and it is used to identify vulnerabilities
-by reviewing the source code. The best point or place to implement this Security Testing, and according the Security Best Practices, is in early stages of your
-CI/CD Pipeline. But What about of SAST in Cloud Native Applications?. You will see in this post 😉 how to deal with that using only opensource.&lt;/p&gt;
+by reviewing the source code. The best point or place to implement this kind of Security Testing is in early stages of your CI/CD Pipeline (&lt;a href=&#34;https://en.wikipedia.org/wiki/Shift-left_testing&#34;&gt;Shift-left Testing&lt;/a&gt;).
+But What if you are building a Cloud Native Applications wich includes new artifacts or building blocks as Docker and/or Cloud Resources, what should do now to use SAST tools and techniques?.
+In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with a SAST stage and everything using AWS CDK.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;
 
 
