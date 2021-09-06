@@ -3,33 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://holisticsecurity.io/categories/</loc>
-    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/cloud/</loc>
-    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/devsecops/</loc>
-    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/holism/</loc>
-    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/</loc>
-    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/post/</loc>
-    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/sast/</loc>
-    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/2021/07/06/sast-in-sdlc-for-cloud-native-apps/</loc>
-    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+    <loc>https://holisticsecurity.io/2021/09/04/sast-in-sdlc-for-cloud-native-apps-2/</loc>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/sdlc/</loc>
-    <lastmod>2021-07-06T10:00:10+02:00</lastmod>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/</loc>
+    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/2021/07/06/sast-in-sdlc-for-cloud-native-apps/</loc>
     <lastmod>2021-07-06T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/caddy/</loc>
