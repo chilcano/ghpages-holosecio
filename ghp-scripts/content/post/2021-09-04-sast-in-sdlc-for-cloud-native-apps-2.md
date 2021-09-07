@@ -29,7 +29,7 @@ In this Jenkins Pipeline I am going to use the following SAST Tools/Linters:
 1. Yaml Linter: [yamllint](https://github.com/adrienverge/yamllint)
 2. Golang Linter: [golangci-lint](https://github.com/golangci/golangci-lint)
 3. Python Linter: [Pylint](https://www.pylint.org)
-4. IaC (Terraform, K8s, CloudFormation, Dockerfiles, etc): [Kics](https://github.com/Checkmarx/kics), already used in the [previous post](/2021/07/06/sast-in-sdlc-for-cloud-native-apps/)
+4. IaC (Terraform, K8s, CloudFormation, Dockerfiles, etc): [Kics](https://github.com/checkmarx/kics), already used in the [previous post](/2021/07/06/sast-in-sdlc-for-cloud-native-apps/)
 
 ## Extra Jenkins Plugins used
 
