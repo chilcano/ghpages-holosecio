@@ -18,8 +18,8 @@ I wanted to continue using Github Pages with the same workflow and reuse previou
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2021/06/20/from-wordpress-blog-to-jekyll-and-then-to-hugo/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-06-20T20:00:00&#43;02:00" />
-<meta property="article:modified_time" content="2021-06-20T20:00:00&#43;02:00" />
+<meta property="article:published_time" content="2021-06-20T20:00:00+02:00" />
+<meta property="article:modified_time" content="2021-06-20T20:00:00+02:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -178,11 +178,11 @@ This 2nd article explains how to customize the recently created static website: 
 <p>Once migrated your blog to GitHub Pages and if you want to change Jekyll to Hugo, follow next steps.</p>
 <h4 id="21-pre-requisites">2.1. Pre-requisites</h4>
 <p>This script installs <code>git</code>, <code>hub</code>, configures git and authentication method, tests <code>hub</code>, etc.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/git_and_hub_setting_in_linux.sh<span style="color:#f92672">)</span> <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/git_and_hub_setting_in_linux.sh<span style="color:#f92672">)</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -u<span style="color:#f92672">=</span>Chilcano <span style="color:#ae81ff">\ </span>
   -e<span style="color:#f92672">=</span>chilcano@intix.info
 </code></pre></div><p>This script installs latest Hugo CLI (<code>hugo</code>)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/hugo_setting_in_linux.sh | bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/hugo_setting_in_linux.sh | bash
 </code></pre></div><h4 id="22-convert-the-jekyll-website-to-hugo-content">2.2. Convert the Jekyll website to Hugo content</h4>
 <p>You have to go along below steps:</p>
 <ol>
@@ -197,7 +197,7 @@ This 2nd article explains how to customize the recently created static website: 
 </ol>
 <p>But if you don&rsquo;t want to go through above steps manually, no worries, I&rsquo;ve created a bash script to do everything automatically, only you have to run below command:</p>
 <p>Running the script in this way (<code>source &lt;(curl -s https://url-to-my-bash) --my-params</code>), we will run the bash in the current shell context which allow us to change directory. This script also will publish the imported site to GitHub in Hugo format.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/migrate_jekyll_to_hugo.sh<span style="color:#f92672">)</span> <span style="color:#ae81ff">\ </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/migrate_jekyll_to_hugo.sh<span style="color:#f92672">)</span> <span style="color:#ae81ff">\ </span>
   --help
 
 source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/migrate_jekyll_to_hugo.sh<span style="color:#f92672">)</span> <span style="color:#ae81ff">\
@@ -212,13 +212,13 @@ source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercon
 <li><code>--destination</code> or <code>-d</code>: The GitHub repository name that will contain the migrated website.</li>
 <li><code>--theme</code> or <code>-t</code>: The theme name that the Hugo website will use. The theme is downloaded from Hugo Themes website.</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/migrate_jekyll_to_hugo.sh<span style="color:#f92672">)</span> <span style="color:#ae81ff">\ </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/migrate_jekyll_to_hugo.sh<span style="color:#f92672">)</span> <span style="color:#ae81ff">\ </span>
   -u<span style="color:#f92672">=</span>chilcano <span style="color:#ae81ff">\ </span>
   -s<span style="color:#f92672">=</span>https://github.com/chilcano/ghpages-holosec.git <span style="color:#ae81ff">\ </span>
   -d<span style="color:#f92672">=</span>site01 <span style="color:#ae81ff">\ </span>
   -t<span style="color:#f92672">=</span>hugo-theme-cactus 
 </code></pre></div><p>I&rsquo;m using this directory structure:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ tree . -d -L <span style="color:#ae81ff">4</span> -I <span style="color:#e6db74">&#39;docs|resources|blog20*&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ tree . -d -L <span style="color:#ae81ff">4</span> -I <span style="color:#e6db74">&#39;docs|resources|blog20*&#39;</span>
 .
 ├── ghp-content
 └── ghp-scripts
@@ -253,13 +253,13 @@ source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercon
 </ul>
 <h4 id="23-serving-hugo-content-and-publishing-content">2.3. Serving Hugo content and publishing content</h4>
 <p>To server the site locally you have to run <code>hugo serve</code> command from <code>ghp-scripts/</code> folder. The content will be generated in memory.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">hugo server -D --bind<span style="color:#f92672">=</span>0.0.0.0 --baseURL<span style="color:#f92672">=</span>http://&lt;your_hugo_ip_address&gt;:1313/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">hugo server -D --bind<span style="color:#f92672">=</span>0.0.0.0 --baseURL<span style="color:#f92672">=</span>http://&lt;your_hugo_ip_address&gt;:1313/
 </code></pre></div><p>Changing the directory, running the above command, going back to parent directory to run another git commands is annoying, to relef this I created a bash 2 scripts, both can be executed from parent directory.</p>
 <p>You can download below bash scripts in the root of your cloned Hugo website and execute from there.</p>
 <h5 id="script-to-server-the-hugo-content-locally">Script to server the Hugo content locally</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/hugo_run_locally.sh<span style="color:#f92672">)</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/hugo_run_locally.sh<span style="color:#f92672">)</span> 
 </code></pre></div><h5 id="script-to-publish-hugo-content-to-github-pages">Script to publish Hugo content to GitHub Pages</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/hugo_publish_site.sh<span style="color:#f92672">)</span> <span style="color:#ae81ff">\ </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source &lt;<span style="color:#f92672">(</span>curl -s https://raw.githubusercontent.com/chilcano/how-tos/master/src/hugo_publish_site.sh<span style="color:#f92672">)</span> <span style="color:#ae81ff">\ </span>
   --commit_msg<span style="color:#f92672">=</span>my-message | -m<span style="color:#f92672">=</span>my-message
 </code></pre></div><p>That&rsquo;s all. Hope this is useful.</p>
   
