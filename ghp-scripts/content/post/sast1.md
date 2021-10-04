@@ -8,10 +8,6 @@ categories: [Cloud, SDLC, DevSecOps, Holism]
 tags: [SAST]
 ---
 
-Blah.
-
-![](/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-apps.png)
-
 {{< rawhtml >}}
 <i><center>A SAST Jenkins Pipeline for a Full Stack Cloud Native Application</center></i>
 {{</ rawhtml >}}
@@ -19,10 +15,16 @@ Blah.
 <!--more--> 
 
 
-## Integrating SAST in the Jenkins Pipeline for a Full Stack Application
+## image-resize
 
-abc
+place the img under /media/
 
-{{< image-resize sast-tfsec "150x50" >}}
+{{< image-resize sast-tfsec "250x" >}}
 
-123
+## logo-resize
+
+place the img under /media/logos/
+
+{{< logo-resize 20210904-sast-in-your-cicd-pipeline-full-stack-apps "x100" >}}
+
+.

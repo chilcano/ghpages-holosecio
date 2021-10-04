@@ -1,8 +1,10 @@
 {{ $imagename := (.Get 0) }}
 {{ $options := .Get 1 }}
-{{ with .Site.GetPage "section" "media*" }}
-  {{ $original := .Page.Resources.GetMatch ( printf "*%s*" $imagename ) }}
+{{ with .Site.GetPage "section" "media" }}
+  {{ $original := .Resources.GetMatch (printf "*%s*" ($imagename)) }}
   {{ with ($original.Resize $options) }}
-    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+    <figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+      <img style="max-width: 100%; width: auto; height: auto;" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+    </figure>
   {{ end }} 
 {{ end }}
