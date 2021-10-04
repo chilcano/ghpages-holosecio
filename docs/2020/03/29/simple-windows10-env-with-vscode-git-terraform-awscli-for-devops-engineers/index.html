@@ -13,8 +13,8 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/03/29/simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-engineers/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-03-29T18:00:00+00:00" />
-<meta property="article:modified_time" content="2020-03-29T18:00:00+00:00" />
+<meta property="article:published_time" content="2020-03-29T18:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-03-29T18:00:00&#43;00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -162,7 +162,7 @@ if (!doNotTrack) {
 </ol>
 <h3 id="2-install-git-aws-client-and-terraform">2. Install GIT, AWS Client and Terraform</h3>
 <p>Open CMD as Admin user and execute below commands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">// Install Git
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">// Install Git
 C:\WINDOWS\system32&gt; choco install git -y
 
 // Terraform (no latest version)
@@ -171,7 +171,7 @@ C:\WINDOWS\system32&gt; choco install terraform --version 0.11.14 -y
 // Install AWS Client
 C:\WINDOWS\system32&gt; choco install awscli -y
 </code></pre></div><p>Close the CMD and open it again but as Standard user, after that check all versions installed.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; git version
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; git version
 git version 2.26.0.windows.1
 
 C:\Users\rmce&gt; terraform version
@@ -184,10 +184,10 @@ C:\Users\rmce&gt; aws --version
 aws-cli/2.0.5 Python/3.7.5 Windows/10 botocore/2.0.0dev9
 </code></pre></div><h3 id="3-set-up-git-in-vs-code">3. Set up Git in VS Code</h3>
 <p>Open CMD and run the following commands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; git config --global user.email <span style="color:#e6db74">&#34;you@example.com&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; git config --global user.email <span style="color:#e6db74">&#34;you@example.com&#34;</span>
 C:\Users\rmce&gt; git config --global user.name <span style="color:#e6db74">&#34;Your Name&#34;</span>
 </code></pre></div><p>This optional. Make Git store the username and password and it will never ask for them.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; git config --global credential.helper store
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; git config --global credential.helper store
 
 // Save the username and password <span style="color:#66d9ef">for</span> a session
 C:\Users\rmce&gt; git config --global credential.helper cache
@@ -195,18 +195,18 @@ C:\Users\rmce&gt; git config --global credential.helper cache
 // Also set a timeout <span style="color:#66d9ef">for</span> the above setting
 C:\Users\rmce&gt; git config --global credential.helper <span style="color:#e6db74">&#39;cache --timeout=600&#39;</span>
 </code></pre></div><p>Create a folder to allocate the Github repos. In this case I&rsquo;m going to use my <a href="https://github.com/chilcano/affordable-k8s">Affordable-K8s</a> Repo. It is a Terraform plan to create a K8s Cluster in AWS using Spot Instances.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; y:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\rmce&gt; y:
 Y:\&gt; mkdir __gitrepos
 Y:\&gt; cd __gitrepos
 Y:\__gitrepos&gt; git clone https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/chilcano/affordable-k8s
 Y:\__gitrepos&gt; cd affordable-k8s
 </code></pre></div><p>Modify any file and push your changes.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Y:\__gitrepos\affordable-k8s&gt; git add .
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Y:\__gitrepos\affordable-k8s&gt; git add .
 Y:\__gitrepos\affordable-k8s&gt; git commit -m <span style="color:#e6db74">&#34;README updated&#34;</span>
 Y:\__gitrepos\affordable-k8s&gt; git push
 </code></pre></div><h3 id="4-open-an-existing-terraform-project-from-vs-code">4. Open an existing Terraform project from VS Code</h3>
 <p>Once cloned <a href="https://github.com/chilcano/affordable-k8s">Affordable-K8s</a> Repo into a local folder, now I&rsquo;ll open it executing this command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Y:\__gitrepos\affordable-k8s&gt; code .
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Y:\__gitrepos\affordable-k8s&gt; code .
 </code></pre></div><p><img src="/assets/blog20200330b/20200330b-simple-windows10-env-with-vscode-git-terraform-awscli-for-devops-2.png" alt=""></p>
   
   </div>
