@@ -53,13 +53,11 @@ Some example Git repositories:
 
 Once the pipeline is running, you will see 4 new links in the Jenkins user interface sidebar, each of them being links to each Report that each SAST Tool or Linter has generated.
 
+{{< image-resize "/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-2-aggregate-reports.png" 320x >}}
+{{< image-resize "/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-3-report-yamllint.png" 320x >}}
 
-{{< image-resize "assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-2-aggregate-reports.png" 320x >}}
-{{< image-resize "assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-3-report-yamllint.png" 320x >}}
-
-
-{{< image-resize "assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-4-report-pylint" 320x >}}
-{{< image-resize "assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-5-report-golint" 320x >}}
+{{< image-resize "/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-4-report-pylint" 320x >}}
+{{< image-resize "/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-5-report-golint" 320x >}}
 
 > If you want to create this pipeline step by step, I recommend you follow this guide: 
 > [https://github.com/chilcano/aws-cdk-examples/tree/main/simple-ec2](https://github.com/chilcano/aws-cdk-examples/tree/main/simple-ec2)
