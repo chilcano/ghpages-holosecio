@@ -1,10 +1,21 @@
-{{ $imagename := (.Get 0) }}
-{{ $options := .Get 1 }}
-{{ with .Site.GetPage "section" "media" }}
-  {{ $original := .Resources.GetMatch (printf "*%s*" ($imagename)) }}
-  {{ with ($original.Resize $options) }}
-    <figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
-      <img style="max-width: 100%; width: auto; height: auto;" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-    </figure>
-  {{ end }} 
+{{ $imgFullPath := path.Split (.Get 0) }}
+{{ $imgSize := (.Get 1) }}
+{{ $imgCaption := (.Get 2) }}
+
+{{ $mediaPageDir := print "media/" $imgFullPath.Dir "index.md" }}
+{{ $imgName := $imgFullPath.File }}
+
+{{ with .Site.GetPage "page" $mediaPageDir }}
+    {{ $original := .Page.Resources.GetMatch (printf "*%s*" ($imgName)) }}
+    {{ with ($original.Resize $imgSize) }}
+
+        <a href="{{ $original.RelPermalink }}">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="{{ .RelPermalink }}" 
+                width="{{ .Width }}" height="{{ .Height }}" 
+                alt="{{ $imgCaption }}">
+        </a>
+
+    {{ end }}
 {{ end }}

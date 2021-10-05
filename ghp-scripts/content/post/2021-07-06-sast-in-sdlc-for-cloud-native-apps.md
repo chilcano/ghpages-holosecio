@@ -16,7 +16,7 @@ by reviewing the source code. The best point or place to implement this kind of 
 But What if you are building a Cloud Native Applications wich includes new artifacts or building blocks as Docker and/or Cloud Resources, what should do now to use SAST tools and techniques?. 
 In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with a SAST stage and everything using AWS CDK.
 
-[![](/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png)](/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png)
+{{< image-resize "/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png" 710x >}}
 {{< rawhtml >}}
 <i><center>Static Application Security Testing (SAST) in the Cloud Native SDLC</center></i>
 {{</ rawhtml >}}
@@ -42,28 +42,28 @@ I'm going to list only a few SAST tools, but if you want to browse the full list
 
 | No. | SAST Tool                                                   |                                                               | Vulnerability scanner for   |
 |---  |---                                                          |---                                                            |---                          |
-| 1.  | [Anchore Grype](https://github.com/anchore/grype)           | ![](/assets/blog20210706_sast/sast-anchore-grype.png)         | Containers and filesystems            |
-| 2.  | [AquaSec Trivy](https://github.com/aquasecurity/trivy)      | ![](/assets/blog20210706_sast/sast-aquasec-trivy.png)         | Containers and application dependencies (Bundler, Composer, npm, yarn, etc) |
-| 3.  | [AWS Cfn-Lint](https://github.com/aws-cloudformation/cfn-lint)      | ![](/assets/blog20210706_sast/sast-cfn-lint.png)      | CloudFormation (.json, .yaml). Rules in Python |
+| 1.  | [Anchore Grype](https://github.com/anchore/grype)           | ![](/media/assets/blog20210706_sast/sast-anchore-grype.png)         | Containers and filesystems            |
+| 2.  | [AquaSec Trivy](https://github.com/aquasecurity/trivy)      | ![](/media/assets/blog20210706_sast/sast-aquasec-trivy.png)         | Containers and application dependencies (Bundler, Composer, npm, yarn, etc) |
+| 3.  | [AWS Cfn-Lint](https://github.com/aws-cloudformation/cfn-lint)      | ![](/media/assets/blog20210706_sast/sast-cfn-lint.png)      | CloudFormation (.json, .yaml). Rules in Python |
 | 4.  | [AWS Serverless Rules](https://github.com/awslabs/serverless-rules) | ![]()                                                 | Serverless Patterns in CloudFormation |
-| 5.  | [Bandit](https://github.com/PyCQA/bandit)                   | ![](/assets/blog20210706_sast/sast-bandit.png)             | Python code |
-| 6.  | [Checkmarx KICS](https://github.com/Checkmarx/kics)         | ![](/assets/blog20210706_sast/sast-checkmarx-kics.png)     | Terraform (.tf, tfvars), CloudFormation (.json or .yaml), Ansible (.yaml), Dockerfile, K8s manifests, OpenAPI (.json or .yaml) |
-| 7.  | [Checkov](https://github.com/bridgecrewio/checkov)          | ![](/assets/blog20210706_sast/sast-checkov.png)            | Terraform, CloudFormation, Kubernetes, Dockerfile, ARM Templates. |
-| 8.  | [Clair](https://github.com/quay/clair)                      | ![](/assets/blog20210706_sast/sast-clair.png)              | Containers                            |
+| 5.  | [Bandit](https://github.com/PyCQA/bandit)                   | ![](/media/assets/blog20210706_sast/sast-bandit.png)             | Python code |
+| 6.  | [Checkmarx KICS](https://github.com/Checkmarx/kics)         | ![](/media/assets/blog20210706_sast/sast-checkmarx-kics.png)     | Terraform (.tf, tfvars), CloudFormation (.json or .yaml), Ansible (.yaml), Dockerfile, K8s manifests, OpenAPI (.json or .yaml) |
+| 7.  | [Checkov](https://github.com/bridgecrewio/checkov)          | ![](/media/assets/blog20210706_sast/sast-checkov.png)            | Terraform, CloudFormation, Kubernetes, Dockerfile, ARM Templates. |
+| 8.  | [Clair](https://github.com/quay/clair)                      | ![](/media/assets/blog20210706_sast/sast-clair.png)              | Containers                            |
 | 9.  | [Dagda](https://github.com/eliasgranderubio/dagda)          | ![]()                                                      | Containers and monitor Docker daemon  |
-| 10. | [Dockle](https://github.com/goodwithtech/dockle)            | ![](/assets/blog20210706_sast/sast-dockle.png)             | Containers and support CIS Benchmarks |
-| 11. | [GolangCI-Lint](https://github.com/golangci/golangci-lint)  | ![](/assets/blog20210706_sast/sast-golangci-lint.png)      | Golang code |
-| 12. | [GoSec](https://github.com/securego/gosec)                  | ![](/assets/blog20210706_sast/sast-gosec.png)              | Golang code |
-| 13. | [huskyCI](https://github.com/globocom/huskyCI)              | ![](/assets/blog20210706_sast/sast-huskyci.png)            | Orchestrate security test (Python, JS, Ruby, Tf, Golang, Java, ...) and centralizes all results |
-| 14. | [PHPStan](https://github.com/phpstan/phpstan)               | ![](/assets/blog20210706_sast/sast-phpstan.png)            | PHP code    |
-| 15. | [Pylint](https://www.pylint.org)                            | ![](/assets/blog20210706_sast/sast-pylint.png)             | Python code |
-| 16. | [Semgrep](https://semgrep.dev/) | ![](/assets/blog20210706_sast/sast-semgrep.png) | Works on 17+ languages. Write rules that look like your code. |
-| 17. | [Skyscanner CFrippe](https://github.com/Skyscanner/cfrippe) | ![](/assets/blog20210706_sast/sast-skyscanner-cfrippe.png) | CloudFormation (.json, .yaml). Rules in Python |
-| 18. | [SonarQube CE](https://www.sonarqube.org)                   | ![](/assets/blog20210706_sast/sast-sonarqube.png)          | Platform and carry out analysis of over 20 programming languages |
-| 19. | [SpotBugs](https://github.com/spotbugs/spotbugs)            | ![](/assets/blog20210706_sast/sast-spotbugs.png)           | Java. SpotBugs is the spiritual successor of FindBugs.   |
-| 20. | [Stelligent cfn_nag](https://github.com/stelligent/cfn_nag) | ![](/assets/blog20210706_sast/sast-stelligent-cfn_nag.png) | CloudFormation (.json, .yaml). Rules in Ruby   |
+| 10. | [Dockle](https://github.com/goodwithtech/dockle)            | ![](/media/assets/blog20210706_sast/sast-dockle.png)             | Containers and support CIS Benchmarks |
+| 11. | [GolangCI-Lint](https://github.com/golangci/golangci-lint)  | ![](/media/assets/blog20210706_sast/sast-golangci-lint.png)      | Golang code |
+| 12. | [GoSec](https://github.com/securego/gosec)                  | ![](/media/assets/blog20210706_sast/sast-gosec.png)              | Golang code |
+| 13. | [huskyCI](https://github.com/globocom/huskyCI)              | ![](/media/assets/blog20210706_sast/sast-huskyci.png)            | Orchestrate security test (Python, JS, Ruby, Tf, Golang, Java, ...) and centralizes all results |
+| 14. | [PHPStan](https://github.com/phpstan/phpstan)               | ![](/media/assets/blog20210706_sast/sast-phpstan.png)            | PHP code    |
+| 15. | [Pylint](https://www.pylint.org)                            | ![](/media/assets/blog20210706_sast/sast-pylint.png)             | Python code |
+| 16. | [Semgrep](https://semgrep.dev/)                             | ![](/media/assets/blog20210706_sast/sast-semgrep.png) | Works on 17+ languages. Write rules that look like your code. |
+| 17. | [Skyscanner CFrippe](https://github.com/Skyscanner/cfrippe) | ![](/media/assets/blog20210706_sast/sast-skyscanner-cfrippe.png) | CloudFormation (.json, .yaml). Rules in Python |
+| 18. | [SonarQube CE](https://www.sonarqube.org)                   | ![](/media/assets/blog20210706_sast/sast-sonarqube.png)          | Platform and carry out analysis of over 20 programming languages |
+| 19. | [SpotBugs](https://github.com/spotbugs/spotbugs)            | ![](/media/assets/blog20210706_sast/sast-spotbugs.png)           | Java. SpotBugs is the spiritual successor of FindBugs.   |
+| 20. | [Stelligent cfn_nag](https://github.com/stelligent/cfn_nag) | ![](/media/assets/blog20210706_sast/sast-stelligent-cfn_nag.png) | CloudFormation (.json, .yaml). Rules in Ruby   |
 | 21. | [Terraform Linter](https://github.com/terraform-linters/tflint)  | ![]()                                                 | Terraform (.tf, .tfvars) |
-| 22. | [tfsec](https://github.com/aquasecurity/tfsec)      | ![](/assets/blog20210706_sast/sast-tfsec.png)              | Terraform templates and support Terraform CDK. |
+| 22. | [tfsec](https://github.com/aquasecurity/tfsec)              | ![](/media/assets/blog20210706_sast/sast-tfsec.png)              | Terraform templates and support Terraform CDK. |
 |-    |                                                                  |                                                       |                          |
 
 ## Designing the CI/CD Pipeline with a SAST stage
@@ -81,7 +81,7 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
   * It will work as our web portal to consolidate all our outcomes in a single point. 
   * Initially, I wanted to use SonarQube, but unfortunatelly it has limitations to [import third party generated reports](https://docs.sonarqube.org/latest/analysis/external-issues/), although It can be used as SAST tool as well, in this post I'm going to use Jenkins and HTML reports.
 
-[![](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png)](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png)
+{{< image-resize "/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png" 710x >}}
 {{< rawhtml >}}
 <i><center>CI/CD design</center></i>
 {{</ rawhtml >}}
@@ -92,7 +92,7 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 * Everything will be Dockerized.
 * The Project I'm going to use as example will be [TerraGoat](https://github.com/bridgecrewio/terragoat.git), although you could use any kind of Cloud-Native Project, the only thing you need is provide the GitHub Repository URL when kicking off the Jenkins Pipeline.
 
-[![](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png)](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png)
+{{< image-resize "/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png" 710x >}}
 {{< rawhtml >}}
 <i><center>SAST stage in CI/CD Pipeline implementation</center></i>
 {{</ rawhtml >}}
@@ -113,8 +113,7 @@ cdk deploy --profile es --require-approval never --outputs-file output.json
 
 Further details can be found in the **[Chilcano/AWS-CDK-Examples](https://github.com/chilcano/aws-cdk-examples/tree/main/simple-ec2)** GitHub repository.
 
-
-[![](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png)](/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png)
+{{< image-resize "/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png" 710x >}}
 {{< rawhtml >}}
 <i><center>Reviewing the SAST scanning (Kics outcomes)</center></i>
 {{</ rawhtml >}}
