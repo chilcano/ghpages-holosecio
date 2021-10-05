@@ -16,6 +16,22 @@ In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with 
 
 
 
+
+
+
+
+
+    
+    
+
+        
+            
+        
+
+    
+
+
+
 Static Application Security Testing (SAST) in the Cloud Native SDLC
 
 " />
@@ -31,6 +47,22 @@ Static Application Security Testing (SAST) in the Cloud Native SDLC
 by reviewing the source code. The best point or place to implement this kind of Security Testing is in early stages of your CI/CD Pipeline (Shift-left Testing).
 But What if you are building a Cloud Native Applications wich includes new artifacts or building blocks as Docker and/or Cloud Resources, what should do now to use SAST tools and techniques?.
 In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with a SAST stage and everything using AWS CDK.
+
+
+
+
+
+
+
+
+    
+    
+
+        
+            
+        
+
+    
 
 
 
@@ -162,7 +194,27 @@ if (!doNotTrack) {
 by reviewing the source code. The best point or place to implement this kind of Security Testing is in early stages of your CI/CD Pipeline (<a href="https://en.wikipedia.org/wiki/Shift-left_testing">Shift-left Testing</a>).
 But What if you are building a Cloud Native Applications wich includes new artifacts or building blocks as Docker and/or Cloud Resources, what should do now to use SAST tools and techniques?.
 In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with a SAST stage and everything using AWS CDK.</p>
-<p><a href="/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png"><img src="/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png" alt=""></a>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps_huae7e28459592da6bad21cce7aa381d87_166568_710x0_resize_box_2.png" 
+                width="710" height="276" 
+                alt="">
+        </a>
+
+    
+
 
 
 <i><center>Static Application Security Testing (SAST) in the Cloud Native SDLC</center></i>
@@ -195,19 +247,19 @@ For example, a standard Cloud Native Application stack is composed of:</p>
 <tr>
 <td>1.</td>
 <td><a href="https://github.com/anchore/grype">Anchore Grype</a></td>
-<td><img src="/assets/blog20210706_sast/sast-anchore-grype.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-anchore-grype.png" alt=""></td>
 <td>Containers and filesystems</td>
 </tr>
 <tr>
 <td>2.</td>
 <td><a href="https://github.com/aquasecurity/trivy">AquaSec Trivy</a></td>
-<td><img src="/assets/blog20210706_sast/sast-aquasec-trivy.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-aquasec-trivy.png" alt=""></td>
 <td>Containers and application dependencies (Bundler, Composer, npm, yarn, etc)</td>
 </tr>
 <tr>
 <td>3.</td>
 <td><a href="https://github.com/aws-cloudformation/cfn-lint">AWS Cfn-Lint</a></td>
-<td><img src="/assets/blog20210706_sast/sast-cfn-lint.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-cfn-lint.png" alt=""></td>
 <td>CloudFormation (.json, .yaml). Rules in Python</td>
 </tr>
 <tr>
@@ -219,25 +271,25 @@ For example, a standard Cloud Native Application stack is composed of:</p>
 <tr>
 <td>5.</td>
 <td><a href="https://github.com/PyCQA/bandit">Bandit</a></td>
-<td><img src="/assets/blog20210706_sast/sast-bandit.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-bandit.png" alt=""></td>
 <td>Python code</td>
 </tr>
 <tr>
 <td>6.</td>
 <td><a href="https://github.com/Checkmarx/kics">Checkmarx KICS</a></td>
-<td><img src="/assets/blog20210706_sast/sast-checkmarx-kics.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-checkmarx-kics.png" alt=""></td>
 <td>Terraform (.tf, tfvars), CloudFormation (.json or .yaml), Ansible (.yaml), Dockerfile, K8s manifests, OpenAPI (.json or .yaml)</td>
 </tr>
 <tr>
 <td>7.</td>
 <td><a href="https://github.com/bridgecrewio/checkov">Checkov</a></td>
-<td><img src="/assets/blog20210706_sast/sast-checkov.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-checkov.png" alt=""></td>
 <td>Terraform, CloudFormation, Kubernetes, Dockerfile, ARM Templates.</td>
 </tr>
 <tr>
 <td>8.</td>
 <td><a href="https://github.com/quay/clair">Clair</a></td>
-<td><img src="/assets/blog20210706_sast/sast-clair.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-clair.png" alt=""></td>
 <td>Containers</td>
 </tr>
 <tr>
@@ -249,67 +301,67 @@ For example, a standard Cloud Native Application stack is composed of:</p>
 <tr>
 <td>10.</td>
 <td><a href="https://github.com/goodwithtech/dockle">Dockle</a></td>
-<td><img src="/assets/blog20210706_sast/sast-dockle.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-dockle.png" alt=""></td>
 <td>Containers and support CIS Benchmarks</td>
 </tr>
 <tr>
 <td>11.</td>
 <td><a href="https://github.com/golangci/golangci-lint">GolangCI-Lint</a></td>
-<td><img src="/assets/blog20210706_sast/sast-golangci-lint.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-golangci-lint.png" alt=""></td>
 <td>Golang code</td>
 </tr>
 <tr>
 <td>12.</td>
 <td><a href="https://github.com/securego/gosec">GoSec</a></td>
-<td><img src="/assets/blog20210706_sast/sast-gosec.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-gosec.png" alt=""></td>
 <td>Golang code</td>
 </tr>
 <tr>
 <td>13.</td>
 <td><a href="https://github.com/globocom/huskyCI">huskyCI</a></td>
-<td><img src="/assets/blog20210706_sast/sast-huskyci.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-huskyci.png" alt=""></td>
 <td>Orchestrate security test (Python, JS, Ruby, Tf, Golang, Java, &hellip;) and centralizes all results</td>
 </tr>
 <tr>
 <td>14.</td>
 <td><a href="https://github.com/phpstan/phpstan">PHPStan</a></td>
-<td><img src="/assets/blog20210706_sast/sast-phpstan.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-phpstan.png" alt=""></td>
 <td>PHP code</td>
 </tr>
 <tr>
 <td>15.</td>
 <td><a href="https://www.pylint.org">Pylint</a></td>
-<td><img src="/assets/blog20210706_sast/sast-pylint.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-pylint.png" alt=""></td>
 <td>Python code</td>
 </tr>
 <tr>
 <td>16.</td>
 <td><a href="https://semgrep.dev/">Semgrep</a></td>
-<td><img src="/assets/blog20210706_sast/sast-semgrep.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-semgrep.png" alt=""></td>
 <td>Works on 17+ languages. Write rules that look like your code.</td>
 </tr>
 <tr>
 <td>17.</td>
 <td><a href="https://github.com/Skyscanner/cfrippe">Skyscanner CFrippe</a></td>
-<td><img src="/assets/blog20210706_sast/sast-skyscanner-cfrippe.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-skyscanner-cfrippe.png" alt=""></td>
 <td>CloudFormation (.json, .yaml). Rules in Python</td>
 </tr>
 <tr>
 <td>18.</td>
 <td><a href="https://www.sonarqube.org">SonarQube CE</a></td>
-<td><img src="/assets/blog20210706_sast/sast-sonarqube.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-sonarqube.png" alt=""></td>
 <td>Platform and carry out analysis of over 20 programming languages</td>
 </tr>
 <tr>
 <td>19.</td>
 <td><a href="https://github.com/spotbugs/spotbugs">SpotBugs</a></td>
-<td><img src="/assets/blog20210706_sast/sast-spotbugs.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-spotbugs.png" alt=""></td>
 <td>Java. SpotBugs is the spiritual successor of FindBugs.</td>
 </tr>
 <tr>
 <td>20.</td>
 <td><a href="https://github.com/stelligent/cfn_nag">Stelligent cfn_nag</a></td>
-<td><img src="/assets/blog20210706_sast/sast-stelligent-cfn_nag.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-stelligent-cfn_nag.png" alt=""></td>
 <td>CloudFormation (.json, .yaml). Rules in Ruby</td>
 </tr>
 <tr>
@@ -321,7 +373,7 @@ For example, a standard Cloud Native Application stack is composed of:</p>
 <tr>
 <td>22.</td>
 <td><a href="https://github.com/aquasecurity/tfsec">tfsec</a></td>
-<td><img src="/assets/blog20210706_sast/sast-tfsec.png" alt=""></td>
+<td><img src="/media/assets/blog20210706_sast/sast-tfsec.png" alt=""></td>
 <td>Terraform templates and support Terraform CDK.</td>
 </tr>
 <tr>
@@ -356,7 +408,27 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 <li>It will work as our web portal to consolidate all our outcomes in a single point.</li>
 <li>Initially, I wanted to use SonarQube, but unfortunatelly it has limitations to <a href="https://docs.sonarqube.org/latest/analysis/external-issues/">import third party generated reports</a>, although It can be used as SAST tool as well, in this post I&rsquo;m going to use Jenkins and HTML reports.</li>
 </ul>
-<p><a href="/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png"><img src="/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png" alt=""></a>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac_hu159b777ab9551a0e60169a5ef7b2039a_121266_710x0_resize_box_2.png" 
+                width="710" height="311" 
+                alt="">
+        </a>
+
+    
+
 
 
 <i><center>CI/CD design</center></i>
@@ -368,7 +440,27 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 <li>Everything will be Dockerized.</li>
 <li>The Project I&rsquo;m going to use as example will be <a href="https://github.com/bridgecrewio/terragoat.git">TerraGoat</a>, although you could use any kind of Cloud-Native Project, the only thing you need is provide the GitHub Repository URL when kicking off the Jenkins Pipeline.</li>
 </ul>
-<p><a href="/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png"><img src="/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png" alt=""></a>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline_hu16b98d6b460c37e394c65e3c84c84aba_116020_710x0_resize_box_2.png" 
+                width="710" height="339" 
+                alt="">
+        </a>
+
+    
+
 
 
 <i><center>SAST stage in CI/CD Pipeline implementation</center></i>
@@ -384,7 +476,27 @@ npm install @aws-cdk/aws-ec2 @aws-cdk/aws-iam dotenv
 
 cdk deploy --profile es --require-approval never --outputs-file output.json
 </code></pre></div><p>Further details can be found in the <strong><a href="https://github.com/chilcano/aws-cdk-examples/tree/main/simple-ec2">Chilcano/AWS-CDK-Examples</a></strong> GitHub repository.</p>
-<p><a href="/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png"><img src="/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png" alt=""></a>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome_hu0b917a3414b02ae08ef1e174e53b65b7_228359_710x0_resize_box_2.png" 
+                width="710" height="549" 
+                alt="">
+        </a>
+
+    
+
 
 
 <i><center>Reviewing the SAST scanning (Kics outcomes)</center></i>

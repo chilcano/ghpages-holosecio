@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Media Folder on Holistic Security</title>
+    <title>media on Holistic Security</title>
     <link>https://holisticsecurity.io/media/</link>
-    <description>Recent content in Media Folder on Holistic Security</description>
+    <description>Recent content in media on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://holisticsecurity.io/media/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Logos Folder</title>
-      <link>https://holisticsecurity.io/media/logos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/media/logos/</guid>
-      <description>Logos Dir </description>
-    </item>
-    
   </channel>
 </rss>
