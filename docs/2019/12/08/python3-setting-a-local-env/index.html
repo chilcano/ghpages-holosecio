@@ -13,8 +13,8 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2019/12/08/python3-setting-a-local-env/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-12-08T10:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2019-12-08T10:00:00&#43;00:00" />
+<meta property="article:published_time" content="2019-12-08T10:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-08T10:00:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -136,7 +136,7 @@ if (!doNotTrack) {
     <p>This post will guide you through installing Python 3, and Python 2.x, on your local Linux machine and setting up a programming environment via the command line. This post will explicitly cover the installation procedures for Ubuntu 18.04 or above, but the general principles apply to any other distribution of Debian Linux.</p>
 <p><img src="/assets/img/20191208-python.png" alt="Python 3" title="Setting a Python 3 local programming environment"></p>
 <h2 id="step-1--setting-up-python-3">Step 1 — Setting Up Python 3</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python3 -V
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python3 -V
 
 $ sudo apt install -y python-pip
 $ sudo apt install -y python3-pip
@@ -147,7 +147,7 @@ $ pip3 install package_name
 
 $ sudo apt install build-essential libssl-dev libffi-dev python-dev
 </code></pre></div><h2 id="step-2--setting-up-a-virtual-environment">Step 2 — Setting Up a Virtual Environment</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">// using Apt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">// using Apt
 $ sudo apt install -y virtualenv
 $ sudo apt install -y python3-venv
 
@@ -155,20 +155,20 @@ $ sudo apt install -y python3-venv
 $ pip install virtualenv
 $ pip3 install virtualenv
 </code></pre></div><p>With this installed, we are ready to create environments. Let’s either choose which directory we would like to put our Python programming environments in, or create a new directory with mkdir, as in:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mkdir abc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mkdir abc
 $ cd abc
 </code></pre></div><p>Once you are in the directory where you would like the environments to live, you can create an environment by running the following command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ virtualenv -p /usr/bin/python myenv27
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ virtualenv -p /usr/bin/python myenv27
 $ python3 -m venv myenv3
 </code></pre></div><p>Essentially, this sets up a new directory that contains a few items which we can view with the ls command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ls myenv27/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ls myenv27/
 bin  include  lib  local  share
 
 $ ls myenv3/
 bin  include  lib  lib64  pyvenv.cfg  share
 </code></pre></div><h2 id="step-3--activate-the-python-environment">Step 3 — Activate the Python Environment</h2>
 <p>To use this environment, you need to activate it, which you can do by typing the following command that calls the activate script:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ source myenv27/bin/activate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ source myenv27/bin/activate
 <span style="color:#f92672">(</span>myenv27<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/abc$ 
 
 $ source myenv3/bin/activate
@@ -177,7 +177,7 @@ $ source myenv3/bin/activate
 <p>Note: Within the virtual environment, you can use the command python instead of python3, and pip instead of pip3 if you would prefer. If you use Python 3 on your machine outside of an environment, you will need to use the python3 and pip3 commands exclusively.</p>
 </blockquote>
 <h2 id="step-4--creating-a-python3-program">Step 4 — Creating a Python3 Program</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">(</span>myenv27<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/abc$ pip install pylint python-dateutil BeautifulSoup4 html2text slugify wget
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">(</span>myenv27<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/abc$ pip install pylint python-dateutil BeautifulSoup4 html2text slugify wget
 
 <span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/abc$ python3 -m pip install -U pylint
 <span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/abc$ pip install pylint python-dateutil BeautifulSoup4 html2text slugify

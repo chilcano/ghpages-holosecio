@@ -21,8 +21,8 @@ Below a high level architecture of Container-based Cloud I want to get. I will f
 These requeriments restric some options, all of them using any Public Cloud Provider, but considering the AWS Spot Instances and Google Cloud Preemptible VM Instances. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-01-16T10:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-01-16T10:00:00&#43;00:00" />
+<meta property="article:published_time" content="2020-01-16T10:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-16T10:00:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -209,7 +209,7 @@ Ah, if you don&rsquo;t want to wait, I suggest you read the <a href="https://git
 <p>I&rsquo;ve attempted to use Terraform 12.x, but unfortunately Terraform scrips need to be tweaked before, for that, for this blog post I recommend download and install <a href="https://releases.hashicorp.com/terraform/">Terraform 11.15-oci</a> version.<br>
 The <code>oci</code> suffix means that Terraform is compatible with <a href="https://www.terraform.io/docs/providers/oci/guides/faq.html">Oracle Cloud Infrastructure</a>.</p>
 <h5 id="2-extract-the-downloaded-terraform-binary-file-and-move-it-into-a-directory-searched-for-executables">2. Extract the downloaded <code>terraform</code> binary file and move it into a directory searched for executables.</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~$ unzip ~/Downloads/terraform_0.11.15-oci_linux_amd64.zip 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~$ unzip ~/Downloads/terraform_0.11.15-oci_linux_amd64.zip 
 
 chilcano@inti:~$ sudo mv terraform /usr/local/bin/
 
@@ -220,7 +220,7 @@ Terraform v0.11.15-oci
 <ol>
 <li>Install AWS CLI. It requires Pip 3.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~$ pip3 --version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~$ pip3 --version
 pip 18.1 from /usr/lib/python3/dist-packages/pip <span style="color:#f92672">(</span>python 3.7<span style="color:#f92672">)</span>
 
 chilcano@inti:~$ pip3 install awscli --upgrade --user
@@ -233,7 +233,7 @@ chilcano@inti:~$ which aws
 </code></pre></div><ol start="2">
 <li>Configure the AWS account.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~$ aws configure --profile affordablek8s01
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~$ aws configure --profile affordablek8s01
 AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: &lt;ACCESS-KEY-ID&gt;
 AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: &lt;SECRET-ACCESS-KEY&gt;
 Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: us-west-2
@@ -251,7 +251,7 @@ aws_secret_access_key <span style="color:#f92672">=</span> &lt;SECRET-ACCESS-KEY
 <li>Clone the Github repo.</li>
 </ol>
 <p>You can clone the <a href="https://github.com/chilcano/kubeadm-aws">forked GitHub repo</a> and switch to <code>0.2.1-chilcano</code> branch.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos$ git clone https://github.com/chilcano/kubeadm-aws affordable-k8s-tf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos$ git clone https://github.com/chilcano/kubeadm-aws affordable-k8s-tf
 
 Cloning into <span style="color:#e6db74">&#39;affordable-k8s-tf&#39;</span>...
 remote: Enumerating objects: 327, <span style="color:#66d9ef">done</span>.
@@ -279,7 +279,7 @@ chilcano@inti:~/git-repos/affordable-k8s-tf$ git branch -r
    origin/HEAD -&gt; origin/master
    origin/master
 </code></pre></div><p>Now, let&rsquo;s switch to <code>0.2.1-chilcano</code> branch.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ git checkout 0.2.1-chilcano
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ git checkout 0.2.1-chilcano
 Branch <span style="color:#e6db74">&#39;0.2.1-chilcano&#39;</span> set up to track remote branch <span style="color:#e6db74">&#39;0.2.1-chilcano&#39;</span> from <span style="color:#e6db74">&#39;origin&#39;</span>.
 Switched to a new branch <span style="color:#e6db74">&#39;0.2.1-chilcano&#39;</span>
 
@@ -289,12 +289,12 @@ Your branch is up to date with <span style="color:#e6db74">&#39;origin/0.2.1-chi
 
 nothing to commit, working tree clean
 </code></pre></div><p>Alternatively to all above steps you can clone the <code>0.2.1-chilcano</code> branch only of GitHub repo as follow:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos$ git clone --single-branch --branch 0.2.1-chilcano https://github.com/chilcano/kubeadm-aws affordable-k8s-tf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos$ git clone --single-branch --branch 0.2.1-chilcano https://github.com/chilcano/kubeadm-aws affordable-k8s-tf
 </code></pre></div><ol start="2">
 <li>Update <code>variables.tf</code>.</li>
 </ol>
 <p>Hard-coding any credentials into any Terraform configuration is not recommended. I recommend to provide your AWS credentials via <code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code> environment variables.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ export AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;an-access-key&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ export AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;an-access-key&#34;</span>
 $ export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a-secret-key&#34;</span>
 </code></pre></div><p>In my case I&rsquo;m not going to update any variables in <code>variables.tf</code>, I will overwrite them when running <code>terraform apply</code>. But if you want to do, the variables you have to modify are:</p>
 <ul>
@@ -312,7 +312,7 @@ $ export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="c
 <li>Update <code>main.tf</code> and initialize the Terraform Providers.</li>
 </ol>
 <p>I will update <code>main.tf</code> to configure the 2 Terraform providers (<code>aws</code> and <code>random</code>) with proper versions according <code>Terraform v0.11.15-oci</code> version:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;aws&#34;</span> {<span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;aws&#34;</span> {<span style="color:#75715e">
 </span><span style="color:#75715e">   #version    = &#34;~&gt; 1.48&#34;
 </span><span style="color:#75715e"></span>   <span style="color:#a6e22e">version</span>    = <span style="color:#e6db74">&#34;~&gt; 2.44.0&#34;</span>
    <span style="color:#a6e22e">access_key</span> = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var.<span style="color:#a6e22e">access_key</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
@@ -329,7 +329,7 @@ $ export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="c
 </span><span style="color:#75715e"></span>   <span style="color:#a6e22e">version</span>    = <span style="color:#e6db74">&#34;2.1.0&#34;</span>
 }
 </code></pre></div><p>Now, initialize Terraform.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform init
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform init
 
 Initializing provider plugins...
 - Checking <span style="color:#66d9ef">for</span> available provider plugins on https://releases.hashicorp.com...
@@ -349,7 +349,7 @@ commands will detect it and remind you to <span style="color:#66d9ef">do</span> 
 </code></pre></div><ol start="4">
 <li>Get the Terraform Plan.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform plan <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform plan <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.46.128.76/32&#34;</span> <span style="color:#ae81ff">\
@@ -368,23 +368,23 @@ is 0.12.19. You can update by downloading from www.terraform.io/downloads.html
 <li>Visual exploration of the AWS resources are going to be created by Terraform.</li>
 </ol>
 <p>Terraform is able to export all Terraform scripts into a file in <a href="https://www.graphviz.org/doc/info/lang.html">DOT format</a>, useful to generate a graph through <a href="http://www.graphviz.org">GraphViz</a>. All details are explained here <a href="https://www.terraform.io/docs/commands/graph.html">&ldquo;Terraform - Command: graph&rdquo;</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ sudo apt install graphviz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ sudo apt install graphviz
 terraform graph | dot -Tsvg &gt; your-graph.svg
 </code></pre></div><p>In my case I&rsquo;m going to tweaking the DOT file to get a better graph. In fact, you can do it and once done, using an online service like this <a href="https://dreampuf.github.io/GraphvizOnline">Graphviz Online</a> generate SVG file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform graph -draw-cycles -module-depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> -type<span style="color:#f92672">=</span>apply &gt; 20200116-service-mesh-02-affordable-k8s-aws-graph.dot
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform graph -draw-cycles -module-depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> -type<span style="color:#f92672">=</span>apply &gt; 20200116-service-mesh-02-affordable-k8s-aws-graph.dot
 </code></pre></div><p>You can download my updated DOT file from here <a href="/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.dot">20200116-service-mesh-02-affordable-k8s-aws-graph.dot</a>.</p>
 <p><a href="/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg"><img src="/assets/img/20200116-service-mesh-02-affordable-k8s-aws-graph.svg" alt="Affordable K8s Data Plane hosted in AWS Graph" title="Affordable K8s Data Plane hosted in AWS Graph"></a></p>
 <ol start="6">
 <li>Apply the Terraform Plan.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform apply <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform apply <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.46.128.76/32&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var region<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;us-east-1&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var kubernetes-version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.14.3&#34;</span>
 </code></pre></div><p>And if you want to destroy all resources recently created by <code>terraform apply</code>, you can do it executing this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform destroy <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ terraform destroy <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.46.128.76/32&#34;</span> <span style="color:#ae81ff">\
@@ -392,9 +392,9 @@ terraform graph | dot -Tsvg &gt; your-graph.svg
 </span><span style="color:#ae81ff"></span>   -var kubernetes-version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.14.3&#34;</span>
 </code></pre></div><h4 id="4-check-the-kubernetes-cluster">4) Check the Kubernetes Cluster</h4>
 <p>If we want to check the Kubernetes Cluster creation, we have to review the <code>/var/log/cloud-init-output.log</code>. Before we should get remote access to Kubernetes Master host.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ chmod <span style="color:#ae81ff">400</span> ~/Downloads/ssh-key-for-us-east-1.pem
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ chmod <span style="color:#ae81ff">400</span> ~/Downloads/ssh-key-for-us-east-1.pem
 </code></pre></div><p>Now, getting remote access to Kubernetes Master host.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem -- cat /var/log/cloud-init-output.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem -- cat /var/log/cloud-init-output.log
 
 <span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
 Completed 1.0 KiB/1.0 KiB <span style="color:#f92672">(</span>6.9 KiB/s<span style="color:#f92672">)</span> with <span style="color:#ae81ff">1</span> file<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> remaining
@@ -406,7 +406,7 @@ Cloud-init v. 19.3-41-gc4735dd3-0ubuntu1~18.04.1 running <span style="color:#e6d
 Cloud-init v. 19.3-41-gc4735dd3-0ubuntu1~18.04.1 finished at Wed, <span style="color:#ae81ff">15</span> Jan <span style="color:#ae81ff">2020</span> 15:33:22 +0000. Datasource DataSourceEc2Local.  Up 594.92 seconds
 </code></pre></div><p>If you see above logs, that means that likely everything worked and Kubernetes Cluster was created successfully.
 But, if you see below logs, that means Kubernetes Cluster wasn&rsquo;t created. In the below logs there are errors about Kubernetes packages (<code>kubeadm</code>, <code>kubelet</code> and <code>kubernetes-cni</code>) dependencies unmet when using <code>kubernetes-version=&quot;1.13.4&quot;</code> (default version of these Terraform scripts). To fix it we should change it to <code>kubernetes-version=&quot;1.14.3&quot;</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ubuntu@ip-10-0-100-4:~$ cat /var/log/cloud-init-output.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ubuntu@ip-10-0-100-4:~$ cat /var/log/cloud-init-output.log
 
 <span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
 Some packages could not be installed. This may mean that you have
@@ -426,7 +426,7 @@ Cloud-init v. 19.3-41-gc4735dd3-0ubuntu1~18.04.1 running <span style="color:#e6d
 Cloud-init v. 19.3-41-gc4735dd3-0ubuntu1~18.04.1 finished at Wed, <span style="color:#ae81ff">15</span> Jan <span style="color:#ae81ff">2020</span> 11:16:18 +0000. Datasource DataSourceEc2Local.  Up 119.65 seconds
 </code></pre></div><p>The below log shows other error related with incompatible <code>apiVersion</code> in <code>init-config.yaml</code> file created by <code>master.sh</code>.
 It shoud be changed to <code>apiVersion: kubeadm.k8s.io/v1beta1</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ubuntu@ip-10-0-100-4:~$ cat /var/log/cloud-init-output.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ubuntu@ip-10-0-100-4:~$ cat /var/log/cloud-init-output.log
 
 <span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
 <span style="color:#66d9ef">else</span>
@@ -446,15 +446,15 @@ Cloud-init v. 19.3-41-gc4735dd3-0ubuntu1~18.04.1 finished at Wed, <span style="c
 <ol>
 <li>Check that there are no errors in <code>/var/log/cloud-init-output.log</code> log file.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem -- cat /var/log/cloud-init-output.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem -- cat /var/log/cloud-init-output.log
 </code></pre></div><ol start="2">
 <li>Check that <code>kubelet</code> has started successfully.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem -- systemctl status kubelet
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem -- systemctl status kubelet
 </code></pre></div><ol start="3">
 <li>Finally, ask to Kubernetes to show all Cluster Nodes and its status.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem -- kubectl get nodes
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-k8s-tf$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem -- kubectl get nodes
 
 NAME                           STATUS   ROLES    AGE   VERSION
 ip-10-0-100-154.ec2.internal   Ready    &lt;none&gt;   48m   v1.14.3
