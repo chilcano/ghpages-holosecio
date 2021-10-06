@@ -11,12 +11,20 @@ tags: [SAST]
 ## Issue with Image Resize for longer filename
 
 {{< image-resize "/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-apps.png" 710x >}}
-
 {{< image-resize "/assets/blog20210904_sast_2/123456789-123456789-123456789-123456789-123456789-pqr" 410x >}} 
+
+<!-- That means, "Stop tiling left to right. No more floaty images. We're starting on a new line, here." -->
+{{< rawhtml >}} 
+<p style="clear: both;">
+{{</ rawhtml >}}
 
 ### 54 chars (img resized is created: <filename>_huxxxxx_size_box_3.png)
 {{< image-resize "/assets/blog20210904_sast_2/123456789-123456789-123456789-123456789-123456789-abcd" 510x >}} 
 
 ### 54 chars + (img resized is created _huxxxxxxxxxx.png) 
 {{< image-resize "/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-2-aggregate-reports" 610x >}} 
+
+### Ref
+* https://owlcation.com/stem/how-to-align-images-side-by-side
+
 
