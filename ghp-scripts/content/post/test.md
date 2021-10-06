@@ -26,5 +26,6 @@ tags: [SAST]
 
 ### Ref
 * https://owlcation.com/stem/how-to-align-images-side-by-side
-
+* https://stackoverflow.com/questions/48213883/image-processing-outside-bundles/
+* https://github.com/talves/hugo-resource-images
 
