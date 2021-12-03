@@ -51,7 +51,7 @@ The ARM64 package available in [Code-Server - Releases](https://github.com/cdr/c
 
 __Installing Code-Server in Raspberry Pi (arm).__   
 ```sh
-$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/resources/code_server_install_rpi.sh
+$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_install_rpi.sh
 $ chmod +x code_server_install_rpi.sh
 $ . code_server_install_rpi.sh
 ```
@@ -59,7 +59,7 @@ This process will install Code-Server and only one VSCode Extension called [`Sha
 
 __Removing Code-Server installation in Raspberry Pi (arm).__   
 ```sh
-$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/resources/code_server_remove_rpi.sh
+$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_remove_rpi.sh
 $ chmod +x code_server_remove_rpi.sh
 $ . code_server_remove_rpi.sh
 ```
@@ -71,7 +71,7 @@ A Linux running through WSL 2 has a few limitations like no `systemd` and so on.
 
 __Installing Code-Server in WSL 2 (Ubuntu 20.04).__   
 ```sh
-$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/resources/code_server_install_wsl2.sh
+$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_install_wsl2.sh
 $ chmod +x code_server_install_wsl2.sh 
 $ . code_server_install_wsl2.sh
 ```
@@ -81,7 +81,7 @@ Again, this script will install Code-Server, an extension called [`Shan.code-set
 
 __Removing Code-Server installation in WSL2 (Ubuntu 20.04).__   
 ```sh
-$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/resources/code_server_remove_wsl2.sh
+$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_remove_wsl2.sh
 $ chmod +x code_server_remove_wsl2.sh
 $ . code_server_remove_wsl2.sh
 ```
