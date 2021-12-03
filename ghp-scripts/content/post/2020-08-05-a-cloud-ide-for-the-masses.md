@@ -43,7 +43,7 @@ I've been playing with __Code-Server__ for a while, it is mature and ready to us
 
 #### Installing and running Code-Server in Linux, FreeBSD and Mac OSX
 
-Installing Code-Server in Linux (Debian, Ubuntu, Fedora, CentOS, RHEL, SUSE and Arch Linux) and Mac OSX is stright forward. Just go through the [Installation guide](https://github.com/cdr/code-server/blob/master/doc/install.md) where you will be able to use the installation script `install.sh`.
+Installing Code-Server in Linux (Debian, Ubuntu, Fedora, CentOS, RHEL, SUSE and Arch Linux) and Mac OSX is stright forward. Just go through the [Installation guide](https://coder.com/docs/code-server/latest/install) where you will be able to use the installation script `[install.sh](https://github.com/cdr/code-server/blob/main/install.sh)`.
 
 #### Installing and running Code-Server in Raspberry Pi (ARM based) 
 
