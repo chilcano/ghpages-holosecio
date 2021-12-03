@@ -15,8 +15,8 @@ In this post I&rsquo;ll explain you how to build your own Remote DevOps Desktop 
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/04/09/building-an-affordable-remote-devops-desktop-on-aws/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-04-09T10:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-04-09T10:00:00&#43;00:00" />
+<meta property="article:published_time" content="2020-04-09T10:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-09T10:00:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -159,7 +159,7 @@ In this post I&rsquo;ll explain you how to build your own Remote DevOps Desktop 
 <p>This article uses Terraform to provision a cheap AWS EC2 Spot instance. The approximate cost will be less of 10 euros/month for a <code>m1.small</code> instance located in <code>us-east-1</code> region. Also I’ll share the Github repository with all Terraform scripts where you will be able to change the configuration.</p>
 <h2 id="getting-started">Getting started</h2>
 <p>You have to clone the <a href="https://github.com/chilcano/affordable-remote-desktop">Affordable Remote DevOps Desktop</a> and run through all steps explained there. Next a compacted list of commands:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git clone https://github.com/chilcano/affordable-remote-desktop
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git clone https://github.com/chilcano/affordable-remote-desktop
 $ cd affordable-remote-desktop
 
 $ terraform init
@@ -174,7 +174,7 @@ $ terraform apply <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var ssh_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remotedevenv&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -var developer_cidr_blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.32.214.211/32&#34;</span> 
 </code></pre></div><p>After a few minutes, you will be able to connect to your remote DevOps Desktop through SSH.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output remotedevenv_fqdn<span style="color:#66d9ef">)</span> -i ~/.ssh/remotedevenv
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output remotedevenv_fqdn<span style="color:#66d9ef">)</span> -i ~/.ssh/remotedevenv
 </code></pre></div><h2 id="software-installed-in-the-remote-devops-desktop">Software installed in the remote DevOps Desktop</h2>
 <p>In the moment of writting this post, the software base and tools installed are:</p>
 <ol>
@@ -253,7 +253,7 @@ X2Go is a X-windows remote access software that has clients for Windows, Mac, an
 <h2 id="connecting-to-the-remote-devops-desktop">Connecting to the remote DevOps Desktop</h2>
 <p>Below some screenshots if you want to know how looks like in Ubuntu 19.10 and if you want configure your X2Go Client.
 Before lets get the FQDN of your EC2 instance.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-remote-desktop$ terraform output remotedevenv_fqdn
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/affordable-remote-desktop$ terraform output remotedevenv_fqdn
 ec2-100-26-48-80.compute-1.amazonaws.com
 </code></pre></div><p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-2.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-1.png" alt=""></a></p>
 <p><a href="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-4.png"><img src="https://raw.githubusercontent.com/chilcano/affordable-remote-desktop/master/imgs/remote-devops-desktop-x2go-client-3.png" alt=""></a></p>
