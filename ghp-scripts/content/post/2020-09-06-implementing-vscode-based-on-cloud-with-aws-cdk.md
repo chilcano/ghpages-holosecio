@@ -1,8 +1,8 @@
 ---
-categories: [Cloud, DevOps]
 comments: true
 date: "2020-09-06T11:00:00Z"
-tags: [AWS, CDK, CloudFormation, Code-Server, VSCode]
+categories: [Cloud, DevOps]
+tags: [CDK, Code-Server, VSCode]
 title: Implementing VSCode-based (Code-Server) on Cloud with AWS CDK
 url: /2020/09/06/implementing-vscode-based-on-cloud-with-aws-cdk
 type: post

@@ -5,7 +5,7 @@ draft: false
 type: post
 layout: single_simple
 categories: [Security, Talk]
-tags: [Docker, TLS, Sidecar, Caddy, Proxy]
+tags: [Docker, TLS, Sidecar]
 url: /2021/06/22/hands-on-with-tls-authentication-for-microservices
 ---
 
