@@ -37,8 +37,8 @@ Static Application Security Testing (SAST) in the Cloud Native SDLC
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2021/07/06/sast-in-sdlc-for-cloud-native-apps/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-07-06T10:00:10+02:00" />
-<meta property="article:modified_time" content="2021-07-06T10:00:10+02:00" />
+<meta property="article:published_time" content="2021-07-06T10:00:10&#43;02:00" />
+<meta property="article:modified_time" content="2021-07-06T10:00:10&#43;02:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -208,7 +208,7 @@ In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with 
         <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png">
             <img 
                 style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps_huae7e28459592da6bad21cce7aa381d87_166568_710x0_resize_box_3.png" 
+                src="/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps_huae7e28459592da6bad21cce7aa381d87_166568_710x0_resize_box_2.png" 
                 width="710" height="276" 
                 alt="">
         </a>
@@ -422,7 +422,7 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
         <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png">
             <img 
                 style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac_hu159b777ab9551a0e60169a5ef7b2039a_121266_710x0_resize_box_3.png" 
+                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac_hu159b777ab9551a0e60169a5ef7b2039a_121266_710x0_resize_box_2.png" 
                 width="710" height="311" 
                 alt="">
         </a>
@@ -454,7 +454,7 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
         <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png">
             <img 
                 style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline_hu16b98d6b460c37e394c65e3c84c84aba_116020_710x0_resize_box_3.png" 
+                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline_hu16b98d6b460c37e394c65e3c84c84aba_116020_710x0_resize_box_2.png" 
                 width="710" height="339" 
                 alt="">
         </a>
@@ -468,7 +468,7 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 </p>
 <h3 id="steps">Steps</h3>
 <p>I&rsquo;ve created a Github repository with a CDK Project that automate the creation of AWS EC2 instance, with bash scripts to automate the installation of Jenkins and default plugins and a <a href="https://github.com/chilcano/aws-cdk-examples/blob/main/simple-ec2/_scripts/sast-pipeline-kics.groovy">Jenkins Pipeline</a> that includes SAST stages in the CI/CD process.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/chilcano/aws-cdk-examples.git
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/chilcano/aws-cdk-examples.git
 
 cd aws-cdk-examples/simple-ec2/
 
@@ -490,7 +490,7 @@ cdk deploy --profile es --require-approval never --outputs-file output.json
         <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png">
             <img 
                 style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome_hu0b917a3414b02ae08ef1e174e53b65b7_228359_710x0_resize_box_3.png" 
+                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome_hu0b917a3414b02ae08ef1e174e53b65b7_228359_710x0_resize_box_2.png" 
                 width="710" height="549" 
                 alt="">
         </a>

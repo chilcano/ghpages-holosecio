@@ -13,8 +13,8 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/08/05/a-cloud-ide-for-the-masses/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-08-05T18:00:00+00:00" />
-<meta property="article:modified_time" content="2020-08-05T18:00:00+00:00" />
+<meta property="article:published_time" content="2020-08-05T18:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-08-05T18:00:00&#43;00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -118,9 +118,6 @@ if (!doNotTrack) {
                · 
               <a class="category-link" href="/categories/devops">DevOps</a>
               
-               · 
-              <a class="category-link" href="/categories/linux">Linux</a>
-              
               · 
           </div>
           
@@ -128,9 +125,6 @@ if (!doNotTrack) {
           <div class="article-tag">
               
               
-              <a class="tag-link" href="/tags/aws" rel="tag">AWS</a>
-              
-               · 
               <a class="tag-link" href="/tags/docker" rel="tag">Docker</a>
               
                · 
@@ -177,25 +171,25 @@ And nowadays, in the Cloud Native Application world, likely your Cloud-based IDE
 <h4 id="installing-and-running-code-server-in-raspberry-pi-arm-based">Installing and running Code-Server in Raspberry Pi (ARM based)</h4>
 <p>The ARM64 package available in <a href="https://github.com/cdr/code-server/releases">Code-Server - Releases</a> didn&rsquo;t work in my Raspberry Pi 3 Model B+ with Raspbian 10 (buster), I had to install it via <code>npm</code>. No worries, I&rsquo;ve prepared a bash script to do that.</p>
 <p><strong>Installing Code-Server in Raspberry Pi (arm).</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_install_rpi.sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_install_rpi.sh
 $ chmod +x code_server_install_rpi.sh
 $ . code_server_install_rpi.sh
 </code></pre></div><p>This process will install Code-Server and only one VSCode Extension called <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync"><code>Shan.code-settings-sync</code></a>. This extension will allow us to sync configuration, themes, extensions between multiple IDEs using GitHub Gist.</p>
 <p><strong>Removing Code-Server installation in Raspberry Pi (arm).</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_remove_rpi.sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_remove_rpi.sh
 $ chmod +x code_server_remove_rpi.sh
 $ . code_server_remove_rpi.sh
 </code></pre></div><h4 id="installing-and-running-code-server-in-windows-10-with-wsl-2httpsdocsmicrosoftcomen-uswindowswsl-ubuntu-2004">Installing and running Code-Server in Windows 10 with <a href="https://docs.microsoft.com/en-us/windows/wsl/">WSL 2</a> (Ubuntu 20.04)</h4>
 <p>Unfortunately Code-Server doesn&rsquo;t have a native installation for Windows 10. In my case I&rsquo;m using <strong><a href="https://docs.microsoft.com/en-us/windows/wsl/">Windows Subsystem for Linux (WSL 2)</a></strong> to get running Linux in Windows 10 and finally get Code-Server installed.
 A Linux running through WSL 2 has a few limitations like no <code>systemd</code> and so on. No worries again, I&rsquo;ve prepared a bash script to go through the installation process smoothly.</p>
 <p><strong>Installing Code-Server in WSL 2 (Ubuntu 20.04).</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_install_wsl2.sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_install_wsl2.sh
 $ chmod +x code_server_install_wsl2.sh 
 $ . code_server_install_wsl2.sh
 </code></pre></div><p>Again, this script will install Code-Server, an extension called <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync"><code>Shan.code-settings-sync</code></a> and it will suggest you to use my shared <a href="https://gist.github.com/chilcano/b5f88127bd2d89289dc2cd36032ce856">Gist ID b5f88127bd2d89289dc2cd36032ce856</a>. Also, this script will install <a href="https://github.com/FiloSottile/mkcert"><code>mkcert</code></a> to issue a TLS certificate for the Code-Server.</p>
 <p><a href="/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png"><img src="/assets/blog20200805_cloud_ide/cloud-ide-3-code-server-settings-sync-ext-mkcert-tls.png" alt=""></a></p>
 <p><strong>Removing Code-Server installation in WSL2 (Ubuntu 20.04).</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_remove_wsl2.sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget -q https://raw.githubusercontent.com/chilcano/how-tos/master/src/code_server_remove_wsl2.sh
 $ chmod +x code_server_remove_wsl2.sh
 $ . code_server_remove_wsl2.sh
 </code></pre></div><h3 id="but-code-server-isnt-installed-on-the-cloud">But&hellip; Code-Server isn&rsquo;t installed on the Cloud</h3>

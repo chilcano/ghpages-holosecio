@@ -6,34 +6,7 @@
     <description>Recent content in Microservice on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Mar 2020 00:10:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2</title>
-      <link>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</link>
-      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</guid>
-      <description>&lt;p&gt;In the &lt;a href=&#34;https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In this post I&amp;rsquo;ll explain how to enable and configure &lt;a href=&#34;https://en.wikipedia.org/wiki/Basic_access_authentication&#34;&gt;HTTP Basic Authentication&lt;/a&gt; over TLS in the &lt;a href=&#34;https://www.weave.works/oss/scope&#34;&gt;Weave Scope&lt;/a&gt; webapp running in the recently created K8s Cluster.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1</title>
-      <link>https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</link>
-      <pubDate>Sun, 08 Mar 2020 10:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Minimum Viable Security&lt;/strong&gt; (MVSec) is a concept borrowed from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Minimum_viable_product&#34;&gt;Minimum Viable Product&lt;/a&gt; (MVP) concept about the Product Development Strategy and from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Pareto_principle&#34;&gt;Pareto Principle or 80/20 rule&lt;/a&gt;. The MVP concept applied to IT Security means the product (application) will contain only the minimum amount (20%) of effort invested in order to prove the viability (80%) of an idea (acceptable security).&lt;/p&gt;
-&lt;p&gt;The purpose of this post is to explain how to implement &lt;strong&gt;TLS everywhere&lt;/strong&gt; to become &lt;strong&gt;MVSec&lt;/strong&gt; (roughly 80% of security with 20% of working) for a &lt;strong&gt;Kubernetised Webapp hosted on AWS&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200308/minimum-viable-security-pareto-tls-everywhere-kubernetised-webapp.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;
-
-
-&lt;i&gt;&lt;center&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere with NGINX Ingress Controller, Cert-Manager and Let&#39;s Encrypt&lt;/center&gt;&lt;/i&gt;
-
-&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Wed, 29 Jan 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building your own affordable K8s to host a Service Mesh - Part 3: Certificate Manager</title>
       <link>https://holisticsecurity.io/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</link>

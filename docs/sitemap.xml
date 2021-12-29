@@ -2,8 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://holisticsecurity.io/tags/api/</loc>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://holisticsecurity.io/categories/</loc>
-    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/devsecops/</loc>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/</loc>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/mvs/</loc>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/post/</loc>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/security/</loc>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/2021/12/29/seguridad-en-el-ci-cd-de-las-apis/</loc>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/</loc>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/talk/</loc>
+    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/cloud/</loc>
     <lastmod>2021-09-04T10:00:10+02:00</lastmod>
@@ -12,12 +39,6 @@
     <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/holism/</loc>
-    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/</loc>
-    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/post/</loc>
     <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/sast/</loc>
@@ -29,14 +50,8 @@
     <loc>https://holisticsecurity.io/categories/sdlc/</loc>
     <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/</loc>
-    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/2021/07/06/sast-in-sdlc-for-cloud-native-apps/</loc>
     <lastmod>2021-07-06T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/caddy/</loc>
-    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/docker/</loc>
     <lastmod>2021-06-22T10:00:10+02:00</lastmod>
@@ -44,23 +59,11 @@
     <loc>https://holisticsecurity.io/2021/06/22/hands-on-with-tls-authentication-for-microservices/</loc>
     <lastmod>2021-06-22T10:00:10+02:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/proxy/</loc>
-    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/security/</loc>
-    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/sidecar/</loc>
-    <lastmod>2021-06-22T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/talk/</loc>
     <lastmod>2021-06-22T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/tls/</loc>
     <lastmod>2021-06-22T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/api/</loc>
-    <lastmod>2021-06-21T22:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/gateway/</loc>
     <lastmod>2021-06-21T22:00:00+02:00</lastmod>
@@ -98,13 +101,7 @@
     <loc>https://holisticsecurity.io/about/</loc>
     <lastmod>2021-02-02T11:31:09+01:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/aws/</loc>
-    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/cdk/</loc>
-    <lastmod>2020-09-06T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/cloudformation/</loc>
     <lastmod>2020-09-06T11:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/code-server/</loc>
@@ -125,9 +122,6 @@
     <loc>https://holisticsecurity.io/tags/git/</loc>
     <lastmod>2020-08-05T18:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/categories/linux/</loc>
-    <lastmod>2020-08-05T18:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/raspberry-pi/</loc>
     <lastmod>2020-08-05T18:00:00+00:00</lastmod>
   </url><url>
@@ -137,8 +131,14 @@
     <loc>https://holisticsecurity.io/categories/pattern/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://holisticsecurity.io/tags/proxy/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://holisticsecurity.io/2020/05/13/sidecar-proxy-the-security-building-block/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/aws/</loc>
+    <lastmod>2020-04-20T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2020/04/20/building-an-affordable-remote-devops-desktop-on-aws-part2/</loc>
     <lastmod>2020-04-20T10:00:00+00:00</lastmod>
@@ -167,13 +167,7 @@
     <loc>https://holisticsecurity.io/tags/windows-10/</loc>
     <lastmod>2020-03-29T18:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/microservice/</loc>
-    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</loc>
-    <lastmod>2020-03-19T00:10:00+00:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/mvp/</loc>
     <lastmod>2020-03-19T00:10:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/service-mesh/</loc>
@@ -218,6 +212,9 @@
     <loc>https://holisticsecurity.io/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/</loc>
     <lastmod>2020-01-29T10:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://holisticsecurity.io/tags/microservice/</loc>
+    <lastmod>2020-01-29T10:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://holisticsecurity.io/tags/pki/</loc>
     <lastmod>2020-01-29T10:00:00+00:00</lastmod>
   </url><url>
@@ -255,6 +252,9 @@
     <lastmod>2019-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/extended/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/linux/</loc>
     <lastmod>2019-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/monitor/</loc>

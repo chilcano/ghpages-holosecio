@@ -6,7 +6,25 @@
     <description>Recent content in Categories on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Sep 2021 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Dec 2021 10:00:00 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security</title>
+      <link>https://holisticsecurity.io/categories/security/</link>
+      <pubDate>Wed, 29 Dec 2021 10:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Talk</title>
+      <link>https://holisticsecurity.io/categories/talk/</link>
+      <pubDate>Wed, 29 Dec 2021 10:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/categories/talk/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Cloud</title>
       <link>https://holisticsecurity.io/categories/cloud/</link>
@@ -44,24 +62,6 @@
     </item>
     
     <item>
-      <title>Security</title>
-      <link>https://holisticsecurity.io/categories/security/</link>
-      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
-      
-      <guid>https://holisticsecurity.io/categories/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Talk</title>
-      <link>https://holisticsecurity.io/categories/talk/</link>
-      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
-      
-      <guid>https://holisticsecurity.io/categories/talk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>CMS</title>
       <link>https://holisticsecurity.io/categories/cms/</link>
       <pubDate>Sun, 20 Jun 2021 20:00:00 +0200</pubDate>
@@ -85,15 +85,6 @@
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/categories/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://holisticsecurity.io/categories/linux/</link>
-      <pubDate>Wed, 05 Aug 2020 18:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/categories/linux/</guid>
       <description></description>
     </item>
     
@@ -139,6 +130,15 @@
       <pubDate>Sun, 08 Dec 2019 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://holisticsecurity.io/categories/linux/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/categories/linux/</guid>
       <description></description>
     </item>
     

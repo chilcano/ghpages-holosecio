@@ -6,7 +6,44 @@
     <description>Recent content in Posts on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Sep 2021 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Dec 2021 10:00:00 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seguridad en el CI/CD de las APIs</title>
+      <link>https://holisticsecurity.io/2021/12/29/seguridad-en-el-ci-cd-de-las-apis/</link>
+      <pubDate>Wed, 29 Dec 2021 10:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/2021/12/29/seguridad-en-el-ci-cd-de-las-apis/</guid>
+      <description>&lt;p&gt;On October 13th 2021 I had the opportunity again to participate at &lt;a href=&#34;https://apiaddictsday.apiaddicts.org/&#34;&gt;API Addicts Days 2021&lt;/a&gt;, the biggest event of API experts in Latam and Spain.
+The 1st time I explained how to build a &lt;a href=&#34;https://holisticsecurity.io/2021/06/21/un-layer4-layer7-gateway-para-proteger-tu-data&#34;&gt;Secure Data Gateway for your APIs&lt;/a&gt;, but this time I brought new concepts and approach such as The Pareto Principle and Shift-Left Testing applied to API Projects.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+    
+    
+
+        &lt;a href=&#34;https://holisticsecurity.io/media/assets/blog20211229_devsecops_api/APIAddictsDays21-DevSecOps-y-APIs.png&#34;&gt;
+            &lt;img 
+                style=&#34;float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;&#34; 
+                src=&#34;https://holisticsecurity.io/media/assets/blog20211229_devsecops_api/APIAddictsDays21-DevSecOps-y-APIs_hu504aaacefeaa43dc389e6bfa4a498ac9_855008_710x0_resize_box_2.png&#34; 
+                width=&#34;710&#34; height=&#34;399&#34; 
+                alt=&#34;&#34;&gt;
+        &lt;/a&gt;
+
+    
+
+
+
+&lt;i&gt;&lt;center&gt;Minimum Viable Security, DevSecOps and API Projects&lt;/center&gt;&lt;/i&gt;
+
+&lt;/p&gt;
+&lt;p&gt;This time I explained how to adopt the &lt;a href=&#34;https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security approach&lt;/a&gt; to implement security in the API Life cycle.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>SAST in your SDLC for Cloud-Native Apps 2</title>
       <link>https://holisticsecurity.io/2021/09/04/sast-in-sdlc-for-cloud-native-apps-2/</link>
@@ -30,7 +67,7 @@ This post will also explain how to consolidate all vulnerabilities/issues/bugs f
         &lt;a href=&#34;https://holisticsecurity.io/media/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-apps.png&#34;&gt;
             &lt;img 
                 style=&#34;float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;&#34; 
-                src=&#34;https://holisticsecurity.io/media/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-apps_hu2a2302e36b0faf5fefd1edbb3f86232c_159418_710x0_resize_box_3.png&#34; 
+                src=&#34;https://holisticsecurity.io/media/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-apps_hu2a2302e36b0faf5fefd1edbb3f86232c_159418_710x0_resize_box_2.png&#34; 
                 width=&#34;710&#34; height=&#34;268&#34; 
                 alt=&#34;&#34;&gt;
         &lt;/a&gt;
@@ -68,7 +105,7 @@ In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with 
         &lt;a href=&#34;https://holisticsecurity.io/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png&#34;&gt;
             &lt;img 
                 style=&#34;float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;&#34; 
-                src=&#34;https://holisticsecurity.io/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps_huae7e28459592da6bad21cce7aa381d87_166568_710x0_resize_box_3.png&#34; 
+                src=&#34;https://holisticsecurity.io/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps_huae7e28459592da6bad21cce7aa381d87_166568_710x0_resize_box_2.png&#34; 
                 width=&#34;710&#34; height=&#34;276&#34; 
                 alt=&#34;&#34;&gt;
         &lt;/a&gt;
@@ -100,9 +137,9 @@ From here I thank &lt;a href=&#34;https://www.meetup.com/DevOpsPlayground/&#34;&
       <pubDate>Mon, 21 Jun 2021 22:00:00 +0200</pubDate>
       
       <guid>https://holisticsecurity.io/2021/06/21/un-layer4-layer7-gateway-para-proteger-tu-data/</guid>
-      <description>&lt;p&gt;On October 15th, 2020 I had the opportunity to participate at &lt;a href=&#34;https://apiaddictsday.apiaddicts.org/&#34;&gt;API Addicts Days 20&lt;/a&gt;, the biggest evento of API experts in Latam and Spain.&lt;/p&gt;
+      <description>&lt;p&gt;On October 15th, 2020 I had the opportunity to participate at &lt;a href=&#34;https://apiaddictsday.apiaddicts.org/&#34;&gt;API Addicts Days 20&lt;/a&gt;, the biggest event of API experts in Latam and Spain.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20210621-apiaddictsdays20-l4-l7-gateway-para-proteger-tu-data.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;This event was important for me because it allowed me come back to online conferences in Spanish bringing a Security topic to The API World.&lt;/p&gt;</description>
+&lt;p&gt;This event was important for me because it allowed me come back to online conferences in Spanish bringing Security topics to The API World.&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Sep 2021 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Dec 2021 10:00:00 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>https://holisticsecurity.io/tags/api/</link>
+      <pubDate>Wed, 29 Dec 2021 10:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevSecOps</title>
+      <link>https://holisticsecurity.io/tags/devsecops/</link>
+      <pubDate>Wed, 29 Dec 2021 10:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/devsecops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MVS</title>
+      <link>https://holisticsecurity.io/tags/mvs/</link>
+      <pubDate>Wed, 29 Dec 2021 10:00:00 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/mvs/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>SAST</title>
       <link>https://holisticsecurity.io/tags/sast/</link>
@@ -17,29 +44,11 @@
     </item>
     
     <item>
-      <title>Caddy</title>
-      <link>https://holisticsecurity.io/tags/caddy/</link>
-      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/caddy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Docker</title>
       <link>https://holisticsecurity.io/tags/docker/</link>
       <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
       
       <guid>https://holisticsecurity.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Proxy</title>
-      <link>https://holisticsecurity.io/tags/proxy/</link>
-      <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/proxy/</guid>
       <description></description>
     </item>
     
@@ -58,15 +67,6 @@
       <pubDate>Tue, 22 Jun 2021 10:00:10 +0200</pubDate>
       
       <guid>https://holisticsecurity.io/tags/tls/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>API</title>
-      <link>https://holisticsecurity.io/tags/api/</link>
-      <pubDate>Mon, 21 Jun 2021 22:00:00 +0200</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/api/</guid>
       <description></description>
     </item>
     
@@ -125,29 +125,11 @@
     </item>
     
     <item>
-      <title>AWS</title>
-      <link>https://holisticsecurity.io/tags/aws/</link>
-      <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>CDK</title>
       <link>https://holisticsecurity.io/tags/cdk/</link>
       <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/cdk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CloudFormation</title>
-      <link>https://holisticsecurity.io/tags/cloudformation/</link>
-      <pubDate>Sun, 06 Sep 2020 11:00:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/cloudformation/</guid>
       <description></description>
     </item>
     
@@ -197,6 +179,24 @@
     </item>
     
     <item>
+      <title>Proxy</title>
+      <link>https://holisticsecurity.io/tags/proxy/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://holisticsecurity.io/tags/aws/</link>
+      <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Packer</title>
       <link>https://holisticsecurity.io/tags/packer/</link>
       <pubDate>Mon, 20 Apr 2020 10:00:00 +0000</pubDate>
@@ -242,24 +242,6 @@
     </item>
     
     <item>
-      <title>Microservice</title>
-      <link>https://holisticsecurity.io/tags/microservice/</link>
-      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/microservice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MVP</title>
-      <link>https://holisticsecurity.io/tags/mvp/</link>
-      <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
-      
-      <guid>https://holisticsecurity.io/tags/mvp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>X509</title>
       <link>https://holisticsecurity.io/tags/x509/</link>
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
@@ -301,6 +283,15 @@
       <pubDate>Mon, 10 Feb 2020 10:00:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/tags/sca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservice</title>
+      <link>https://holisticsecurity.io/tags/microservice/</link>
+      <pubDate>Wed, 29 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/microservice/</guid>
       <description></description>
     </item>
     
