@@ -17,7 +17,7 @@ The 1st time I explained how to build a [Secure Data Gateway for your APIs](/202
 <i><center>Minimum Viable Security, DevSecOps and API Projects</center></i>
 {{</ rawhtml >}}
 
-This time I explained how to adopt the [Minimum Viable Security approach](/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1) to implement security in the API Life cycle.
+I explained how to adopt the [Minimum Viable Security approach](/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1) to implement security in the API Life cycle.
 
 <!--more-->
 
