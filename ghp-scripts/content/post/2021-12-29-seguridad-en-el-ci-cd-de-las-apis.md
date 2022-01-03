@@ -7,6 +7,8 @@ layout: single_simple
 categories: [Security, Talk]
 tags: [API, DevSecOps, MVS]
 url: /2021/12/29/seguridad-en-el-ci-cd-de-las-apis
+aliases: 
+   - /2021/12/28/seguridad-en-el-ci-cd-de-las-apis
 ---
 
 On October 13th 2021 I had the opportunity again to participate at [API Addicts Days 2021](https://apiaddictsday.apiaddicts.org/), the biggest event of API experts in Latam and Spain.
