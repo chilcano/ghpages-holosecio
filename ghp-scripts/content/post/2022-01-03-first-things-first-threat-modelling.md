@@ -14,7 +14,14 @@ aliases:
 On 2014 RSA Conference (archive not available), Eric Olson of Cyveillance said a good and real simil about Threat Modelling: "It is a lot like teenage sex: Everyone is talking about it, 
 everyone thinks everyone else is doing it, and most of the few people who are actually doing it aren't doing it all that well".
 
+![](/media/assets/blog20220103_threat_model/20220103_threat_model_and_devsecops.png)
+{{< rawhtml >}}
+<i><center>Threat Model and DevSecOps</center></i>
+{{</ rawhtml >}}
+
 Well, in this post I'll try to help you do it well from the Tooling point of view.
+
+<!--more--> 
 
 ## What is Threat Modelling
 
@@ -36,27 +43,57 @@ Because:
 
 ## Why now 
 
+Before, this was the domain of the Security Consultant aided by some commercial tool. Not now, there are very good opensource tools of all kinds, they are able to be integrated into CI/CD Processes, 
+even they have semi-automated functionalities: templates and examples already pre-loaded, database of common threats by type of application already defined, etc.  
+There is not excuse now. Here all opensource tools I've found and tested:
 
+| 1. [Cairis](https://cairis.org) |
+|--- |
+| * Apache Software License.  |
+| * Live demo: https://demo.cairis.org  |
+| * It is a Web Application and can be shared as part of your Toolchain. |
+| * Features exposed as RERTful API and can be integrated into your ecosystem. |
+| * Focused on specification of requirements, modelling threats and managing risks. |
+| * Manages the security, usability, and design artifacts in one place. |
+| * We can visualise the design from different perspectives. |
+| * Leverages attack and architectural patterns. |
+| * Show all security, usability and design elements associated with your product's risks. |
+| * Quickly validate even the most basic design for known security design and privacy problems. |
+| * Generate documentation from Volere compliant requirement specification to GDPR DPIA docs. |
+|--- |
 
-{{< image-resize "/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-apps.png" 710x >}}
-{{< rawhtml >}}
-<i><center>A SAST Jenkins Pipeline for a Full Stack Cloud Native Application</center></i>
-{{</ rawhtml >}}
+| 2. [OWASP pytm](https://github.com/izar/pytm) |
+|--- |
+| * xxxx |
+|--- |
 
+| 3. [OWASP Threat Dragon](https://threatdragon.org)
+|--- |
+| * xxxx |
+|--- |
 
-"Security is a process, not a product" (Bruce Schneier, April 2000). Get started with #Threat #Modelling. Here are some open source tools to accomplish that:
+| 4. [Threagile](https://threagile.io) |
+|--- |
+| * xxxx |
+|--- |
 
-1) Cairis: https://cairis.org
-2) Microsoft Threat Modeling Tool: https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool
-3) OWASP pytm: https://github.com/izar/pytm
-4) OWASP Threat Dragon: https://threatdragon.org
-5) Threagile: https://threagile.io
-6) Threats Manager Suite (TMS): https://threatsmanager.com by Simone Curzi
-7) ThreatSpec https://github.com/threatspec/threatspec
+| 5. [ThreatSpec](https://github.com/threatspec/threatspec) |
+|--- |
+| * xxxx |
+|--- |
 
-Here more #security tools (~102) to use in the #SDLC: https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/
+| 6. [Microsoft Threat Modeling Tool](https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool) |
+|--- |
+| * xxxx |
+|--- |
 
-<!--more--> 
+| 7. [Threats Manager Suite (TMS)](https://threatsmanager.com) |
+|--- |
+| * xxxx |
+|--- |
+
+by Simone Curzi
+
 
 ## References
 
@@ -64,3 +101,4 @@ Here more #security tools (~102) to use in the #SDLC: https://holisticsecurity.i
 2. https://www.threatmodelingmanifesto.org/
 3. Raising resilience against advanced cyber attacks through threat modeling: https://www.unifiedkillchain.com/
 4. Minimum Viable Secure Product: https://mvsp.dev/mvsp.en/index.html
+5. More OSS security tools (~102) to use in the SDLC: https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/
