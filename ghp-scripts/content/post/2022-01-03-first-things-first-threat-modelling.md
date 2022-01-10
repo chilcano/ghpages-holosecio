@@ -1,7 +1,7 @@
 ---
 title: 'First things first: Threat Modelling'
 date: 2022-01-03T10:00:10+02:00
-draft: true
+draft: false
 type: post
 layout: single_simple
 categories: [Cloud, SDLC, DevSecOps, Holism]
@@ -20,8 +20,7 @@ everyone thinks everyone else is doing it, and most of the few people who are ac
 {{</ rawhtml >}}
 
 Well, in this post I'll try to help you do it well from the Tooling point of view.
-
-<!--more--> 
+<!--more-->
 
 ## What is Threat Modelling
 
@@ -30,7 +29,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Threat_model):
 
 In other words, using Threat Modelling we will be able to identify potential threats along your process (Software Development Life Cycle) and anticipate before happening.
 
-## Why it is first thing to do in Cybersecurity
+## Why is it the first thing to do in Cybersecurity
 
 Because:
 * It makes sense:
@@ -41,17 +40,18 @@ Because:
 * It is cheaper.
 * No security skills are required when modelling.
 
-## Why now 
+## Why now - Threat Modelling Tools
 
-Before, this was the domain of the Security Consultant aided by some commercial tool. Not now, there are very good opensource tools of all kinds, they are able to be integrated into CI/CD Processes, 
-even they have semi-automated functionalities: templates and examples already pre-loaded, database of common threats by type of application already defined, etc.  
+Before, this was the domain of the Security Consultant aided by some commercial tools. Not now, because there are very good opensource tools of all kinds, many of them are integrable into CI/CD Pipelines, 
+even they have functionalities that help to be productive such as templates and examples already pre-loaded, database of common threats by type of application already defined, etc.  
 There is not excuse now. Here all opensource tools I've found and tested:
 
-| 1. [Cairis](https://cairis.org) |
-|--- |
+
+| 1. [Cairis](https://cairis.org) | {{< image-resize "/assets/blog20220103_threat_model/logo-cairis.jpg" 60x >}} | 
+|--- | --- |
 | * Apache Software License.  |
 | * Live demo: https://demo.cairis.org  |
-| * It is a Web Application and can be shared as part of your Toolchain. |
+| * It's a Web Application and can be shared as part of your Toolchain. |
 | * Features exposed as RERTful API and can be integrated into your ecosystem. |
 | * Focused on specification of requirements, modelling threats and managing risks. |
 | * Manages the security, usability, and design artifacts in one place. |
@@ -60,39 +60,94 @@ There is not excuse now. Here all opensource tools I've found and tested:
 | * Show all security, usability and design elements associated with your product's risks. |
 | * Quickly validate even the most basic design for known security design and privacy problems. |
 | * Generate documentation from Volere compliant requirement specification to GDPR DPIA docs. |
+|--- | 
+
+| 2. [OWASP pytm](https://github.com/izar/pytm) | {{< image-resize "/assets/blog20220103_threat_model/logo-owasp-pytm" 120x >}} |
+|--- | --- |
+| * MIT License. |
+| * pytm: A Pythonic framework for threat modeling |
+| * The goal of pytm is to shift threat modeling to the left, making threat modeling more automated and developer-centric. |
+| * Based on your input and definition of the architectural design, pytm can automatically generate Data Flow Diagram (DFD), Sequence Diagram and Relevant threats to your system |
+| * Provides a Threats database. It can be extended. |
 |--- |
 
-| 2. [OWASP pytm](https://github.com/izar/pytm) |
-|--- |
-| * xxxx |
-|--- |
-
-| 3. [OWASP Threat Dragon](https://threatdragon.org)
-|--- |
-| * xxxx |
-|--- |
-
-| 4. [Threagile](https://threagile.io) |
-|--- |
-| * xxxx |
+| 3. [OWASP Threat Dragon](https://threatdragon.org) | {{< image-resize "/assets/blog20220103_threat_model/logo-owasp-threat-dragon.png" 200x >}} |
+|--- | --- |
+| * Apache Software License. |
+| * It can be used as a standalone desktop app for Windows and MacOS (Linux coming soon) or as a web application.  |
+| * Live demo: https://threatdragon.org/login |
+| * It is cross-platform threat modelling application including system diagramming and a threat rule engine to auto-generate threats/mitigations. |
+| * The focus of the project is on great UX, a powerful rule engine and integration with other development lifecycle tools. |
+| * Threat Dragon provides [STRIDE per Element](https://www.microsoft.com/security/blog/2007/10/29/the-stride-per-element-chart/) rules to generate the suggested threats for an element on the diagram - except for trust boundaries. The suggested threats can be individually accepted or ignored, and other threats added manually. |
 |--- |
 
-| 5. [ThreatSpec](https://github.com/threatspec/threatspec) |
+| 4. [Threagile - Agile Threat Modeling Toolkit](https://threagile.io) | {{< image-resize "/assets/blog20220103_threat_model/logo-threagile.png" 420x >}} |
+|--- | --- |
+| * MIT License. |
+| * Live demo: https://run.threagile.io |
+| * It allows to model an architecture with its assets in an agile fashion as a YAML file directly inside the IDE. |
+| * Threagile toolkit checks a set of risk-rules execute security against the architecture model and create a report with potential risk and migitation advice. |
+| * Generates automatically data-flow diagrams as well as other output formats (Excel and JSON). |
+| * The risk tracking can also happen inside the Threagile YAML model file, so that the current state of risk mitigation is reported as well. |
+| * It can either be run via the CLI or started as a REST server allowing easy integration into CI/CD Pipelines. |
 |--- |
-| * xxxx |
+
+| 5. [ThreatSpec](https://github.com/threatspec/threatspec) | {{< image-resize "/assets/blog20220103_threat_model/logo-threatspec.png" 500x >}} |
+|--- | --- |
+| * MIT License. |
+| * Threatspec is an open source project that aims to close the gap between development and security by bringing the threat modelling process further into the development process. |
+| * This allows the developers and security engineers write threat specifications alongside code, then dynamically generating reports and data-flow diagrams from the code. |
+| * This allows engineers to capture the security context of the code they write, as they write it by using `annotations`. |
+| * How does it work?: Annotating your code. And supported language are: C, C++, C#, Golang, HTML, Java, Javascript, Shell and XML. |
 |--- |
 
 | 6. [Microsoft Threat Modeling Tool](https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool) |
 |--- |
-| * xxxx |
+| * This tool is free to download and use.  |
+| * Windows Desktop Application. |
+| * It applies STRIDE threat classification scheme to the identified threats. |
+| * It was designed with non-security experts in mind, making threat modeling easier for all developers by providing clear guidance on creating and analyzing threat models. |
+| * It suggests and manages mitigations for security issues. |
+| * It uses [STRIDE per Element](https://www.microsoft.com/security/blog/2007/10/29/the-stride-per-element-chart/) : Guided analysis of threats and mitigations. |
+| * Designed for Developers and Centered on Software and focused on Design Analysis. |
 |--- |
 
 | 7. [Threats Manager Suite (TMS)](https://threatsmanager.com) |
 |--- |
-| * xxxx |
+| * This tool is free to download and use. 
+| * Created by [Simone Curzi](https://simoneonsecurity.com), Senior Consultant at Microsoft Global CyberSecurity Practice (GCP). |
+| * Windows Desktop Application. |
+| * TMS is based on a solid Open Source foundation called [Threats Manager Platform](https://github.com/simonec73/threatsmanager), which is under the MIT license. |
+| * TMS has been designed to fulfill the needs of many different personas, from the super-Expert to the novice, including Project Managers, Product Owners, and Business Stakeholders. |
 |--- |
 
-by Simone Curzi
+
+## Other complementary Tools
+
+| 1. [The Raindance Project](https://github.com/devsecops/raindance) |
+| --- |
+| * Apache Software License. |
+| * Project intended to make Attack Maps part of software development by reducing the time it takes to complete them. |
+| * The attack map process helps identifying target surface and adversary attack strategies that lead to exploit and compromise. This project is extensive with a goal of creating re-usable and inheritable attack maps. |
+| --- |
+
+
+| 2. [Mozilla Rapid Risk Assessment (RRA)](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment.html) |
+| --- |
+| * Mozilla License. |
+| * The Rapid Risk Assessment or Rapid Risk Analysis (RRA) methodology helps formalize this type of decision making and ensures that the process is reproducible, consistent and the results are easy to communicate.. |
+| --- |
+
+
+| 3. [ThreatPlaybook](https://threatplaybook.io) |
+| --- |
+| * No mentioned. |
+| * A unified DevSecOps Framework that allows you to go from iterative, collaborative Threat Modeling to Application Security Test Orchestration. |
+| * ThreatPlaybook be used in CI/CD environments. It uses the Robot Framework. |
+| * Here is a working example of Threat Models and Security Automation with ThreatPlaybook: https://github.com/we45/ThreatPlaybook-Example |
+| --- |
+
+
 
 
 ## References
