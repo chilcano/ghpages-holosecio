@@ -2,22 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://holisticsecurity.io/tags/api/</loc>
-    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/categories/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/cloud/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/devsecops/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/2022/01/03/first-things-first-threat-modelling/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/holism/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/post/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/sast/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/sdlc/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/</loc>
+    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/api/</loc>
     <lastmod>2021-12-29T10:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/devsecops/</loc>
     <lastmod>2021-12-29T10:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/</loc>
-    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/mvs/</loc>
-    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/post/</loc>
     <lastmod>2021-12-29T10:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/security/</loc>
@@ -26,28 +47,10 @@
     <loc>https://holisticsecurity.io/2021/12/29/seguridad-en-el-ci-cd-de-las-apis/</loc>
     <lastmod>2021-12-29T10:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/tags/</loc>
-    <lastmod>2021-12-29T10:00:00+02:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/categories/talk/</loc>
     <lastmod>2021-12-29T10:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/categories/cloud/</loc>
-    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/devsecops/</loc>
-    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/holism/</loc>
-    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/sast/</loc>
-    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/2021/09/04/sast-in-sdlc-for-cloud-native-apps-2/</loc>
-    <lastmod>2021-09-04T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/sdlc/</loc>
     <lastmod>2021-09-04T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2021/07/06/sast-in-sdlc-for-cloud-native-apps/</loc>

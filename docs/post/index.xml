@@ -6,7 +6,24 @@
     <description>Recent content in Posts on Holistic Security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Dec 2021 10:00:00 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jan 2022 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First things first: Threat Modelling</title>
+      <link>https://holisticsecurity.io/2022/01/03/first-things-first-threat-modelling/</link>
+      <pubDate>Mon, 03 Jan 2022 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/2022/01/03/first-things-first-threat-modelling/</guid>
+      <description>&lt;p&gt;On 2014 RSA Conference (archive not available), Eric Olson of Cyveillance said a good and real simil about Threat Modelling: &amp;ldquo;It is a lot like teenage sex: Everyone is talking about it,
+everyone thinks everyone else is doing it, and most of the few people who are actually doing it aren&amp;rsquo;t doing it all that well&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/media/assets/blog20220103_threat_model/20220103_threat_model_and_devsecops.png&#34; alt=&#34;&#34;&gt;
+
+
+&lt;i&gt;&lt;center&gt;Threat Model and DevSecOps&lt;/center&gt;&lt;/i&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Well, in this post I&amp;rsquo;ll try to help you do it well from the Tooling point of view.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Seguridad en el CI/CD de las APIs</title>
       <link>https://holisticsecurity.io/2021/12/29/seguridad-en-el-ci-cd-de-las-apis/</link>

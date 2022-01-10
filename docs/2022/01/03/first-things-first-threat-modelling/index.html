@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> First things first: Threat Modelling | Holistic Security</title>
+  <meta name="description" content="With The Systems Thinking Methodology we are able to see any problem in a complete and holistic manner, in fact, The Systems Thinking Methodology allows us to solve complex problems (IT Security, Global Warming, World Poverty, etc.) by considering new factors, elements and variables (usability, trust, quality, risk, etc.) which were not considered initially.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="First things first: Threat Modelling" />
+<meta property="og:description" content="On 2014 RSA Conference (archive not available), Eric Olson of Cyveillance said a good and real simil about Threat Modelling: &ldquo;It is a lot like teenage sex: Everyone is talking about it,
+everyone thinks everyone else is doing it, and most of the few people who are actually doing it aren&rsquo;t doing it all that well&rdquo;.
+
+
+
+Threat Model and DevSecOps
+
+
+Well, in this post I&rsquo;ll try to help you do it well from the Tooling point of view." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://holisticsecurity.io/2022/01/03/first-things-first-threat-modelling/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-03T10:00:10&#43;02:00" />
+<meta property="article:modified_time" content="2022-01-03T10:00:10&#43;02:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="First things first: Threat Modelling"/>
+<meta name="twitter:description" content="On 2014 RSA Conference (archive not available), Eric Olson of Cyveillance said a good and real simil about Threat Modelling: &ldquo;It is a lot like teenage sex: Everyone is talking about it,
+everyone thinks everyone else is doing it, and most of the few people who are actually doing it aren&rsquo;t doing it all that well&rdquo;.
+
+
+
+Threat Model and DevSecOps
+
+
+Well, in this post I&rsquo;ll try to help you do it well from the Tooling point of view."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://holisticsecurity.io/css/style-white.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://holisticsecurity.io/images/favicon.ico" />
+
+  
+  
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  
+  
+
+  <link rel="stylesheet" href="https://holisticsecurity.io/css/custom-cactus-style-white.css">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://holisticsecurity.io/">
+  
+    <div id="logo" style="background-image: url(https://holisticsecurity.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Holistic Security</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/post">Blog</a></li>
+      
+        <li><a href="/taxonomy">Taxonomy</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+  <h1 class="posttitle" itemprop="name headline"> First things first: Threat Modelling </h1>
+
+  <ul class="post-list">  
+      <li class="post-item">
+        <div class="meta">
+          <time datetime="2022-01-03 10:00:10 &#43;0200 &#43;0200" itemprop="datePublished">2022-01-03</time>
+        </div>
+        <span>    
+          
+          
+          <div class="article-category">
+              
+              
+              <a class="category-link" href="/categories/cloud">Cloud</a>
+              
+               · 
+              <a class="category-link" href="/categories/sdlc">SDLC</a>
+              
+               · 
+              <a class="category-link" href="/categories/devsecops">DevSecOps</a>
+              
+               · 
+              <a class="category-link" href="/categories/holism">Holism</a>
+              
+              · 
+          </div>
+          
+          
+          <div class="article-tag">
+              
+              
+              <a class="tag-link" href="/tags/sast" rel="tag">SAST</a>
+              
+          </div>
+          
+  
+        </span>
+      </li>  
+    </ul>
+
+  <div class="content" itemprop="articleBody">
+  
+    <p>On 2014 RSA Conference (archive not available), Eric Olson of Cyveillance said a good and real simil about Threat Modelling: &ldquo;It is a lot like teenage sex: Everyone is talking about it,
+everyone thinks everyone else is doing it, and most of the few people who are actually doing it aren&rsquo;t doing it all that well&rdquo;.</p>
+<p><img src="/media/assets/blog20220103_threat_model/20220103_threat_model_and_devsecops.png" alt="">
+
+
+<i><center>Threat Model and DevSecOps</center></i>
+
+</p>
+<p>Well, in this post I&rsquo;ll try to help you do it well from the Tooling point of view.</p>
+<h2 id="what-is-threat-modelling">What is Threat Modelling</h2>
+<p>From <a href="https://en.wikipedia.org/wiki/Threat_model">Wikipedia</a>:</p>
+<blockquote>
+<p>Threat modeling is a process by which potential threats, such as structural vulnerabilities or the absence of appropriate safeguards, can be identified, enumerated, and mitigations can be prioritized.</p>
+</blockquote>
+<p>In other words, using Threat Modelling we will be able to identify potential threats along your process (Software Development Life Cycle) and anticipate before happening.</p>
+<h2 id="why-is-it-the-first-thing-to-do-in-cybersecurity">Why is it the first thing to do in Cybersecurity</h2>
+<p>Because:</p>
+<ul>
+<li>It makes sense:
+<ul>
+<li>Minimum Viable Secure.</li>
+<li>Shift-Left Testing.</li>
+<li>Pareto Principle.</li>
+<li>Holistic Security.</li>
+</ul>
+</li>
+<li>It is cheaper.</li>
+<li>No security skills are required when modelling.</li>
+</ul>
+<h2 id="why-now---threat-modelling-tools">Why now - Threat Modelling Tools</h2>
+<p>Before, this was the domain of the Security Consultant aided by some commercial tools. Not now, because there are very good opensource tools of all kinds, many of them are integrable into CI/CD Pipelines,
+even they have functionalities that help to be productive such as templates and examples already pre-loaded, database of common threats by type of application already defined, etc.<br>
+There is not excuse now. Here all opensource tools I&rsquo;ve found and tested:</p>
+<table>
+<thead>
+<tr>
+<th>1. <a href="https://cairis.org">Cairis</a></th>
+<th>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20220103_threat_model/logo-cairis.jpg">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20220103_threat_model/logo-cairis_hu236c71b8415dd6d6ceb592e4257342ec_3603_60x0_resize_q75_box.jpg" 
+                width="60" height="60" 
+                alt="">
+        </a>
+
+    
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* Apache Software License.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Live demo: <a href="https://demo.cairis.org">https://demo.cairis.org</a></td>
+<td></td>
+</tr>
+<tr>
+<td>* It&rsquo;s a Web Application and can be shared as part of your Toolchain.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Features exposed as RERTful API and can be integrated into your ecosystem.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Focused on specification of requirements, modelling threats and managing risks.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Manages the security, usability, and design artifacts in one place.</td>
+<td></td>
+</tr>
+<tr>
+<td>* We can visualise the design from different perspectives.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Leverages attack and architectural patterns.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Show all security, usability and design elements associated with your product&rsquo;s risks.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Quickly validate even the most basic design for known security design and privacy problems.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Generate documentation from Volere compliant requirement specification to GDPR DPIA docs.</td>
+<td></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>2. <a href="https://github.com/izar/pytm">OWASP pytm</a></th>
+<th>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20220103_threat_model/logo-owasp-pytm.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20220103_threat_model/logo-owasp-pytm_hua632b1267d6248a6fa0075779fcead04_52390_120x0_resize_box_2.png" 
+                width="120" height="120" 
+                alt="">
+        </a>
+
+    
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* MIT License.</td>
+<td></td>
+</tr>
+<tr>
+<td>* pytm: A Pythonic framework for threat modeling</td>
+<td></td>
+</tr>
+<tr>
+<td>* The goal of pytm is to shift threat modeling to the left, making threat modeling more automated and developer-centric.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Based on your input and definition of the architectural design, pytm can automatically generate Data Flow Diagram (DFD), Sequence Diagram and Relevant threats to your system</td>
+<td></td>
+</tr>
+<tr>
+<td>* Provides a Threats database. It can be extended.</td>
+<td></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>3. <a href="https://threatdragon.org">OWASP Threat Dragon</a></th>
+<th>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20220103_threat_model/logo-owasp-threat-dragon.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20220103_threat_model/logo-owasp-threat-dragon_huaf961a0f855e2a18af152df66dbfd3e8_7131_200x0_resize_box_2.png" 
+                width="200" height="200" 
+                alt="">
+        </a>
+
+    
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* Apache Software License.</td>
+<td></td>
+</tr>
+<tr>
+<td>* It can be used as a standalone desktop app for Windows and MacOS (Linux coming soon) or as a web application.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Live demo: <a href="https://threatdragon.org/login">https://threatdragon.org/login</a></td>
+<td></td>
+</tr>
+<tr>
+<td>* It is cross-platform threat modelling application including system diagramming and a threat rule engine to auto-generate threats/mitigations.</td>
+<td></td>
+</tr>
+<tr>
+<td>* The focus of the project is on great UX, a powerful rule engine and integration with other development lifecycle tools.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Threat Dragon provides <a href="https://www.microsoft.com/security/blog/2007/10/29/the-stride-per-element-chart/">STRIDE per Element</a> rules to generate the suggested threats for an element on the diagram - except for trust boundaries. The suggested threats can be individually accepted or ignored, and other threats added manually.</td>
+<td></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>4. <a href="https://threagile.io">Threagile - Agile Threat Modeling Toolkit</a></th>
+<th>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20220103_threat_model/logo-threagile.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20220103_threat_model/logo-threagile_hue5966155f56436871d87263d650a1371_65326_420x0_resize_box_2.png" 
+                width="420" height="146" 
+                alt="">
+        </a>
+
+    
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* MIT License.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Live demo: <a href="https://run.threagile.io">https://run.threagile.io</a></td>
+<td></td>
+</tr>
+<tr>
+<td>* It allows to model an architecture with its assets in an agile fashion as a YAML file directly inside the IDE.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Threagile toolkit checks a set of risk-rules execute security against the architecture model and create a report with potential risk and migitation advice.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Generates automatically data-flow diagrams as well as other output formats (Excel and JSON).</td>
+<td></td>
+</tr>
+<tr>
+<td>* The risk tracking can also happen inside the Threagile YAML model file, so that the current state of risk mitigation is reported as well.</td>
+<td></td>
+</tr>
+<tr>
+<td>* It can either be run via the CLI or started as a REST server allowing easy integration into CI/CD Pipelines.</td>
+<td></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>5. <a href="https://github.com/threatspec/threatspec">ThreatSpec</a></th>
+<th>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20220103_threat_model/logo-threatspec.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20220103_threat_model/logo-threatspec_hu4ea64e32d9a67c56092aa74a53341b0b_14850_500x0_resize_box_2.png" 
+                width="500" height="80" 
+                alt="">
+        </a>
+
+    
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* MIT License.</td>
+<td></td>
+</tr>
+<tr>
+<td>* Threatspec is an open source project that aims to close the gap between development and security by bringing the threat modelling process further into the development process.</td>
+<td></td>
+</tr>
+<tr>
+<td>* This allows the developers and security engineers write threat specifications alongside code, then dynamically generating reports and data-flow diagrams from the code.</td>
+<td></td>
+</tr>
+<tr>
+<td>* This allows engineers to capture the security context of the code they write, as they write it by using <code>annotations</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td>* How does it work?: Annotating your code. And supported language are: C, C++, C#, Golang, HTML, Java, Javascript, Shell and XML.</td>
+<td></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>6. <a href="https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool">Microsoft Threat Modeling Tool</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* This tool is free to download and use.</td>
+</tr>
+<tr>
+<td>* Windows Desktop Application.</td>
+</tr>
+<tr>
+<td>* It applies STRIDE threat classification scheme to the identified threats.</td>
+</tr>
+<tr>
+<td>* It was designed with non-security experts in mind, making threat modeling easier for all developers by providing clear guidance on creating and analyzing threat models.</td>
+</tr>
+<tr>
+<td>* It suggests and manages mitigations for security issues.</td>
+</tr>
+<tr>
+<td>* It uses <a href="https://www.microsoft.com/security/blog/2007/10/29/the-stride-per-element-chart/">STRIDE per Element</a> : Guided analysis of threats and mitigations.</td>
+</tr>
+<tr>
+<td>* Designed for Developers and Centered on Software and focused on Design Analysis.</td>
+</tr>
+<tr>
+<td>&mdash;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>7. <a href="https://threatsmanager.com">Threats Manager Suite (TMS)</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* This tool is free to download and use.</td>
+</tr>
+<tr>
+<td>* Created by <a href="https://simoneonsecurity.com">Simone Curzi</a>, Senior Consultant at Microsoft Global CyberSecurity Practice (GCP).</td>
+</tr>
+<tr>
+<td>* Windows Desktop Application.</td>
+</tr>
+<tr>
+<td>* TMS is based on a solid Open Source foundation called <a href="https://github.com/simonec73/threatsmanager">Threats Manager Platform</a>, which is under the MIT license.</td>
+</tr>
+<tr>
+<td>* TMS has been designed to fulfill the needs of many different personas, from the super-Expert to the novice, including Project Managers, Product Owners, and Business Stakeholders.</td>
+</tr>
+<tr>
+<td>&mdash;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-complementary-tools">Other complementary Tools</h2>
+<table>
+<thead>
+<tr>
+<th>1. <a href="https://github.com/devsecops/raindance">The Raindance Project</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* Apache Software License.</td>
+</tr>
+<tr>
+<td>* Project intended to make Attack Maps part of software development by reducing the time it takes to complete them.</td>
+</tr>
+<tr>
+<td>* The attack map process helps identifying target surface and adversary attack strategies that lead to exploit and compromise. This project is extensive with a goal of creating re-usable and inheritable attack maps.</td>
+</tr>
+<tr>
+<td>&mdash;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>2. <a href="https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment.html">Mozilla Rapid Risk Assessment (RRA)</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* Mozilla License.</td>
+</tr>
+<tr>
+<td>* The Rapid Risk Assessment or Rapid Risk Analysis (RRA) methodology helps formalize this type of decision making and ensures that the process is reproducible, consistent and the results are easy to communicate..</td>
+</tr>
+<tr>
+<td>&mdash;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>3. <a href="https://threatplaybook.io">ThreatPlaybook</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* No mentioned.</td>
+</tr>
+<tr>
+<td>* A unified DevSecOps Framework that allows you to go from iterative, collaborative Threat Modeling to Application Security Test Orchestration.</td>
+</tr>
+<tr>
+<td>* ThreatPlaybook be used in CI/CD environments. It uses the Robot Framework.</td>
+</tr>
+<tr>
+<td>* Here is a working example of Threat Models and Security Automation with ThreatPlaybook: <a href="https://github.com/we45/ThreatPlaybook-Example">https://github.com/we45/ThreatPlaybook-Example</a></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://shostack.org/resources/tm-in-2021.html">https://shostack.org/resources/tm-in-2021.html</a></li>
+<li><a href="https://www.threatmodelingmanifesto.org/">https://www.threatmodelingmanifesto.org/</a></li>
+<li>Raising resilience against advanced cyber attacks through threat modeling: <a href="https://www.unifiedkillchain.com/">https://www.unifiedkillchain.com/</a></li>
+<li>Minimum Viable Secure Product: <a href="https://mvsp.dev/mvsp.en/index.html">https://mvsp.dev/mvsp.en/index.html</a></li>
+<li>More OSS security tools (~102) to use in the SDLC: <a href="https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/">https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/</a></li>
+</ol>
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Holistic Security 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/post">Blog</a></li>
+         
+        <li><a href="/taxonomy">Taxonomy</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-156433649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>
