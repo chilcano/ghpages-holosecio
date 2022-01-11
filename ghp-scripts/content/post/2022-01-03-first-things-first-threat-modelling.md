@@ -20,6 +20,7 @@ everyone thinks everyone else is doing it, and most of the few people who are ac
 {{</ rawhtml >}}
 
 Well, in this post I'll try to help you do it well from the Tooling point of view.
+
 <!--more-->
 
 ## What is Threat Modelling
@@ -29,7 +30,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Threat_model):
 
 In other words, using Threat Modelling we will be able to identify potential threats along your process (Software Development Life Cycle) and anticipate before happening.
 
-## Why is it the first thing to do in Cybersecurity
+## Why is it the first thing to do in Cybersecurity ?
 
 Because:
 * It makes sense:
@@ -40,11 +41,13 @@ Because:
 * It is cheaper.
 * No security skills are required when modelling.
 
-## Why now - Threat Modelling Tools
+## Why now ? Mature Threat Modelling Tools
 
 Before, this was the domain of the Security Consultant aided by some commercial tools. Not now, because there are very good opensource tools of all kinds, many of them are integrable into CI/CD Pipelines, 
 even they have functionalities that help to be productive such as templates and examples already pre-loaded, database of common threats by type of application already defined, etc.  
-There is not excuse now. Here all opensource tools I've found and tested:
+> There is not excuse now. We have good mature opensource Threat Modelling Tools.  
+
+Here all opensource tools I've found and reviewed:
 
 
 | 1. [Cairis](https://cairis.org) | {{< image-resize "/assets/blog20220103_threat_model/logo-cairis.jpg" 60x >}} | 
@@ -124,6 +127,8 @@ There is not excuse now. Here all opensource tools I've found and tested:
 
 ## Other complementary Tools
 
+Attack Maps, Assessment Methodologies, Frameworks to automate and integrate the Threat Intelligence process into CI/CD Pipelines, etc:
+
 | 1. [The Raindance Project](https://github.com/devsecops/raindance) |
 | --- |
 | * Apache Software License. |
@@ -149,11 +154,11 @@ There is not excuse now. Here all opensource tools I've found and tested:
 
 
 
-
 ## References
 
-1. https://shostack.org/resources/tm-in-2021.html
-2. https://www.threatmodelingmanifesto.org/
-3. Raising resilience against advanced cyber attacks through threat modeling: https://www.unifiedkillchain.com/
-4. Minimum Viable Secure Product: https://mvsp.dev/mvsp.en/index.html
-5. More OSS security tools (~102) to use in the SDLC: https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/
+1. ["Threat Modeling in 2021" - By Adam Shostack](https://shostack.org/resources/tm-in-2021.html)
+2. [The Threat Modeling Manifesto](https://www.threatmodelingmanifesto.org)
+3. [Raising resilience against advanced cyber attacks through threat modeling](https://www.unifiedkillchain.com)
+4. [Minimum Viable Secure Product](https://mvsp.dev/mvsp.en/index.html)
+5. [Why Threat Intelligence Is Like Teenage Sex - Dark Reading, 2014](https://www.darkreading.com/threat-intelligence/why-threat-intelligence-is-like-teenage-sex)
+6. [More OSS security tools (~102) to use in the SDLC](https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/)
