@@ -30,7 +30,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Threat_model):
 
 In other words, using Threat Modelling we will be able to identify potential threats along your process (Software Development Life Cycle) and anticipate before happening.
 
-## Why is it the first thing to do in Cybersecurity ?
+## Why is it the first thing to do in Cybersecurity?
 
 Because:
 * It makes sense:
@@ -41,7 +41,7 @@ Because:
 * It is cheaper.
 * No security skills are required when modelling.
 
-## Why now ? Mature Threat Modelling Tools
+## Why now? Mature Threat Modelling Tools
 
 Before, this was the domain of the Security Consultant aided by some commercial tools. Not now, because there are very good opensource tools of all kinds, many of them are integrable into CI/CD Pipelines, 
 even they have functionalities that help to be productive such as templates and examples already pre-loaded, database of common threats by type of application already defined, etc.  
