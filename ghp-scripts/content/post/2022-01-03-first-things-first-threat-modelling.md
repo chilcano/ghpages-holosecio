@@ -1,5 +1,5 @@
 ---
-title: 'First things first: Threat Modelling'
+title: 'First things first: Threat Modelling using Free and Open Source Tools'
 date: 2022-01-03T10:00:10+02:00
 draft: false
 type: post
