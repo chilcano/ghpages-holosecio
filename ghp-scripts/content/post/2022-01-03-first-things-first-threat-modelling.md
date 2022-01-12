@@ -4,8 +4,8 @@ date: 2022-01-03T10:00:10+02:00
 draft: false
 type: post
 layout: single_simple
-categories: [Cloud, SDLC, DevSecOps, Holism]
-tags: [SAST]
+categories: [SDLC, DevSecOps, Holism]
+tags: [Threat Model, Shift-Left]
 url: /2022/01/03/first-things-first-threat-modelling
 aliases: 
    - /post/2022/01/03/first-things-first-threat-modelling
@@ -36,7 +36,6 @@ Because:
 * It makes sense:
   - Minimum Viable Secure. 
   - Shift-Left Testing. 
-  - Pareto Principle.
   - Holistic Security.
 * It is cheaper.
 * No security skills are required when modelling.
