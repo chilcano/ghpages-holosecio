@@ -8,11 +8,20 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 03 Jan 2022 10:00:10 +0200</lastBuildDate><atom:link href="https://holisticsecurity.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SAST</title>
-      <link>https://holisticsecurity.io/tags/sast/</link>
+      <title>Shift-Left</title>
+      <link>https://holisticsecurity.io/tags/shift-left/</link>
       <pubDate>Mon, 03 Jan 2022 10:00:10 +0200</pubDate>
       
-      <guid>https://holisticsecurity.io/tags/sast/</guid>
+      <guid>https://holisticsecurity.io/tags/shift-left/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Threat Model</title>
+      <link>https://holisticsecurity.io/tags/threat-model/</link>
+      <pubDate>Mon, 03 Jan 2022 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/threat-model/</guid>
       <description></description>
     </item>
     
@@ -40,6 +49,15 @@
       <pubDate>Wed, 29 Dec 2021 10:00:00 +0200</pubDate>
       
       <guid>https://holisticsecurity.io/tags/mvs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SAST</title>
+      <link>https://holisticsecurity.io/tags/sast/</link>
+      <pubDate>Sat, 04 Sep 2021 10:00:10 +0200</pubDate>
+      
+      <guid>https://holisticsecurity.io/tags/sast/</guid>
       <description></description>
     </item>
     
