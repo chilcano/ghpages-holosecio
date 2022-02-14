@@ -25,6 +25,49 @@ https://www.soteria.dev/post/how-to-audit-solana-smart-contracts-part-2-automate
 https://www.soteria.dev/post/how-to-audit-solana-smart-contracts-part-3-penetration-testing
 https://www.soteria.dev/post/how-to-audit-solana-smart-contracts-part-4-the-anchor-framework
 
+Building a Smart Contract in Rust
+https://docs.near.org/docs/develop/contracts/rust/intro
+https://www.near.university/
+
+Counter with simple Cross-Contract calls in Rust
+https://github.com/near-examples/cross-contract-rust-counter
+
+Cross-contract calls
+https://github.com/near-examples/cross-contract-calls
+
+Meta Staking Pool
+https://github.com/Narwallets/meta-pool
+
+Slither, the Solidity source analyzer
+https://github.com/crytic/slither
+
+
+Static Application Security Testing (SAST) for Rust Lang
+https://www.reddit.com/r/rust/comments/e8alwt/static_application_security_testing_sast_for_rust/
+
+List of security-related projects
+https://github.com/rust-secure-code/projects
+
+The RustSec Advisory Database
+https://rustsec.org/
+
+Security / Rust
+https://github.com/analysis-tools-dev/static-analysis#rust
+
+
+Links / Ben Laurie blathering / Bitcoin
+https://www.links.org/?p=1164
+Proof of Stake ¿Qué es y para qué se utiliza?
+https://jfmunoz.com/proof-of-stake/
+
+EVENTO LOGÍSTICA Y TECNOLOGÍA
+https://www.lacchain.net/events/EVENTO-LOG%C3%8DSTICA%20Y%20TECNOLOG%C3%8DA
+
+ASI Innovation Week
+https://www.lacchain.net/events/ASI-Innovation%20Week
+
+LACChain Notarizer FAQ
+https://lacchain.medium.com/lacchain-notarizer-faq-6ae3dbb3441e
 
 <!--more--> 
 
