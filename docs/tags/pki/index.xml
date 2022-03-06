@@ -20,7 +20,7 @@ During the Terraform execution, immediately after Kubernetes Cluster creation, t
 &lt;li&gt;&lt;a href=&#34;http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane&#34;&gt;Part 1 - Building your own affordable K8s to host a Service Mesh&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress&#34;&gt;Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34; alt=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&amp;rsquo;s Encrypt&#34; title=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&#39;s Encrypt&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png&#34; alt=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&amp;amp;rsquo;s Encrypt&#34; title=&#34;K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&#39;s Encrypt&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

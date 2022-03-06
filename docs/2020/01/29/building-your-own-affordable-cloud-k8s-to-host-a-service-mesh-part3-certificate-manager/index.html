@@ -19,8 +19,8 @@ Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-01-29T10:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-01-29T10:00:00&#43;00:00" />
+<meta property="article:published_time" content="2020-01-29T10:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T10:00:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -164,7 +164,7 @@ During the Terraform execution, immediately after Kubernetes Cluster creation, t
 <li><a href="http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane">Part 1 - Building your own affordable K8s to host a Service Mesh</a>.</li>
 <li><a href="http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress">Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress</a>.</li>
 </ul>
-<p><a href="/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png"><img src="/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png" alt="K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&rsquo;s Encrypt" title="K8s Cluster created using AWS Spot Instances - Cert-Manager and Let's Encrypt"></a></p>
+<p><a href="/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png"><img src="/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png" alt="K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&amp;rsquo;s Encrypt" title="K8s Cluster created using AWS Spot Instances - Cert-Manager and Let's Encrypt"></a></p>
 <h2 id="steps">Steps</h2>
 <h3 id="1-cleaning-everything">1. Cleaning everything</h3>
 <p>If you are using the Terraform scripts to create an affordable K8s Cluster I&rsquo;ve forked and updated for you, then first of all you should clean up to start creating a new fresh K8s Cluster for following this scenario.</p>
@@ -173,158 +173,157 @@ During the Terraform execution, immediately after Kubernetes Cluster creation, t
 <a href="https://github.com/chilcano/kubeadm-aws/tree/0.2.1-chilcano">https://github.com/chilcano/kubeadm-aws/tree/0.2.1-chilcano</a></p>
 </blockquote>
 <p>Removing existing K8s Cluster.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ terraform destroy <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.50.13.174/32&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var region<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;us-east-1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var kubernetes-version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.14.3&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var external-dns-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var nginx-ingress-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var nginx-ingress-domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ingress-nginx.cloud.holisticsecurity.io&#34;</span> 
-</code></pre></div><p>If you have destroyed the K8s Cluster with <code>terraform destroy</code>, likely you have to remove unwanted records (created for your services) in the AWS Hosted Zone.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ export MY_SUBDOMAIN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cloud.holisticsecurity.io&#34;</span>
-$ export HZ_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws route53 list-hosted-zones-by-name --dns-name <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>MY_SUBDOMAIN<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span> | jq -r <span style="color:#e6db74">&#39;.HostedZones[0].Id&#39;</span><span style="color:#66d9ef">)</span>
-$ aws route53 list-resource-record-sets --hosted-zone-id $HZ_ID --query <span style="color:#e6db74">&#34;ResourceRecordSets[?Name != &#39;</span><span style="color:#e6db74">${</span>MY_SUBDOMAIN<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#39;]&#34;</span> | jq -c <span style="color:#e6db74">&#39;.[]&#39;</span> |
-  <span style="color:#66d9ef">while</span> read -r RRS; <span style="color:#66d9ef">do</span>
-    read -r name type <span style="color:#f92672">&lt;&lt;&lt;</span> <span style="color:#66d9ef">$(</span>jq -jr <span style="color:#e6db74">&#39;.Name, &#34; &#34;, .Type&#39;</span> <span style="color:#f92672">&lt;&lt;&lt;</span> <span style="color:#e6db74">&#34;</span>$RRS<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span> 
-    CHG_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws route53 change-resource-record-sets --hosted-zone-id $HZ_ID --change-batch <span style="color:#e6db74">&#39;{&#34;Changes&#34;:[{&#34;Action&#34;:&#34;DELETE&#34;,&#34;ResourceRecordSet&#34;: &#39;</span><span style="color:#e6db74">&#34;</span>$RRS<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39; }]}&#39;</span> --output text --query <span style="color:#e6db74">&#39;ChangeInfo.Id&#39;</span><span style="color:#66d9ef">)</span>
-    echo <span style="color:#e6db74">&#34; - DELETING: </span>$type<span style="color:#e6db74"> </span>$name<span style="color:#e6db74"> - CHANGE ID: </span>$CHG_ID<span style="color:#e6db74">&#34;</span>    
-  <span style="color:#66d9ef">done</span>
-</code></pre></div><p>For further details and an explanation about above step review this post:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ terraform destroy <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.50.13.174/32&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var region<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;us-east-1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var kubernetes-version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.14.3&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var external-dns-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var nginx-ingress-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var nginx-ingress-domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ingress-nginx.cloud.holisticsecurity.io&#34;</span> 
+</span></span></code></pre></div><p>If you have destroyed the K8s Cluster with <code>terraform destroy</code>, likely you have to remove unwanted records (created for your services) in the AWS Hosted Zone.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ export MY_SUBDOMAIN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cloud.holisticsecurity.io&#34;</span>
+</span></span><span style="display:flex;"><span>$ export HZ_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws route53 list-hosted-zones-by-name --dns-name <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>MY_SUBDOMAIN<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span> | jq -r <span style="color:#e6db74">&#39;.HostedZones[0].Id&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>$ aws route53 list-resource-record-sets --hosted-zone-id $HZ_ID --query <span style="color:#e6db74">&#34;ResourceRecordSets[?Name != &#39;</span><span style="color:#e6db74">${</span>MY_SUBDOMAIN<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#39;]&#34;</span> | jq -c <span style="color:#e6db74">&#39;.[]&#39;</span> |
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> read -r RRS; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    read -r name type <span style="color:#f92672">&lt;&lt;&lt;</span> <span style="color:#66d9ef">$(</span>jq -jr <span style="color:#e6db74">&#39;.Name, &#34; &#34;, .Type&#39;</span> <span style="color:#f92672">&lt;&lt;&lt;</span> <span style="color:#e6db74">&#34;</span>$RRS<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span> 
+</span></span><span style="display:flex;"><span>    CHG_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws route53 change-resource-record-sets --hosted-zone-id $HZ_ID --change-batch <span style="color:#e6db74">&#39;{&#34;Changes&#34;:[{&#34;Action&#34;:&#34;DELETE&#34;,&#34;ResourceRecordSet&#34;: &#39;</span><span style="color:#e6db74">&#34;</span>$RRS<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39; }]}&#39;</span> --output text --query <span style="color:#e6db74">&#39;ChangeInfo.Id&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34; - DELETING: </span>$type<span style="color:#e6db74"> </span>$name<span style="color:#e6db74"> - CHANGE ID: </span>$CHG_ID<span style="color:#e6db74">&#34;</span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>For further details and an explanation about above step review this post:</p>
 <ul>
 <li><a href="http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress">Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress</a>.</li>
 </ul>
 <h3 id="2-create-a-fresh-k8s-cluster-with-jetstack-cert-manager-installed">2. Create a fresh K8s Cluster with JetStack Cert-Manager installed</h3>
 <p>Note the <code>cert-manager-enabled=&quot;1&quot;</code> and <code>cert-manager-email=&quot;cheapk8s@holisticsecurity.io&quot;</code> parameters which are required to create a Kubernetes Cluster with the <a href="https://github.com/jetstack/cert-manager">JetStack Cert-Manager</a> installed.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ terraform plan <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.50.13.174/32&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var region<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;us-east-1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var kubernetes-version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.14.3&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var external-dns-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var nginx-ingress-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var nginx-ingress-domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ingress-nginx.cloud.holisticsecurity.io&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var cert-manager-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var cert-manager-email<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s@holisticsecurity.io&#34;</span> 
-
-$ terraform apply <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.50.13.174/32&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var region<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;us-east-1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var kubernetes-version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.14.3&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var external-dns-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var nginx-ingress-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var nginx-ingress-domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ingress-nginx.cloud.holisticsecurity.io&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var cert-manager-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -var cert-manager-email<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s@holisticsecurity.io&#34;</span> 
-</code></pre></div><h3 id="3-checking-recently-created-k8s-cluster-and-jetstack-cert-manager">3. Checking recently created K8s Cluster and JetStack Cert-Manager</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ terraform plan <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.50.13.174/32&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var region<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;us-east-1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var kubernetes-version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.14.3&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var external-dns-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var nginx-ingress-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var nginx-ingress-domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ingress-nginx.cloud.holisticsecurity.io&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var cert-manager-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var cert-manager-email<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s@holisticsecurity.io&#34;</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ terraform apply <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var cluster-name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var k8s-ssh-key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh-key-for-us-east-1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var admin-cidr-blocks<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;83.50.13.174/32&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var region<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;us-east-1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var kubernetes-version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.14.3&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var external-dns-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var nginx-ingress-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var nginx-ingress-domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ingress-nginx.cloud.holisticsecurity.io&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var cert-manager-enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -var cert-manager-email<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cheapk8s@holisticsecurity.io&#34;</span> 
+</span></span></code></pre></div><h3 id="3-checking-recently-created-k8s-cluster-and-jetstack-cert-manager">3. Checking recently created K8s Cluster and JetStack Cert-Manager</h3>
 <h4 id="31-exploring-the-jetstack-cert-manager-resources-created-in-the-k8s-cluster">3.1. Exploring the JetStack Cert-Manager resources created in the K8s Cluster</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Get SSH access to K8s master node</span>
-$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem
-
-<span style="color:#75715e"># List all namespaces</span>
-$ kubectl get ns
-NAME              STATUS   AGE
-cert-manager      Active   159m
-default           Active   161m
-ingress-nginx     Active   158m
-kube-node-lease   Active   161m
-kube-public       Active   161m
-kube-system       Active   161m
-
-<span style="color:#75715e"># Listing all resources under namespace &#39;cert-manager&#39;</span>
-$ kubectl get all -n cert-manager
-NAME                                READY   STATUS    RESTARTS   AGE
-pod/cert-manager-54d94bb6fc-9zchz   1/1     Running   <span style="color:#ae81ff">0</span>          5h22m
-
-NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/cert-manager   1/1     <span style="color:#ae81ff">1</span>            <span style="color:#ae81ff">1</span>           5h22m
-
-NAME                                      DESIRED   CURRENT   READY   AGE
-replicaset.apps/cert-manager-54d94bb6fc   <span style="color:#ae81ff">1</span>         <span style="color:#ae81ff">1</span>         <span style="color:#ae81ff">1</span>       5h22m
-</code></pre></div><h4 id="32-calling-ingress-health-check-over-tls">3.2. Calling Ingress' <code>health check</code> over TLS.</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ curl https://ingress-nginx.cloud.holisticsecurity.io/healthz -v -k
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
-&lt; HTTP/2 <span style="color:#ae81ff">200</span> 
-&lt; server: nginx/1.15.5
-&lt; date: Tue, <span style="color:#ae81ff">28</span> Jan <span style="color:#ae81ff">2020</span> 15:23:26 GMT
-&lt; content-type: text/html
-&lt; content-length: <span style="color:#ae81ff">0</span>
-&lt; 
-* Connection <span style="color:#75715e">#0 to host ingress-nginx.cloud.holisticsecurity.io left intact</span>
-</code></pre></div><h4 id="33-getting-the-tls-certificate-using-openssl">3.3. Getting the TLS Certificate using <code>openssl</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ echo | openssl s_client -showcerts -servername ingress-nginx.cloud.holisticsecurity.io -connect ingress-nginx.cloud.holisticsecurity.io:443 2&gt;/dev/null | openssl x509 -inform pem -noout -text
-</code></pre></div><h3 id="4-calling-a-microservice-over-https-port-443">4. Calling a Microservice over HTTPS (port 443)</h3>
-<p>Since all Microservices and RESTful API were configured to be invoked over 80/HTTP and 443/HTTPS and routed through the NGINX Ingress Controller. The only thing to do is call them through their FQDN (Fully Qualified Domain Name) and the Microservices' FQDN could be <code>https://ingress-nginx.cloud.holisticsecurity.io/&lt;MICROSERVICE_NAME&gt;</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Get SSH access to K8s master node</span>
+</span></span><span style="display:flex;"><span>$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all namespaces</span>
+</span></span><span style="display:flex;"><span>$ kubectl get ns
+</span></span><span style="display:flex;"><span>NAME              STATUS   AGE
+</span></span><span style="display:flex;"><span>cert-manager      Active   159m
+</span></span><span style="display:flex;"><span>default           Active   161m
+</span></span><span style="display:flex;"><span>ingress-nginx     Active   158m
+</span></span><span style="display:flex;"><span>kube-node-lease   Active   161m
+</span></span><span style="display:flex;"><span>kube-public       Active   161m
+</span></span><span style="display:flex;"><span>kube-system       Active   161m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Listing all resources under namespace &#39;cert-manager&#39;</span>
+</span></span><span style="display:flex;"><span>$ kubectl get all -n cert-manager
+</span></span><span style="display:flex;"><span>NAME                                READY   STATUS    RESTARTS   AGE
+</span></span><span style="display:flex;"><span>pod/cert-manager-54d94bb6fc-9zchz   1/1     Running   <span style="color:#ae81ff">0</span>          5h22m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+</span></span><span style="display:flex;"><span>deployment.apps/cert-manager   1/1     <span style="color:#ae81ff">1</span>            <span style="color:#ae81ff">1</span>           5h22m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                                      DESIRED   CURRENT   READY   AGE
+</span></span><span style="display:flex;"><span>replicaset.apps/cert-manager-54d94bb6fc   <span style="color:#ae81ff">1</span>         <span style="color:#ae81ff">1</span>         <span style="color:#ae81ff">1</span>       5h22m
+</span></span></code></pre></div><h4 id="32-calling-ingress-health-check-over-tls">3.2. Calling Ingress&rsquo; <code>health check</code> over TLS.</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ curl https://ingress-nginx.cloud.holisticsecurity.io/healthz -v -k
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>&lt; HTTP/2 <span style="color:#ae81ff">200</span> 
+</span></span><span style="display:flex;"><span>&lt; server: nginx/1.15.5
+</span></span><span style="display:flex;"><span>&lt; date: Tue, <span style="color:#ae81ff">28</span> Jan <span style="color:#ae81ff">2020</span> 15:23:26 GMT
+</span></span><span style="display:flex;"><span>&lt; content-type: text/html
+</span></span><span style="display:flex;"><span>&lt; content-length: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>&lt; 
+</span></span><span style="display:flex;"><span>* Connection <span style="color:#75715e">#0 to host ingress-nginx.cloud.holisticsecurity.io left intact</span>
+</span></span></code></pre></div><h4 id="33-getting-the-tls-certificate-using-openssl">3.3. Getting the TLS Certificate using <code>openssl</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ echo | openssl s_client -showcerts -servername ingress-nginx.cloud.holisticsecurity.io -connect ingress-nginx.cloud.holisticsecurity.io:443 2&gt;/dev/null | openssl x509 -inform pem -noout -text
+</span></span></code></pre></div><h3 id="4-calling-a-microservice-over-https-port-443">4. Calling a Microservice over HTTPS (port 443)</h3>
+<p>Since all Microservices and RESTful API were configured to be invoked over 80/HTTP and 443/HTTPS and routed through the NGINX Ingress Controller. The only thing to do is call them through their FQDN (Fully Qualified Domain Name) and the Microservices&rsquo; FQDN could be <code>https://ingress-nginx.cloud.holisticsecurity.io/&lt;MICROSERVICE_NAME&gt;</code>.</p>
 <p>Then, let&rsquo;s try it using the <code>Hello Microservice</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Get SSH access to K8s master node</span>
-$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem
-   
-<span style="color:#75715e"># Deploy Hello microservices, services and ingress</span>
-$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-app.yaml
-$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-svc.yaml
-$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-ingress.yaml
-$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-ingress-tls.yaml
-   
-<span style="color:#75715e"># Get status</span>
-$ kubectl get pod,svc,ingress -n hello -o wide
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
-NAME                                       HOSTS                                     ADDRESS   PORTS     AGE
-ingress.extensions/hello-ingress-cip       ingress-nginx.cloud.holisticsecurity.io             <span style="color:#ae81ff">80</span>        16m
-ingress.extensions/hello-ingress-cip-tls   ingress-nginx.cloud.holisticsecurity.io             80, <span style="color:#ae81ff">443</span>   15s
-ingress.extensions/hello-ingress-np        hello-svc-np.cloud.holisticsecurity.io              <span style="color:#ae81ff">80</span>        16m
-ingress.extensions/hello-ingress-np-tls    hello-svc-np.cloud.holisticsecurity.io              80, <span style="color:#ae81ff">443</span>   15s
-</code></pre></div><p>Now, from any computer in Internet execute this command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Calling Hello Microservices over HTTP</span>
-$ curl http://ingress-nginx.cloud.holisticsecurity.io/hello
-$ curl http://hello-svc-np.cloud.holisticsecurity.io/hello 
-
-<span style="color:#75715e"># Calling Hello Microservices over HTTPS/TLS through `hello-ingress-cip-tls`</span>
-$ curl https://ingress-nginx.cloud.holisticsecurity.io/hello -v -k
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
-Hello version: v1, instance: hello-v1-66fc9c7d98-tljkw
-* Connection <span style="color:#75715e">#0 to host ingress-nginx.cloud.holisticsecurity.io left intact</span>
-
-<span style="color:#75715e"># Calling Hello Microservices over HTTPS/TLS through `hello-ingress-np-tls`</span>
-$ curl https://hello-svc-np.cloud.holisticsecurity.io/hello -v -k
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
-Hello version: v2, instance: hello-v2-845749f774-tft56
-* Connection <span style="color:#75715e">#0 to host hello-svc-np.cloud.holisticsecurity.io left intact</span>
-
-</code></pre></div><h2 id="conclusions">Conclusions</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Get SSH access to K8s master node</span>
+</span></span><span style="display:flex;"><span>$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Deploy Hello microservices, services and ingress</span>
+</span></span><span style="display:flex;"><span>$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-app.yaml
+</span></span><span style="display:flex;"><span>$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-svc.yaml
+</span></span><span style="display:flex;"><span>$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-ingress.yaml
+</span></span><span style="display:flex;"><span>$ kubectl apply -f https://raw.githubusercontent.com/chilcano/kubeadm-aws/0.2.1-chilcano/examples/hello-cheapk8s-ingress-tls.yaml
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get status</span>
+</span></span><span style="display:flex;"><span>$ kubectl get pod,svc,ingress -n hello -o wide
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>NAME                                       HOSTS                                     ADDRESS   PORTS     AGE
+</span></span><span style="display:flex;"><span>ingress.extensions/hello-ingress-cip       ingress-nginx.cloud.holisticsecurity.io             <span style="color:#ae81ff">80</span>        16m
+</span></span><span style="display:flex;"><span>ingress.extensions/hello-ingress-cip-tls   ingress-nginx.cloud.holisticsecurity.io             80, <span style="color:#ae81ff">443</span>   15s
+</span></span><span style="display:flex;"><span>ingress.extensions/hello-ingress-np        hello-svc-np.cloud.holisticsecurity.io              <span style="color:#ae81ff">80</span>        16m
+</span></span><span style="display:flex;"><span>ingress.extensions/hello-ingress-np-tls    hello-svc-np.cloud.holisticsecurity.io              80, <span style="color:#ae81ff">443</span>   15s
+</span></span></code></pre></div><p>Now, from any computer in Internet execute this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Calling Hello Microservices over HTTP</span>
+</span></span><span style="display:flex;"><span>$ curl http://ingress-nginx.cloud.holisticsecurity.io/hello
+</span></span><span style="display:flex;"><span>$ curl http://hello-svc-np.cloud.holisticsecurity.io/hello 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calling Hello Microservices over HTTPS/TLS through `hello-ingress-cip-tls`</span>
+</span></span><span style="display:flex;"><span>$ curl https://ingress-nginx.cloud.holisticsecurity.io/hello -v -k
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Hello version: v1, instance: hello-v1-66fc9c7d98-tljkw
+</span></span><span style="display:flex;"><span>* Connection <span style="color:#75715e">#0 to host ingress-nginx.cloud.holisticsecurity.io left intact</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calling Hello Microservices over HTTPS/TLS through `hello-ingress-np-tls`</span>
+</span></span><span style="display:flex;"><span>$ curl https://hello-svc-np.cloud.holisticsecurity.io/hello -v -k
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Hello version: v2, instance: hello-v2-845749f774-tft56
+</span></span><span style="display:flex;"><span>* Connection <span style="color:#75715e">#0 to host hello-svc-np.cloud.holisticsecurity.io left intact</span>
+</span></span></code></pre></div><h2 id="conclusions">Conclusions</h2>
 <ol>
 <li>NGINX Ingress Controller routes HTTP and HTTPS/TLS traffic to Hello Microservices.</li>
 <li>NGINX Ingress Controller manages TLS Termination, that means that Hello Microservices don&rsquo;t require X.509 TLS Certificate. In other words, the NGINX Ingress Controller redirect the ingress traffic to downstream microservice over HTTP standard.</li>
 <li>Hello Microservices are exposed through NGINX Ingress enabling TLS and requesting X.509 TLS Certificate. Note the <code>annotations</code> used in the <code>Ingress Resource</code> definition. Below details:</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">extensions/v1beta1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Ingress</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">hello-ingress-cip-tls</span>
-  <span style="color:#f92672">annotations</span>:
-    <span style="color:#f92672">kubernetes.io/ingress.class</span>: <span style="color:#e6db74">&#34;nginx&#34;</span>
-    <span style="color:#f92672">certmanager.k8s.io/issuer</span>: <span style="color:#e6db74">&#34;letsencrypt-prod&#34;</span>
-    <span style="color:#f92672">certmanager.k8s.io/acme-challenge-type</span>: <span style="color:#ae81ff">http01</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">hello</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">tls</span>:
-  - <span style="color:#f92672">hosts</span>:
-    - <span style="color:#ae81ff">ingress-nginx.cloud.holisticsecurity.io</span>
-    <span style="color:#f92672">secretName</span>: <span style="color:#ae81ff">ingress-nginx-cloud-holisticsecurity-io-https</span>
-  <span style="color:#f92672">rules</span>:
-  - <span style="color:#f92672">host</span>: <span style="color:#ae81ff">ingress-nginx.cloud.holisticsecurity.io</span>
-    <span style="color:#f92672">http</span>:
-      <span style="color:#f92672">paths</span>:
-      - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/</span>
-        <span style="color:#f92672">backend</span>:
-          <span style="color:#f92672">serviceName</span>: <span style="color:#ae81ff">hello-svc-cip</span>
-          <span style="color:#f92672">servicePort</span>: <span style="color:#ae81ff">5080</span>
----
-</code></pre></div><p>In the next post I&rsquo;ll explain how to enable Mutual TLS Authentication for Microservices.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">extensions/v1beta1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Ingress</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">hello-ingress-cip-tls</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">annotations</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/ingress.class</span>: <span style="color:#e6db74">&#34;nginx&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">certmanager.k8s.io/issuer</span>: <span style="color:#e6db74">&#34;letsencrypt-prod&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">certmanager.k8s.io/acme-challenge-type</span>: <span style="color:#ae81ff">http01</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">hello</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tls</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">hosts</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">ingress-nginx.cloud.holisticsecurity.io</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">secretName</span>: <span style="color:#ae81ff">ingress-nginx-cloud-holisticsecurity-io-https</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">host</span>: <span style="color:#ae81ff">ingress-nginx.cloud.holisticsecurity.io</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">http</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">backend</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">serviceName</span>: <span style="color:#ae81ff">hello-svc-cip</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">servicePort</span>: <span style="color:#ae81ff">5080</span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>In the next post I&rsquo;ll explain how to enable Mutual TLS Authentication for Microservices.
 Stay tuned.</p>
 <h2 id="references">References</h2>
 <ol>

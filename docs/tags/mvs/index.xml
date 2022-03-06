@@ -29,7 +29,7 @@ The 1st time I explained how to build a &lt;a href=&#34;https://holisticsecurity
         &lt;a href=&#34;https://holisticsecurity.io/media/assets/blog20211229_devsecops_api/APIAddictsDays21-DevSecOps-y-APIs.png&#34;&gt;
             &lt;img 
                 style=&#34;float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;&#34; 
-                src=&#34;https://holisticsecurity.io/media/assets/blog20211229_devsecops_api/APIAddictsDays21-DevSecOps-y-APIs_hu504aaacefeaa43dc389e6bfa4a498ac9_855008_710x0_resize_box_2.png&#34; 
+                src=&#34;https://holisticsecurity.io/media/assets/blog20211229_devsecops_api/APIAddictsDays21-DevSecOps-y-APIs_hu504aaacefeaa43dc389e6bfa4a498ac9_855008_710x0_resize_box_3.png&#34; 
                 width=&#34;710&#34; height=&#34;399&#34; 
                 alt=&#34;&#34;&gt;
         &lt;/a&gt;
@@ -50,7 +50,7 @@ The 1st time I explained how to build a &lt;a href=&#34;https://holisticsecurity
       <pubDate>Thu, 19 Mar 2020 00:10:00 +0000</pubDate>
       
       <guid>https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/</guid>
-      <description>&lt;p&gt;In the &lt;a href=&#34;https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.&lt;/p&gt;
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1&#34;&gt;Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1&lt;/a&gt; I used the &lt;a href=&#34;https://github.com/chilcano/affordable-k8s&#34;&gt;Affordable K8s&lt;/a&gt;&amp;rsquo; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34;&gt;&lt;img src=&#34;https://holisticsecurity.io/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In this post I&amp;rsquo;ll explain how to enable and configure &lt;a href=&#34;https://en.wikipedia.org/wiki/Basic_access_authentication&#34;&gt;HTTP Basic Authentication&lt;/a&gt; over TLS in the &lt;a href=&#34;https://www.weave.works/oss/scope&#34;&gt;Weave Scope&lt;/a&gt; webapp running in the recently created K8s Cluster.&lt;/p&gt;</description>
     </item>

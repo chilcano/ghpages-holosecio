@@ -9,18 +9,18 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2" />
-<meta property="og:description" content="In the Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1 I used the Affordable K8s&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.
+<meta property="og:description" content="In the Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1 I used the Affordable K8s&rsquo; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.
 
 In this post I&rsquo;ll explain how to enable and configure HTTP Basic Authentication over TLS in the Weave Scope webapp running in the recently created K8s Cluster." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2020/03/19/minimum-viable-security-for-a-k8s-webapp-http-basic-auth-on-tls-part2/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-03-19T00:10:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-03-19T00:10:00&#43;00:00" />
+<meta property="article:published_time" content="2020-03-19T00:10:00+00:00" />
+<meta property="article:modified_time" content="2020-03-19T00:10:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Minimum Viable Security for a Kubernetised Webapp: HTTP Basic Auth on TLS - Part2"/>
-<meta name="twitter:description" content="In the Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1 I used the Affordable K8s&#39; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.
+<meta name="twitter:description" content="In the Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1 I used the Affordable K8s&rsquo; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.
 
 In this post I&rsquo;ll explain how to enable and configure HTTP Basic Authentication over TLS in the Weave Scope webapp running in the recently created K8s Cluster."/>
 
@@ -147,116 +147,116 @@ if (!doNotTrack) {
 
   <div class="content" itemprop="articleBody">
   
-    <p>In the <a href="/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1">Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1</a> I used the <a href="https://github.com/chilcano/affordable-k8s">Affordable K8s</a>' Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.</p>
+    <p>In the <a href="/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1">Minimum Viable Security for a Kubernetised Webapp: TLS everywhere - Part1</a> I used the <a href="https://github.com/chilcano/affordable-k8s">Affordable K8s</a>&rsquo; Terraform scripts to create a K8s Cluster with the Jetstack Cert-Manager and the NGINX Ingress Controller pre-installed, now I want to improve the security of a Webapp hosted in that Cluster according the Minimum Viable Security (MVSec) and Pareto Principle or 80/20 rule.</p>
 <p><a href="/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png"><img src="/assets/blog20200319/mvp-sec-part2-http-basic-auth-over-tls-for-weave-scope-with-nginx-ingress-jetstack-cert-manager-lets-encrypt.png" alt=""></a></p>
 <p>In this post I&rsquo;ll explain how to enable and configure <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a> over TLS in the <a href="https://www.weave.works/oss/scope">Weave Scope</a> webapp running in the recently created K8s Cluster.</p>
 <h2 id="getting-started">Getting started</h2>
 <p>I recommend follow the <a href="/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1">Part 1</a> to get this scenario.
 Let&rsquo;s explore the K8s services created.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl get svc -n weave
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl get svc -n weave
+</span></span></code></pre></div><ul>
 <li>The <code>weave-scope-app-svc-np</code> NodePort service will create the <code>weave-scope.cloud.holisticsecurity.io</code> subdomain entry in AWS Route 53.</li>
 <li>The <code>weave-scope-app-svc-np</code> NodePort service is required when I&rsquo;m getting access through SSH tunnel.</li>
 <li>The <code>weave-scope-app</code> ClusterIP service was created when Weave Scope was installed.</li>
 </ul>
 <p>Get access through SSH to your K8s Cluster and clone the <a href="https://github.com/chilcano/affordable-k8s">Affordable K8s</a> Git Repo. It contains all YAML files required for next steps.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem
-
-$ git clone https://github.com/chilcano/affordable-k8s
-$ cd affordable-k8s/examples/
-</code></pre></div><p>Since I&rsquo;ll use HTTP Basic Auth, I need creating a K8s secret resources that the NGINX Ingress resources for Weave Scope will need.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo apt install apache2-utils -y
-$ htpasswd -bc auth YOUR_USR YOUR_PWD
-$ kubectl create secret generic secret-http-basic-auth --from-file<span style="color:#f92672">=</span>auth -n weave
-</code></pre></div><h3 id="enabling-and-configuring-http-basic-authentication-over-tls">Enabling and configuring HTTP Basic Authentication over TLS</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ssh ubuntu@<span style="color:#66d9ef">$(</span>terraform output master_dns<span style="color:#66d9ef">)</span> -i ~/Downloads/ssh-key-for-us-east-1.pem
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ git clone https://github.com/chilcano/affordable-k8s
+</span></span><span style="display:flex;"><span>$ cd affordable-k8s/examples/
+</span></span></code></pre></div><p>Since I&rsquo;ll use HTTP Basic Auth, I need creating a K8s secret resources that the NGINX Ingress resources for Weave Scope will need.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo apt install apache2-utils -y
+</span></span><span style="display:flex;"><span>$ htpasswd -bc auth YOUR_USR YOUR_PWD
+</span></span><span style="display:flex;"><span>$ kubectl create secret generic secret-http-basic-auth --from-file<span style="color:#f92672">=</span>auth -n weave
+</span></span></code></pre></div><h3 id="enabling-and-configuring-http-basic-authentication-over-tls">Enabling and configuring HTTP Basic Authentication over TLS</h3>
 <h4 id="1-create-a-lets-encrypt-issuer">1. Create a Let’s Encrypt Issuer</h4>
 <p>A Certificate issuer is the definition for where <a href="https://cert-manager.io/docs/concepts/issuer/#namespaces">Jetstack Cert-Manager</a> will get request TLS certs. An <code>Issuer</code> is specific to a single namespace in Kubernetes, and a <code>ClusterIssuer</code> is meant to be a cluster-wide definition for the same purpose.</p>
 <p>In a scenario or project real, we should generate certificates for testing (<code>staging</code>) purporses, once tested the process to get and configure testing certificates, the next step is to get and use final (<code>production</code>) certificates. That is the reason I provide <code>letsencrypt-issuer-staging.yaml</code> and <code>letsencrypt-issuer-prod.yaml</code>. Then, let&rsquo;s create both issuers.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl apply -f letsencrypt-issuer-staging.yaml -n weave
-$ kubectl apply -f letsencrypt-issuer-prod.yaml -n weave
-</code></pre></div><p>Checking the Let&rsquo;s Encrypt Issuers. If you got <code>Reason: ACMEAccountRegistered</code>, the Issuer is ready to issue certificates.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl get issuer,secret -n weave
-NAME                                                READY   AGE
-issuer.cert-manager.io/letsencrypt-issuer-prod      True    14s
-issuer.cert-manager.io/letsencrypt-issuer-staging   True    76s
-
-NAME                                        TYPE                                  DATA   AGE
-secret/default-token-gzbzs                  kubernetes.io/service-account-token   <span style="color:#ae81ff">3</span>      7m30s
-secret/letsencrypt-issuer-privkey-prod      Opaque                                <span style="color:#ae81ff">1</span>      12s
-secret/letsencrypt-issuer-privkey-staging   Opaque                                <span style="color:#ae81ff">1</span>      74s
-secret/secret-http-basic-auth               Opaque                                <span style="color:#ae81ff">1</span>      3m6s
-secret/weave-scope-token-vb7vg              kubernetes.io/service-account-token   <span style="color:#ae81ff">3</span>      7m31s
-
-
-$ kubectl describe issuer letsencrypt-issuer-staging -n weave
-$ kubectl describe issuer letsencrypt-issuer-prod -n weave
-</code></pre></div><p>If you have under <code>Status</code> this <code>Reason: ACMEAccountRegistered</code> message in both issuers, that means they are ready to get certificates from Let&rsquo;s Encrypt.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl apply -f letsencrypt-issuer-staging.yaml -n weave
+</span></span><span style="display:flex;"><span>$ kubectl apply -f letsencrypt-issuer-prod.yaml -n weave
+</span></span></code></pre></div><p>Checking the Let&rsquo;s Encrypt Issuers. If you got <code>Reason: ACMEAccountRegistered</code>, the Issuer is ready to issue certificates.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl get issuer,secret -n weave
+</span></span><span style="display:flex;"><span>NAME                                                READY   AGE
+</span></span><span style="display:flex;"><span>issuer.cert-manager.io/letsencrypt-issuer-prod      True    14s
+</span></span><span style="display:flex;"><span>issuer.cert-manager.io/letsencrypt-issuer-staging   True    76s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                                        TYPE                                  DATA   AGE
+</span></span><span style="display:flex;"><span>secret/default-token-gzbzs                  kubernetes.io/service-account-token   <span style="color:#ae81ff">3</span>      7m30s
+</span></span><span style="display:flex;"><span>secret/letsencrypt-issuer-privkey-prod      Opaque                                <span style="color:#ae81ff">1</span>      12s
+</span></span><span style="display:flex;"><span>secret/letsencrypt-issuer-privkey-staging   Opaque                                <span style="color:#ae81ff">1</span>      74s
+</span></span><span style="display:flex;"><span>secret/secret-http-basic-auth               Opaque                                <span style="color:#ae81ff">1</span>      3m6s
+</span></span><span style="display:flex;"><span>secret/weave-scope-token-vb7vg              kubernetes.io/service-account-token   <span style="color:#ae81ff">3</span>      7m31s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ kubectl describe issuer letsencrypt-issuer-staging -n weave
+</span></span><span style="display:flex;"><span>$ kubectl describe issuer letsencrypt-issuer-prod -n weave
+</span></span></code></pre></div><p>If you have under <code>Status</code> this <code>Reason: ACMEAccountRegistered</code> message in both issuers, that means they are ready to get certificates from Let&rsquo;s Encrypt.</p>
 <h4 id="2-create-the-ingress-resource-with-a-staging-certificate">2. Create the Ingress resource with a Staging Certificate</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl apply -f weave-scope-app-ingress.yaml 
-</code></pre></div><p>With <code>weave-scope-app-ingress.yaml</code> I&rsquo;ll have a testing certificate.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">extensions/v1beta1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Ingress</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">weave-scope-app-ingress</span>
-  <span style="color:#f92672">annotations</span>:
-    <span style="color:#f92672">kubernetes.io/ingress.class</span>: <span style="color:#e6db74">&#34;nginx&#34;</span>
-    <span style="color:#f92672">cert-manager.io/issuer</span>: <span style="color:#e6db74">&#34;letsencrypt-issuer-staging&#34;</span>
-    <span style="color:#75715e">#cert-manager.io/issuer: &#34;letsencrypt-issuer-prod&#34;</span>
-    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-type</span>: <span style="color:#ae81ff">basic</span>
-    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-secret</span>: <span style="color:#ae81ff">secret-http-basic-auth</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">weave</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">rules</span>:
-  - <span style="color:#f92672">host</span>: <span style="color:#ae81ff">weave-scope.cloud.holisticsecurity.io</span>
-    <span style="color:#f92672">http</span>:
-      <span style="color:#f92672">paths</span>:
-      - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/</span>
-        <span style="color:#f92672">backend</span>:
-          <span style="color:#f92672">serviceName</span>: <span style="color:#ae81ff">weave-scope-app-svc-np </span> <span style="color:#75715e">## NodePort</span>
-          <span style="color:#f92672">servicePort</span>: <span style="color:#ae81ff">82</span>
-  <span style="color:#f92672">tls</span>:
-  - <span style="color:#f92672">hosts</span>:
-    - <span style="color:#ae81ff">weave-scope.cloud.holisticsecurity.io</span>
-    <span style="color:#f92672">secretName</span>: <span style="color:#ae81ff">cert-tls</span>
-</code></pre></div><p>When creating the TLS NGINX Ingress resources, the NGINX Ingress Controller underhood will execute the next steps:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl apply -f weave-scope-app-ingress.yaml 
+</span></span></code></pre></div><p>With <code>weave-scope-app-ingress.yaml</code> I&rsquo;ll have a testing certificate.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">extensions/v1beta1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Ingress</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">weave-scope-app-ingress</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">annotations</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/ingress.class</span>: <span style="color:#e6db74">&#34;nginx&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">cert-manager.io/issuer</span>: <span style="color:#e6db74">&#34;letsencrypt-issuer-staging&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#cert-manager.io/issuer: &#34;letsencrypt-issuer-prod&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-type</span>: <span style="color:#ae81ff">basic</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-secret</span>: <span style="color:#ae81ff">secret-http-basic-auth</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">weave</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">host</span>: <span style="color:#ae81ff">weave-scope.cloud.holisticsecurity.io</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">http</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">backend</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">serviceName</span>: <span style="color:#ae81ff">weave-scope-app-svc-np </span> <span style="color:#75715e">## NodePort</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">servicePort</span>: <span style="color:#ae81ff">82</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tls</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">hosts</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">weave-scope.cloud.holisticsecurity.io</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">secretName</span>: <span style="color:#ae81ff">cert-tls</span>
+</span></span></code></pre></div><p>When creating the TLS NGINX Ingress resources, the NGINX Ingress Controller underhood will execute the next steps:</p>
 <ul>
 <li>Request a TLS Cert through the Let&rsquo;s Encrypt Issuer (<code>letsencrypt-issuer-staging</code>).</li>
 <li>Load the issued TLS Cert and its configuration to route the <code>weave-scope.cloud.holisticsecurity.io</code> incomming traffic over TLS to Weave Scope pods.</li>
 <li>The HTTP Basic Auth annotations (<code>nginx.ingress.kubernetes.io/auth-type: basic</code> and <code>nginx.ingress.kubernetes.io/auth-secret: secret-http-basic-auth</code>) will be used.</li>
 </ul>
 <p>If everything looks good, you might check the K8s <code>secret</code> resource and the Let&rsquo;s Encrypt Issuer resources (<code>certificate</code>, <code>certificaterequest</code>, <code>order</code> and <code>challenge</code>) details.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl get ingress,secret,certificate,certificaterequest,order -n weave 
-$ kubectl describe secret cert-tls -n weave
-Name:         cert-tls
-Namespace:    weave
-Labels:       &lt;none&gt;
-Annotations:  cert-manager.io/alt-names: weave-scope.cloud.holisticsecurity.io
-              cert-manager.io/certificate-name: cert-tls
-              cert-manager.io/common-name: weave-scope.cloud.holisticsecurity.io
-              cert-manager.io/ip-sans: 
-              cert-manager.io/issuer-kind: Issuer
-              cert-manager.io/issuer-name: letsencrypt-issuer-staging
-              cert-manager.io/uri-sans: 
-
-Type:  kubernetes.io/tls
-
-Data
-<span style="color:#f92672">====</span>
-tls.crt:  <span style="color:#ae81ff">3610</span> bytes
-tls.key:  <span style="color:#ae81ff">1675</span> bytes
-ca.crt:   <span style="color:#ae81ff">0</span> bytes
-
-
-$ kubectl describe certificate cert-tls -n weave
-...
-...
-Events:
-  Type    Reason        Age    From          Message
-  ----    ------        ----   ----          -------
-  Normal  GeneratedKey  3m39s  cert-manager  Generated a new private key
-  Normal  Requested     3m36s  cert-manager  Created new CertificateRequest resource <span style="color:#e6db74">&#34;cert-tls-3240899713&#34;</span>
-  Normal  Issued        2m2s   cert-manager  Certificate issued successfully
-</code></pre></div><p>Now, if you open this url <code>https://weave-scope.cloud.holisticsecurity.io</code> in your browser you will get an error about <em>Certificate desn&rsquo;t Trusted</em> and can not get access to Weave Scope. That doesn&rsquo;t mean that Cert-Manager or Ingress Controller don&rsquo;t work, that means specifically this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl get ingress,secret,certificate,certificaterequest,order -n weave 
+</span></span><span style="display:flex;"><span>$ kubectl describe secret cert-tls -n weave
+</span></span><span style="display:flex;"><span>Name:         cert-tls
+</span></span><span style="display:flex;"><span>Namespace:    weave
+</span></span><span style="display:flex;"><span>Labels:       &lt;none&gt;
+</span></span><span style="display:flex;"><span>Annotations:  cert-manager.io/alt-names: weave-scope.cloud.holisticsecurity.io
+</span></span><span style="display:flex;"><span>              cert-manager.io/certificate-name: cert-tls
+</span></span><span style="display:flex;"><span>              cert-manager.io/common-name: weave-scope.cloud.holisticsecurity.io
+</span></span><span style="display:flex;"><span>              cert-manager.io/ip-sans: 
+</span></span><span style="display:flex;"><span>              cert-manager.io/issuer-kind: Issuer
+</span></span><span style="display:flex;"><span>              cert-manager.io/issuer-name: letsencrypt-issuer-staging
+</span></span><span style="display:flex;"><span>              cert-manager.io/uri-sans: 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Type:  kubernetes.io/tls
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Data
+</span></span><span style="display:flex;"><span><span style="color:#f92672">====</span>
+</span></span><span style="display:flex;"><span>tls.crt:  <span style="color:#ae81ff">3610</span> bytes
+</span></span><span style="display:flex;"><span>tls.key:  <span style="color:#ae81ff">1675</span> bytes
+</span></span><span style="display:flex;"><span>ca.crt:   <span style="color:#ae81ff">0</span> bytes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ kubectl describe certificate cert-tls -n weave
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>Events:
+</span></span><span style="display:flex;"><span>  Type    Reason        Age    From          Message
+</span></span><span style="display:flex;"><span>  ----    ------        ----   ----          -------
+</span></span><span style="display:flex;"><span>  Normal  GeneratedKey  3m39s  cert-manager  Generated a new private key
+</span></span><span style="display:flex;"><span>  Normal  Requested     3m36s  cert-manager  Created new CertificateRequest resource <span style="color:#e6db74">&#34;cert-tls-3240899713&#34;</span>
+</span></span><span style="display:flex;"><span>  Normal  Issued        2m2s   cert-manager  Certificate issued successfully
+</span></span></code></pre></div><p>Now, if you open this url <code>https://weave-scope.cloud.holisticsecurity.io</code> in your browser you will get an error about <em>Certificate desn&rsquo;t Trusted</em> and can not get access to Weave Scope. That doesn&rsquo;t mean that Cert-Manager or Ingress Controller don&rsquo;t work, that means specifically this:</p>
 <blockquote>
 <p>weave-scope.cloud.holisticsecurity.io has a security policy called HTTP Strict Transport Security (HSTS), which <br>
 means that Firefox can only connect to it securely. You can&rsquo;t add an exceptions to visit this site.</p>
@@ -266,59 +266,59 @@ means that Firefox can only connect to it securely. You can&rsquo;t add an excep
 <p><a href="/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-2-tls-http-basic-auth-fake-cert-error.png" alt=""></a></p>
 <h4 id="3-create-the-ingress-resource-and-getting-a-production-certificate">3. Create the Ingress resource and getting a Production Certificate</h4>
 <p>In this point we are ready to get a certificate for production purposes, before we should remove the previous ingress resource and its corresponding generated secret.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl delete ingress weave-scope-app-ingress -n weave
-$ kubectl delete secret cert-tls -n weave
-</code></pre></div><p>Edit the <code>weave-scope-app-ingress.yaml</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ nano weave-scope-app-ingress.yaml 
-</code></pre></div><p>Uncomment this line <code>cert-manager.io/issuer: &quot;letsencrypt-issuer-prod&quot;</code> and comment this other <code>cert-manager.io/issuer: &quot;letsencrypt-issuer-staging&quot;</code> in <code>weave-scope-app-ingress.yaml</code> file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">extensions/v1beta1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Ingress</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">weave-scope-app-ingress</span>
-  <span style="color:#f92672">annotations</span>:
-    <span style="color:#f92672">kubernetes.io/ingress.class</span>: <span style="color:#e6db74">&#34;nginx&#34;</span>
-    <span style="color:#75715e">#cert-manager.io/issuer: &#34;letsencrypt-issuer-staging&#34;</span>
-    <span style="color:#f92672">cert-manager.io/issuer</span>: <span style="color:#e6db74">&#34;letsencrypt-issuer-prod&#34;</span>
-    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-type</span>: <span style="color:#ae81ff">basic</span>
-    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-secret</span>: <span style="color:#ae81ff">secret-http-basic-auth</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">weave</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">rules</span>:
-  - <span style="color:#f92672">host</span>: <span style="color:#ae81ff">weave-scope.cloud.holisticsecurity.io</span>
-    <span style="color:#f92672">http</span>:
-      <span style="color:#f92672">paths</span>:
-      - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/</span>
-        <span style="color:#f92672">backend</span>:
-          <span style="color:#f92672">serviceName</span>: <span style="color:#ae81ff">weave-scope-app-svc-np </span> <span style="color:#75715e">## NodePort</span>
-          <span style="color:#f92672">servicePort</span>: <span style="color:#ae81ff">82</span>
-  <span style="color:#f92672">tls</span>:
-  - <span style="color:#f92672">hosts</span>:
-    - <span style="color:#ae81ff">weave-scope.cloud.holisticsecurity.io</span>
-    <span style="color:#f92672">secretName</span>: <span style="color:#ae81ff">cert-tls</span>
-</code></pre></div><p>Now create the updated ingress.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl apply -f weave-scope-app-ingress.yaml 
-</code></pre></div><p>Check all resources created.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl get ingress,secret,certificate,certificaterequest,order -n weave 
-NAME                                         HOSTS                                   ADDRESS   PORTS     AGE
-ingress.extensions/weave-scope-app-ingress   weave-scope.cloud.holisticsecurity.io             80, <span style="color:#ae81ff">443</span>   68s
-
-NAME                                        TYPE                                  DATA   AGE
-secret/cert-tls                             kubernetes.io/tls                     <span style="color:#ae81ff">3</span>      66s
-secret/default-token-gzbzs                  kubernetes.io/service-account-token   <span style="color:#ae81ff">3</span>      31m
-secret/letsencrypt-issuer-privkey-prod      Opaque                                <span style="color:#ae81ff">1</span>      24m
-secret/letsencrypt-issuer-privkey-staging   Opaque                                <span style="color:#ae81ff">1</span>      25m
-secret/secret-http-basic-auth               Opaque                                <span style="color:#ae81ff">1</span>      27m
-secret/weave-scope-token-vb7vg              kubernetes.io/service-account-token   <span style="color:#ae81ff">3</span>      31m
-
-NAME                                   READY   SECRET     AGE
-certificate.cert-manager.io/cert-tls   True    cert-tls   68s
-
-NAME                                                     READY   AGE
-certificaterequest.cert-manager.io/cert-tls-1393507612   True    66s
-
-NAME                                                        STATE   AGE
-order.acme.cert-manager.io/cert-tls-1393507612-2800536094   valid   66s
-</code></pre></div><p>Now, if you open this url <code>https://weave-scope.cloud.holisticsecurity.io</code> in your browser you will be prompted for user and password to get access to Weave Scope.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl delete ingress weave-scope-app-ingress -n weave
+</span></span><span style="display:flex;"><span>$ kubectl delete secret cert-tls -n weave
+</span></span></code></pre></div><p>Edit the <code>weave-scope-app-ingress.yaml</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ nano weave-scope-app-ingress.yaml 
+</span></span></code></pre></div><p>Uncomment this line <code>cert-manager.io/issuer: &quot;letsencrypt-issuer-prod&quot;</code> and comment this other <code>cert-manager.io/issuer: &quot;letsencrypt-issuer-staging&quot;</code> in <code>weave-scope-app-ingress.yaml</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">extensions/v1beta1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Ingress</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">weave-scope-app-ingress</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">annotations</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/ingress.class</span>: <span style="color:#e6db74">&#34;nginx&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#cert-manager.io/issuer: &#34;letsencrypt-issuer-staging&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">cert-manager.io/issuer</span>: <span style="color:#e6db74">&#34;letsencrypt-issuer-prod&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-type</span>: <span style="color:#ae81ff">basic</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-secret</span>: <span style="color:#ae81ff">secret-http-basic-auth</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">weave</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">host</span>: <span style="color:#ae81ff">weave-scope.cloud.holisticsecurity.io</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">http</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">backend</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">serviceName</span>: <span style="color:#ae81ff">weave-scope-app-svc-np </span> <span style="color:#75715e">## NodePort</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">servicePort</span>: <span style="color:#ae81ff">82</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tls</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">hosts</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">weave-scope.cloud.holisticsecurity.io</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">secretName</span>: <span style="color:#ae81ff">cert-tls</span>
+</span></span></code></pre></div><p>Now create the updated ingress.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl apply -f weave-scope-app-ingress.yaml 
+</span></span></code></pre></div><p>Check all resources created.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl get ingress,secret,certificate,certificaterequest,order -n weave 
+</span></span><span style="display:flex;"><span>NAME                                         HOSTS                                   ADDRESS   PORTS     AGE
+</span></span><span style="display:flex;"><span>ingress.extensions/weave-scope-app-ingress   weave-scope.cloud.holisticsecurity.io             80, <span style="color:#ae81ff">443</span>   68s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                                        TYPE                                  DATA   AGE
+</span></span><span style="display:flex;"><span>secret/cert-tls                             kubernetes.io/tls                     <span style="color:#ae81ff">3</span>      66s
+</span></span><span style="display:flex;"><span>secret/default-token-gzbzs                  kubernetes.io/service-account-token   <span style="color:#ae81ff">3</span>      31m
+</span></span><span style="display:flex;"><span>secret/letsencrypt-issuer-privkey-prod      Opaque                                <span style="color:#ae81ff">1</span>      24m
+</span></span><span style="display:flex;"><span>secret/letsencrypt-issuer-privkey-staging   Opaque                                <span style="color:#ae81ff">1</span>      25m
+</span></span><span style="display:flex;"><span>secret/secret-http-basic-auth               Opaque                                <span style="color:#ae81ff">1</span>      27m
+</span></span><span style="display:flex;"><span>secret/weave-scope-token-vb7vg              kubernetes.io/service-account-token   <span style="color:#ae81ff">3</span>      31m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                                   READY   SECRET     AGE
+</span></span><span style="display:flex;"><span>certificate.cert-manager.io/cert-tls   True    cert-tls   68s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                                                     READY   AGE
+</span></span><span style="display:flex;"><span>certificaterequest.cert-manager.io/cert-tls-1393507612   True    66s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                                                        STATE   AGE
+</span></span><span style="display:flex;"><span>order.acme.cert-manager.io/cert-tls-1393507612-2800536094   valid   66s
+</span></span></code></pre></div><p>Now, if you open this url <code>https://weave-scope.cloud.holisticsecurity.io</code> in your browser you will be prompted for user and password to get access to Weave Scope.</p>
 <p><a href="/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-3-tls-http-basic-auth-ok.png" alt=""></a></p>
 <p><a href="/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-4-tls-http-basic-auth-info.png" alt=""></a></p>
 <p>Once authenticated, you will be able to check the TLS Certificate issued by Let&rsquo;s Encrypt.
@@ -326,10 +326,10 @@ order.acme.cert-manager.io/cert-tls-1393507612-2800536094   valid   66s
 <p><a href="/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png"><img src="/assets/blog20200319/mvp-sec-part2-weave-6-tls-http-basic-authed.png" alt=""></a></p>
 <h4 id="4-troubleshooting-with-logs">4. Troubleshooting with logs</h4>
 <p>Check the Cert-Manager logs to see if the TLS Cert, Keys, CSR, etc. were requested and approved successfully.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl logs -f -n cert-manager -lapp<span style="color:#f92672">=</span>cert-manager
-</code></pre></div><p>Check the NGINX Ingress Controller logs to see if the TLS Cert and configuration were created and loaded successfully.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl logs -f -n ingress-nginx -lapp.kubernetes.io/part-of<span style="color:#f92672">=</span>ingress-nginx
-</code></pre></div><h2 id="conclusions">Conclusions</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl logs -f -n cert-manager -lapp<span style="color:#f92672">=</span>cert-manager
+</span></span></code></pre></div><p>Check the NGINX Ingress Controller logs to see if the TLS Cert and configuration were created and loaded successfully.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ kubectl logs -f -n ingress-nginx -lapp.kubernetes.io/part-of<span style="color:#f92672">=</span>ingress-nginx
+</span></span></code></pre></div><h2 id="conclusions">Conclusions</h2>
 <h3 id="you-need-a-pki">You need a PKI</h3>
 <p>Let&rsquo;s Encrypt technically can issue TLS Client Certificates, but it isn&rsquo;t recommended because using Let’s Encrypt’s DV certificates directly as client certificates doesn’t offer a lot of flexibility, and probably doesn’t enhance overall security in most configurations. The best option would be to use your own CA for this process, as that allows for much more direct control, and client certificates don’t have to be publicly trusted by all clients, just trusted by your server.<br>
 For other side, at operationaly speaking, TLS Certificate Management (revocation, renewals, validation, etc.) is expensive, that means we will require a PKI with a powerful RESTful API to manage the Cert Lifecycle during the deployment of Containers-based Applications.<br>

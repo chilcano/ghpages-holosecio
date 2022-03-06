@@ -15,8 +15,8 @@ In the next blog post (Part 2) I will explain how to manage the look&amp;feel, l
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-10-14T15:58:00&#43;00:00" />
-<meta property="article:modified_time" content="2019-10-14T15:58:00&#43;00:00" />
+<meta property="article:published_time" content="2019-10-14T15:58:00+00:00" />
+<meta property="article:modified_time" content="2019-10-14T15:58:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -152,7 +152,7 @@ if (!doNotTrack) {
     <p>I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
 In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
 In the next blog post (Part 2) I will explain how to manage the look&amp;feel, layouts, etc.
-<img src="/assets/img/2019-10-14-blog-migration-wp-github.png" alt="Migrating WordPress.com&rsquo;s blog to GitHub Pages by using Jekyll"></p>
+<img src="/assets/img/2019-10-14-blog-migration-wp-github.png" alt="Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll"></p>
 <h2 id="create-a-github-pages-repository">Create a GitHub Pages repository</h2>
 <p>I created an empty GitHub repository, in my case is <a href="https://github.com/chilcano/ghpages-holosec"><code>ghpages-holosec</code></a>, to host my migrated WordPress.com&rsquo;s blog, then I followed the <a href="https://pages.github.com">https://pages.github.com</a> guide and configured it as <code>Project site</code>, no as <code>User or organization site</code> since my GitHub Account will host multiple Sites with different custom Domain Names.</p>
 <p>Once completed, you should configure your DNS records in your DNS Provider, in my case it is Gandi.Net and used the above <a href="https://gist.github.com/matt-bailey/bbbc181d5234c618e4dfe0642ad80297">Matt Bailey&rsquo;s good guide</a>. You have to consider that making these changes and their propagation across DNS and GitHub will take around 24 hours.</p>
@@ -165,54 +165,54 @@ In the next blog post (Part 2) I will explain how to manage the look&amp;feel, l
 <h2 id="install-ruby-on-ubuntu">Install Ruby on Ubuntu</h2>
 <p>This step must be executed once in the computer.
 First of all, install Ruby.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo apt -y install ruby ruby-dev build-essential zlib1g-dev
-</code></pre></div><p>Now, configure Ruby for my Linux&rsquo;s user.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ echo <span style="color:#e6db74">&#39;# Install Ruby Gems to ~/gems&#39;</span> &gt;&gt; ~/.bashrc
-$ echo <span style="color:#e6db74">&#39;export GEM_HOME=&#34;$HOME/gems&#34;&#39;</span> &gt;&gt; ~/.bashrc
-$ echo <span style="color:#e6db74">&#39;export PATH=&#34;$HOME/gems/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
-$ source ~/.bashrc
-
-$ gem install bundler
-</code></pre></div><h2 id="install-jekyll-with-bundler">Install Jekyll with Bundler</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo apt -y install ruby ruby-dev build-essential zlib1g-dev
+</span></span></code></pre></div><p>Now, configure Ruby for my Linux&rsquo;s user.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#39;# Install Ruby Gems to ~/gems&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#39;export GEM_HOME=&#34;$HOME/gems&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#39;export PATH=&#34;$HOME/gems/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>$ source ~/.bashrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ gem install bundler
+</span></span></code></pre></div><h2 id="install-jekyll-with-bundler">Install Jekyll with Bundler</h2>
 <p>This step and next ones must be executed per website or ruby project. In this point your configured custom DNS should be working.
 I will download my empty created GitHub Page repository into <code>~/gitrepos/ghpages-holosec/</code> directory.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mkdir -p $HOME/gitrepos/ghpages-holosec/; cd $HOME/gitrepos/ghpages-holosec/ 
-$ git clone https://github.com/chilcano/ghpages-holosec 
-</code></pre></div><p><strong>Creating a Jekyll project from scratch</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ mkdir -p $HOME/gitrepos/ghpages-holosec/; cd $HOME/gitrepos/ghpages-holosec/ 
+</span></span><span style="display:flex;"><span>$ git clone https://github.com/chilcano/ghpages-holosec 
+</span></span></code></pre></div><p><strong>Creating a Jekyll project from scratch</strong></p>
 <p>In this case the <code>ghpages-holosec</code> is an empty project, then run next commands.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bundle init
-$ bundle add jekyll
-</code></pre></div><p>Once Jekyll is installed, we can use it to create the scaffolding for our site.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bundle exec jekyll new --force --skip-bundle .
-</code></pre></div><p>If <code>ghpages-holosec</code> is already a Jekyll project, then run next commands:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">// This installs Jekyll and all gems present in Gemfile
-$ bundle config set path vendor/bundle
-
-// This installs jekyll and update Gemfile
-$ bundle install	
-</code></pre></div><h2 id="serving-the-site-for-first-time">Serving the site for first time</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ bundle init
+</span></span><span style="display:flex;"><span>$ bundle add jekyll
+</span></span></code></pre></div><p>Once Jekyll is installed, we can use it to create the scaffolding for our site.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ bundle exec jekyll new --force --skip-bundle .
+</span></span></code></pre></div><p>If <code>ghpages-holosec</code> is already a Jekyll project, then run next commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>// This installs Jekyll and all gems present in Gemfile
+</span></span><span style="display:flex;"><span>$ bundle config set path vendor/bundle
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// This installs jekyll and update Gemfile
+</span></span><span style="display:flex;"><span>$ bundle install	
+</span></span></code></pre></div><h2 id="serving-the-site-for-first-time">Serving the site for first time</h2>
 <p>I updated the generated <code>_config.yml</code> file with information about <code>baseurl</code>, <code>title</code>, <code>email</code>, etc.
 Yes, I&rsquo;ll tweak the <code>_config.yml</code> file to apply new design later.
 Now, you will see only <code>Welcome to Jekyll!</code> sample post.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bundle exec jekyll serve --incremental --watch
-</code></pre></div><h2 id="importing-a-wordpresscoms-blog-into-github-pages-site">Importing a WordPress.com&rsquo;s blog into GitHub Pages site</h2>
-<p>Go to <code>https://your-user-name.wordpress.com/wp-admin/export.php</code> and export your blog&rsquo;s content into a XML, place the xml file in <code>~/gitrepos/ghpages-holosec/wp_export/</code>, once completed, execute <code>jekyll-import</code> to convert WordPress' XML format into GitHub&rsquo;s MarkDown format.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ bundle exec jekyll serve --incremental --watch
+</span></span></code></pre></div><h2 id="importing-a-wordpresscoms-blog-into-github-pages-site">Importing a WordPress.com&rsquo;s blog into GitHub Pages site</h2>
+<p>Go to <code>https://your-user-name.wordpress.com/wp-admin/export.php</code> and export your blog&rsquo;s content into a XML, place the xml file in <code>~/gitrepos/ghpages-holosec/wp_export/</code>, once completed, execute <code>jekyll-import</code> to convert WordPress&rsquo; XML format into GitHub&rsquo;s MarkDown format.</p>
 <p>Install jekyll-import and its dependencies.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bundle add jekyll-import hpricot open_uri_redirections
-</code></pre></div><p>Convert wordpress' blog to Jekyll format.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bundle exec ruby -r rubygems -e <span style="color:#e6db74">&#39;require &#34;jekyll-import&#34;;
-</span><span style="color:#e6db74">    JekyllImport::Importers::WordpressDotCom.run({
-</span><span style="color:#e6db74">      &#34;source&#34; =&gt; &#34;wp_export/holisticsecurity.WordPress.2019-11-07.xml&#34;,
-</span><span style="color:#e6db74">      &#34;no_fetch_images&#34; =&gt; false,
-</span><span style="color:#e6db74">      &#34;assets_folder&#34; =&gt; &#34;assets&#34;
-</span><span style="color:#e6db74">    })&#39;</span>
-</code></pre></div><h2 id="serving-the-site-again">Serving the site again</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bundle exec jekyll serve
-</code></pre></div><p>If you are using Google Analytics plugin configured, you can try this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ JEKYLL_ENV<span style="color:#f92672">=</span>production bundle exec jekyll serve --incremental --watch
-</code></pre></div><p>If you have posts in draft (place your posts in <code>&lt;site&gt;\_drafts\</code> folder without <code>date</code> and <code>permalink</code> in the front-matter.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ JEKYLL_ENV<span style="color:#f92672">=</span>production bundle exec jekyll serve --watch --drafts
-</code></pre></div><p>You will see that all posts were imported.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ bundle add jekyll-import hpricot open_uri_redirections
+</span></span></code></pre></div><p>Convert wordpress&rsquo; blog to Jekyll format.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ bundle exec ruby -r rubygems -e <span style="color:#e6db74">&#39;require &#34;jekyll-import&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    JekyllImport::Importers::WordpressDotCom.run({
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;source&#34; =&gt; &#34;wp_export/holisticsecurity.WordPress.2019-11-07.xml&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;no_fetch_images&#34; =&gt; false,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;assets_folder&#34; =&gt; &#34;assets&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    })&#39;</span>
+</span></span></code></pre></div><h2 id="serving-the-site-again">Serving the site again</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ bundle exec jekyll serve
+</span></span></code></pre></div><p>If you are using Google Analytics plugin configured, you can try this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ JEKYLL_ENV<span style="color:#f92672">=</span>production bundle exec jekyll serve --incremental --watch
+</span></span></code></pre></div><p>If you have posts in draft (place your posts in <code>&lt;site&gt;\_drafts\</code> folder without <code>date</code> and <code>permalink</code> in the front-matter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ JEKYLL_ENV<span style="color:#f92672">=</span>production bundle exec jekyll serve --watch --drafts
+</span></span></code></pre></div><p>You will see that all posts were imported.</p>
 <p><img src="/assets/img/2019-10-14-wp-to-github-holosec-1st.png" alt="Holistic Security About page"></p>
 <h2 id="references">References</h2>
 <ul>

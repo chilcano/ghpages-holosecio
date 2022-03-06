@@ -14,8 +14,8 @@ Also I&rsquo;ll explain how to convert all HTML post files, obtained by using th
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-12-10T10:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2019-12-10T10:00:00&#43;00:00" />
+<meta property="article:published_time" content="2019-12-10T10:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-10T10:00:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -149,7 +149,7 @@ if (!doNotTrack) {
   
     <p>In the first blog post <a href="/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1" title="Migrating WordPress.com's blog to GitHub Pages with Jekyll - Part 1">I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages</a>. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
 Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the <code>JekyllImport::Importers::WordpressDotCom</code>, to Markdown format by using a simple Python script.</p>
-<p><img src="/assets/img/20191210-wp-github-jekyll-python-part2-1.png" alt="Migrating WordPress.com&rsquo;s blog to GitHub Pages by using Jekyll Part2"></p>
+<p><img src="/assets/img/20191210-wp-github-jekyll-python-part2-1.png" alt="Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll Part2"></p>
 <h2 id="lookfeel-themes-and-layouts">Look&amp;Feel: Themes and Layouts</h2>
 <p>When I created the Jekyll site (by running the <code>jekyll new &lt;PATH&gt;</code> command), Jekyll installed a site that uses a gem-based theme called <a href="https://github.com/jekyll/minima">Minima</a>.</p>
 <p>Then, the best way to change the Look&amp;Feel of your Github Page site is changing existing Theme/Layout; Jekyll supports an easy way to do it and here this is explained very well:</p>
@@ -158,71 +158,71 @@ Also I&rsquo;ll explain how to convert all HTML post files, obtained by using th
 <li><a href="https://jekyllrb.com/docs/themes/">Jekyll Themes</a></li>
 </ul>
 <p>So, in order to make changes in the Look&amp;Feel I will override the Minima&rsquo;s Gem. First of all I&rsquo;ll locate where the Minima&rsquo;s Theme/Layout Gem is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ bundle show
-Gems included by the bundle:
-  * addressable <span style="color:#f92672">(</span>2.7.0<span style="color:#f92672">)</span>
-  * bundler <span style="color:#f92672">(</span>2.0.2<span style="color:#f92672">)</span>
-  * colorator <span style="color:#f92672">(</span>1.1.0<span style="color:#f92672">)</span>
-  * concurrent-ruby <span style="color:#f92672">(</span>1.1.5<span style="color:#f92672">)</span>
-  * em-websocket <span style="color:#f92672">(</span>0.5.1<span style="color:#f92672">)</span>
-  * eventmachine <span style="color:#f92672">(</span>1.2.7<span style="color:#f92672">)</span>
-  * fastercsv <span style="color:#f92672">(</span>1.5.5<span style="color:#f92672">)</span>
-  * ffi <span style="color:#f92672">(</span>1.11.1<span style="color:#f92672">)</span>
-  * forwardable-extended <span style="color:#f92672">(</span>2.6.0<span style="color:#f92672">)</span>
-  * hpricot <span style="color:#f92672">(</span>0.8.6<span style="color:#f92672">)</span>
-  * http_parser.rb <span style="color:#f92672">(</span>0.6.0<span style="color:#f92672">)</span>
-  * i18n <span style="color:#f92672">(</span>1.7.0<span style="color:#f92672">)</span>
-  * jekyll <span style="color:#f92672">(</span>4.0.0<span style="color:#f92672">)</span>
-  * jekyll-feed <span style="color:#f92672">(</span>0.12.1<span style="color:#f92672">)</span>
-  * jekyll-import <span style="color:#f92672">(</span>0.19.0<span style="color:#f92672">)</span>
-  * jekyll-paginate <span style="color:#f92672">(</span>1.1.0<span style="color:#f92672">)</span>
-  * jekyll-sass-converter <span style="color:#f92672">(</span>2.0.1<span style="color:#f92672">)</span>
-  * jekyll-seo-tag <span style="color:#f92672">(</span>2.6.1<span style="color:#f92672">)</span>
-  * jekyll-watch <span style="color:#f92672">(</span>2.2.1<span style="color:#f92672">)</span>
-  * kramdown <span style="color:#f92672">(</span>2.1.0<span style="color:#f92672">)</span>
-  * kramdown-parser-gfm <span style="color:#f92672">(</span>1.1.0<span style="color:#f92672">)</span>
-  * liquid <span style="color:#f92672">(</span>4.0.3<span style="color:#f92672">)</span>
-  * listen <span style="color:#f92672">(</span>3.2.0<span style="color:#f92672">)</span>
-  * mercenary <span style="color:#f92672">(</span>0.3.6<span style="color:#f92672">)</span>
-  * mini_portile2 <span style="color:#f92672">(</span>2.4.0<span style="color:#f92672">)</span>
-  * minima <span style="color:#f92672">(</span>2.5.1<span style="color:#f92672">)</span>
-...
-
-chilcano@inti:~/git-repos/ghpages-holosec$ bundle show minima
-/home/chilcano/git-repos/ghpages-holosec/vendor/bundle/ruby/2.5.0/gems/minima-2.5.1
-
-chilcano@inti:~/git-repos/ghpages-holosec$ tree /home/chilcano/git-repos/ghpages-holosec/vendor/bundle/ruby/2.5.0/gems/minima-2.5.1
-/home/chilcano/git-repos/ghpages-holosec/vendor/bundle/ruby/2.5.0/gems/minima-2.5.1
-├── assets
-│   ├── main.scss
-│   └── minima-social-icons.svg
-├── _includes
-│   ├── disqus_comments.html
-│   ├── footer.html
-│   ├── google-analytics.html
-│   ├── header.html
-│   ├── head.html
-│   ├── icon-github.html
-│   ├── icon-github.svg
-│   ├── icon-twitter.html
-│   ├── icon-twitter.svg
-│   └── social.html
-├── _layouts
-│   ├── default.html
-│   ├── home.html
-│   ├── page.html
-│   └── post.html
-├── LICENSE.txt
-├── README.md
-└── _sass
-    ├── minima
-    │   ├── _base.scss
-    │   ├── _layout.scss
-    │   └── _syntax-highlighting.scss
-    └── minima.scss
-
-<span style="color:#ae81ff">5</span> directories, <span style="color:#ae81ff">22</span> files
-</code></pre></div><p>With a clear understanding of the theme’s files, you can now override any theme file by creating a similarly named file in your Jekyll site directory.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chilcano@inti:~/git-repos/ghpages-holosec$ bundle show
+</span></span><span style="display:flex;"><span>Gems included by the bundle:
+</span></span><span style="display:flex;"><span>  * addressable <span style="color:#f92672">(</span>2.7.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * bundler <span style="color:#f92672">(</span>2.0.2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * colorator <span style="color:#f92672">(</span>1.1.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * concurrent-ruby <span style="color:#f92672">(</span>1.1.5<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * em-websocket <span style="color:#f92672">(</span>0.5.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * eventmachine <span style="color:#f92672">(</span>1.2.7<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * fastercsv <span style="color:#f92672">(</span>1.5.5<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * ffi <span style="color:#f92672">(</span>1.11.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * forwardable-extended <span style="color:#f92672">(</span>2.6.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * hpricot <span style="color:#f92672">(</span>0.8.6<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * http_parser.rb <span style="color:#f92672">(</span>0.6.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * i18n <span style="color:#f92672">(</span>1.7.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * jekyll <span style="color:#f92672">(</span>4.0.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * jekyll-feed <span style="color:#f92672">(</span>0.12.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * jekyll-import <span style="color:#f92672">(</span>0.19.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * jekyll-paginate <span style="color:#f92672">(</span>1.1.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * jekyll-sass-converter <span style="color:#f92672">(</span>2.0.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * jekyll-seo-tag <span style="color:#f92672">(</span>2.6.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * jekyll-watch <span style="color:#f92672">(</span>2.2.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * kramdown <span style="color:#f92672">(</span>2.1.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * kramdown-parser-gfm <span style="color:#f92672">(</span>1.1.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * liquid <span style="color:#f92672">(</span>4.0.3<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * listen <span style="color:#f92672">(</span>3.2.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * mercenary <span style="color:#f92672">(</span>0.3.6<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * mini_portile2 <span style="color:#f92672">(</span>2.4.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  * minima <span style="color:#f92672">(</span>2.5.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chilcano@inti:~/git-repos/ghpages-holosec$ bundle show minima
+</span></span><span style="display:flex;"><span>/home/chilcano/git-repos/ghpages-holosec/vendor/bundle/ruby/2.5.0/gems/minima-2.5.1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chilcano@inti:~/git-repos/ghpages-holosec$ tree /home/chilcano/git-repos/ghpages-holosec/vendor/bundle/ruby/2.5.0/gems/minima-2.5.1
+</span></span><span style="display:flex;"><span>/home/chilcano/git-repos/ghpages-holosec/vendor/bundle/ruby/2.5.0/gems/minima-2.5.1
+</span></span><span style="display:flex;"><span>├── assets
+</span></span><span style="display:flex;"><span>│   ├── main.scss
+</span></span><span style="display:flex;"><span>│   └── minima-social-icons.svg
+</span></span><span style="display:flex;"><span>├── _includes
+</span></span><span style="display:flex;"><span>│   ├── disqus_comments.html
+</span></span><span style="display:flex;"><span>│   ├── footer.html
+</span></span><span style="display:flex;"><span>│   ├── google-analytics.html
+</span></span><span style="display:flex;"><span>│   ├── header.html
+</span></span><span style="display:flex;"><span>│   ├── head.html
+</span></span><span style="display:flex;"><span>│   ├── icon-github.html
+</span></span><span style="display:flex;"><span>│   ├── icon-github.svg
+</span></span><span style="display:flex;"><span>│   ├── icon-twitter.html
+</span></span><span style="display:flex;"><span>│   ├── icon-twitter.svg
+</span></span><span style="display:flex;"><span>│   └── social.html
+</span></span><span style="display:flex;"><span>├── _layouts
+</span></span><span style="display:flex;"><span>│   ├── default.html
+</span></span><span style="display:flex;"><span>│   ├── home.html
+</span></span><span style="display:flex;"><span>│   ├── page.html
+</span></span><span style="display:flex;"><span>│   └── post.html
+</span></span><span style="display:flex;"><span>├── LICENSE.txt
+</span></span><span style="display:flex;"><span>├── README.md
+</span></span><span style="display:flex;"><span>└── _sass
+</span></span><span style="display:flex;"><span>    ├── minima
+</span></span><span style="display:flex;"><span>    │   ├── _base.scss
+</span></span><span style="display:flex;"><span>    │   ├── _layout.scss
+</span></span><span style="display:flex;"><span>    │   └── _syntax-highlighting.scss
+</span></span><span style="display:flex;"><span>    └── minima.scss
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> directories, <span style="color:#ae81ff">22</span> files
+</span></span></code></pre></div><p>With a clear understanding of the theme’s files, you can now override any theme file by creating a similarly named file in your Jekyll site directory.
 For example:</p>
 <ol>
 <li>Create the <code>&lt;GHPAGE_SITE_ROOT&gt;/_layouts/</code> and/or <code>&lt;GHPAGE_SITE_ROOT&gt;/assets/</code> folder if they don&rsquo;t exist.</li>
@@ -238,26 +238,26 @@ For example:</p>
 <h2 id="blog-post-pagination-and-excerpts">Blog post Pagination and Excerpts</h2>
 <p>By default Jekyll since version 3 includes the <code>jekyll-paginate</code> plugin in the <code>Gemfile</code> and in the <code>_config.yml</code> under the plugins section.
 But if you don&rsquo;t have it, add it with this command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ bundle add jekyll-paginate
-</code></pre></div><p>To configure the Blog pagination and the showing excerpts we have to edit the <code>_config.yml</code> file which affect at global level.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">...
-...
-<span style="color:#75715e">## Pagination for blog posts: https://jekyllrb.com/docs/pagination/</span>
-<span style="color:#f92672">paginate</span>: <span style="color:#ae81ff">5</span>
-<span style="color:#f92672">paginate_path</span>: <span style="color:#e6db74">&#34;/blog/pg:num&#34;</span>
-
-<span style="color:#75715e">#show_excerpts: false</span>
-<span style="color:#f92672">excerpt_separator</span>: <span style="color:#ae81ff">&lt;!--more--&gt;</span>
-</code></pre></div><p>Once done, we have to create the <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code> which it will render the Blog Posts list. I recommend to start with the code snippet available <a href="https://jekyllrb.com/docs/pagination/">here - https://jekyllrb.com/docs/pagination/</a>, or if you prefer you can use my modified <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code> <a href="/blog/index.html">file</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">layout</span>: <span style="color:#ae81ff">page</span>
-<span style="color:#f92672">title</span>: <span style="color:#ae81ff">Blog</span>
-<span style="color:#f92672">show_excerpts</span>: <span style="color:#66d9ef">true</span>
-<span style="color:#75715e">#excerpt_separator: &lt;!--more--&gt;</span>
----
-...
-...
-</code></pre></div><p>Where:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chilcano@inti:~/git-repos/ghpages-holosec$ bundle add jekyll-paginate
+</span></span></code></pre></div><p>To configure the Blog pagination and the showing excerpts we have to edit the <code>_config.yml</code> file which affect at global level.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Pagination for blog posts: https://jekyllrb.com/docs/pagination/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">paginate</span>: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">paginate_path</span>: <span style="color:#e6db74">&#34;/blog/pg:num&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#show_excerpts: false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">excerpt_separator</span>: <span style="color:#ae81ff">&lt;!--more--&gt;</span>
+</span></span></code></pre></div><p>Once done, we have to create the <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code> which it will render the Blog Posts list. I recommend to start with the code snippet available <a href="https://jekyllrb.com/docs/pagination/">here - https://jekyllrb.com/docs/pagination/</a>, or if you prefer you can use my modified <code>&lt;GHPAGE_SITE_ROOT&gt;/blog/index.html</code> <a href="/blog/index.html">file</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">layout</span>: <span style="color:#ae81ff">page</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#ae81ff">Blog</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">show_excerpts</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#excerpt_separator: &lt;!--more--&gt;</span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Where:</p>
 <ul>
 <li><code>paginate: 5</code>: means 5 blog post for each page.</li>
 <li><code>paginate_path: &quot;/blog/pg:num&quot;</code>: the path to the file with which all Blog Posts will be rendered and viewed, also it will include the pagination controls.</li>
@@ -268,17 +268,17 @@ But if you don&rsquo;t have it, add it with this command:</p>
 <p>If you have gone through exportation and importation process you will have a Blog with some WordPress&rsquo;s HTML with unrecognizable tags and metadata, and missing links, that is normal and annoying too. For that, I looked out for some Ruby Gems or Python scripts to convert to Markdown, tweak the code and improve the readibility of new Markdown converted Posts.</p>
 <p>I&rsquo;ve used the <a href="https://import.jekyllrb.com/docs/wordpressdotcom">Jekyll WordPress.com Importer</a>, it extracts all posts and download attachments from the WordPress Export XML File and place them into <code>&lt;GHPAGE_SITE_ROOT&gt;/_posts/</code> and <code>&lt;GHPAGE_SITE_ROOT&gt;/assets/</code> folders, once done I&rsquo;ll run the prepared Python script:</p>
 <p>Activate the Python 3 Environment. If you want to know how to get it, here I&rsquo;ve prepared its explanation: <a href="/2019/12/08/python3-setting-a-local-env" title="Setting a Python 3 local programming environment">Setting a Python 3 local programming environment</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chilcano@inti:~/git-repos/ghpages-holosec$ source ../abc/myenv3/bin/activate
-<span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/ghpages-holosec$ 
-</code></pre></div><p>Once activated, execute the provided Python script.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/ghpages-holosec$ python ./wp_export/simple_html_wp_to_md.py ./_posts/
-&gt; Loading and splitting <span style="color:#ae81ff">89</span> HTML files from ./_posts/
-	 2010-09-10-agile-bpm-systems-development-with-camunda-fox-and-alfresco-activiti.html
-...
-&gt; Saving <span style="color:#ae81ff">89</span> markdown files in ./_posts/
-	 2010-09-10-agile-bpm-systems-development-with-camunda-fox-and-alfresco-activiti.md
-...
-</code></pre></div><p>And I will get:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chilcano@inti:~/git-repos/ghpages-holosec$ source ../abc/myenv3/bin/activate
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/ghpages-holosec$ 
+</span></span></code></pre></div><p>Once activated, execute the provided Python script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#f92672">(</span>myenv3<span style="color:#f92672">)</span> chilcano@inti:~/git-repos/ghpages-holosec$ python ./wp_export/simple_html_wp_to_md.py ./_posts/
+</span></span><span style="display:flex;"><span>&gt; Loading and splitting <span style="color:#ae81ff">89</span> HTML files from ./_posts/
+</span></span><span style="display:flex;"><span>	 2010-09-10-agile-bpm-systems-development-with-camunda-fox-and-alfresco-activiti.html
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>&gt; Saving <span style="color:#ae81ff">89</span> markdown files in ./_posts/
+</span></span><span style="display:flex;"><span>	 2010-09-10-agile-bpm-systems-development-with-camunda-fox-and-alfresco-activiti.md
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>And I will get:</p>
 <ol>
 <li>Convert HTML to Markdown.</li>
 <li>Update all Markdown files to Jekyll&rsquo;s Markdown with a Front Matter&rsquo;s header.</li>
