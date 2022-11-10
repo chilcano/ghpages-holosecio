@@ -1,0 +1,33 @@
+---
+name: Test
+
+on:
+  push:
+    branches:
+      - 'tests/**'
+
+jobs:
+  job_setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+  job_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get branch name and commit hash
+        id: vars
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-' )"
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Print variables
+        run: |
+          echo "=> GH_REFS: ${GITHUB_REF#refs/heads/}"
+          echo "=> BRANCH_NAME: ${{ steps.vars.outputs.branch }}"
+          echo "=> COMMIT_HASH: ${{ steps.vars.outputs.sha_short }}"
+          
