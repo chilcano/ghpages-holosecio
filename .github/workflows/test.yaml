@@ -7,7 +7,7 @@ on:
       - 'tests/**'
 
 jobs:
-  get_and_print_variables:
+  job_get_and_print_variables:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -37,4 +37,16 @@ jobs:
           echo "=> COMMIT_HASH: ${{ steps.vars1.outputs.commit_hash }}"
           echo "=> COMMIT_HASH_SHORT: ${{ steps.vars1.outputs.commit_hash_short }}"
           echo "=> ACTOR: ${{ steps.vars1.outputs.actor }}"
-          
+
+  job_print_variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print variables from separate job
+        run: |
+          echo "=> GH_REFS: ${GITHUB_REF#refs/heads/}"
+          echo "=> COMMITTER: ${{ steps.vars1.outputs.committer }}"
+          echo "=> BRANCH_NAME.old: ${{ steps.vars1.outputs.branch_name_old }}"
+          echo "=> BRANCH_NAME.new: ${{ steps.vars1.outputs.branch_name_new }}"
+          echo "=> COMMIT_HASH: ${{ steps.vars1.outputs.commit_hash }}"
+          echo "=> COMMIT_HASH_SHORT: ${{ steps.vars1.outputs.commit_hash_short }}"
+          echo "=> ACTOR: ${{ steps.vars1.outputs.actor }}"
