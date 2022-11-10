@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       envar_commit_hash_short_out1: ${{ env.envar_commit_hash_short }}
-      envar_commit_hash_short_out2: ${{ steps.stepvars1.outputs.envar_commit_hash_short }}
-      envar_commit_hash_short_out3: ${{ steps.stepvars1.outputs.envar_commit_hash_short_out }}
+      envar_commit_hash_short_out2: ${{ steps.step1.outputs.envar_commit_hash_short }}
+      envar_commit_hash_short_out3: ${{ steps.step1.outputs.envar_commit_hash_short_out }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -22,7 +22,7 @@ jobs:
       #     node-version: 16.x
       #     cache: 'npm'
       - name: Get variables
-        id: stepvars1
+        id: step1
         run: |
           echo "##[set-output name=branch_name_old;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-' )"
           echo "branch_name_new=$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-' )" >> $GITHUB_OUTPUT
@@ -35,15 +35,17 @@ jobs:
           echo "envar_commit_hash_short_out=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Print variables
+        id: step2
         run: |
           echo "=> GH_REFS: ${GITHUB_REF#refs/heads/}"
-          echo "=> COMMITTER: ${{ steps.stepvars1.outputs.committer }}"
-          echo "=> BRANCH_NAME.old: ${{ steps.stepvars1.outputs.branch_name_old }}"
-          echo "=> BRANCH_NAME.new: ${{ steps.stepvars1.outputs.branch_name_new }}"
-          echo "=> COMMIT_HASH: ${{ steps.stepvars1.outputs.commit_hash }}"
-          echo "=> COMMIT_HASH_SHORT: ${{ steps.stepvars1.outputs.commit_hash_short }}"
-          echo "=> ACTOR: ${{ steps.stepvars1.outputs.actor }}"
+          echo "=> COMMITTER: ${{ steps.step1.outputs.committer }}"
+          echo "=> BRANCH_NAME.old: ${{ steps.step1.outputs.branch_name_old }}"
+          echo "=> BRANCH_NAME.new: ${{ steps.step1.outputs.branch_name_new }}"
+          echo "=> COMMIT_HASH: ${{ steps.step1.outputs.commit_hash }}"
+          echo "=> COMMIT_HASH_SHORT: ${{ steps.step1.outputs.commit_hash_short }}"
+          echo "=> ACTOR: ${{ steps.step1.outputs.actor }}"
           echo "=> envar_commit_hash_short: ${{ env.envar_commit_hash_short }}"
+          echo "=> envar_commit_hash_short_out: ${{ steps.step1.outputs.envar_commit_hash_short_out }}"
 
       - name: List home
         run: |
@@ -57,12 +59,12 @@ jobs:
       - name: Print variables from separate job
         run: |
           echo "=> GH_REFS: ${GITHUB_REF#refs/heads/}"
-          echo "=> COMMITTER: ${{ steps.stepvars1.outputs.committer }}"
-          echo "=> BRANCH_NAME.old: ${{ steps.stepvars1.outputs.branch_name_old }}"
-          echo "=> BRANCH_NAME.new: ${{ steps.stepvars1.outputs.branch_name_new }}"
-          echo "=> COMMIT_HASH: ${{ steps.stepvars1.outputs.commit_hash }}"
-          echo "=> COMMIT_HASH_SHORT: ${{ steps.stepvars1.outputs.commit_hash_short }}"
-          echo "=> ACTOR: ${{ steps.stepvars1.outputs.actor }}"
+          echo "=> COMMITTER: ${{ steps.step1.outputs.committer }}"
+          echo "=> BRANCH_NAME.old: ${{ steps.step1.outputs.branch_name_old }}"
+          echo "=> BRANCH_NAME.new: ${{ steps.step1.outputs.branch_name_new }}"
+          echo "=> COMMIT_HASH: ${{ steps.step1.outputs.commit_hash }}"
+          echo "=> COMMIT_HASH_SHORT: ${{ steps.step1.outputs.commit_hash_short }}"
+          echo "=> ACTOR: ${{ steps.step1.outputs.actor }}"
           echo "=> envar_commit_hash_short: ${{ env.envar_commit_hash_short }}"
           echo "=> envar_commit_hash_short_out1: ${{ needs.job1.outputs.envar_commit_hash_short_out1 }}"
           echo "=> envar_commit_hash_short_out2: ${{ needs.job1.outputs.envar_commit_hash_short_out2 }}"
