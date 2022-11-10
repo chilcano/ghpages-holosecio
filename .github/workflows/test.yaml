@@ -24,6 +24,7 @@ jobs:
           echo "::set-output name=commit_hash_short::$(git rev-parse --short HEAD)"
           echo "::set-output name=commit_hash::$(git rev-parse HEAD)"
           echo "::set-output name=committer::${GITHUB_ACTOR}"
+          ## this is the right way to set output vars: https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files
           echo "actor=${GITHUB_ACTOR}" >> $GITHUB_OUTPUT
 
       - name: Print variables
