@@ -24,6 +24,7 @@ jobs:
           echo "::set-output name=commit_hash_short::$(git rev-parse --short HEAD)"
           echo "::set-output name=commit_hash::$(git rev-parse HEAD)"
           echo "::set-output name=committer::${GITHUB_ACTOR}"
+          echo "actor=${GITHUB_ACTOR}" >> $GITHUB_OUTPUT
 
       - name: Get branch name only
         id: vars2
@@ -43,9 +44,9 @@ jobs:
       - name: Print variables
         run: |
           echo "=> GH_REFS: ${GITHUB_REF#refs/heads/}"
-          echo "=> ACTOR: ${{ steps.vars1.outputs.committer }}"
+          echo "=> COMMITTER: ${{ steps.vars1.outputs.committer }}"
           echo "=> BRANCH_NAME: ${{ steps.vars2.outputs.branch_name }}"
           echo "=> COMMIT_HASH: ${{ steps.vars3.outputs.commit_hash }}"
           echo "=> COMMIT_HASH_SHORT4: ${{ steps.vars4.outputs.commit_hash_short }}"
-          echo "=> COMMIT_HASH_SHORT1: ${{ steps.vars1.outputs.commit_hash_short }}"
+          echo "=> ACTOR.VARS1: ${{ steps.vars1.outputs.actor }}"
           
