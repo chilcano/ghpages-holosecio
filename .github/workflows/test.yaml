@@ -46,5 +46,6 @@ jobs:
           echo "=> ACTOR: ${{ steps.vars1.outputs.committer }}"
           echo "=> BRANCH_NAME: ${{ steps.vars2.outputs.branch_name }}"
           echo "=> COMMIT_HASH: ${{ steps.vars3.outputs.commit_hash }}"
-          echo "=> COMMIT_HASH_SHORT: ${{ steps.vars4.outputs.commit_hash_short }}"
+          echo "=> COMMIT_HASH_SHORT4: ${{ steps.vars4.outputs.commit_hash_short }}"
+          echo "=> COMMIT_HASH_SHORT1: ${{ steps.vars1.outputs.commit_hash_short }}"
           
