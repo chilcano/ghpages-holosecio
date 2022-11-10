@@ -39,7 +39,7 @@ jobs:
           echo "=> COMMIT_HASH_SHORT: ${{ steps.vars1.outputs.commit_hash_short }}"
           echo "=> ACTOR: ${{ steps.vars1.outputs.actor }}"
           echo "=> commit_hash_short_envvar: ${{ commit_hash_short_envvar }}"
-          echo "=> commit_hash_short_envvar.env: ${{ env.commit_hash_short_envvar }}"
+          echo "=> commit_hash_short_envvar_env: ${{ env.commit_hash_short_envvar }}"
 
       - name: List home
         run: |
