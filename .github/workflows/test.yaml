@@ -21,16 +21,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get branch name and commit hash
-        id: vars
+        id: vars1
         run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-' )"
-          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-          echo "::set-output name=commit_id::$(git rev-parse HEAD)"
+          echo "##[set-output name=branch_name;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-' )"
+          echo "::set-output name=commit_hash_short::$(git rev-parse --short HEAD)"
+          echo "::set-output name=commit_hash::$(git rev-parse HEAD)"
+          echo "::set-output name=committer::${GITHUB_ACTOR}"
+
+      - name: Get branch name only
+        id: vars2
+        run: |
+          echo "##[set-output name=branch_name;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-' )"
+
+      - name: Get commit hash only
+        id: vars3
+        run: |
+          echo "::set-output name=commit_hash::$(git rev-parse HEAD)"
+
+      - name: Get short commit hash only
+        id: vars4
+        run: |
+          echo "::set-output name=commit_hash_short::$(git rev-parse --short HEAD)"
 
       - name: Print variables
         run: |
           echo "=> GH_REFS: ${GITHUB_REF#refs/heads/}"
-          echo "=> BRANCH_NAME: ${{ steps.vars.outputs.branch }}"
-          echo "=> COMMIT_HASH: ${{ steps.vars.outputs.sha_short }}"
-          echo "=> COMMIT_ID: ${{ steps.vars.outputs.commit_id }}"
+          echo "=> ACTOR: ${{ steps.vars1.outputs.committer }}"
+          echo "=> BRANCH_NAME: ${{ steps.vars2.outputs.branch_name }}"
+          echo "=> COMMIT_HASH: ${{ steps.vars3.outputs.commit_hash }}"
+          echo "=> COMMIT_HASH_SHORT: ${{ steps.vars.outputs.commit_hash_short }}"
           
