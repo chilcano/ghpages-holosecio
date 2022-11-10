@@ -20,7 +20,8 @@ jobs:
       - name: Get variables
         id: vars1
         run: |
-          echo "##[set-output name=branch_name;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-' )"
+          echo "##[set-output name=branch_name_old;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-' )"
+          echo "branch_name_new=$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-' )" >> $GITHUB_OUTPUT
           echo "::set-output name=commit_hash_short::$(git rev-parse --short HEAD)"
           echo "::set-output name=commit_hash::$(git rev-parse HEAD)"
           echo "::set-output name=committer::${GITHUB_ACTOR}"
@@ -31,7 +32,8 @@ jobs:
         run: |
           echo "=> GH_REFS: ${GITHUB_REF#refs/heads/}"
           echo "=> COMMITTER: ${{ steps.vars1.outputs.committer }}"
-          echo "=> BRANCH_NAME: ${{ steps.vars1.outputs.branch_name }}"
+          echo "=> BRANCH_NAME.old: ${{ steps.vars1.outputs.branch_name_old }}"
+          echo "=> BRANCH_NAME.new: ${{ steps.vars1.outputs.branch_name_new }}"
           echo "=> COMMIT_HASH: ${{ steps.vars1.outputs.commit_hash }}"
           echo "=> COMMIT_HASH_SHORT: ${{ steps.vars1.outputs.commit_hash_short }}"
           echo "=> ACTOR: ${{ steps.vars1.outputs.actor }}"
