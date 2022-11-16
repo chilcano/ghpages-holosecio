@@ -24,11 +24,11 @@ jobs:
           result=''
           echo "CURRENT_MILLISECS=$millisecs" >> ${GITHUB_ENV}
           if [ $((millisecs%2)) -eq 0 ]; then
-            result='impar'
-            echo "RESULT=impar" >> ${GITHUB_ENV}
-          else
             result='par'
             echo "RESULT=par" >> ${GITHUB_ENV}
+          else
+            result='impar'
+            echo "RESULT=impar" >> ${GITHUB_ENV}
           fi
           echo "=> $millisecs -> $result"
 
@@ -38,8 +38,8 @@ jobs:
 
       - name: Conditional printing (par)
         if: env.RESULT == 'par'
-        run: echo "*** Es número par ***"
+        run: echo "*** $CURRENT_MILLISECS es número par ***"
 
       - name: Conditional printing (impar)
         if: env.RESULT != 'par'
-        run: echo "*** Es número impar ***"
+        run: echo "*** $CURRENT_MILLISECS es número impar ***"
