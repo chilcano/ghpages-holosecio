@@ -22,7 +22,7 @@ jobs:
         id: step1
         run: |
           millisecs=$(date +%s)
-          result=""
+          result=''
           echo "CURRENT_MILLISECS=$(millisecs" >> ${GITHUB_ENV}
           if [ $((millisecs%2)) -eq 0 ]; then
             result='impar'
