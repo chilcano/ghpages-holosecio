@@ -21,13 +21,18 @@ jobs:
       - name: Get values
         id: step1
         run: |
-          echo "CURRENT_MILLISECS=$(date +%s)" >> ${GITHUB_ENV}
-          if [ $((CURRENT_MILLISECS%2)) -eq 0 ]; then
+          millisecs=$(date +%s)
+          result=""
+          echo "CURRENT_MILLISECS=$(millisecs" >> ${GITHUB_ENV}
+          if [ $((millisecs%2)) -eq 0 ]; then
+            result='impar'
             echo "RESULT=impar" >> ${GITHUB_ENV}
           else
+            result='par'
             echo "RESULT=par" >> ${GITHUB_ENV}
           fi
           echo "=> $CURRENT_MILLISECS -> $RESULT"
+          echo "=> $env.CURRENT_MILLISECS -> $env.RESULT"
 
       - name: Conditional printing (par)
         if: env.RESULT == 'par'
