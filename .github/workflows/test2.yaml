@@ -1,0 +1,39 @@
+---
+name: Test2
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: false
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug 
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get values
+        id: step1
+        run: |
+          echo "CURRENT_MILLISECS=$(date +%s)" >> ${GITHUB_ENV}
+          if [ $((CURRENT_MILLISECS%2)) -eq 0 ]; then
+            echo "RESULT=impar" >> ${GITHUB_ENV}
+          else
+            echo "RESULT=par" >> ${GITHUB_ENV}
+          fi
+
+      - name: Print variables
+        id: step2
+        run: |
+          echo "=> $CURRENT_MILLISECS -> $RESULT"
+
+      - name: Conditional printing
+        if: env.RESULT == 'par'
+        run: |
+          echo "*** Es número par ***"
