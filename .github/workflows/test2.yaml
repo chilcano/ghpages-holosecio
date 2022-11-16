@@ -32,7 +32,6 @@ jobs:
           fi
           echo "=> $millisecs -> $result"
           echo "=> ${{ env.CURRENT_MILLISECS }} -> ${{ env.RESULT }}"
-          echo "=> ${{ CURRENT_MILLISECS }} -> ${{ RESULT }}"
 
       - name: Print values
         run: |
