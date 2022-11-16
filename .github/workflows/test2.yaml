@@ -27,18 +27,12 @@ jobs:
           else
             echo "RESULT=par" >> ${GITHUB_ENV}
           fi
-
-      - name: Print variables
-        id: step2
-        run: |
           echo "=> $CURRENT_MILLISECS -> $RESULT"
 
       - name: Conditional printing (par)
         if: env.RESULT == 'par'
-        run: |
-          echo "*** Es número par ***"
+        run: echo "*** Es número par ***"
 
       - name: Conditional printing (impar)
         if: env.RESULT != 'par'
-        run: |
-          echo "*** Es número impar ***"
+        run: echo "*** Es número impar ***"
