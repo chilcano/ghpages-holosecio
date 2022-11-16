@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get values
-        id: step1
         run: |
           millisecs=$(date +%s)
           result=''
@@ -31,7 +30,10 @@ jobs:
             result='par'
             echo "RESULT=par" >> ${GITHUB_ENV}
           fi
-          echo "=> $CURRENT_MILLISECS -> $RESULT"
+          echo "=> $millisecs -> $result"
+
+      - name: Print values
+        run: 
           echo "=> $env.CURRENT_MILLISECS -> $env.RESULT"
 
       - name: Conditional printing (par)
