@@ -2,9 +2,17 @@
 name: Test
 
 on:
-  push:
-    branches:
-      - 'tests/**'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: false
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug 
 
 jobs:
   job1:
