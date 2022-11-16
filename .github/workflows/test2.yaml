@@ -33,7 +33,12 @@ jobs:
         run: |
           echo "=> $CURRENT_MILLISECS -> $RESULT"
 
-      - name: Conditional printing
+      - name: Conditional printing (par)
         if: env.RESULT == 'par'
         run: |
           echo "*** Es número par ***"
+
+      - name: Conditional printing (impar)
+        if: env.RESULT != 'par'
+        run: |
+          echo "*** Es número impar ***"
