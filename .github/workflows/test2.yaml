@@ -32,10 +32,12 @@ jobs:
           fi
           echo "=> $millisecs -> $result"
           echo "=> ${{ env.CURRENT_MILLISECS }} -> ${{ env.RESULT }}"
+          echo "=> ${{ CURRENT_MILLISECS }} -> ${{ RESULT }}"
 
       - name: Print values
-        run: 
-          echo "=> $CURRENT_MILLISECS -> $RESULT"
+        run: |
+          echo "1> $CURRENT_MILLISECS -> $RESULT"
+          echo "2> ${{ env.CURRENT_MILLISECS }} -> ${{ env.RESULT }}"
 
       - name: Conditional printing (par)
         if: env.RESULT == 'par'
