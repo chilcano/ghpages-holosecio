@@ -73,11 +73,11 @@ Here all opensource tools I've found and reviewed:
 | * Provides a Threats database. It can be extended. |
 |--- |
 
-| 3. [OWASP Threat Dragon](https://threatdragon.org) | {{< image-resize "/assets/blog20220103_threat_model/logo-owasp-threat-dragon.png" 200x >}} |
+| 3. [OWASP Threat Dragon](https://owasp.org/www-project-threat-dragon/) | {{< image-resize "/assets/blog20220103_threat_model/logo-owasp-threat-dragon.png" 200x >}} |
 |--- | --- |
 | * Apache Software License. |
 | * It can be used as a standalone desktop app for Windows and MacOS (Linux coming soon) or as a web application.  |
-| * Live demo: https://threatdragon.org/login |
+| * Live demo: https://www.threatdragon.com |
 | * It is cross-platform threat modelling application including system diagramming and a threat rule engine to auto-generate threats/mitigations. |
 | * The focus of the project is on great UX, a powerful rule engine and integration with other development lifecycle tools. |
 | * Threat Dragon provides [STRIDE per Element](https://www.microsoft.com/security/blog/2007/10/29/the-stride-per-element-chart/) rules to generate the suggested threats for an element on the diagram - except for trust boundaries. The suggested threats can be individually accepted or ignored, and other threats added manually. |
