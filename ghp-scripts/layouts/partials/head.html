@@ -31,7 +31,8 @@
   {{ end }}
   {{ if .Site.GoogleAnalytics }}
   {{ if .Site.Params.googleAnalyticsAsync }}
-    {{ template "_internal/google_analytics_async.html" . }}
+    <!-- 2024.04.24: Hugo has deprecated next template -->
+    {{/* template "_internal/google_analytics_async.html" . */}}
   {{ else }}
     {{ template "_internal/google_analytics.html" . }}
   {{ end }}
