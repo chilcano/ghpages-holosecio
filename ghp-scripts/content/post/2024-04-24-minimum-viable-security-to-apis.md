@@ -1,7 +1,7 @@
 ---
 title: 'Applying Minimum Viable Security to APIs'
 date: 2024-04-24T12:00:00+02:00
-draft: true
+draft: false
 type: post
 layout: single_simple
 categories: [SDLC, DevSecOps, Holism]
