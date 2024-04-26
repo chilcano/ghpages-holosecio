@@ -12,6 +12,10 @@ while [ $# -gt 0 ]; do
     --commit_msg*|-m*)
       _COMMIT_MSG="${1#*=}"
       ;;
+    --sign*|-s*)
+      if [[ "$1" != *=* ]]; then shift; fi
+      _SIGN="${1#*=}"
+      ;;
     --help|-h)
       printf "Publish Hugo content."
       exit 0
@@ -36,14 +40,16 @@ HUGO_CONTENT_DIR="ghp-content"
 HUGO_CONTENT_BRANCH="${HUGO_CONTENT_DIR}"
 
 if [ -z ${_COMMIT_MSG+x} ]; then
-    if [ "`git status -s`" ]
-    then
-        printf "==> The working directory is dirty. Please commit any pending changes or re-run this script with '--commit_msg' or '-m' params. \n"
-        exit 1;
-    fi
+  if [ "`git status -s`" ]; then
+    printf "==> The working directory is dirty. Please commit any pending changes or re-run this script with '--commit_msg' or '-m' params. \n"
+    exit 1;
+  fi
 else
-    printf "==> Pushing previous changes.\n" 
-    git add .; git commit -m "Published content: ${_COMMIT_MSG}"; git push
+  if [ -z ${_SIGN+x} ]; then
+    git add .; git commit -S -m "chore: publishes content: ${_COMMIT_MSG}"; git push
+  else
+    git add .; git commit -m "chore: publishes content: ${_COMMIT_MSG}"; git push
+  fi
 fi
 
 printf "==> Deleting older content and history of '${HUGO_CONTENT_BRANCH}' \n" 
@@ -71,4 +77,3 @@ git push --all
 
 printf "==> Returning to current dir. \n"
 cd ../
-
