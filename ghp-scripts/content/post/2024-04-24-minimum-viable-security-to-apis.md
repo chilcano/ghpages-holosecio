@@ -4,7 +4,7 @@ date: 2024-04-24T12:00:00+02:00
 draft: false
 type: post
 layout: single_simple
-categories: [SDLC, DevSecOps, Holism]
+categories: [SDLC, DevSecOps]
 tags: [Pareto, Shift-Left, SAST, SCA, DAST, API]
 url: /2024/04/24/minimum-viable-security-to-apis
 ---
