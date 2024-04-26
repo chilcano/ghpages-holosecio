@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Applying Minimum Viable Security to APIs | Holistic Security</title>
+  <meta name="description" content="With The Systems Thinking Methodology we are able to see any problem in a complete and holistic manner, in fact, The Systems Thinking Methodology allows us to solve complex problems (IT Security, Global Warming, World Poverty, etc.) by considering new factors, elements and variables (usability, trust, quality, risk, etc.) which were not considered initially.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://holisticsecurity.io/2024/04/24/minimum-viable-security-to-apis/">
+  <meta property="og:site_name" content="Holistic Security">
+  <meta property="og:title" content="Applying Minimum Viable Security to APIs">
+  <meta property="og:description" content="From Security standpoint, exposing Application functionalities as APIs means increasing the attack surface. The APIs are like to adding windows to a house, we know the doors usually are secure and being monitored in houses, however new windows might not be built with security in mind. Well, in this post I&amp;rsquo;ll explain how to check the security of your APIs and make it more secure according The Minimum Viable Security, following Pareto Principle and Shift-Left Testing approaches.
+Some time ago I had the chance to speak (in Spanish) about Securing API lifecycle through the CI/CD, with that experience, I&amp;rsquo;m going to share the technical details on how to apply Minimum Viable Security to Application&amp;rsquo;s RESTful APIs, specifically how to implement SAST, SCA &amp;amp; DAST using opensource tools. To do that, I&amp;rsquo;ll use MAC Address Manufacturer Lookup python service.
+SDLC and APIs ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-04-24T12:00:00+02:00">
+    <meta property="article:modified_time" content="2024-04-24T12:00:00+02:00">
+    <meta property="article:tag" content="Pareto">
+    <meta property="article:tag" content="Shift-Left">
+    <meta property="article:tag" content="SAST">
+    <meta property="article:tag" content="SCA">
+    <meta property="article:tag" content="DAST">
+    <meta property="article:tag" content="API">
+
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Applying Minimum Viable Security to APIs">
+<meta name="twitter:description" content="From Security standpoint, exposing Application functionalities as APIs means increasing the attack surface. The APIs are like to adding windows to a house, we know the doors usually are secure and being monitored in houses, however new windows might not be built with security in mind. Well, in this post I&rsquo;ll explain how to check the security of your APIs and make it more secure according The Minimum Viable Security, following Pareto Principle and Shift-Left Testing approaches.
+Some time ago I had the chance to speak (in Spanish) about Securing API lifecycle through the CI/CD, with that experience, I&rsquo;m going to share the technical details on how to apply Minimum Viable Security to Application&rsquo;s RESTful APIs, specifically how to implement SAST, SCA &amp; DAST using opensource tools. To do that, I&rsquo;ll use MAC Address Manufacturer Lookup python service.
+
+
+
+SDLC and APIs
+
+">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://holisticsecurity.io/css/style-white.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://holisticsecurity.io/images/favicon.ico" />
+
+  
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+
+  
+  
+
+  <link rel="stylesheet" href="https://holisticsecurity.io/css/custom-cactus-style-white.css">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://holisticsecurity.io/">
+  
+    <div id="logo" style="background-image: url(https://holisticsecurity.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Holistic Security</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/post">Blog</a></li>
+      
+        <li><a href="/taxonomy">Taxonomy</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+  <h1 class="posttitle" itemprop="name headline"> Applying Minimum Viable Security to APIs </h1>
+
+  <ul class="post-list">  
+      <li class="post-item">
+        <div class="meta">
+          <time datetime="2024-04-24 12:00:00 &#43;0200 CEST" itemprop="datePublished">2024-04-24</time>
+        </div>
+        <span>    
+          
+          
+          <div class="article-category">
+              
+              
+              <a class="category-link" href="/categories/sdlc">SDLC</a>
+              
+               · 
+              <a class="category-link" href="/categories/devsecops">DevSecOps</a>
+              
+               · 
+              <a class="category-link" href="/categories/holism">Holism</a>
+              
+              · 
+          </div>
+          
+          
+          <div class="article-tag">
+              
+              
+              <a class="tag-link" href="/tags/pareto" rel="tag">Pareto</a>
+              
+               · 
+              <a class="tag-link" href="/tags/shift-left" rel="tag">Shift-Left</a>
+              
+               · 
+              <a class="tag-link" href="/tags/sast" rel="tag">SAST</a>
+              
+               · 
+              <a class="tag-link" href="/tags/sca" rel="tag">SCA</a>
+              
+               · 
+              <a class="tag-link" href="/tags/dast" rel="tag">DAST</a>
+              
+               · 
+              <a class="tag-link" href="/tags/api" rel="tag">API</a>
+              
+          </div>
+          
+  
+        </span>
+      </li>  
+    </ul>
+
+  <div class="content" itemprop="articleBody">
+  
+    <p>From Security standpoint, exposing Application functionalities as APIs means increasing the attack surface. The APIs are like to adding windows to a house, we know the doors usually are secure and being monitored in houses, however new windows might not be built with security in mind. Well, in this post I&rsquo;ll explain how to check the security of your APIs and make it more secure according <a href="https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/">The Minimum Viable Security, following Pareto Principle and Shift-Left Testing</a> approaches.</p>
+<p>Some time ago I had the chance to speak (in Spanish) about <a href="https://holisticsecurity.io/2021/12/29/seguridad-en-el-ci-cd-de-las-apis/">Securing API lifecycle through the CI/CD</a>, with that experience, I&rsquo;m going to share the technical details on how to apply Minimum Viable Security to Application&rsquo;s RESTful APIs, specifically how to implement SAST, SCA &amp; DAST using opensource tools. To do that, I&rsquo;ll use <a href="https://github.com/chilcano/mac-address-manuf-lookup">MAC Address Manufacturer Lookup</a> python service.</p>
+<p><img src="/media/assets/blog20240424_api_mvs/20240424_secure_apis_01_sdlc_in_api.png" alt="">
+
+
+<i><center>SDLC and APIs</center></i>
+
+</p>
+<h2 id="security-along-the-apis-lifecycle">Security along the APIs lifecycle</h2>
+<p>Software Development Life Cycle (SDLC) is an interable process with a sequence of stages that Engineers follow to gather requirements, plan, design and build Systems, Applications and/or Software. From Security point of view, we, the Security Specialsts, use different Security best practices and tools in each stage to make the end product (software) more robust, secure and reduce its defects and security issues.</p>
+<p>The SDLC is more or less used to build any kind of software, on cloud, client/server, docker-based, blockchain-based, etc. That said, exposing a set of Application functionalities as RESTful APIs mean extending its features only, and doing that doesn&rsquo;t require a new SDLC, because the process stages will not change. The only thing we will need is extending our CI/CD pipelines by adding the right approach to check the security of newly RESTful API artifacts added to our Application stack.</p>
+<blockquote>
+<p>From Security standpoint, exposing functionalities as APIs only requires extending CI/CD pipelines and adding security checks in SDLC key stages.</p>
+</blockquote>
+<h2 id="using-the-pareto-principle-and-shift-left-testing">Using the Pareto Principle and Shift-Left Testing</h2>
+<p>I’ve borrowed both approaches to outline what I want for Minimum viable Security, while Pareto Principle helps to focus on what to test and what testing technology will be used on specific software artifacts, the Shift-Left Testing recommends where those tests in SDLC stages will be implemented, considering limited resources, budget, time and maximizing the security outcome.
+With that, the SDLC stages and Security Controls are:</p>
+<p><img src="/media/assets/blog20240424_api_mvs/20240424_secure_apis_02_mvs_in_sdlc.png" alt="">
+
+
+<i><center>Implementing Minimum Viable Security in APIs Projects</center></i>
+
+</p>
+<table>
+<thead>
+<tr>
+<th>SDLC Stage</th>
+<th>Security Control</th>
+<th>Tool options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02. CODE</td>
+<td>SAST, Config Drift</td>
+<td>SonarQube, Bandit (Python), Spectral (OpenAPI spec).</td>
+</tr>
+<tr>
+<td>03. BUILD</td>
+<td>SCA</td>
+<td>Trivy, OWASP Dependency-Check.</td>
+</tr>
+<tr>
+<td>04. TEST</td>
+<td>DAST</td>
+<td>OWASP ZAP.</td>
+</tr>
+<tr>
+<td>07. OPERATE</td>
+<td>WAF</td>
+<td><a href="https://api7.ai/apisix">Apache APISIX</a> with <a href="https://coraza.io">Coraza WAF</a> or <a href="https://github.com/chaitin/SafeLine">Chaitin SafeLine</a>.</td>
+</tr>
+<tr>
+<td>08. MONITOR</td>
+<td>Logging</td>
+<td>APISIX with ELK, Loki, Prometheus, Grafana, etc.</td>
+</tr>
+</tbody>
+</table>
+<p>With this and considering the <a href="https://github.com/chilcano/mac-address-manuf-lookup">MAC Address Manufacturer Lookup</a> python service, we could reduce the above list and have this:</p>
+<p><strong>1. SAST for Application</strong></p>
+<p>The Service is implemented in Python, using a <a href="https://sonarcloud.io/">SonarCloud</a> free account is enough to scan statically the Python code in entire repository.
+You can run scan for vulnerabilities in your code easily with SonarCloud by integrating it with your Github repository.</p>
+<ul>
+<li>You can get a report every time you make changes in your code, in my case, you can see the report for the MAC Address Manufacturer Lookup repository here: <a href="https://sonarcloud.io/summary/overall?id=chilcano_mac-address-manuf-lookup">https://sonarcloud.io/summary/overall?id=chilcano_mac-address-manuf-lookup</a></li>
+</ul>
+<p><strong>2. SAST for APIs</strong></p>
+<p>The Service is exposed as RESTful API, we are using the <a href="https://apiflask.com">APIFlask Python library</a> to generate the OpenAPI specification and documentation. I&rsquo;ll use the <a href="https://stoplight.io/open-source/spectral">Spectral CLI</a> as an API style guide enforcer and linter. It will require a set of rules to enforce the security, in this case the <a href="https://owasp.org/www-project-api-security">OWASP API Security Top 10 (2023)</a> and the <a href="https://github.com/stoplightio/spectral-owasp-ruleset">Spectral OWASP API Security Ruleset</a> are suitable to check of security of these APIs.</p>
+<ul>
+<li>You can see the report generated by Spectral and imported to Github Security - Code scanning here: <a href="https://github.com/chilcano/mac-address-manuf-lookup/security/code-scanning">https://github.com/chilcano/mac-address-manuf-lookup/security/code-scanning</a></li>
+<li>If you are interested on how to trigger Spectral CLI to check OWASP API Security ruleset from your Github repository, you can use this Github workflow: <a href="https://github.com/chilcano/mac-address-manuf-lookup/blob/main/.github/workflows/02-sast-api-sec-spectral-owasp.yaml">https://github.com/chilcano/mac-address-manuf-lookup/blob/main/.github/workflows/02-sast-api-sec-spectral-owasp.yaml</a></li>
+</ul>
+<p><strong>3. SCA</strong></p>
+<p>The MAC Address Manufacturer Lookup service uses Python libraries, a Dockerfile to build the application, a Docker Image based on Linux Alpine with a pre-installed Python environment to ship the application and its configuration, and since all source code, configuration files, Dockerfile, etc. are included in a single <a href="https://github.com/chilcano/mac-address-manuf-lookup">public Github repository</a> I will use only a single tool to take care of everything in one single shot. The right tool to do everything is <a href="https://trivy.dev/">Trivy</a>.</p>
+<ul>
+<li>Although Trivy CLI can be executed from a local terminal, I&rsquo;ve implemented a Github workflow that is triggered by events in the repository, it generates different kind of reports and are published as Github artifacts, although the report in Sarif format would be imported to Github Security - Code scanning Dahboard as well. This Github workflow is available here: <a href="https://github.com/chilcano/mac-address-manuf-lookup/actions/workflows/01-sca-app-deps-sec-trivy.yaml">https://github.com/chilcano/mac-address-manuf-lookup/actions/workflows/01-sca-app-deps-sec-trivy.yaml</a></li>
+</ul>
+<p><strong>4. DAST</strong></p>
+<p>Conduct Dynamic Application Security Testing (DAST) requires the application is up and running, and an appropiate tool to scanner all web interfaces exposed for this application. The recommended tool to do this is <a href="https://www.zaproxy.org">OWASP ZAP</a>. It works as a web proxy where we can automate the execution of many different tactics to find gaps and bugs in the applications. ZAP provides extensions and scripts to scan the security of APIs. The next guides explain how to do that:</p>
+<ul>
+<li>How can you use ZAP to scan APIs?: <a href="https://www.zaproxy.org/faq/how-can-you-use-zap-to-scan-apis/">https://www.zaproxy.org/faq/how-can-you-use-zap-to-scan-apis/</a></li>
+<li>Scanning APIs with ZAP: <a href="https://www.zaproxy.org/blog/2017-06-19-scanning-apis-with-zap/">https://www.zaproxy.org/blog/2017-06-19-scanning-apis-with-zap/</a></li>
+<li>ZAP - API Scan: <a href="https://www.zaproxy.org/docs/docker/api-scan/">https://www.zaproxy.org/docs/docker/api-scan/</a></li>
+</ul>
+<p><img src="/media/assets/blog20240424_api_mvs/20240424_secure_apis_03_sast_sca_dast.png" alt="">
+
+
+<i><center>SAST, SCA and DAST for APIs</center></i>
+
+</p>
+<p><strong>5. Web Application Firewall (WAF)</strong></p>
+<p>Once the Application has been deployed, an way to protect it when it is up and running is using a WAF. You can install and configure a WAF to catch the incoming traffic before hitting the application, however this requires re-configure the application and re-route the traffic through the WAF.</p>
+<p>To make easier everything and since our Application exposes APIs, to do everything in the API Gateway side. With that, changes in the Application side and re-route the traffic will not needed. Generally, the API Gateway supports making these changes and configurations.</p>
+<p>The combination recommended for that is APISIX as API Gateway and Coraza as WAF. Next guides explain very well how to accomplish that:</p>
+<ul>
+<li>Protecting Your APIs in the Wild - A Deep Dive into WAF and API Gateway Integration: <a href="https://api7.ai/blog/waf-and-api-gateway-integration">https://api7.ai/blog/waf-and-api-gateway-integration</a></li>
+<li>Integrate APISIX with Coraza - <a href="https://docs.api7.ai/apisix/how-to-guide/security/waf/integrate-with-coraza">https://docs.api7.ai/apisix/how-to-guide/security/waf/integrate-with-coraza</a></li>
+</ul>
+<p><img src="/media/assets/blog20240424_api_mvs/20240424_secure_apis_04_gateway_and_waf.png" alt="">
+
+
+<i><center>APISIX and Coraza WAF</center></i>
+
+</p>
+<p><strong>6. Observability</strong></p>
+<p>Observability is important in Security. If we don&rsquo;t know what is happening with my application, we can not make decisions to enhance the security and the health of my application.
+As stated before, an API Gateway makes easier manipulate the traffic and integrate with 3rd party services. If we want to monitor the activity and performance of my running application and its APIs, then we need collect all log events and analyze that activity.</p>
+<p>That&rsquo;s why I&rsquo;ve fallen in love with APISIX. It provides easier mechanisms to integrate monitoring services such Log Indexers, Log SaaS, Tracing, Metrics Monitoring, etc. Next guides to implement observability (security monitoring):</p>
+<ul>
+<li>Observe APIs with APISIX - <a href="https://apisix.apache.org/docs/apisix/tutorials/observe-your-api/">https://apisix.apache.org/docs/apisix/tutorials/observe-your-api/</a></li>
+<li>API Observability with APISIX Plugins - <a href="https://apisix.apache.org/blog/2022/04/17/api-observability/">https://apisix.apache.org/blog/2022/04/17/api-observability/</a></li>
+</ul>
+<p><img src="/media/assets/blog20240424_api_mvs/20240424_secure_apis_05_observability.png" alt="">
+
+
+<i><center>API Observability with APISIX</center></i>
+
+</p>
+<h2 id="conclusions">Conclusions</h2>
+<ul>
+<li>Adopt API First approach, it allows you be aware what functionalities and services are being exposed and should be protected and monitored. Using an OpenAPI spec file you can automate the security checking from your CI/CD pipeline. This is the first thing you should deal when implementing APIs.</li>
+<li>Consider an API Gateway as part of your Application stack. The API Gateway will make easier the thing about security be implemented, specifically advanced security cotrols like Runtime Protection through WAF and Security Observability.</li>
+<li>There are many things to secure when building Applications and APIs, but if you have release faster with a good level of security, then embrace the Minimum Viable Security approach and implement it using opensource tools. For more security tools, I&rsquo;ve created this list for you: <a href="https://holisticsecurity.io/sec-sdlc-oss-tool-list/">https://holisticsecurity.io/sec-sdlc-oss-tool-list/</a></li>
+</ul>
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2024  Holistic Security 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/post">Blog</a></li>
+         
+        <li><a href="/taxonomy">Taxonomy</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  
+    
+      
+    
+  
+
+
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>

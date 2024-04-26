@@ -6,8 +6,43 @@
     <description>Recent content in Tags on Holistic Security</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Jan 2022 10:00:10 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 24 Apr 2024 12:00:00 +0200</lastBuildDate>
     <atom:link href="https://holisticsecurity.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>https://holisticsecurity.io/tags/api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://holisticsecurity.io/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DAST</title>
+      <link>https://holisticsecurity.io/tags/dast/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://holisticsecurity.io/tags/dast/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pareto</title>
+      <link>https://holisticsecurity.io/tags/pareto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://holisticsecurity.io/tags/pareto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SAST</title>
+      <link>https://holisticsecurity.io/tags/sast/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://holisticsecurity.io/tags/sast/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SCA</title>
+      <link>https://holisticsecurity.io/tags/sca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://holisticsecurity.io/tags/sca/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Shift-Left</title>
       <link>https://holisticsecurity.io/tags/shift-left/</link>
@@ -23,13 +58,6 @@
       <description></description>
     </item>
     <item>
-      <title>API</title>
-      <link>https://holisticsecurity.io/tags/api/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://holisticsecurity.io/tags/api/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>DevSecOps</title>
       <link>https://holisticsecurity.io/tags/devsecops/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -41,13 +69,6 @@
       <link>https://holisticsecurity.io/tags/mvs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://holisticsecurity.io/tags/mvs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SAST</title>
-      <link>https://holisticsecurity.io/tags/sast/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://holisticsecurity.io/tags/sast/</guid>
       <description></description>
     </item>
     <item>
@@ -219,13 +240,6 @@
       <description></description>
     </item>
     <item>
-      <title>DAST</title>
-      <link>https://holisticsecurity.io/tags/dast/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://holisticsecurity.io/tags/dast/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>IAST</title>
       <link>https://holisticsecurity.io/tags/iast/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -237,13 +251,6 @@
       <link>https://holisticsecurity.io/tags/rasp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://holisticsecurity.io/tags/rasp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SCA</title>
-      <link>https://holisticsecurity.io/tags/sca/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://holisticsecurity.io/tags/sca/</guid>
       <description></description>
     </item>
     <item>

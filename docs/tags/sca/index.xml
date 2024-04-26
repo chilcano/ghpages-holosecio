@@ -6,8 +6,15 @@
     <description>Recent content in SCA on Holistic Security</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Feb 2020 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Apr 2024 12:00:00 +0200</lastBuildDate>
     <atom:link href="https://holisticsecurity.io/tags/sca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Applying Minimum Viable Security to APIs</title>
+      <link>https://holisticsecurity.io/2024/04/24/minimum-viable-security-to-apis/</link>
+      <pubDate>Wed, 24 Apr 2024 12:00:00 +0200</pubDate>
+      <guid>https://holisticsecurity.io/2024/04/24/minimum-viable-security-to-apis/</guid>
+      <description>&lt;p&gt;From Security standpoint, exposing Application functionalities as APIs means increasing the attack surface. The APIs are like to adding windows to a house, we know the doors usually are secure and being monitored in houses, however new windows might not be built with security in mind. Well, in this post I&amp;rsquo;ll explain how to check the security of your APIs and make it more secure according &lt;a href=&#34;https://holisticsecurity.io/2020/03/08/minimum-viable-security-for-a-k8s-webapp-tls-everywhere-part1/&#34;&gt;The Minimum Viable Security, following Pareto Principle and Shift-Left Testing&lt;/a&gt; approaches.&lt;/p&gt;&#xA;&lt;p&gt;Some time ago I had the chance to speak (in Spanish) about &lt;a href=&#34;https://holisticsecurity.io/2021/12/29/seguridad-en-el-ci-cd-de-las-apis/&#34;&gt;Securing API lifecycle through the CI/CD&lt;/a&gt;, with that experience, I&amp;rsquo;m going to share the technical details on how to apply Minimum Viable Security to Application&amp;rsquo;s RESTful APIs, specifically how to implement SAST, SCA &amp;amp; DAST using opensource tools. To do that, I&amp;rsquo;ll use &lt;a href=&#34;https://github.com/chilcano/mac-address-manuf-lookup&#34;&gt;MAC Address Manufacturer Lookup&lt;/a&gt; python service.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/media/assets/blog20240424_api_mvs/20240424_secure_apis_01_sdlc_in_api.png&#34; alt=&#34;&#34;&gt;&#xA;&#xA;&#xA;&lt;i&gt;&lt;center&gt;SDLC and APIs&lt;/center&gt;&lt;/i&gt;&#xA;&#xA;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Security along the SDLC for Cloud-Native Apps</title>
       <link>https://holisticsecurity.io/2020/02/10/security-along-the-sdlc-for-cloud-native-apps/</link>
