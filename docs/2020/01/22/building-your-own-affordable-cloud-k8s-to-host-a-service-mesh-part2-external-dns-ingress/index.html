@@ -8,29 +8,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Building your own affordable K8s to host a Service Mesh - Part 2: External DNS and Ingress" />
-<meta property="og:description" content="In order to get an affordable Kubernetes, every part we&rsquo;re going to use should be affordable too, and ones of the expensive and tricky things are the AWS Elastic Load Balancing (ELB) and the AWS Route 53 (DNS). Fortunately, Kubernetes SIGs are working to address this gap with the Kubernetes ExternalDNS.
-But what is the problem?
-Apart of it is expensive, the problem is every time I deploy a Service in Kubernetes I have to update and add a new DNS entry in the Cloud Provider&rsquo;s DNS manually. Yes, of course, the process can be automated, but the idea is doing it during the provisioning time. In other words, every developer can publish theirs services adding the DNS name as annotation for that services can be called over Internet.
-Yes, Kubernetes brings by default a DNS but this is an internal one and it is only to work resolving DNS names over the Kubernetes Network, not for internet facing services.
-The Solution
-The Kubernetes ExternalDNS will run a program in our affordable K8s which it will synchronize exposed Kubernetes Services and Ingresses with the Cloud Provider&rsquo;s DNS Service, in this case with AWS Route 53. Below you can view a high level diagram and current status of my Affordable Kubernetes Data Plane, I recommend look at first post about it.
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-01-22T10:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-22T10:00:00+00:00" />
+  <meta property="og:url" content="https://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress/">
+  <meta property="og:site_name" content="Holistic Security">
+  <meta property="og:title" content="Building your own affordable K8s to host a Service Mesh - Part 2: External DNS and Ingress">
+  <meta property="og:description" content="In order to get an affordable Kubernetes, every part we&amp;rsquo;re going to use should be affordable too, and ones of the expensive and tricky things are the AWS Elastic Load Balancing (ELB) and the AWS Route 53 (DNS). Fortunately, Kubernetes SIGs are working to address this gap with the Kubernetes ExternalDNS.
+But what is the problem? Apart of it is expensive, the problem is every time I deploy a Service in Kubernetes I have to update and add a new DNS entry in the Cloud Provider&amp;rsquo;s DNS manually. Yes, of course, the process can be automated, but the idea is doing it during the provisioning time. In other words, every developer can publish theirs services adding the DNS name as annotation for that services can be called over Internet. Yes, Kubernetes brings by default a DNS but this is an internal one and it is only to work resolving DNS names over the Kubernetes Network, not for internet facing services.
+The Solution The Kubernetes ExternalDNS will run a program in our affordable K8s which it will synchronize exposed Kubernetes Services and Ingresses with the Cloud Provider&amp;rsquo;s DNS Service, in this case with AWS Route 53. Below you can view a high level diagram and current status of my Affordable Kubernetes Data Plane, I recommend look at first post about it.
+">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2020-01-22T10:00:00+00:00">
+    <meta property="article:modified_time" content="2020-01-22T10:00:00+00:00">
+    <meta property="article:tag" content="AWS">
+    <meta property="article:tag" content="Microservice">
+    <meta property="article:tag" content="DNS">
+    <meta property="article:tag" content="Ingress">
+    <meta property="article:tag" content="Nginx">
 
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Building your own affordable K8s to host a Service Mesh - Part 2: External DNS and Ingress"/>
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Building your own affordable K8s to host a Service Mesh - Part 2: External DNS and Ingress">
 <meta name="twitter:description" content="In order to get an affordable Kubernetes, every part we&rsquo;re going to use should be affordable too, and ones of the expensive and tricky things are the AWS Elastic Load Balancing (ELB) and the AWS Route 53 (DNS). Fortunately, Kubernetes SIGs are working to address this gap with the Kubernetes ExternalDNS.
 But what is the problem?
 Apart of it is expensive, the problem is every time I deploy a Service in Kubernetes I have to update and add a new DNS entry in the Cloud Provider&rsquo;s DNS manually. Yes, of course, the process can be automated, but the idea is doing it during the provisioning time. In other words, every developer can publish theirs services adding the DNS name as annotation for that services can be called over Internet.
 Yes, Kubernetes brings by default a DNS but this is an internal one and it is only to work resolving DNS names over the Kubernetes Network, not for internet facing services.
 The Solution
 The Kubernetes ExternalDNS will run a program in our affordable K8s which it will synchronize exposed Kubernetes Services and Ingresses with the Cloud Provider&rsquo;s DNS Service, in this case with AWS Route 53. Below you can view a high level diagram and current status of my Affordable Kubernetes Data Plane, I recommend look at first post about it.
-"/>
+">
 
   
   
@@ -56,18 +59,13 @@ The Kubernetes ExternalDNS will run a program in our affordable K8s which it wil
   
   
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
   
   
 
@@ -424,7 +422,7 @@ Stay tuned.</p>
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Holistic Security 
+    Copyright  &copy; 2024  Holistic Security 
   </div>
   <div class="footer-right">
     <nav>
@@ -444,18 +442,13 @@ Stay tuned.</p>
 </footer>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
 
 
   </div>

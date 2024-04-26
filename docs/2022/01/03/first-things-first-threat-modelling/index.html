@@ -8,24 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="First things first: Threat Modelling using Free and Open Source Tools" />
-<meta property="og:description" content="On 2014 RSA Conference (archive not available), Eric Olson of Cyveillance said a good and real simil about Threat Modelling: &ldquo;It is a lot like teenage sex: Everyone is talking about it,
-everyone thinks everyone else is doing it, and most of the few people who are actually doing it aren&rsquo;t doing it all that well&rdquo;.
+  <meta property="og:url" content="https://holisticsecurity.io/2022/01/03/first-things-first-threat-modelling/">
+  <meta property="og:site_name" content="Holistic Security">
+  <meta property="og:title" content="First things first: Threat Modelling using Free and Open Source Tools">
+  <meta property="og:description" content="On 2014 RSA Conference (archive not available), Eric Olson of Cyveillance said a good and real simil about Threat Modelling: &amp;ldquo;It is a lot like teenage sex: Everyone is talking about it, everyone thinks everyone else is doing it, and most of the few people who are actually doing it aren&amp;rsquo;t doing it all that well&amp;rdquo;.
+Threat Model and DevSecOps Well, in this post I&amp;rsquo;ll try to help you do it well from the Tooling point of view.
+">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2022-01-03T10:00:10+02:00">
+    <meta property="article:modified_time" content="2022-01-03T10:00:10+02:00">
+    <meta property="article:tag" content="Threat Model">
+    <meta property="article:tag" content="Shift-Left">
 
-
-
-Threat Model and DevSecOps
-
-
-Well, in this post I&rsquo;ll try to help you do it well from the Tooling point of view." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://holisticsecurity.io/2022/01/03/first-things-first-threat-modelling/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-01-03T10:00:10+02:00" />
-<meta property="article:modified_time" content="2022-01-03T10:00:10+02:00" />
-
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="First things first: Threat Modelling using Free and Open Source Tools"/>
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="First things first: Threat Modelling using Free and Open Source Tools">
 <meta name="twitter:description" content="On 2014 RSA Conference (archive not available), Eric Olson of Cyveillance said a good and real simil about Threat Modelling: &ldquo;It is a lot like teenage sex: Everyone is talking about it,
 everyone thinks everyone else is doing it, and most of the few people who are actually doing it aren&rsquo;t doing it all that well&rdquo;.
 
@@ -34,7 +31,7 @@ everyone thinks everyone else is doing it, and most of the few people who are ac
 Threat Model and DevSecOps
 
 
-Well, in this post I&rsquo;ll try to help you do it well from the Tooling point of view."/>
+Well, in this post I&rsquo;ll try to help you do it well from the Tooling point of view.">
 
   
   
@@ -60,18 +57,13 @@ Well, in this post I&rsquo;ll try to help you do it well from the Tooling point 
   
   
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
   
   
 
@@ -202,19 +194,6 @@ even they have functionalities that help to be productive such as templates and 
 
 
 
-
-    
-    
-
-        <a href="/media/assets/blog20220103_threat_model/logo-cairis.jpg">
-            <img 
-                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20220103_threat_model/logo-cairis_hu236c71b8415dd6d6ceb592e4257342ec_3603_60x0_resize_q75_box.jpg" 
-                width="60" height="60" 
-                alt="">
-        </a>
-
-    
 </th>
 </tr>
 </thead>
@@ -280,19 +259,6 @@ even they have functionalities that help to be productive such as templates and 
 
 
 
-
-    
-    
-
-        <a href="/media/assets/blog20220103_threat_model/logo-owasp-pytm.png">
-            <img 
-                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20220103_threat_model/logo-owasp-pytm_hua632b1267d6248a6fa0075779fcead04_52390_120x0_resize_box_3.png" 
-                width="120" height="120" 
-                alt="">
-        </a>
-
-    
 </th>
 </tr>
 </thead>
@@ -334,19 +300,6 @@ even they have functionalities that help to be productive such as templates and 
 
 
 
-
-    
-    
-
-        <a href="/media/assets/blog20220103_threat_model/logo-owasp-threat-dragon.png">
-            <img 
-                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20220103_threat_model/logo-owasp-threat-dragon_huaf961a0f855e2a18af152df66dbfd3e8_7131_200x0_resize_box_3.png" 
-                width="200" height="200" 
-                alt="">
-        </a>
-
-    
 </th>
 </tr>
 </thead>
@@ -392,19 +345,6 @@ even they have functionalities that help to be productive such as templates and 
 
 
 
-
-    
-    
-
-        <a href="/media/assets/blog20220103_threat_model/logo-threagile.png">
-            <img 
-                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20220103_threat_model/logo-threagile_hue5966155f56436871d87263d650a1371_65326_420x0_resize_box_3.png" 
-                width="420" height="146" 
-                alt="">
-        </a>
-
-    
 </th>
 </tr>
 </thead>
@@ -454,19 +394,6 @@ even they have functionalities that help to be productive such as templates and 
 
 
 
-
-    
-    
-
-        <a href="/media/assets/blog20220103_threat_model/logo-threatspec.png">
-            <img 
-                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20220103_threat_model/logo-threatspec_hu4ea64e32d9a67c56092aa74a53341b0b_14850_500x0_resize_box_3.png" 
-                width="500" height="80" 
-                alt="">
-        </a>
-
-    
 </th>
 </tr>
 </thead>
@@ -638,7 +565,7 @@ even they have functionalities that help to be productive such as templates and 
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Holistic Security 
+    Copyright  &copy; 2024  Holistic Security 
   </div>
   <div class="footer-right">
     <nav>
@@ -658,18 +585,13 @@ even they have functionalities that help to be productive such as templates and 
 </footer>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
 
 
   </div>

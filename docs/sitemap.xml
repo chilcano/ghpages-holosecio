@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://holisticsecurity.io/</loc>
+    <lastmod>2024-04-24T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/post/</loc>
+    <lastmod>2024-04-24T12:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://holisticsecurity.io/categories/</loc>
     <lastmod>2022-01-03T10:00:10+02:00</lastmod>
   </url><url>
@@ -12,12 +18,6 @@
     <lastmod>2022-01-03T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/holism/</loc>
-    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/</loc>
-    <lastmod>2022-01-03T10:00:10+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/post/</loc>
     <lastmod>2022-01-03T10:00:10+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/categories/sdlc/</loc>
@@ -188,6 +188,9 @@
     <loc>https://holisticsecurity.io/categories/bigdata/</loc>
     <lastmod>2020-03-10T10:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://holisticsecurity.io/tags/ci/cd/</loc>
+    <lastmod>2020-03-10T10:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://holisticsecurity.io/2020/03/10/devops-is-to-sdlc-as-mlops-is-to-machine-learning-apps/</loc>
     <lastmod>2020-03-10T10:00:00+00:00</lastmod>
   </url><url>
@@ -294,8 +297,6 @@
     <lastmod>2019-10-14T15:58:00+00:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/authors/</loc>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/ci/cd/</loc>
   </url><url>
     <loc>https://holisticsecurity.io/media/</loc>
   </url><url>

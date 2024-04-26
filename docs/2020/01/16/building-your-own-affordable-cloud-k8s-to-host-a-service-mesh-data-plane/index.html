@@ -8,25 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Building your own affordable K8s to host a Service Mesh - Part 1" />
-<meta property="og:description" content="I want to build a Container-based Cloud to deploy any kind of workload (RESTful API, Microservices, Event-Driven, Functions, etc.) but it should be affordable, ready to use, reliable, secure and productionable. This means:
+  <meta property="og:url" content="https://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/">
+  <meta property="og:site_name" content="Holistic Security">
+  <meta property="og:title" content="Building your own affordable K8s to host a Service Mesh - Part 1">
+  <meta property="og:description" content="I want to build a Container-based Cloud to deploy any kind of workload (RESTful API, Microservices, Event-Driven, Functions, etc.) but it should be affordable, ready to use, reliable, secure and productionable. This means:
+Productionable: should be fully functional and ready to be used as a production environment. Reliable and Secure: able to improve the security level by implementing more security controls, at least fully isolated secure private networking. Affordable: cheaper. Ready to use: able to be automated (DevOps and IaC) with a mature management API. Below a high level architecture of Container-based Cloud I want to get. I will focus on the Service Mesh Data Plane.
+These requeriments restric some options, all of them using any Public Cloud Provider, but considering the AWS Spot Instances and Google Cloud Preemptible VM Instances. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers.
+">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2020-01-16T10:00:00+00:00">
+    <meta property="article:modified_time" content="2020-01-16T10:00:00+00:00">
+    <meta property="article:tag" content="AWS">
+    <meta property="article:tag" content="Data Plane">
+    <meta property="article:tag" content="Microservice">
 
-Productionable: should be fully functional and ready to be used as a production environment.
-Reliable and Secure: able to improve the security level by implementing more security controls, at least fully isolated secure private networking.
-Affordable: cheaper.
-Ready to use: able to be automated (DevOps and IaC) with a mature management API.
-
-Below a high level architecture of Container-based Cloud I want to get. I will focus on the Service Mesh Data Plane.
-
-These requeriments restric some options, all of them using any Public Cloud Provider, but considering the AWS Spot Instances and Google Cloud Preemptible VM Instances. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-01-16T10:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-16T10:00:00+00:00" />
-
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Building your own affordable K8s to host a Service Mesh - Part 1"/>
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Building your own affordable K8s to host a Service Mesh - Part 1">
 <meta name="twitter:description" content="I want to build a Container-based Cloud to deploy any kind of workload (RESTful API, Microservices, Event-Driven, Functions, etc.) but it should be affordable, ready to use, reliable, secure and productionable. This means:
 
 Productionable: should be fully functional and ready to be used as a production environment.
@@ -36,7 +34,7 @@ Ready to use: able to be automated (DevOps and IaC) with a mature management API
 
 Below a high level architecture of Container-based Cloud I want to get. I will focus on the Service Mesh Data Plane.
 
-These requeriments restric some options, all of them using any Public Cloud Provider, but considering the AWS Spot Instances and Google Cloud Preemptible VM Instances. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers."/>
+These requeriments restric some options, all of them using any Public Cloud Provider, but considering the AWS Spot Instances and Google Cloud Preemptible VM Instances. Unfortunately Microsoft Azure only provides Low-Priority VMs to be used from Azure Batch Service. But if you are new user, you could apply for using the Free Tier in all of 3 Cloud Providers.">
 
   
   
@@ -62,18 +60,13 @@ These requeriments restric some options, all of them using any Public Cloud Prov
   
   
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
   
   
 
@@ -493,7 +486,7 @@ I hope this helps.</p>
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Holistic Security 
+    Copyright  &copy; 2024  Holistic Security 
   </div>
   <div class="footer-right">
     <nav>
@@ -513,18 +506,13 @@ I hope this helps.</p>
 </footer>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
 
 
   </div>

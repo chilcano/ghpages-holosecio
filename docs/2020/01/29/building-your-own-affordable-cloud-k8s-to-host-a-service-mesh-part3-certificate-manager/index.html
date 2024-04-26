@@ -8,23 +8,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Building your own affordable K8s to host a Service Mesh - Part 3: Certificate Manager" />
-<meta property="og:description" content="In this blog post I&rsquo;ll explain how to get a X.509 TLS Certificate from Let&rsquo;s Encrypt automatically during the Terraform provision time, in this way we can now invoke the services additionally on port 443 (HTTPS/TLS).
+  <meta property="og:url" content="https://holisticsecurity.io/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/">
+  <meta property="og:site_name" content="Holistic Security">
+  <meta property="og:title" content="Building your own affordable K8s to host a Service Mesh - Part 3: Certificate Manager">
+  <meta property="og:description" content="In this blog post I&amp;rsquo;ll explain how to get a X.509 TLS Certificate from Let&amp;rsquo;s Encrypt automatically during the Terraform provision time, in this way we can now invoke the services additionally on port 443 (HTTPS/TLS).
 During the Terraform execution, immediately after Kubernetes Cluster creation, the JetStack Cert-Manager will inject the X.509 Certificate as a Kubernetes Secret into NGINX Ingress Controller to enbale TLS.
-At this point you must have created a Kubernetes Cluster with ExternalDNS and NGINX as Ingress Controller. If you don&rsquo;t know how to achieve that, I recommend to follow these posts:
+At this point you must have created a Kubernetes Cluster with ExternalDNS and NGINX as Ingress Controller. If you don&amp;rsquo;t know how to achieve that, I recommend to follow these posts:
+Part 1 - Building your own affordable K8s to host a Service Mesh. Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress. ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2020-01-29T10:00:00+00:00">
+    <meta property="article:modified_time" content="2020-01-29T10:00:00+00:00">
+    <meta property="article:tag" content="AWS">
+    <meta property="article:tag" content="Microservice">
+    <meta property="article:tag" content="X509">
+    <meta property="article:tag" content="PKI">
 
-Part 1 - Building your own affordable K8s to host a Service Mesh.
-Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress.
-
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://holisticsecurity.io/2020/01/29/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part3-certificate-manager/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-01-29T10:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-29T10:00:00+00:00" />
-
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Building your own affordable K8s to host a Service Mesh - Part 3: Certificate Manager"/>
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Building your own affordable K8s to host a Service Mesh - Part 3: Certificate Manager">
 <meta name="twitter:description" content="In this blog post I&rsquo;ll explain how to get a X.509 TLS Certificate from Let&rsquo;s Encrypt automatically during the Terraform provision time, in this way we can now invoke the services additionally on port 443 (HTTPS/TLS).
 During the Terraform execution, immediately after Kubernetes Cluster creation, the JetStack Cert-Manager will inject the X.509 Certificate as a Kubernetes Secret into NGINX Ingress Controller to enbale TLS.
 At this point you must have created a Kubernetes Cluster with ExternalDNS and NGINX as Ingress Controller. If you don&rsquo;t know how to achieve that, I recommend to follow these posts:
@@ -32,7 +33,7 @@ At this point you must have created a Kubernetes Cluster with ExternalDNS and NG
 Part 1 - Building your own affordable K8s to host a Service Mesh.
 Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress.
 
-"/>
+">
 
   
   
@@ -58,18 +59,13 @@ Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress.
   
   
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
   
   
 
@@ -164,7 +160,7 @@ During the Terraform execution, immediately after Kubernetes Cluster creation, t
 <li><a href="http://holisticsecurity.io/2020/01/16/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-data-plane">Part 1 - Building your own affordable K8s to host a Service Mesh</a>.</li>
 <li><a href="http://holisticsecurity.io/2020/01/22/building-your-own-affordable-cloud-k8s-to-host-a-service-mesh-part2-external-dns-ingress">Part 2 - Building your own affordable K8s - ExternalDNS and NGINX as Ingress</a>.</li>
 </ul>
-<p><a href="/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png"><img src="/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png" alt="K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&amp;rsquo;s Encrypt" title="K8s Cluster created using AWS Spot Instances - Cert-Manager and Let's Encrypt"></a></p>
+<p><a href="/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png"><img src="/assets/img/20200129-affordablek8s-aws-01-arch-ingress-dns-tls-cert-manager.png" alt="K8s Cluster created using AWS Spot Instances - Cert-Manager and Let&rsquo;s Encrypt" title="K8s Cluster created using AWS Spot Instances - Cert-Manager and Let's Encrypt"></a></p>
 <h2 id="steps">Steps</h2>
 <h3 id="1-cleaning-everything">1. Cleaning everything</h3>
 <p>If you are using the Terraform scripts to create an affordable K8s Cluster I&rsquo;ve forked and updated for you, then first of all you should clean up to start creating a new fresh K8s Cluster for following this scenario.</p>
@@ -338,7 +334,7 @@ Stay tuned.</p>
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Holistic Security 
+    Copyright  &copy; 2024  Holistic Security 
   </div>
   <div class="footer-right">
     <nav>
@@ -358,18 +354,13 @@ Stay tuned.</p>
 </footer>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
 
 
   </div>

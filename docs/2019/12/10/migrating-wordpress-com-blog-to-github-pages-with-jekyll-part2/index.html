@@ -8,21 +8,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2" />
-<meta property="og:description" content="In the first blog post I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
-Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the JekyllImport::Importers::WordpressDotCom, to Markdown format by using a simple Python script.
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-12-10T10:00:00+00:00" />
-<meta property="article:modified_time" content="2019-12-10T10:00:00+00:00" />
+  <meta property="og:url" content="https://holisticsecurity.io/2019/12/10/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part2/">
+  <meta property="og:site_name" content="Holistic Security">
+  <meta property="og:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2">
+  <meta property="og:description" content="In the first blog post I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages. Now, in this blog post (Part 2) I will explain how to manage the look&amp;amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&amp;rsquo;s blog to GitHub Pages. Also I&amp;rsquo;ll explain how to convert all HTML post files, obtained by using the JekyllImport::Importers::WordpressDotCom, to Markdown format by using a simple Python script.
+">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2019-12-10T10:00:00+00:00">
+    <meta property="article:modified_time" content="2019-12-10T10:00:00+00:00">
+    <meta property="article:tag" content="Github">
+    <meta property="article:tag" content="Wordpress">
+    <meta property="article:tag" content="Jekyll">
+    <meta property="article:tag" content="Python">
 
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2"/>
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 2">
 <meta name="twitter:description" content="In the first blog post I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
 Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the JekyllImport::Importers::WordpressDotCom, to Markdown format by using a simple Python script.
-"/>
+">
 
   
   
@@ -48,18 +52,13 @@ Also I&rsquo;ll explain how to convert all HTML post files, obtained by using th
   
   
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
   
   
 
@@ -149,7 +148,7 @@ if (!doNotTrack) {
   
     <p>In the first blog post <a href="/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1" title="Migrating WordPress.com's blog to GitHub Pages with Jekyll - Part 1">I explained how to export your WordPress.com blog and use it to generate your static blog site to be hosted in GitHub Pages</a>. Now, in this blog post (Part 2) I will explain how to manage the look&amp;feel, theme, layouts and pagination of a previous migrated WordPress.com&rsquo;s blog to GitHub Pages.
 Also I&rsquo;ll explain how to convert all HTML post files, obtained by using the <code>JekyllImport::Importers::WordpressDotCom</code>, to Markdown format by using a simple Python script.</p>
-<p><img src="/assets/img/20191210-wp-github-jekyll-python-part2-1.png" alt="Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll Part2"></p>
+<p><img src="/assets/img/20191210-wp-github-jekyll-python-part2-1.png" alt="Migrating WordPress.com&rsquo;s blog to GitHub Pages by using Jekyll Part2"></p>
 <h2 id="lookfeel-themes-and-layouts">Look&amp;Feel: Themes and Layouts</h2>
 <p>When I created the Jekyll site (by running the <code>jekyll new &lt;PATH&gt;</code> command), Jekyll installed a site that uses a gem-based theme called <a href="https://github.com/jekyll/minima">Minima</a>.</p>
 <p>Then, the best way to change the Look&amp;Feel of your Github Page site is changing existing Theme/Layout; Jekyll supports an easy way to do it and here this is explained very well:</p>
@@ -311,7 +310,7 @@ Regards.</p>
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Holistic Security 
+    Copyright  &copy; 2024  Holistic Security 
   </div>
   <div class="footer-right">
     <nav>
@@ -331,18 +330,13 @@ Regards.</p>
 </footer>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
 
 
   </div>

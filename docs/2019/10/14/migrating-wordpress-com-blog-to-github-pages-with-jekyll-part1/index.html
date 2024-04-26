@@ -8,23 +8,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1" />
-<meta property="og:description" content="I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
-In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
-In the next blog post (Part 2) I will explain how to manage the look&amp;feel, layouts, etc.
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-10-14T15:58:00+00:00" />
-<meta property="article:modified_time" content="2019-10-14T15:58:00+00:00" />
+  <meta property="og:url" content="https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/">
+  <meta property="og:site_name" content="Holistic Security">
+  <meta property="og:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1">
+  <meta property="og:description" content="I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts. In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby. In the next blog post (Part 2) I will explain how to manage the look&amp;amp;feel, layouts, etc. ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2019-10-14T15:58:00+00:00">
+    <meta property="article:modified_time" content="2019-10-14T15:58:00+00:00">
+    <meta property="article:tag" content="Github">
+    <meta property="article:tag" content="Wordpress">
+    <meta property="article:tag" content="Jekyll">
+    <meta property="article:tag" content="Python">
 
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1"/>
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Migrating WordPress.com&#39;s blog to GitHub Pages with Jekyll - Part 1">
 <meta name="twitter:description" content="I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
 In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
 In the next blog post (Part 2) I will explain how to manage the look&amp;feel, layouts, etc.
-"/>
+">
 
   
   
@@ -50,18 +52,13 @@ In the next blog post (Part 2) I will explain how to manage the look&amp;feel, l
   
   
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
   
   
 
@@ -152,7 +149,7 @@ if (!doNotTrack) {
     <p>I would like to share my experience migrating my blog site hosted in WordPress.com to GitHub Pages in 2 parts.
 In this blog post (Part 1) I will explain how to use Jekyll to export/import, how to configure GitHub Page site to host a fully blog as a headless Content Management System (CMS) based on Ruby.
 In the next blog post (Part 2) I will explain how to manage the look&amp;feel, layouts, etc.
-<img src="/assets/img/2019-10-14-blog-migration-wp-github.png" alt="Migrating WordPress.com&amp;rsquo;s blog to GitHub Pages by using Jekyll"></p>
+<img src="/assets/img/2019-10-14-blog-migration-wp-github.png" alt="Migrating WordPress.com&rsquo;s blog to GitHub Pages by using Jekyll"></p>
 <h2 id="create-a-github-pages-repository">Create a GitHub Pages repository</h2>
 <p>I created an empty GitHub repository, in my case is <a href="https://github.com/chilcano/ghpages-holosec"><code>ghpages-holosec</code></a>, to host my migrated WordPress.com&rsquo;s blog, then I followed the <a href="https://pages.github.com">https://pages.github.com</a> guide and configured it as <code>Project site</code>, no as <code>User or organization site</code> since my GitHub Account will host multiple Sites with different custom Domain Names.</p>
 <p>Once completed, you should configure your DNS records in your DNS Provider, in my case it is Gandi.Net and used the above <a href="https://gist.github.com/matt-bailey/bbbc181d5234c618e4dfe0642ad80297">Matt Bailey&rsquo;s good guide</a>. You have to consider that making these changes and their propagation across DNS and GitHub will take around 24 hours.</p>
@@ -227,7 +224,7 @@ Now, you will see only <code>Welcome to Jekyll!</code> sample post.</p>
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Holistic Security 
+    Copyright  &copy; 2024  Holistic Security 
   </div>
   <div class="footer-right">
     <nav>
@@ -247,18 +244,13 @@ Now, you will see only <code>Welcome to Jekyll!</code> sample post.</p>
 </footer>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
 
 
   </div>

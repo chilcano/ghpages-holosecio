@@ -8,41 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="SAST in your SDLC for Cloud-Native Apps" />
-<meta property="og:description" content="SAST stands for &ldquo;Static Application Security Testing&rdquo; and it is used to identify vulnerabilities
-by reviewing the source code. The best point or place to implement this kind of Security Testing is in early stages of your CI/CD Pipeline (Shift-left Testing).
-But What if you are building a Cloud Native Applications wich includes new artifacts or building blocks as Docker and/or Cloud Resources, what should do now to use SAST tools and techniques?.
-In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with a SAST stage and everything using AWS CDK.
+  <meta property="og:url" content="https://holisticsecurity.io/2021/07/06/sast-in-sdlc-for-cloud-native-apps/">
+  <meta property="og:site_name" content="Holistic Security">
+  <meta property="og:title" content="SAST in your SDLC for Cloud-Native Apps">
+  <meta property="og:description" content="SAST stands for &amp;ldquo;Static Application Security Testing&amp;rdquo; and it is used to identify vulnerabilities by reviewing the source code. The best point or place to implement this kind of Security Testing is in early stages of your CI/CD Pipeline (Shift-left Testing). But What if you are building a Cloud Native Applications wich includes new artifacts or building blocks as Docker and/or Cloud Resources, what should do now to use SAST tools and techniques?. In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with a SAST stage and everything using AWS CDK.
+Static Application Security Testing (SAST) in the Cloud Native SDLC ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2021-07-06T10:00:10+02:00">
+    <meta property="article:modified_time" content="2021-07-06T10:00:10+02:00">
+    <meta property="article:tag" content="SAST">
 
-
-
-
-
-
-
-
-    
-    
-
-        
-            
-        
-
-    
-
-
-
-Static Application Security Testing (SAST) in the Cloud Native SDLC
-
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://holisticsecurity.io/2021/07/06/sast-in-sdlc-for-cloud-native-apps/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-07-06T10:00:10+02:00" />
-<meta property="article:modified_time" content="2021-07-06T10:00:10+02:00" />
-
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="SAST in your SDLC for Cloud-Native Apps"/>
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="SAST in your SDLC for Cloud-Native Apps">
 <meta name="twitter:description" content="SAST stands for &ldquo;Static Application Security Testing&rdquo; and it is used to identify vulnerabilities
 by reviewing the source code. The best point or place to implement this kind of Security Testing is in early stages of your CI/CD Pipeline (Shift-left Testing).
 But What if you are building a Cloud Native Applications wich includes new artifacts or building blocks as Docker and/or Cloud Resources, what should do now to use SAST tools and techniques?.
@@ -55,20 +33,11 @@ In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with 
 
 
 
-    
-    
-
-        
-            
-        
-
-    
-
 
 
 Static Application Security Testing (SAST) in the Cloud Native SDLC
 
-"/>
+">
 
   
   
@@ -94,18 +63,13 @@ Static Application Security Testing (SAST) in the Cloud Native SDLC
   
   
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
   
   
 
@@ -201,19 +165,6 @@ In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with 
 
 
 
-
-    
-    
-
-        <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png">
-            <img 
-                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps_huae7e28459592da6bad21cce7aa381d87_166568_710x0_resize_box_3.png" 
-                width="710" height="276" 
-                alt="">
-        </a>
-
-    
 
 
 
@@ -416,19 +367,6 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 
 
 
-    
-    
-
-        <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png">
-            <img 
-                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac_hu159b777ab9551a0e60169a5ef7b2039a_121266_710x0_resize_box_3.png" 
-                width="710" height="311" 
-                alt="">
-        </a>
-
-    
-
 
 
 <i><center>CI/CD design</center></i>
@@ -447,19 +385,6 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 
 
 
-
-    
-    
-
-        <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png">
-            <img 
-                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline_hu16b98d6b460c37e394c65e3c84c84aba_116020_710x0_resize_box_3.png" 
-                width="710" height="339" 
-                alt="">
-        </a>
-
-    
 
 
 
@@ -483,19 +408,6 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 
 
 
-
-    
-    
-
-        <a href="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png">
-            <img 
-                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
-                src="/media/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome_hu0b917a3414b02ae08ef1e174e53b65b7_228359_710x0_resize_box_3.png" 
-                width="710" height="549" 
-                alt="">
-        </a>
-
-    
 
 
 
@@ -524,7 +436,7 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Holistic Security 
+    Copyright  &copy; 2024  Holistic Security 
   </div>
   <div class="footer-right">
     <nav>
@@ -544,18 +456,13 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 </footer>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-156433649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  
+    
+      
+    
+  
+
+
 
 
   </div>
