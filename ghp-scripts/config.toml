@@ -6,7 +6,8 @@ theme = "hugo-theme-cactus"
 publishDir = "../ghp-content/docs"
 #copyright = "Roger Carhuatocto"
 #disqusShortname = "username"
-googleAnalytics = "UA-156433649-1"
+#googleAnalytics = "UA-156433649-1"
+googleAnalytics = "G-YS5MYYLFC2"
 paginate = 12
 #summaryLength = 2
 
