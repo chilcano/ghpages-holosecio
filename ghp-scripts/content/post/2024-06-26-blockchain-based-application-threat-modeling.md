@@ -104,15 +104,14 @@ They are:
 
 {{< image-resize "assets/blog20240626_web3_tm/05-web3-tm-build-time-flows.png" 710x >}}
 {{< rawhtml >}}
-<i><center>05-web3-tm-build-time-flows.png</center></i>
+<i><center>Build-time flows</center></i>
 {{</ rawhtml >}}
 
 The next table shows all data and process flows identified during the execution of Web3 Application. The flows are:
 
-
 {{< image-resize "assets/blog20240626_web3_tm/06-web3-tm-run-time-flows.png" 710x >}}
 {{< rawhtml >}}
-<i><center>06-web3-tm-run-time-flows.png</center></i>
+<i><center>Run-time flows</center></i>
 {{</ rawhtml >}}
 
 ### Question #2. What can go wrong?
@@ -124,12 +123,12 @@ Remember, you can use any tool you feel comfortable with, in my case, we do an â
 
 {{< image-resize "assets/blog20240626_web3_tm/07-web3-tm-build-time-threats.png" 710x >}}
 {{< rawhtml >}}
-<i><center>07-web3-tm-build-time-threats</center></i>
+<i><center>Build-time threats</center></i>
 {{</ rawhtml >}}
 
 {{< image-resize "assets/blog20240626_web3_tm/08-web3-tm-run-time-threats.png" 710x >}}
 {{< rawhtml >}}
-<i><center>08-web3-tm-run-time-threats</center></i>
+<i><center>Run-time threats</center></i>
 {{</ rawhtml >}}
 
 ### Question #3. What are we going to do about it?
@@ -140,12 +139,12 @@ As I stated before, this is not an in-depth threat modeling process, this only a
 
 {{< image-resize "assets/blog20240626_web3_tm/09-web3-tm-build-time-countermeasures.png" 710x >}}
 {{< rawhtml >}}
-<i><center>09-web3-tm-build-time-countermeasures</center></i>
+<i><center>Build-time countermeasures</center></i>
 {{</ rawhtml >}}
 
 {{< image-resize "assets/blog20240626_web3_tm/10-web3-tm-run-time-countermeasures.png" 710x >}}
 {{< rawhtml >}}
-<i><center>10-web3-tm-run-time-countermeasures</center></i>
+<i><center>Run-time countermeasures</center></i>
 {{</ rawhtml >}}
 
 ## Conclusions
