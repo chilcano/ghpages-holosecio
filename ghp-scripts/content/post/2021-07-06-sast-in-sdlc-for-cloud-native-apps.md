@@ -16,7 +16,7 @@ by reviewing the source code. The best point or place to implement this kind of 
 But What if you are building a Cloud Native Applications wich includes new artifacts or building blocks as Docker and/or Cloud Resources, what should do now to use SAST tools and techniques?. 
 In this post, I will explain how to setup Jenkins on AWS to run a Pipeline with a SAST stage and everything using AWS CDK.
 
-{{< image-resize "/assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png" 710x >}}
+{{< image-resize "assets/blog20210706_sast/20210706-sast-in-your-sdlc-for-cloud-native-apps.png" 710x >}}
 {{< rawhtml >}}
 <i><center>Static Application Security Testing (SAST) in the Cloud Native SDLC</center></i>
 {{</ rawhtml >}}
@@ -81,7 +81,7 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
   * It will work as our web portal to consolidate all our outcomes in a single point. 
   * Initially, I wanted to use SonarQube, but unfortunatelly it has limitations to [import third party generated reports](https://docs.sonarqube.org/latest/analysis/external-issues/), although It can be used as SAST tool as well, in this post I'm going to use Jenkins and HTML reports.
 
-{{< image-resize "/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png" 710x >}}
+{{< image-resize "assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-iac.png" 710x >}}
 {{< rawhtml >}}
 <i><center>CI/CD design</center></i>
 {{</ rawhtml >}}
@@ -92,7 +92,7 @@ In order to embed the SAST process in your CI/CD pipeline, you will need at leas
 * Everything will be Dockerized.
 * The Project I'm going to use as example will be [TerraGoat](https://github.com/bridgecrewio/terragoat.git), although you could use any kind of Cloud-Native Project, the only thing you need is provide the GitHub Repository URL when kicking off the Jenkins Pipeline.
 
-{{< image-resize "/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png" 710x >}}
+{{< image-resize "assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline.png" 710x >}}
 {{< rawhtml >}}
 <i><center>SAST stage in CI/CD Pipeline implementation</center></i>
 {{</ rawhtml >}}
@@ -113,7 +113,7 @@ cdk deploy --profile es --require-approval never --outputs-file output.json
 
 Further details can be found in the **[Chilcano/AWS-CDK-Examples](https://github.com/chilcano/aws-cdk-examples/tree/main/simple-ec2)** GitHub repository.
 
-{{< image-resize "/assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png" 710x >}}
+{{< image-resize "assets/blog20210706_sast/20210706-sast-in-your-cicd-pipeline-6-outcome.png" 710x >}}
 {{< rawhtml >}}
 <i><center>Reviewing the SAST scanning (Kics outcomes)</center></i>
 {{</ rawhtml >}}

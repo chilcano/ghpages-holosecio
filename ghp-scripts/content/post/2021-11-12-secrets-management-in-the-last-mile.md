@@ -15,7 +15,7 @@ Here a Twitter discussion I had:
 
 https://mobile.twitter.com/lizrice/status/1116293199499337728
 
-{{< image-resize "/assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-apps.png" 710x >}}
+{{< image-resize "assets/blog20210904_sast_2/20210904-sast-in-your-cicd-pipeline-full-stack-apps.png" 710x >}}
 {{< rawhtml >}}
 <i><center>
 xxxxxxxxxxxxxxxxxx

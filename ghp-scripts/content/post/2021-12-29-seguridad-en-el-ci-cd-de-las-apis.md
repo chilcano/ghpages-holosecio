@@ -14,7 +14,7 @@ aliases:
 On October 13th 2021 I had the opportunity again to participate at [API Addicts Days 2021](https://apiaddictsday.apiaddicts.org/), the biggest event of API experts in Latam and Spain.
 The 1st time I explained how to build a [Secure Data Gateway for your APIs](/2021/06/21/un-layer4-layer7-gateway-para-proteger-tu-data), but this time I brought new concepts and approach such as The Pareto Principle and Shift-Left Testing applied to API Projects. 
 
-{{< image-resize "/assets/blog20211229_devsecops_api/APIAddictsDays21-DevSecOps-y-APIs.png" 710x >}}
+{{< image-resize "assets/blog20211229_devsecops_api/APIAddictsDays21-DevSecOps-y-APIs.png" 710x >}}
 {{< rawhtml >}}
 <i><center>Minimum Viable Security, DevSecOps and API Projects</center></i>
 {{</ rawhtml >}}
