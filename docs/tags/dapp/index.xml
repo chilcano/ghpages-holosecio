@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DApp on Holistic Security</title>
+    <link>https://holisticsecurity.io/tags/dapp/</link>
+    <description>Recent content in DApp on Holistic Security</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Jun 2024 12:00:00 +0200</lastBuildDate>
+    <atom:link href="https://holisticsecurity.io/tags/dapp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blockchain-based Application Threat Modeling</title>
+      <link>https://holisticsecurity.io/2024/06/26/blockchain-based-application-threat-modeling/</link>
+      <pubDate>Wed, 26 Jun 2024 12:00:00 +0200</pubDate>
+      <guid>https://holisticsecurity.io/2024/06/26/blockchain-based-application-threat-modeling/</guid>
+      <description>&lt;p&gt;Using Blockchain Technology does not make your application secure. The Blockchain-based Applications are as vulnerable, or more, than traditional applications for many reasons. For example, the Blockchain-based Application, called Web3 Application or Decentralised Application (dApp) have defects like traditional applications because they are software as well. Both Blockchain and traditional applications are created by humans to be used by humans, and both types of applications make the same mistakes and face the same threats. Other reasons are the Smart Contracts included in Blockchain-based Applications increase the attack surface, the Wallet adds a new attack vector and the very tenet of Decentralisation in Blockchain-based applications also becomes its Achilles&amp;rsquo; heel. In simple words, every revolution and innovation in the IT space comes with its own set of challenges and vulnerabilities, and all this is happening to Web3 Applications.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://holisticsecurity.io/media/assets/blog20240626_web3_tm/01-web3-tm-architecture-ini.png&#34; alt=&#34;&#34;&gt;&#xA;&#xA;&#xA;&lt;i&gt;&lt;center&gt;Blockchain-based Application Architecture &amp; Security&lt;/center&gt;&lt;/i&gt;&#xA;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

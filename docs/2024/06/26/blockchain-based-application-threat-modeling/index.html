@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Blockchain-based Application Threat Modeling | Holistic Security</title>
+  <meta name="description" content="With The Systems Thinking Methodology we are able to see any problem in a complete and holistic manner, in fact, The Systems Thinking Methodology allows us to solve complex problems (IT Security, Global Warming, World Poverty, etc.) by considering new factors, elements and variables (usability, trust, quality, risk, etc.) which were not considered initially.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://holisticsecurity.io/2024/06/26/blockchain-based-application-threat-modeling/">
+  <meta property="og:site_name" content="Holistic Security">
+  <meta property="og:title" content="Blockchain-based Application Threat Modeling">
+  <meta property="og:description" content="Using Blockchain Technology does not make your application secure. The Blockchain-based Applications are as vulnerable, or more, than traditional applications for many reasons. For example, the Blockchain-based Application, called Web3 Application or Decentralised Application (dApp) have defects like traditional applications because they are software as well. Both Blockchain and traditional applications are created by humans to be used by humans, and both types of applications make the same mistakes and face the same threats. Other reasons are the Smart Contracts included in Blockchain-based Applications increase the attack surface, the Wallet adds a new attack vector and the very tenet of Decentralisation in Blockchain-based applications also becomes its Achilles&amp;rsquo; heel. In simple words, every revolution and innovation in the IT space comes with its own set of challenges and vulnerabilities, and all this is happening to Web3 Applications.
+Blockchain-based Application Architecture &amp; Security ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-06-26T12:00:00+02:00">
+    <meta property="article:modified_time" content="2024-06-26T12:00:00+02:00">
+    <meta property="article:tag" content="Blockchain">
+    <meta property="article:tag" content="Web3">
+    <meta property="article:tag" content="DApp">
+    <meta property="article:tag" content="DeFi">
+
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Blockchain-based Application Threat Modeling">
+<meta name="twitter:description" content="Using Blockchain Technology does not make your application secure. The Blockchain-based Applications are as vulnerable, or more, than traditional applications for many reasons. For example, the Blockchain-based Application, called Web3 Application or Decentralised Application (dApp) have defects like traditional applications because they are software as well. Both Blockchain and traditional applications are created by humans to be used by humans, and both types of applications make the same mistakes and face the same threats. Other reasons are the Smart Contracts included in Blockchain-based Applications increase the attack surface, the Wallet adds a new attack vector and the very tenet of Decentralisation in Blockchain-based applications also becomes its Achilles&rsquo; heel. In simple words, every revolution and innovation in the IT space comes with its own set of challenges and vulnerabilities, and all this is happening to Web3 Applications.
+
+
+
+Blockchain-based Application Architecture & Security
+
+">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://holisticsecurity.io/css/style-white.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://holisticsecurity.io/images/favicon.ico" />
+
+  
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+
+  
+  
+
+  <link rel="stylesheet" href="https://holisticsecurity.io/css/custom-cactus-style-white.css">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://holisticsecurity.io/">
+  
+    <div id="logo" style="background-image: url(https://holisticsecurity.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Holistic Security</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/post">Blog</a></li>
+      
+        <li><a href="/taxonomy">Taxonomy</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+  <h1 class="posttitle" itemprop="name headline"> Blockchain-based Application Threat Modeling </h1>
+
+  <ul class="post-list">  
+      <li class="post-item">
+        <div class="meta">
+          <time datetime="2024-06-26 12:00:00 &#43;0200 CEST" itemprop="datePublished">2024-06-26</time>
+        </div>
+        <span>    
+          
+          
+          <div class="article-category">
+              
+              
+              <a class="category-link" href="/categories/threat-modeling">Threat Modeling</a>
+              
+              · 
+          </div>
+          
+          
+          <div class="article-tag">
+              
+              
+              <a class="tag-link" href="/tags/blockchain" rel="tag">Blockchain</a>
+              
+               · 
+              <a class="tag-link" href="/tags/web3" rel="tag">Web3</a>
+              
+               · 
+              <a class="tag-link" href="/tags/dapp" rel="tag">dApp</a>
+              
+               · 
+              <a class="tag-link" href="/tags/defi" rel="tag">DeFi</a>
+              
+          </div>
+          
+  
+        </span>
+      </li>  
+    </ul>
+
+  <div class="content" itemprop="articleBody">
+  
+    <p>Using Blockchain Technology does not make your application secure. The Blockchain-based Applications are as vulnerable, or more, than traditional applications for many reasons. For example, the Blockchain-based Application, called Web3 Application or Decentralised Application (dApp) have defects like traditional applications because they are software as well. Both Blockchain and traditional applications are created by humans to be used by humans, and both types of applications make the same mistakes and face the same threats. Other reasons are the Smart Contracts included in Blockchain-based Applications increase the attack surface, the Wallet adds a new attack vector and the very tenet of Decentralisation in Blockchain-based applications also becomes its Achilles&rsquo; heel. In simple words, every revolution and innovation in the IT space comes with its own set of challenges and vulnerabilities, and all this is happening to Web3 Applications.</p>
+<p><img src="/media/assets/blog20240626_web3_tm/01-web3-tm-architecture-ini.png" alt="">
+
+
+<i><center>Blockchain-based Application Architecture & Security</center></i>
+
+</p>
+<p>Starting from the assumption that Blockchain Networks are a managed secure service. I’m going to run the first iteration of Threat Modeling only for a typical Blockchain-based, or Web3, Application, without considering the Blockchain Network. Threat Modeling will allow us to bring security into system trade-offs, identify blind spots or architectural and design security gaps, to be able to communicate and understand threats and define corresponding mitigation strategies.</p>
+<h2 id="web3-security-incidents-facts">Web3 Security Incidents: facts</h2>
+<p>According to the SlowMist Monthly Security Report.</p>
+<blockquote>
+<p>In April 2024, there were a total of 37 security incidents, resulting in approximately $90.81 million in losses. Based on the data from the <a href="https://hacked.slowmist.io/statistics/?c=all&amp;d=all">SlowMist Blockchain Security Incident Database</a>, these incidents were caused by contract vulnerabilities, third-party vulnerabilities, exit scams, and hacked accounts.</p>
+</blockquote>
+<p>And</p>
+<blockquote>
+<p>Of the 37 reported security incidents this month, 15 were due to exit scams by project teams, accounting for 40.54% of the total incidents. These exit scam incidents resulted in losses of approximately $37.57 million, representing 41.4% of the total stolen amount this month.</p>
+</blockquote>
+<p>And</p>
+<blockquote>
+<p>This month, 10 incidents of contract vulnerability exploitation resulted in losses of approximately $46.93 million, accounting for 51.7% of the total stolen amount this month.</p>
+</blockquote>
+<p>In brief, incidents come from the exploitation of vulnerabilities available throughout the application attack surface, including many incidents come from the exploitation of the human factor and the other large part of incidents come from the exploitation of vulnerabilities in the Smart Contracts because that is a new attack vector in Web3 Applications. That is because “<a href="https://www.schneier.com/blog/archives/2005/12/weakest_link_se.html">security is only as strong as the weakest link</a>” and malicious people put focus and use all their resources to take advantage of weakest links.</p>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20240626_web3_tm/02-web3-tm-slowmist-hacked-db-top-10.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20240626_web3_tm/02-web3-tm-slowmist-hacked-db-top-10_hu1da4f3dde05ded88e8484aa1ce8f9ba6_43865_710x0_resize_box_3.png" 
+                width="710" height="525" 
+                alt="">
+        </a>
+
+    
+
+
+
+<i><center>SlowMist Report about security in Blockchain space</center></i>
+
+</p>
+<h2 id="continuous-threat-modeling">Continuous Threat Modeling</h2>
+<p>Since “<a href="https://www.schneier.com/essays/archives/2000/04/the_process_of_secur.html">Security is a process</a>”, Threat Modeling is best applied continuously along Software Development Life Cycle (SDLC), in this article I’ll not be able to repeat this activity more than once. This article is only the first iteration but I think it will help us to highlight in an iterable way the most important threats that blockchain-based applications are facing.</p>
+<p>Another recommendation is to try to introduce this practice as part of technical design and analysis of requirements meetings, independently of the kind of application you want to build. This will help to gain security awareness among your team.</p>
+<h2 id="bringing-problems-not-solutions">Bringing problems, not solutions</h2>
+<p>I’ve heard many times “The application is secure because is using Blockchain”, “My applications is a front-end that call to Smart Contracts and It has not any secret or sensitive information to protect” or “The application is secure because all Smart Contracts are been peer-reviewed and audited”. As I stated before, the technology Blockchain is only a part of the application, and as each part they contribute a little bit more in increasing the attack surface and if that security risk is not managed, then early or late, that will impact your business.</p>
+<p>That is the reason why conducting Threat Modeling sessions among our Teams will allow us to detect threats, raise them and implement countermeasures before adversaries take advantage of those gaps. Threat Modeling doesn’t solve the problems, it only helps us identify and raise them. But doing that solves a huge part of the problem. As you know “out of sight, out of mind” or if a threat has not been identified, it can not be mitigated.</p>
+<h2 id="getting-started-the-threat-modeling-process">Getting started the Threat Modeling Process</h2>
+<p>We are going to follow <a href="https://shostack.org/resources/threat-modeling">The Ultimate Beginner&rsquo;s Guide to Threat Modeling</a> (by Shostack &amp; Associates), specifically we will follow The Shostack’s Four Question Framework:</p>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20240626_web3_tm/03-web3-tm-four-question-framework.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20240626_web3_tm/03-web3-tm-four-question-framework_hu943722d03f71cf74e112ec4c7535b44a_77331_710x0_resize_box_3.png" 
+                width="710" height="320" 
+                alt="">
+        </a>
+
+    
+
+
+
+<i><center>The Shostack’s Four Question Framework</center></i>
+
+</p>
+<p>And for the 2nd question “What can go wrong”, we will use the lovely whitepaper <a href="https://shostack.org/files/papers/Fast-Cheap-and-Good.pdf">Fast, Cheap and Good</a>, that will allow us to contextualise and run a first iteration for our scenario. This whitepaper introduces some techniques and tools to ease this 2nd phase.</p>
+<p>The findings will be complemented with information from articles about Web3 Architecture, Blockchain’s Promises and Principles, Web3 Products and Services and Incident and Vulnerabilities Databases in Web3.</p>
+<h3 id="question-1-what-are-we-working-on">Question #1. What are we working on?</h3>
+<p>We have to define or clarify what we are working on. In this case, we want to build a simple Web3 Application, which is depicted in the next diagram.</p>
+<h4 id="model-the-system">Model the System</h4>
+<p>We should review the requirements, existing design documents and have many technical and business interviews in order to have a full understanding of what we are doing and what we want to do. Since we would like to ease the introduction of TM to the Web3 world, well, using a high level architecture diagram rather than a data flow diagram (DFD) will be easier to understand. Then let’s start with these coarse grained requirements: “We want to create a decentralised Web Application on the Ethereum Blockchain. It should consist of a user interface that interacts with deployed Solidity-based Smart Contracts”.</p>
+<p>The components and services are:</p>
+<ul>
+<li>Web Client: Chrome, Firefox or Brave.</li>
+<li>Wallet: Metamask</li>
+<li>Package Manager: NPMJS</li>
+<li>Source Code Repository service: Two public repositories in Github, one for application source code and second one for Smart Contracts Solidity code.</li>
+<li>IPFS: IPFS Network for storage of metadata, IPFS Gateway to retrieve content and Fleek to manage the deployment of static websites.</li>
+<li>RPC and Subgraph Service Providers: Alchemy, Satsuma and Infura.</li>
+<li>Smart Contracts: Solidity</li>
+<li>L1 &amp; L2 Blockchains: Ethereum and Polygon.</li>
+</ul>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20240626_web3_tm/04-web3-tm-architecture-flows.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20240626_web3_tm/04-web3-tm-architecture-flows_huaed6e59c3f50743b8bc21b654792edb4_47096_710x0_resize_box_3.png" 
+                width="710" height="247" 
+                alt="">
+        </a>
+
+    
+
+
+
+<i><center>High Level Web3 Application Architecture</center></i>
+
+</p>
+<h4 id="high-level-architecture-diagram-with-data-and-process-flows">High Level Architecture Diagram with Data and Process Flows</h4>
+<p>Next table lists all data and process flows identified when the Web3 Application is being implemented (sysops) and when it is on running time. We did this separation because it allows us to raise threats that affect specifically during build time and others that affect in run time.</p>
+<p>They are:</p>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20240626_web3_tm/05-web3-tm-build-time-flows.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20240626_web3_tm/05-web3-tm-build-time-flows_hu6c231ee00ce57643c4586ae2ec98734d_102266_710x0_resize_box_3.png" 
+                width="710" height="404" 
+                alt="">
+        </a>
+
+    
+
+
+
+<i><center>05-web3-tm-build-time-flows.png</center></i>
+
+</p>
+<p>The next table shows all data and process flows identified during the execution of Web3 Application. The flows are:</p>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20240626_web3_tm/06-web3-tm-run-time-flows.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20240626_web3_tm/06-web3-tm-run-time-flows_hu0045907e0199dd771af7851dadca37cd_195873_710x0_resize_box_3.png" 
+                width="710" height="734" 
+                alt="">
+        </a>
+
+    
+
+
+
+<i><center>06-web3-tm-run-time-flows.png</center></i>
+
+</p>
+<h3 id="question-2-what-can-go-wrong">Question #2. What can go wrong?</h3>
+<p>Once we have the architecture and defined the context of the application, outlined all data and process flows, we are ready to enumerate the threats that we can identify.
+Remember, you can use any tool you feel comfortable with, in my case, we do an “evil brainstorming” with colleagues that are working in the Blockchain space and combine it with the outcome from <a href="https://shostack.org/files/papers/Fast-Cheap-and-Good.pdf">techniques recommended by Adam Shostack</a>.</p>
+<h4 id="threats-enumeration">Threats Enumeration</h4>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20240626_web3_tm/07-web3-tm-build-time-threats.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20240626_web3_tm/07-web3-tm-build-time-threats_hu9e5d4b8f67a199e7381324d0eaf5d32e_114374_710x0_resize_box_3.png" 
+                width="710" height="550" 
+                alt="">
+        </a>
+
+    
+
+
+
+<i><center>07-web3-tm-build-time-threats</center></i>
+
+</p>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20240626_web3_tm/08-web3-tm-run-time-threats.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20240626_web3_tm/08-web3-tm-run-time-threats_hu47beb0664cac92c486c357b817386545_184184_710x0_resize_box_3.png" 
+                width="710" height="880" 
+                alt="">
+        </a>
+
+    
+
+
+
+<i><center>08-web3-tm-run-time-threats</center></i>
+
+</p>
+<h3 id="question-3-what-are-we-going-to-do-about-it">Question #3. What are we going to do about it?</h3>
+<p>As I stated before, this is not an in-depth threat modeling process, this only attempts to begin quickly, explore what we are doing and raise and highlight gaps and potential problems. However, while we were doing threat enumeration, many solutions came to our minds, that is why We’ve added the next section about Countermeasures where We outlined some suggestions.</p>
+<h4 id="countermeasures--mitigation">Countermeasures &amp; Mitigation</h4>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20240626_web3_tm/09-web3-tm-build-time-countermeasures.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20240626_web3_tm/09-web3-tm-build-time-countermeasures_hufb5ba1effce614e9b23629e1187781b9_239878_710x0_resize_box_3.png" 
+                width="710" height="527" 
+                alt="">
+        </a>
+
+    
+
+
+
+<i><center>09-web3-tm-build-time-countermeasures</center></i>
+
+</p>
+<p>
+
+
+
+
+
+
+
+    
+    
+
+        <a href="/media/assets/blog20240626_web3_tm/10-web3-tm-run-time-countermeasures.png">
+            <img 
+                style="float: left; margin-right: 1%; margin-bottom: 0.5em; max-width: 100%; width: auto; height: auto;" 
+                src="/media/assets/blog20240626_web3_tm/10-web3-tm-run-time-countermeasures_hu5f0202d74f06779d7aaeb276760c491f_241279_710x0_resize_box_3.png" 
+                width="710" height="553" 
+                alt="">
+        </a>
+
+    
+
+
+
+<i><center>10-web3-tm-run-time-countermeasures</center></i>
+
+</p>
+<h2 id="conclusions">Conclusions</h2>
+<ol>
+<li>Threat Modeling is about contextualising and understanding what, how and why we are building an application. These sessions should be integrated to technical, design, analysis or retrospective meetings in a continuous way, independently of the kind of application you want to build. This will help to gain security awareness and familiarise in countermeasure plans among your team.</li>
+<li>We can confirm that in Web3 Applications can be identified more threats than in the Web2 world. That is because Web3 is a specialisation of Web2 Application with a set of constraints and new attack vectors such as: Decentralisation, Wallets and Smart Contracts.</li>
+<li>Many of the detailed countermeasures make reference to Web2 technical approaches or patterns, even the Smart Contracts require, from a security point of view, SAST (Static Application Security Testing) and DAST (Dynamic Application Security Testing) tools to identify vulnerabilities. While that other countermeasures require reconsider or redefine the concept of “Decentralisation” in our Web3 Application. Is “Decentralisation” a “buzzword” or a mandatory requirement?.</li>
+<li>The implementation of “Decentralisation” impacts the architecture of the application. It forces building a static and monolith web application to be served from IPFS Network and using IPFS to persist its metadata rather than using DB. Another consequence of this is leaking secrets in the front-end and trust in an external addon or plugin or application only to deal with key material such as wallet address, private keys, etc. To sort those threats, the listed countermeasures suggest embracing Multilayered Architecture (add a backend and/or API Gateway), introduce a Secrets Management Tool, implement a Monitoring Framework, etc.</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>Threat Modeling in Web3: A Guide to DeFi Security by John Amatulli, August 31, 2023 - <a href="https://www.linkedin.com/pulse/threat-modeling-web3-guide-defi-security-john-amatulli/">https://www.linkedin.com/pulse/threat-modeling-web3-guide-defi-security-john-amatulli/</a></li>
+<li>Ethereum: Introduction to dApps - <a href="https://ethereum.org/en/developers/docs/dapps/">https://ethereum.org/en/developers/docs/dapps/</a></li>
+<li>Mitre ATT&amp;CK - <a href="https://attack.mitre.org">https://attack.mitre.org</a></li>
+<li>SlowMist Blockchain Security Incident Database - <a href="https://hacked.slowmist.io">https://hacked.slowmist.io</a></li>
+<li>Immunefi Top 10 Bugs - <a href="https://immunefi.com/immunefi-top-10/">https://immunefi.com/immunefi-top-10/</a></li>
+<li>DefiLlama Hacks - <a href="https://defillama.com/hacks">https://defillama.com/hacks</a></li>
+<li>CryptoScamDB - <a href="https://cryptoscamdb.org/scams">https://cryptoscamdb.org/scams</a></li>
+<li>Top 5 Web3 security breaches: A deep dive into DApp frontend and API vulnerabilities - <a href="https://escape.tech/blog/top-5-web3-security-breaches/">https://escape.tech/blog/top-5-web3-security-breaches/</a></li>
+</ul>
+<h2 id="acknowledgement">Acknowledgement</h2>
+<p>Thanks to Guido Portalanza &amp; Gustavo Vazquez Amado, for their unconditional collaboration during the writing of this article.</p>
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2024  Holistic Security 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/post">Blog</a></li>
+         
+        <li><a href="/taxonomy">Taxonomy</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  
+    
+      
+    
+  
+
+
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>

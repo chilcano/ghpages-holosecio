@@ -2,13 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://holisticsecurity.io/tags/blockchain/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/2024/06/26/blockchain-based-application-threat-modeling/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/dapp/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/defi/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/post/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/categories/threat-modeling/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/tags/web3/</loc>
+    <lastmod>2024-06-26T12:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://holisticsecurity.io/tags/api/</loc>
     <lastmod>2024-04-24T12:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2024/04/24/minimum-viable-security-to-apis/</loc>
-    <lastmod>2024-04-24T12:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/categories/</loc>
     <lastmod>2024-04-24T12:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/dast/</loc>
@@ -17,13 +44,7 @@
     <loc>https://holisticsecurity.io/categories/devsecops/</loc>
     <lastmod>2024-04-24T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://holisticsecurity.io/</loc>
-    <lastmod>2024-04-24T12:00:00+02:00</lastmod>
-  </url><url>
     <loc>https://holisticsecurity.io/tags/pareto/</loc>
-    <lastmod>2024-04-24T12:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/post/</loc>
     <lastmod>2024-04-24T12:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/sast/</loc>
@@ -36,9 +57,6 @@
     <lastmod>2024-04-24T12:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/tags/shift-left/</loc>
-    <lastmod>2024-04-24T12:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://holisticsecurity.io/tags/</loc>
     <lastmod>2024-04-24T12:00:00+02:00</lastmod>
   </url><url>
     <loc>https://holisticsecurity.io/2022/01/03/first-things-first-threat-modelling/</loc>
@@ -301,6 +319,10 @@
   </url><url>
     <loc>https://holisticsecurity.io/2019/10/14/migrating-wordpress-com-blog-to-github-pages-with-jekyll-part1/</loc>
     <lastmod>2019-10-14T15:58:00+00:00</lastmod>
+  </url><url>
+    <loc>https://holisticsecurity.io/media/assets/blog20240424_api_mvs/</loc>
+  </url><url>
+    <loc>https://holisticsecurity.io/media/assets/blog20240626_web3_tm/</loc>
   </url><url>
     <loc>https://holisticsecurity.io/authors/</loc>
   </url><url>
