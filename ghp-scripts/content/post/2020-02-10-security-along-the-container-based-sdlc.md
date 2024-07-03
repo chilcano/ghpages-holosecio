@@ -1,16 +1,16 @@
 ---
-categories: [Cloud, SDLC, DevSecOps, Holism]
-tags: [SCA, SAST, DAST, IAST, RASP]
-comments: true
-date: "2020-02-10T10:00:00Z"
 title: Security along the SDLC for Cloud-Native Apps
+date: "2020-02-10T10:00:00Z"
+draft: false
+type: post
+layout: single_simple
+categories: [Cloud, SDLC, DevSecOps]
+tags: [SCA, SAST, DAST, IAST, RASP]
 url: /2020/02/10/security-along-the-sdlc-for-cloud-native-apps
 aliases: 
    - /2020/02/10/security-along-the-container-based-sdlc
    - /post/2020/02/10/security-along-the-container-based-sdlc
    - /post/2020/02/10/security-along-the-sdlc-for-cloud-native-apps
-type: post
-layout: single_simple
 ---
 
 Nowadays, containers are becoming the standard deployment unit of software, and that in the Cloud-based Application Security world means 2 things:
